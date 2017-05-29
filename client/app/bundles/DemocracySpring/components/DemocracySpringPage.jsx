@@ -5,7 +5,7 @@ export default class DemocracySpringPage extends React.Component {
   displayName: 'DemocracySpring';
 
   static propTypes = {
-    name: PropTypes.string.isRequired, // this is passed from the Rails view
+    // name: PropTypes.string.isRequired,
   };
 
   constructor(props, _railsContext) {
@@ -14,12 +14,108 @@ export default class DemocracySpringPage extends React.Component {
     this.state = { name: this.props.name };
   }
 
-  render() {
+  render () {
     return (
       <div>
-        <h1>Democrats</h1>
-        <h1>Need Big Change</h1>
+        {this.renderNavbar()}
+        {this.renderHeadlineSection()}
+        {this.renderProgressBar()}
+        {this.renderMotivationStatement()}
       </div>
     );
   }
+
+  renderNavbar () {
+    return (
+      <div className="navbar">
+        {this.renderLogo()}
+        {this.renderCallToActionButton()}
+      </div>
+    );
+  }
+
+  renderHeadlineSection () {
+    return (
+      <div>
+        <div className="section headline_section"
+             style={{display: 'flex', flexDirection: 'row', backgroundColor: 'black', width: '100%'}}>
+          <div className="content" style={{flex: 1}}>
+            <h1 className="headline">
+              <span style={{ color: "white" }}>
+                Democrats
+              </span>
+              <br/>
+              <span style={{ color: "yellow" }}>
+                Need Big Change
+              </span>
+            </h1>
+            <div className="headline_underline"></div>
+            <p style={{color: 'white', lineHeight: '1.5em'}}>
+              Despite an overwhelming appetite for bold progressive change, the DNC continues to support an agenda backed by Big Money donors instead of everyday people. Let's make them pay.
+            </p>
+          </div>
+          <img src="/democracy-spring-headline.jpg"
+                style={{flex: 1, height: '400px'}}/>
+        </div>
+      </div>
+    );
+  }
+
+  renderLogo () {
+    return (
+      <div className="logo">
+        <img src='/dem-spring-logo-blue.png'
+             style={{ width: '300px', margin: '10px' }}/>
+      </div>
+    );
+  }
+
+  renderCallToActionButton () {
+    return (
+      <button className="call_to_action">
+        Give $1/Day
+      </button>
+    );
+  }
+
+  renderProgressBar () {
+    return (
+      <div style={{width: '100%'}}>
+        <div style={{
+          width: '70%',
+          margin: '30px auto'
+        }}>
+          <p>$534 raised out of $1000 goal</p>
+          <div style={{
+            backgroundColor: 'green',
+            height: '10px',
+          }}>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  renderMotivationStatement () {
+    return (
+      <div style={{
+        width: '100%',
+        backgroundColor: 'rgb(243, 243, 243)',
+      }}>
+        <div style={{
+          width: '70%',
+          textTransform: 'uppercase',
+          margin: '30px auto',
+          textAlign: 'center',
+        }}>
+          <p style={{fontWeight: 'bold'}}>
+            Every day the DNC fails to break with Big Money, I will chip in:
+            &nbsp;
+            {this.renderCallToActionButton()}
+          </p>
+        </div>
+      </div>
+    );
+  }
+
 }
