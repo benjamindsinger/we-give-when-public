@@ -21,6 +21,7 @@ export default class DemocracySpringPage extends React.Component {
         {this.renderHeadlineSection()}
         {this.renderProgressBar()}
         {this.renderMotivationStatement()}
+        {this.renderGiveWhen()}
       </div>
     );
   }
@@ -38,7 +39,7 @@ export default class DemocracySpringPage extends React.Component {
     return (
       <div>
         <div className="section headline_section"
-             style={{display: 'flex', flexDirection: 'row', backgroundColor: 'black', width: '100%'}}>
+             style={{display: 'flex', backgroundColor: 'black', width: '100%'}}>
           <div className="content" style={{flex: 1}}>
             <h1 className="headline">
               <span style={{ color: "white" }}>
@@ -105,15 +106,51 @@ export default class DemocracySpringPage extends React.Component {
         <div style={{
           width: '70%',
           textTransform: 'uppercase',
-          margin: '30px auto',
+          margin: '0 auto',
+          padding: '30px 0',
           textAlign: 'center',
         }}>
-          <p style={{fontWeight: 'bold'}}>
+          <p style={{fontWeight: 'bold', display: 'inline', height: '100px'}}>
             Every day the DNC fails to break with Big Money, I will chip in:
             &nbsp;
             {this.renderCallToActionButton()}
           </p>
         </div>
+      </div>
+    );
+  }
+
+  renderGiveWhen () {
+    return (
+      <div style={{display: 'flex', width: '100%'}}>
+        <div style={{flex: 1, backgroundColor: 'yellow'}}>
+          <div style={{textAlign: 'center', textTransform: 'uppercase'}}>
+            <h3>Give</h3>
+          </div>
+          <div style={{
+            backgroundColor: 'rgb(252, 240, 62)',
+            textAlign: 'center'
+          }}>
+            <p>
+              To support a progressive takeover of the Democratic Party
+            </p>
+          </div>
+        </div>
+        <div style={{flex: 1, backgroundColor: 'black', color: 'white'}}>
+          <div style={{textAlign: 'center', textTransform: 'uppercase'}}>
+            <h3>When</h3>
+          </div>
+          <div style={{
+            backgroundColor: 'gray',
+            textAlign: 'center'
+          }}>
+            <p>
+              lorem ipsum
+            </p>
+          </div>
+
+        </div>
+
       </div>
     );
   }
