@@ -1,0 +1,2 @@
+class CrowdFund < ApplicationRecord
+end
