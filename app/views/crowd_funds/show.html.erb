@@ -1,0 +1,15 @@
+<% if @crowd_fund.id == 1 %>
+  <%= react_component(
+        "DemocracySpringPage",
+        trace: nil,
+        replay_console: nil
+      )
+  %>
+<% elsif @crowd_fund.id == 2 %>
+  <%= react_component(
+        "WillGuzzardiPageg",
+        trace: nil,
+        replay_console: nil
+      )
+  %>
+<% end %>
