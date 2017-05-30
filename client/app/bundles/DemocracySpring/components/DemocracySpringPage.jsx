@@ -127,8 +127,8 @@ export default class DemocracySpringPage extends React.Component {
           textAlign: 'center',
         }}>
           <p style={{fontWeight: 'bold', display: 'inline', height: '100px'}}>
-            Every day the DNC fails to break with Big Money, I will chip in:
-            &nbsp;
+            Every day the DNC fails to break with Big Money, I will chip in
+            &rarr; &nbsp;
             {this.renderCallToActionButton()}
           </p>
         </div>
