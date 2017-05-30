@@ -145,11 +145,14 @@ export default class DemocracySpringPage extends React.Component {
           </div>
           <div style={{
             backgroundColor: 'rgb(252, 240, 62)',
-            textAlign: 'center'
+            textAlign: 'center',
+            height: 100
           }}>
-            <p>
-              To support a progressive takeover of the Democratic Party
-            </p>
+            <div style={{ padding: 30 }}>
+              <p>
+                To support a progressive takeover of the Democratic Party
+              </p>
+            </div>
           </div>
         </div>
         <div style={{flex: 1, backgroundColor: 'black', color: 'white'}}>
@@ -157,12 +160,15 @@ export default class DemocracySpringPage extends React.Component {
             <h3>When</h3>
           </div>
           <div style={{
-            backgroundColor: 'gray',
-            textAlign: 'center'
+            backgroundColor: 'rgb(50, 50, 50)',
+            textAlign: 'center',
+            height: 100
           }}>
-            <p>
-              lorem ipsum
-            </p>
+            <div style={{ padding: 30 }}>
+              <p>
+                Every day the DNC fails to break with Big Money ...
+              </p>
+            </div>
           </div>
 
         </div>
