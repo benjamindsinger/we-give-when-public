@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170530223833) do
+ActiveRecord::Schema.define(version: 20170530225246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 20170530223833) do
     t.datetime "goal_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "cause_id"
+    t.index ["cause_id"], name: "index_crowd_funds_on_cause_id", using: :btree
   end
 
   create_table "funders", force: :cascade do |t|
@@ -73,5 +75,6 @@ ActiveRecord::Schema.define(version: 20170530223833) do
 
   add_foreign_key "crowd_fund_memberships", "crowd_funds"
   add_foreign_key "crowd_fund_memberships", "funders"
+  add_foreign_key "crowd_funds", "causes"
   add_foreign_key "legal_entities", "causes"
 end
