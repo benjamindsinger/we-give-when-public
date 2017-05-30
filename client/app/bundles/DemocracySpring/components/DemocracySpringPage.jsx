@@ -316,7 +316,17 @@ export default class DemocracySpringPage extends React.Component {
 
   renderVideoSection () {
     return (
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/lIH-tZEPw8k" frameborder="0" allowfullscreen></iframe>
+      <div style={{
+        padding: 30,
+        width: '60%',
+        margin: '0 auto'
+      }}>
+        <h3 className="content_headline">
+          Watch CNN's 4-minute piece on our 2016 DNC accountability actions.
+        </h3>
+        <br/>
+        <iframe width="100%" height="500px" src="https://www.youtube.com/embed/lIH-tZEPw8k" frameborder="0" allowfullscreen></iframe>
+      </div>
     );
   }
 
