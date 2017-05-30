@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170530223656) do
+ActiveRecord::Schema.define(version: 20170530223833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,15 @@ ActiveRecord::Schema.define(version: 20170530223656) do
   create_table "causes", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "crowd_fund_memberships", force: :cascade do |t|
+    t.integer  "crowd_fund_id"
+    t.integer  "giver_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["crowd_fund_id"], name: "index_crowd_fund_memberships_on_crowd_fund_id", using: :btree
+    t.index ["giver_id"], name: "index_crowd_fund_memberships_on_giver_id", using: :btree
   end
 
   create_table "crowd_funds", force: :cascade do |t|
@@ -62,5 +71,7 @@ ActiveRecord::Schema.define(version: 20170530223656) do
     t.index ["cause_id"], name: "index_legal_entities_on_cause_id", using: :btree
   end
 
+  add_foreign_key "crowd_fund_memberships", "crowd_funds"
+  add_foreign_key "crowd_fund_memberships", "givers"
   add_foreign_key "legal_entities", "causes"
 end
