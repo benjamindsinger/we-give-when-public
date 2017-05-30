@@ -149,7 +149,7 @@ export default class DemocracySpringPage extends React.Component {
             height: 100
           }}>
             <div style={{ padding: 30 }}>
-              <p>
+              <p style={{ fontWeight: 'bold', fontSize: 19 }}>
                 To support a progressive takeover of the Democratic Party
               </p>
             </div>
@@ -165,7 +165,7 @@ export default class DemocracySpringPage extends React.Component {
             height: 100
           }}>
             <div style={{ padding: 30 }}>
-              <p>
+              <p style={{ fontWeight: 'bold', fontSize: 19 }}>
                 Every day the DNC fails to break with Big Money ...
               </p>
             </div>
