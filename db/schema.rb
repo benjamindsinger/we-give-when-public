@@ -22,11 +22,11 @@ ActiveRecord::Schema.define(version: 20170530223833) do
 
   create_table "crowd_fund_memberships", force: :cascade do |t|
     t.integer  "crowd_fund_id"
-    t.integer  "giver_id"
+    t.integer  "funder_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["crowd_fund_id"], name: "index_crowd_fund_memberships_on_crowd_fund_id", using: :btree
-    t.index ["giver_id"], name: "index_crowd_fund_memberships_on_giver_id", using: :btree
+    t.index ["funder_id"], name: "index_crowd_fund_memberships_on_funder_id", using: :btree
   end
 
   create_table "crowd_funds", force: :cascade do |t|
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20170530223833) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "givers", force: :cascade do |t|
+  create_table "funders", force: :cascade do |t|
     t.string   "stripe_customer_id"
     t.string   "first_name"
     t.string   "last_name"
@@ -72,6 +72,6 @@ ActiveRecord::Schema.define(version: 20170530223833) do
   end
 
   add_foreign_key "crowd_fund_memberships", "crowd_funds"
-  add_foreign_key "crowd_fund_memberships", "givers"
+  add_foreign_key "crowd_fund_memberships", "funders"
   add_foreign_key "legal_entities", "causes"
 end

@@ -1,6 +1,6 @@
 class CreateGivers < ActiveRecord::Migration[5.0]
   def change
-    create_table :givers do |t|
+    create_table :funders do |t|
       t.string :stripe_customer_id
       t.string :first_name
       t.string :last_name
