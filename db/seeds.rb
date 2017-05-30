@@ -1,9 +1,11 @@
 crowd_funds = [
   {
-    name: 'Democracy Spring'
+    name: 'Democracy Spring',
+    id: 1
   },
   {
-    name: 'Fight for $15'
+    name: 'Fight for $15',
+    id: 2
   }
 ]
 
