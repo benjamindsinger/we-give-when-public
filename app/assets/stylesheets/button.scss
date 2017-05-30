@@ -1,4 +1,4 @@
-button.call_to_action {
+button.call_to_action, .continue {
   border: 1px solid gray;
   text-transform: uppercase;
   font-weight: bold;
@@ -9,22 +9,36 @@ button.call_to_action {
   cursor: pointer;
 
   .call_to_action_shading {
+    background-color: darken(yellow, 2.5%);
+  }
+
+  .call_to_action_shading, .continue_shading {
     height: 21px;
     width: 100%;
-    background-color: darken(yellow, 2.5%);
     position: absolute;
     bottom: 0;
     left: 0;
     z-index: -5;
   }
 
-  .call_to_action_background {
+  .continue_shading {
+    background-color: rgb(67, 222, 31);
+  }
+
+  .call_to_action_background, .continue_background {
     height: 42px;
     width: 100%;
-    background-color: yellow;
     position: absolute;
     bottom: 0;
     left: 0;
     z-index: -10;
+  }
+
+  .call_to_action_background {
+    background-color: yellow;
+  }
+
+  .continue_background {
+    background-color: lighten(rgb(67, 222, 31), 15%);
   }
 }

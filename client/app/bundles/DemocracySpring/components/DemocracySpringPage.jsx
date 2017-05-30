@@ -22,6 +22,7 @@ export default class DemocracySpringPage extends React.Component {
         {this.renderProgressBar()}
         {this.renderMotivationStatement()}
         {this.renderGiveWhen()}
+        {this.renderBenefitStatement()}
       </div>
     );
   }
@@ -77,6 +78,16 @@ export default class DemocracySpringPage extends React.Component {
         Give $1/Day
         <div className="call_to_action_shading" />
         <div className="call_to_action_background" />
+      </button>
+    );
+  }
+
+  renderContinueButton () {
+    return (
+      <button className="continue">
+        Continue
+        <div className="continue_shading" />
+        <div className="continue_background" />
       </button>
     );
   }
@@ -139,40 +150,103 @@ export default class DemocracySpringPage extends React.Component {
   renderGiveWhen () {
     return (
       <div style={{display: 'flex', width: '100%'}}>
-        <div style={{flex: 1, backgroundColor: 'yellow'}}>
-          <div style={{textAlign: 'center', textTransform: 'uppercase'}}>
-            <h3>Give</h3>
-          </div>
+        {this.renderGive()}
+        {this.renderWhen()}
+      </div>
+    );
+  }
+
+  renderGive () {
+    return (
+      <div style={{flex: 1, backgroundColor: 'yellow'}}>
+        <div style={{textAlign: 'center', textTransform: 'uppercase'}}>
+          <h3>Give</h3>
+        </div>
+        <div style={{
+          backgroundColor: 'rgb(252, 240, 62)',
+          textAlign: 'center',
+        }}>
           <div style={{
             backgroundColor: 'rgb(252, 240, 62)',
-            textAlign: 'center',
-            height: 100
+            padding: '30px 0',
           }}>
-            <div style={{ padding: 30 }}>
-              <p style={{ fontWeight: 'bold', fontSize: 19 }}>
-                To support a progressive takeover of the Democratic Party
-              </p>
+            <p style={{ fontWeight: 'bold', fontSize: 19 }}>
+              To support a progressive takeover of the Democratic Party
+            </p>
+            <div style={{
+              margin: '0 auto',
+              width: '67%',
+              height: 100,
+              textAlign: 'center'
+            }}>
+              {this.renderSelectorButton('¢50')}
+              {this.renderSelectorButton('$1')}
+              {this.renderSelectorButton('$3')}
+              {this.renderSelectorButton('other')}
             </div>
           </div>
         </div>
-        <div style={{flex: 1, backgroundColor: 'black', color: 'white'}}>
-          <div style={{textAlign: 'center', textTransform: 'uppercase'}}>
-            <h3>When</h3>
-          </div>
+      </div>
+    );
+  }
+
+  renderWhen () {
+    return (
+      <div style={{flex: 1, backgroundColor: 'black', color: 'white'}}>
+        <div style={{textAlign: 'center', textTransform: 'uppercase'}}>
+          <h3>When</h3>
+        </div>
+        <div style={{
+          backgroundColor: 'rgb(50, 50, 50)',
+          textAlign: 'center',
+        }}>
           <div style={{
             backgroundColor: 'rgb(50, 50, 50)',
-            textAlign: 'center',
-            height: 100
+            padding: '30px 0',
           }}>
-            <div style={{ padding: 30 }}>
-              <p style={{ fontWeight: 'bold', fontSize: 19 }}>
-                Every day the DNC fails to break with Big Money ...
-              </p>
+            <p style={{ fontWeight: 'bold', fontSize: 19 }}>
+              Every day the DNC fails to break with Big Money ...
+            </p>
+            <div style={{
+              margin: '0 auto',
+              width: '67%',
+              height: 100,
+              textAlign: 'center'
+            }}>
+              {this.renderContinueButton()}
             </div>
           </div>
-
         </div>
+      </div>
+    );
+  }
 
+  renderSelectorButton (amount) {
+    return (
+      <div style={{ width: 60, padding: '10px 20px', backgroundColor: 'white',
+           fontFamily: 'Helvetica', float: 'left',
+           fontSize: 21, fontWeight: 'bold', margin: 10 }}>
+        {amount}
+      </div>
+    );
+  }
+
+  renderBenefitStatement () {
+    return (
+      <div style={{
+        width: '100%',
+        backgroundColor: 'rgb(243, 243, 243)',
+      }}>
+        <div style={{
+          width: '70%',
+          margin: '0 auto',
+          padding: '30px 0',
+          textAlign: 'center',
+        }}>
+          <p style={{fontWeight: 'bold', display: 'inline', height: '100px'}}>
+            Sign up as an automatic responder and you'll get monthly updates from one of the organizers we hire to help force the Democrats to break with Big Money.
+          </p>
+        </div>
       </div>
     );
   }
