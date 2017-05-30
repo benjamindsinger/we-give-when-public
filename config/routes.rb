@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   post '/funders' => 'funders#create'
 
-  resources :crowd_funds, only: [:show, :index] do
+  resources :crowd_funds, path: 'campaigns', only: [:show, :index] do
     get :dashboard, on: :member
   end
 end
