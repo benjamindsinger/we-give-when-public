@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170520164522) do
+ActiveRecord::Schema.define(version: 20170530223301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +18,22 @@ ActiveRecord::Schema.define(version: 20170520164522) do
   create_table "causes", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "givers", force: :cascade do |t|
+    t.string   "stripe_customer_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "occupation"
+    t.string   "employer"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "address"
+    t.string   "city"
+    t.string   "us_state"
+    t.string   "zip"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "legal_entities", force: :cascade do |t|
@@ -35,9 +50,8 @@ ActiveRecord::Schema.define(version: 20170520164522) do
     t.integer  "cause_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["cause_id"], name: "index_legal_entities_on_cause_id", using: :btree
   end
-
-  add_index "legal_entities", ["cause_id"], name: "index_legal_entities_on_cause_id", using: :btree
 
   add_foreign_key "legal_entities", "causes"
 end
