@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :cause_admins, only: [:sessions, :passwords], path: ''
 
-  root 'causes#index'
+  root 'crowd_funds#index'
 
   post '/funders' => 'funders#create'
 
