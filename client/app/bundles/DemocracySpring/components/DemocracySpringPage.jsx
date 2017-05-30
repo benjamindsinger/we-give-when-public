@@ -26,6 +26,10 @@ export default class DemocracySpringPage extends React.Component {
         {this.renderExplanation()}
         {this.renderEmphasisStatement()}
         {this.renderVideoSection()}
+        {this.renderAgenda()}
+        {this.renderFootnotes()}
+        {this.renderSignature()}
+        {this.renderSocial()}
       </div>
     );
   }
@@ -327,6 +331,30 @@ export default class DemocracySpringPage extends React.Component {
         <br/>
         <iframe width="100%" height="500px" src="https://www.youtube.com/embed/lIH-tZEPw8k" frameborder="0" allowfullscreen></iframe>
       </div>
+    );
+  }
+
+  renderAgenda () {
+    return (
+      null
+    );
+  }
+
+  renderFootnotes () {
+    return (
+      null
+    );
+  }
+
+  renderSignature () {
+    return (
+      null
+    );
+  }
+
+  renderSocial () {
+    return (
+      null
     );
   }
 
