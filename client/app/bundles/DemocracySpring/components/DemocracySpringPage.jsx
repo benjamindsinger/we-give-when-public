@@ -45,26 +45,24 @@ export default class DemocracySpringPage extends React.Component {
 
   renderHeadlineSection () {
     return (
-      <div>
-        <div style={{display: 'flex', backgroundColor: 'black', width: '100%'}}>
-          <div style={{flex: 1, padding: '30px 60px', height: 360}}>
-            <h1 className="headline">
-              <span style={{ color: "white" }}>
-                Democrats
-              </span>
-              <br/>
-              <span style={{ color: "yellow" }}>
-                Need Big Change
-              </span>
-            </h1>
-            <div className="headline_underline"></div>
-            <p style={{color: 'white', lineHeight: '1.5em'}}>
-              Despite an overwhelming appetite for bold progressive change, the DNC continues to support an agenda backed by Big Money donors instead of everyday people. Let's make them pay.
-            </p>
-          </div>
-          <img src="/democracy-spring-headline-long.jpg"
-                style={{flex: 0, height: 420}}/>
+      <div style={{display: 'flex', backgroundColor: 'black', width: '100%'}}>
+        <div style={{flex: 1, padding: '30px 60px', height: 360}}>
+          <h1 className="headline">
+            <span style={{ color: "white" }}>
+              Democrats
+            </span>
+            <br/>
+            <span style={{ color: "yellow" }}>
+              Need Big Change
+            </span>
+          </h1>
+          <div className="headline_underline"></div>
+          <p style={{color: 'white', lineHeight: '1.5em'}}>
+            Despite an overwhelming appetite for bold progressive change, the DNC continues to support an agenda backed by Big Money donors instead of everyday people. Let's make them pay.
+          </p>
         </div>
+        <img src="/democracy-spring-headline-long.jpg"
+              style={{flex: 0, height: 420}}/>
       </div>
     );
   }
@@ -336,7 +334,24 @@ export default class DemocracySpringPage extends React.Component {
 
   renderAgenda () {
     return (
-      null
+      <div style={{display: 'flex', backgroundColor: 'black', width: '100%'}}>
+        <div style={{flex: 1, padding: '30px 60px', color: 'yellow'}}>
+          <h3 className="content_headline">
+            Support this campaign if you think the democrats must:
+          </h3>
+
+          <div style={{
+            border: '2px solid yellow',
+            width: '100%',
+            margin: '10px 0'
+          }} />
+
+        </div>
+
+        <img src="/democracy-spring-capitol.jpg"
+              style={{flex: 0, height: 500}}/>
+
+      </div>
     );
   }
 
