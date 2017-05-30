@@ -85,14 +85,28 @@ export default class DemocracySpringPage extends React.Component {
     return (
       <div style={{width: '100%'}}>
         <div style={{
-          width: '70%',
-          margin: '30px auto'
+          width: '80%',
+          margin: '30px auto',
+          position: 'relative',
+          padding: '30px 0',
         }}>
-          <p>$534 raised out of $1000 goal</p>
+          <div style={{width: '100%', position: 'relative', bottom: 30}}>
+            <p style={{lineHeight: 0, float: 'left'}}>
+              $534 raised, 302 backers
+            </p>
+            <p style={{lineHeight: 0, float: 'right'}}>
+              $1000 goal, 17 days left
+            </p>
+          </div>
           <div style={{
-            backgroundColor: 'green',
+            backgroundColor: '#ccc',
             height: '10px',
           }}>
+            <div style={{
+              backgroundColor: 'rgb(67, 222, 31)',
+              height: '10px',
+              width: '55%'
+            }} />
           </div>
         </div>
       </div>
