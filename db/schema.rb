@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170531200944) do
+ActiveRecord::Schema.define(version: 20170531201423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,9 +58,11 @@ ActiveRecord::Schema.define(version: 20170531200944) do
     t.string   "name"
     t.json     "page_data"
     t.datetime "goal_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.integer  "cause_id"
+    t.boolean  "is_countdown", null: false
+    t.boolean  "is_slingshot", null: false
     t.index ["cause_id"], name: "index_crowd_funds_on_cause_id", using: :btree
   end
 
