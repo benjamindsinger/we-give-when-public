@@ -1,0 +1,32 @@
+<div class="campaigner-navbar">
+  <span class="p-text"><%= @crowd_fund.name %> Data</span>
+  <%= link_to "See Your Crowd Funding Page", crowd_fund_url(@crowd_fund) %>
+  <%= link_to "Download CSV", dashboard_crowd_fund_url(@crowd_fund, format: :csv) %>
+  <%= link_to('Log Out', destroy_cause_admin_session_path, method: :delete, style: "float: right") %>
+</div>
+
+<div class="summary-stats">
+  <div><span class="summary-stat">Total raised</span>: TK</div>
+  <div><span class="summary-stat">Backers</span>: <%= @membership_rows.count %></div>
+  <div><span class="summary-stat">Pledged per event</span>: TK</div>
+  <div><span class="summary-stat">Pledged monthly max</span>: TK</div>
+</div>
+
+<table class="dashboard">
+  <thead>
+    <tr>
+      <% @membership_headers.each do |header| %>
+        <th><%= header %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @membership_rows.each_with_index do |membership_row, index| %>
+      <tr class=<%= index.odd? ? 'odd' : 'even' %>>
+        <% membership_row.each do |row| %>
+          <td><%= row %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
