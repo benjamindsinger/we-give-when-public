@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe GiversController, type: :controller do
+RSpec.describe FundersController, type: :controller do
 
   describe "POST #create" do
 
@@ -20,22 +20,14 @@ RSpec.describe GiversController, type: :controller do
       )
     end
 
-    let(:campaign) {
-      Campaign.create!(
-        name: 'Example Campaign',
-        launch_date: DateTime.now,
-        donation_page_data: {
-          background_image_class: 'example',
-          title: 'Example Title',
-          donation_form_data: {},
-        }
-      )
+    let(:crowd_fund) {
+      CrowdFund.create!(name: 'Democracy Spring')
     }
 
     context "valid giver data, valid campaign membership data" do
       let(:params) {
         {
-          giverDetails: {
+          funderDetails: {
             firstName: 'Josh',
             lastName: 'Q.',
             occupation: 'Web Dev',
@@ -50,11 +42,11 @@ RSpec.describe GiversController, type: :controller do
           stripeToken: {
             id: 'FAKE_STRIPE_TOKEN'
           },
-          campaignMembershipDetails: {
+          crowdFundMembershipDetails: {
             amountPerTimeInCents: 100,
             monthlyMaximumInCents: 1000,
-            coverCampaignFees: true,
-            campaignId: campaign.id
+            coverFees: true,
+            crowdFundId: crowd_fund.id
           }
         }
       }
@@ -68,7 +60,7 @@ RSpec.describe GiversController, type: :controller do
     context "valid giver data, no campaign membership data" do
       let(:params) {
         {
-          giverDetails: {
+          funderDetails: {
             firstName: 'Josh',
             lastName: 'Q.',
             occupation: 'Web Dev',

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170531195456) do
+ActiveRecord::Schema.define(version: 20170531200944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,8 +43,12 @@ ActiveRecord::Schema.define(version: 20170531195456) do
   create_table "crowd_fund_memberships", force: :cascade do |t|
     t.integer  "crowd_fund_id"
     t.integer  "funder_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "status",                   null: false
+    t.boolean  "cover_fees",               null: false
+    t.integer  "amount_per_time_in_cents"
+    t.integer  "monthly_maximum_in_cents"
     t.index ["crowd_fund_id"], name: "index_crowd_fund_memberships_on_crowd_fund_id", using: :btree
     t.index ["funder_id"], name: "index_crowd_fund_memberships_on_funder_id", using: :btree
   end
