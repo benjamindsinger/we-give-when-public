@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe CampaignsController, type: :controller do
+RSpec.describe CrowdFundsController, type: :controller do
 
   let(:campaign) {
     Campaign.create!(
