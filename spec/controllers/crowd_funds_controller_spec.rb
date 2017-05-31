@@ -2,14 +2,15 @@ require "rails_helper"
 
 RSpec.describe CrowdFundsController, type: :controller do
 
+  let(:cause) { Cause.create! }
+
   let(:crowd_fund) {
     CrowdFund.create!(
       name: 'Example Crowd Fund',
       crowd_fund_type: 'COUNTDOWN',
+      cause: cause
     )
   }
-
-  let(:cause) { Cause.create! }
 
   let(:cause_admin) {
     CauseAdmin.create!(
@@ -60,7 +61,7 @@ RSpec.describe CrowdFundsController, type: :controller do
 
         it "fails" do
           sign_in some_other_admin
-          get :dashboard, params: { id: cause.id }
+          get :dashboard, params: { id: crowd_fund.id }
           expect(response).not_to be_success
         end
       end
@@ -68,7 +69,7 @@ RSpec.describe CrowdFundsController, type: :controller do
 
     context "user not logged in" do
       it "fails" do
-        get :dashboard, params: { id: cause.id }
+        get :dashboard, params: { id: crowd_fund.id }
         expect(response).not_to be_success
       end
     end

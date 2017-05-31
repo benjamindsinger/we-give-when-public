@@ -1,5 +1,8 @@
 class CrowdFundsController < ApplicationController
 
+  before_action :authenticate_cause_admin!, only: [:dashboard]
+  before_action :check_crowd_fund_cause!, only: [:dashboard]
+
   def index
     @crowd_funds = CrowdFund.all
   end
@@ -37,6 +40,17 @@ class CrowdFundsController < ApplicationController
   end
 
   private
+
+  def check_crowd_fund_cause!
+    return true if current_cause_admin.super_admin == true
+
+    crowd_fund = CrowdFund.friendly.find(params[:id])
+    correct_cause = current_cause_admin.cause
+
+    if crowd_fund.cause != correct_cause
+      redirect_to root_url, alert: 'That\'s not your crowd fund, don\'t play.'
+    end
+  end
 
   def to_csv(headers, rows)
     CSV.generate { |csv|
