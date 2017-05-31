@@ -4,15 +4,15 @@ RSpec.describe CrowdFundsController, type: :controller do
 
   let(:crowd_fund) {
     CrowdFund.create!(
-      name: 'Example Campaign',
-      is_countdown: true,
-      is)
+      name: 'Example Crowd Fund',
+      crowd_fund_type: 'COUNTDOWN',
+    )
   }
 
   let(:cause) { Cause.create! }
 
   let(:cause_admin) {
-    CampaignAdmin.create!(
+    CauseAdmin.create!(
       email: 'test@example.com',
       password: 'test-password',
       cause: cause
@@ -42,7 +42,7 @@ RSpec.describe CrowdFundsController, type: :controller do
       context "cause admin for the correct crowd fund" do
         it "succeeds" do
           sign_in cause_admin
-          get :dashboard, params: { id: campaign.id }
+          get :dashboard, params: { id: crowd_fund.id }
           expect(response).to be_success
         end
       end

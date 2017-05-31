@@ -58,11 +58,10 @@ ActiveRecord::Schema.define(version: 20170531201423) do
     t.string   "name"
     t.json     "page_data"
     t.datetime "goal_date"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.integer  "cause_id"
-    t.boolean  "is_countdown", null: false
-    t.boolean  "is_slingshot", null: false
+    t.string   "crowd_fund_type", null: false
     t.index ["cause_id"], name: "index_crowd_funds_on_cause_id", using: :btree
   end
 
