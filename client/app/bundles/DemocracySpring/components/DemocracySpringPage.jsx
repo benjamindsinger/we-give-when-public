@@ -129,7 +129,7 @@ export default class DemocracySpringPage extends React.Component {
 
   renderGiveWhen () {
     return (
-      <div style={{display: 'flex', width: '100%'}}>
+      <div className="section flex">
         {this.renderGive()}
         {this.renderArrowShape()}
         {this.renderWhen()}
@@ -170,7 +170,7 @@ export default class DemocracySpringPage extends React.Component {
 
   renderArrowShape () {
     return (
-      <div className="arrow_box">
+      <div className="arrow_box" style={{flex: 0}}>
       </div>
     );
   }
@@ -208,7 +208,8 @@ export default class DemocracySpringPage extends React.Component {
         width: 2,
         backgroundColor: '#1c407b',
         display: 'inline',
-        float: 'right'
+        float: 'right',
+        flex: 0.005
       }}>
       </div>
     );

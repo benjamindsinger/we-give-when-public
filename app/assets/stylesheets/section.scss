@@ -37,7 +37,7 @@ div.red {
 
 @media screen and (max-width: $breakpoint-m) {
   .section.flex {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 
   .section.flex img {
