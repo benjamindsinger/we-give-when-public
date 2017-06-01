@@ -155,10 +155,10 @@ export default class DemocracySpringPage extends React.Component {
             margin: '0 auto',
             width: '80%',
           }}>
-            {this.renderSelectorButton('¢50')}
-            {this.renderSelectorButton('$1')}
-            {this.renderSelectorButton('$3')}
-            {this.renderSelectorButton('...')}
+            {this.renderSelectorButton('¢50', false)}
+            {this.renderSelectorButton('$1', true)}
+            {this.renderSelectorButton('$3', false)}
+            {this.renderSelectorButton('...', false)}
           </div>
         </div>
       </div>
@@ -194,9 +194,12 @@ export default class DemocracySpringPage extends React.Component {
     );
   }
 
-  renderSelectorButton (amount) {
+  renderSelectorButton (amount, selected) {
+    const className = selected ?
+                      'amount_selector_button selected' :
+                      'amount_selector_button';
     return (
-      <div className="amount_selector_button">
+      <div className={className}>
         {amount}
       </div>
     );

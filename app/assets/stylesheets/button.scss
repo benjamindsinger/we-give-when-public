@@ -11,6 +11,11 @@
   border: 1px solid #1c407b;
 }
 
+.amount_selector_button.selected {
+  background-color: #1c407b;
+  color: white;
+}
+
 button.call_to_action, .continue {
   border: 1px solid gray;
   text-transform: uppercase;
