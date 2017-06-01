@@ -3,7 +3,9 @@ $breakpoint-s: 500px;
 $breakpoint-m: 1100px;
 $breakpoint-l: 1300px;
 $breakpoint-xl: 1850px;
+
 $red: #f90016;
+$darkblue: #1c407b;
 
 .section.flex {
   display: flex;
@@ -46,3 +48,12 @@ div.red {
   }
 }
 
+@media screen and (max-width: $breakpoint-m) {
+  #when {
+    border-bottom: 2px solid $darkblue;
+  }
+
+  #divider-line {
+    display: none !important;
+  }
+}

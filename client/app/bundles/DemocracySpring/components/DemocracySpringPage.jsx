@@ -177,13 +177,14 @@ export default class DemocracySpringPage extends React.Component {
 
   renderWhen () {
     return (
-      <div style={{
-        flex: 1,
-        color: '#1c407b',
-        textAlign: 'center',
-        backgroundColor: 'white',
-        padding: 20
-      }}>
+      <div id="when"
+           style={{
+             flex: 1,
+             color: '#1c407b',
+             textAlign: 'center',
+             backgroundColor: 'white',
+             padding: 20
+           }}>
         <div style={{ width: '85%', margin: '0 auto' }}>
           <h3 style={{ textTransform: 'uppercase' }}>When</h3>
           <p style={{ fontSize: '1.125em' }}>
@@ -202,7 +203,8 @@ export default class DemocracySpringPage extends React.Component {
 
   renderDividerLine () {
     return (
-      <div style={{
+      <div id="divider-line"
+        style={{
         minHeight: 100,
         margin: '15px 0',
         width: 2,
