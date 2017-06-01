@@ -38,7 +38,19 @@ export default class DemocracySpringPage extends React.Component {
     return (
       <div className="navbar">
         {this.renderLogo()}
-        {this.renderCallToActionButton()}
+        <div style={{
+          float: 'right',
+          color: '#f90016',
+          margin: '20px',
+          fontSize: '1.175em'
+        }}>
+          <p style={{fontWeight: 'bold'}}>
+            I will <span style={{
+              textDecoration: 'underline',
+              cursor: 'pointer'
+            }}>give $1/day</span> until the DNC breaks with Big Money.
+          </p>
+        </div>
       </div>
     );
   }
@@ -69,9 +81,9 @@ export default class DemocracySpringPage extends React.Component {
 
   renderLogo () {
     return (
-      <div className="logo">
-        <img src='/dem-spring-logo-blue.png'
-             style={{ width: '300px', margin: '10px' }}/>
+      <div className="logo" style={{ margin: '20px', height: '50px' }}>
+        <img src='/dem-spring-logo-blue-small.png'
+             style={{ margin: '10px' }}/>
       </div>
     );
   }
