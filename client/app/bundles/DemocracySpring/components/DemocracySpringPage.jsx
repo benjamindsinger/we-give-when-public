@@ -97,7 +97,7 @@ export default class DemocracySpringPage extends React.Component {
           width: '80%',
           margin: '20px auto',
           position: 'relative',
-          padding: 20
+          padding: '40px 20px'
         }}>
           <h3 style={{color: '#1c407b', lineHeight: '7.5px'}}>
             $534 raised
@@ -147,7 +147,7 @@ export default class DemocracySpringPage extends React.Component {
         color: '#1c407b',
         textAlign: 'center',
         backgroundColor: '#eef3f6',
-        padding: 20
+        padding: '40px 20px'
       }}>
         <div style={{ width: '85%', margin: '0 auto' }}>
           <h3 style={{ textTransform: 'uppercase' }}>Give</h3>
@@ -183,7 +183,7 @@ export default class DemocracySpringPage extends React.Component {
              color: '#1c407b',
              textAlign: 'center',
              backgroundColor: 'white',
-             padding: 20
+             padding: '40px 20px'
            }}>
         <div style={{ width: '85%', margin: '0 auto' }}>
           <h3 style={{ textTransform: 'uppercase' }}>When</h3>
