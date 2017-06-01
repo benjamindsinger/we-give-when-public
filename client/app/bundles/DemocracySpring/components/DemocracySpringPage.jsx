@@ -144,16 +144,17 @@ export default class DemocracySpringPage extends React.Component {
         flex: 1,
         color: '#1c407b',
         textAlign: 'center',
-        backgroundColor: '#eef3f6'
+        backgroundColor: '#eef3f6',
+        padding: 20
       }}>
-        <div style={{ width: '85%', margin: '30px auto' }}>
+        <div style={{ width: '85%', margin: '0 auto' }}>
           <h3 style={{ textTransform: 'uppercase' }}>Give</h3>
           <p style={{ fontSize: '1.125em' }}>
             To support a progressive takeover of the Democratic Party
           </p>
           <div style={{
             margin: '0 auto',
-            width: '80%',
+            width: '85%',
           }}>
             {this.renderSelectorButton('¢50', false)}
             {this.renderSelectorButton('$1', true)}
@@ -167,27 +168,23 @@ export default class DemocracySpringPage extends React.Component {
 
   renderWhen () {
     return (
-      <div style={{flex: 1, color: '#1c407b'}}>
-        <div style={{textAlign: 'center', textTransform: 'uppercase'}}>
-          <h3>When</h3>
-        </div>
-        <div style={{
-          textAlign: 'center',
-        }}>
+      <div style={{
+        flex: 1,
+        color: '#1c407b',
+        textAlign: 'center',
+        backgroundColor: 'white',
+        padding: 20
+      }}>
+        <div style={{ width: '85%', margin: '0 auto' }}>
+          <h3 style={{ textTransform: 'uppercase' }}>When</h3>
+          <p style={{ fontSize: '1.125em' }}>
+            Every day the DNC fails to break with Big Money
+          </p>
           <div style={{
-            padding: '30px 0',
+            margin: '0 auto',
+            width: 140,
           }}>
-            <p style={{ fontWeight: 'bold', fontSize: 19 }}>
-              Every day the DNC fails to break with Big Money ...
-            </p>
-            <div style={{
-              margin: '0 auto',
-              width: '67%',
-              height: 100,
-              textAlign: 'center'
-            }}>
-              {this.renderContinueButton()}
-            </div>
+            {this.renderSelectorButton('continue →', true)}
           </div>
         </div>
       </div>
