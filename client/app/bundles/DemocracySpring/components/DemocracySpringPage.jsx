@@ -98,7 +98,7 @@ export default class DemocracySpringPage extends React.Component {
 
   renderProgressBar () {
     return (
-      <div style={{width: '100%'}}>
+      <div style={{flex: 1}}>
         <div style={{
           width: '80%',
           margin: '30px auto',
@@ -133,38 +133,32 @@ export default class DemocracySpringPage extends React.Component {
       <div style={{display: 'flex', width: '100%'}}>
         {this.renderGive()}
         {this.renderWhen()}
+        {this.renderProgressBar()}
       </div>
     );
   }
 
   renderGive () {
     return (
-      <div style={{flex: 1, backgroundColor: 'yellow'}}>
-        <div style={{textAlign: 'center', textTransform: 'uppercase'}}>
-          <h3>Give</h3>
-        </div>
-        <div style={{
-          backgroundColor: 'rgb(252, 240, 62)',
-          textAlign: 'center',
-        }}>
+      <div style={{
+        flex: 1,
+        color: '#1c407b',
+        textAlign: 'center',
+        backgroundColor: '#eef3f6'
+      }}>
+        <div style={{ width: '85%', margin: '30px auto' }}>
+          <h3 style={{ textTransform: 'uppercase' }}>Give</h3>
+          <p style={{ fontSize: '1.125em' }}>
+            To support a progressive takeover of the Democratic Party
+          </p>
           <div style={{
-            backgroundColor: 'rgb(252, 240, 62)',
-            padding: '30px 0',
+            margin: '0 auto',
+            width: '80%',
           }}>
-            <p style={{ fontWeight: 'bold', fontSize: 19 }}>
-              To support a progressive takeover of the Democratic Party
-            </p>
-            <div style={{
-              margin: '0 auto',
-              width: '67%',
-              height: 100,
-              textAlign: 'center'
-            }}>
-              {this.renderSelectorButton('¢50')}
-              {this.renderSelectorButton('$1')}
-              {this.renderSelectorButton('$3')}
-              {this.renderSelectorButton('other')}
-            </div>
+            {this.renderSelectorButton('¢50')}
+            {this.renderSelectorButton('$1')}
+            {this.renderSelectorButton('$3')}
+            {this.renderSelectorButton('...')}
           </div>
         </div>
       </div>
@@ -173,16 +167,14 @@ export default class DemocracySpringPage extends React.Component {
 
   renderWhen () {
     return (
-      <div style={{flex: 1, backgroundColor: 'black', color: 'white'}}>
+      <div style={{flex: 1, color: '#1c407b'}}>
         <div style={{textAlign: 'center', textTransform: 'uppercase'}}>
           <h3>When</h3>
         </div>
         <div style={{
-          backgroundColor: 'rgb(50, 50, 50)',
           textAlign: 'center',
         }}>
           <div style={{
-            backgroundColor: 'rgb(50, 50, 50)',
             padding: '30px 0',
           }}>
             <p style={{ fontWeight: 'bold', fontSize: 19 }}>
@@ -204,9 +196,7 @@ export default class DemocracySpringPage extends React.Component {
 
   renderSelectorButton (amount) {
     return (
-      <div style={{ width: 60, padding: '10px 20px', backgroundColor: 'white',
-           fontFamily: 'Helvetica', float: 'left',
-           fontSize: 21, fontWeight: 'bold', margin: 10 }}>
+      <div className="amount_selector_button">
         {amount}
       </div>
     );

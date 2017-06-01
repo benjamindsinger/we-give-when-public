@@ -1,3 +1,16 @@
+.amount_selector_button {
+  min-width: 35px;
+  padding: 10px 15px;
+  background-color: #eef3f6;
+  font-family: Helvetica;
+  float: left;
+  font-size: 1.125em;
+  font-weight: bold;
+  margin: 10px 5px;
+  color: #1c407b;
+  border: 1px solid #1c407b;
+}
+
 button.call_to_action, .continue {
   border: 1px solid gray;
   text-transform: uppercase;
