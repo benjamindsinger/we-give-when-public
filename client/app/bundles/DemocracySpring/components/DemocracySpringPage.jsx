@@ -134,6 +134,7 @@ export default class DemocracySpringPage extends React.Component {
         {this.renderGive()}
         {this.renderArrowShape()}
         {this.renderWhen()}
+        {this.renderDividerLine()}
         {this.renderProgressBar()}
       </div>
     );
@@ -196,6 +197,20 @@ export default class DemocracySpringPage extends React.Component {
             {this.renderSelectorButton('continue →', true)}
           </div>
         </div>
+      </div>
+    );
+  }
+
+  renderDividerLine () {
+    return (
+      <div style={{
+        minHeight: 100,
+        margin: '15px 0',
+        width: 2,
+        backgroundColor: '#1c407b',
+        display: 'inline',
+        float: 'right'
+      }}>
       </div>
     );
   }
