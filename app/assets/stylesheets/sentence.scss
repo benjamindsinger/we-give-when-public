@@ -1,8 +1,30 @@
+$breakpoint-xs: 350px;
+$breakpoint-s: 500px;
+$breakpoint-m: 1100px;
+$breakpoint-l: 1300px;
+$breakpoint-xl: 1850px;
+
+$red: #f90016;
+$darkblue: #1c407b;
+
+@media (min-width: $breakpoint-m) {
+  #call_to_action_sentence {
+    float: right;
+  }
+}
+
+@media (max-width: $breakpoint-m) {
+  #call_to_action_sentence {
+    text-align: center;
+    line-height: 1.95em;
+    margin: 20px 40px;
+  }
+}
+
 #call_to_action_sentence {
-  float: right;
-  color: #f90016;
-  margin: 20px;
+  color: $red;
   font-size: 1.175em;
+  margin: 20px;
 
   p {
     font-weight: bold;
@@ -19,5 +41,4 @@
     background-color: #f90016;
     color: white;
   }
-
 }
