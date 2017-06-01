@@ -1,22 +1,48 @@
-.arrow_box {
-  position: relative;
-  background: #eef3f6;
-  border: 4px solid #eef3f6;
+$breakpoint-xs: 350px;
+$breakpoint-s: 500px;
+$breakpoint-m: 1100px;
+$breakpoint-l: 1300px;
+$breakpoint-xl: 1850px;
+$red: #f90016;
+
+.section.flex {
+  display: flex;
+  width: 100%;
 }
 
-.arrow_box:after, .arrow_box:before {
-  left: 100%;
-  top: 50%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
+.section.flex div {
+  flex: 1;
 }
 
-.arrow_box:before {
-  border-left-color: #eef3f6;
-  border-width: 40px;
-  margin-top: -40px;
+.section.flex div.text {
+  flex: 1;
+  padding: 30px 60px;
 }
+
+div.red {
+  background-color: $red;
+  color: white;
+}
+
+@media screen and (min-width: $breakpoint-m) {
+  .section.flex {
+    flex-direction: row;
+  }
+
+  .section.flex img {
+    flex: 0;
+    height: 420px;
+  }
+}
+
+@media screen and (max-width: $breakpoint-m) {
+  .section.flex {
+    flex-direction: column-reverse;
+  }
+
+  .section.flex img {
+    flex: 0;
+    max-width: 100%;
+  }
+}
+

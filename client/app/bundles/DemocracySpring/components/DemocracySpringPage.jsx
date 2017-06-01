@@ -24,10 +24,6 @@ export default class DemocracySpringPage extends React.Component {
         {this.renderBenefitStatement()}
         {this.renderEmphasisStatement()}
         {this.renderVideoSection()}
-        {this.renderAgenda()}
-        {this.renderFootnotes()}
-        {this.renderSignature()}
-        {this.renderSocial()}
       </div>
     );
   }
@@ -47,16 +43,14 @@ export default class DemocracySpringPage extends React.Component {
 
   renderHeadlineSection () {
     return (
-      <div style={{display: 'flex', backgroundColor: '#f90016', width: '100%'}}>
-        <img src="/democracy-spring-headline-long.jpg"
-              style={{flex: 0, height: 420}}/>
-        <div style={{flex: 1, padding: '30px 60px', height: 360}}>
+      <div className="section flex">
+        <img src="/democracy-spring-headline-long.jpg" />
+
+        <div className="text red">
           <h1 className="headline">
-            <span style={{ color: "white" }}>
-              Democrats
-              <br/>
-              Need Big Change
-            </span>
+            Democrats
+            <br/>
+            Need Big Change
           </h1>
           <div className="headline_underline"></div>
           <p style={{color: 'white', lineHeight: '1.5em'}}>
@@ -297,14 +291,19 @@ export default class DemocracySpringPage extends React.Component {
 
   renderEmphasisStatement () {
     return (
-      <div style={{display: 'flex', backgroundColor: 'yellow', width: '100%'}}>
+      <div style={{
+        display: 'flex',
+        backgroundColor: '#f90016',
+        color: 'white',
+        width: '100%'
+      }}>
         <div style={{flex: 1, padding: '30px 60px', height: 360}}>
           <h3 className="content_headline">
             Speak Up. Stand Up. Support the Movement.
           </h3>
 
           <div style={{
-            border: '2px solid black',
+            border: '2px solid white',
             width: '100%',
             margin: '10px 0'
           }} />
