@@ -19,8 +19,6 @@ export default class DemocracySpringPage extends React.Component {
       <div>
         {this.renderNavbar()}
         {this.renderHeadlineSection()}
-        {this.renderProgressBar()}
-        {this.renderMotivationStatement()}
         {this.renderGiveWhen()}
         {this.renderBenefitStatement()}
         {this.renderExplanation()}
@@ -125,29 +123,6 @@ export default class DemocracySpringPage extends React.Component {
               width: '55%'
             }} />
           </div>
-        </div>
-      </div>
-    );
-  }
-
-  renderMotivationStatement () {
-    return (
-      <div style={{
-        width: '100%',
-        backgroundColor: 'rgb(243, 243, 243)',
-      }}>
-        <div style={{
-          width: '70%',
-          textTransform: 'uppercase',
-          margin: '0 auto',
-          padding: '30px 0',
-          textAlign: 'center',
-        }}>
-          <p style={{fontWeight: 'bold', display: 'inline', height: '100px'}}>
-            Every day the DNC fails to break with Big Money, I will chip in
-            &rarr; &nbsp;
-            {this.renderCallToActionButton()}
-          </p>
         </div>
       </div>
     );
