@@ -132,6 +132,7 @@ export default class DemocracySpringPage extends React.Component {
     return (
       <div style={{display: 'flex', width: '100%'}}>
         {this.renderGive()}
+        {this.renderArrowShape()}
         {this.renderWhen()}
         {this.renderProgressBar()}
       </div>
@@ -140,7 +141,8 @@ export default class DemocracySpringPage extends React.Component {
 
   renderGive () {
     return (
-      <div style={{
+      <div
+        style={{
         flex: 1,
         color: '#1c407b',
         textAlign: 'center',
@@ -162,6 +164,13 @@ export default class DemocracySpringPage extends React.Component {
             {this.renderSelectorButton('...', false)}
           </div>
         </div>
+      </div>
+    );
+  }
+
+  renderArrowShape () {
+    return (
+      <div className="arrow_box">
       </div>
     );
   }
