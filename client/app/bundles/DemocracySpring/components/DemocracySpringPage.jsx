@@ -38,17 +38,9 @@ export default class DemocracySpringPage extends React.Component {
     return (
       <div className="navbar">
         {this.renderLogo()}
-        <div style={{
-          float: 'right',
-          color: '#f90016',
-          margin: '20px',
-          fontSize: '1.175em'
-        }}>
-          <p style={{fontWeight: 'bold'}}>
-            I will <span style={{
-              textDecoration: 'underline',
-              cursor: 'pointer'
-            }}>give $1/day</span> until the DNC breaks with Big Money.
+        <div id="call_to_action_sentence">
+          <p>
+            I will <span className="action_button">give $1/day</span> until the DNC breaks with Big Money.
           </p>
         </div>
       </div>

@@ -1,0 +1,23 @@
+#call_to_action_sentence {
+  float: right;
+  color: #f90016;
+  margin: 20px;
+  font-size: 1.175em;
+
+  p {
+    font-weight: bold;
+  }
+
+  .action_button {
+    border: 2px solid #f90016;
+    cursor: pointer;
+    padding: 5px 7.5px;
+    transition: background-color 0.5s ease;
+  }
+
+  .action_button:hover {
+    background-color: #f90016;
+    color: white;
+  }
+
+}
