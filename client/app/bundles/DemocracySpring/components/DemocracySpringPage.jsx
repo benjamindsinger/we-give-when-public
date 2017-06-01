@@ -49,14 +49,14 @@ export default class DemocracySpringPage extends React.Component {
 
   renderHeadlineSection () {
     return (
-      <div style={{display: 'flex', backgroundColor: 'black', width: '100%'}}>
+      <div style={{display: 'flex', backgroundColor: '#f90016', width: '100%'}}>
+        <img src="/democracy-spring-headline-long.jpg"
+              style={{flex: 0, height: 420}}/>
         <div style={{flex: 1, padding: '30px 60px', height: 360}}>
           <h1 className="headline">
             <span style={{ color: "white" }}>
               Democrats
-            </span>
-            <br/>
-            <span style={{ color: "yellow" }}>
+              <br/>
               Need Big Change
             </span>
           </h1>
@@ -65,8 +65,6 @@ export default class DemocracySpringPage extends React.Component {
             Despite an overwhelming appetite for bold progressive change, the DNC continues to support an agenda backed by Big Money donors instead of everyday people. Let's make them pay.
           </p>
         </div>
-        <img src="/democracy-spring-headline-long.jpg"
-              style={{flex: 0, height: 420}}/>
       </div>
     );
   }
