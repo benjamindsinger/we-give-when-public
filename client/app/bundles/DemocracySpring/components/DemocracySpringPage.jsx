@@ -232,13 +232,13 @@ export default class DemocracySpringPage extends React.Component {
     return (
       <div style={{
         width: '100%',
-        backgroundColor: 'rgb(243, 243, 243)',
       }}>
         <div style={{
           width: '70%',
-          margin: '0 auto',
+          margin: '30px auto',
           padding: '30px 0',
           textAlign: 'center',
+          fontSize: '1.25em'
         }}>
           <p style={{fontWeight: 'bold', display: 'inline', height: '100px'}}>
             Sign up as an automatic responder and you'll get monthly updates from one of the organizers we hire to help force the Democrats to break with Big Money.
