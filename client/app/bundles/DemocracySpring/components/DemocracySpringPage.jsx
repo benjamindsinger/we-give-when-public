@@ -254,36 +254,43 @@ export default class DemocracySpringPage extends React.Component {
   renderExplanation () {
     return (
       <div style={{
-        padding: 30,
-        width: '60%',
-        margin: '0 auto'
+        background: '#1c407b',
+        color: 'white'
       }}>
-        <h1 className="subheadline">
-          The Democrats need a shakeup.
-        </h1>
-        <p><span style={{fontWeight: 'bold'}}>The DNC ended its ban on corporate lobbyists attending fundraisers and serving on the party committee.</span> The DNC leadership continues to side with corporate donors and the failed establishment instead of its own progressive voters.</p>
-
-        <p><span style={{fontWeight: 'bold'}}>Every day Tom Perez and DNC don't break with Big Money</span>--by reinstating the ban on corporate lobbyists and supporting reform--<span style={{fontWeight: 'bold'}}>chip in to help hire organizers to shift the Democratic Party to resist Trump, act progressive, and break with big money.</span></p>
-
-        <p>That’s right: every day the party fails to take action, we can get stronger until we have the power to FORCE them to act.</p>
-
-        <p>We’ll lift up those champions in the party who DO stand up for change. And we’ll protest fundraisers and events of candidates and party officials who support the corrupt, failed status quo.</p>
-
         <div style={{
-          border: '2px solid black',
-          width: '100%',
-          margin: 10
-        }} />
+          padding: 30,
+          width: '60%',
+          margin: '0 auto',
+        }}>
+          <h1 className="subheadline">
+            The Democrats need a shakeup.
+          </h1>
+          <div style={{fontSize: '1.25em'}}>
+            <p><span style={{fontWeight: 'bold'}}>The DNC ended its ban on corporate lobbyists attending fundraisers and serving on the party committee.</span> The DNC leadership continues to side with corporate donors and the failed establishment instead of its own progressive voters.</p>
 
-        <h3 className="content_headline">
-          Support this campaign if you think the Democrats must:
-        </h3>
+            <p><span style={{fontWeight: 'bold'}}>Every day Tom Perez and DNC don't break with Big Money</span>--by reinstating the ban on corporate lobbyists and supporting reform--<span style={{fontWeight: 'bold'}}>chip in to help hire organizers to shift the Democratic Party to resist Trump, act progressive, and break with big money.</span></p>
 
-        <ul>
-          <li style={{fontWeight: 'bold'}}>Fiercely resist Trump and his agenda of hate and greed</li>
-          <li style={{fontWeight: 'bold'}}>Embrace an unapologetically progressive agenda</li>
-          <li style={{fontWeight: 'bold'}}>Break with Big Money so they can represent everyday people</li>
-        </ul>
+            <p>That’s right: every day the party fails to take action, we can get stronger until we have the power to FORCE them to act.</p>
+
+            <p>We’ll lift up those champions in the party who DO stand up for change. And we’ll protest fundraisers and events of candidates and party officials who support the corrupt, failed status quo.</p>
+
+            <div style={{
+              border: '2px solid white',
+              width: '100%',
+              margin: 10
+            }} />
+
+            <h3 className="content_headline">
+              Support this campaign if you think the Democrats must:
+            </h3>
+
+            <ul>
+              <li style={{fontWeight: 'bold'}}>Fiercely resist Trump and his agenda of hate and greed</li>
+              <li style={{fontWeight: 'bold'}}>Embrace an unapologetically progressive agenda</li>
+              <li style={{fontWeight: 'bold'}}>Break with Big Money so they can represent everyday people</li>
+            </ul>
+          </div>
+        </div>
       </div>
     );
   }
