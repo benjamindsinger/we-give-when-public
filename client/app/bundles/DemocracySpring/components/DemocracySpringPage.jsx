@@ -20,8 +20,8 @@ export default class DemocracySpringPage extends React.Component {
         {this.renderNavbar()}
         {this.renderHeadlineSection()}
         {this.renderGiveWhen()}
-        {this.renderBenefitStatement()}
         {this.renderExplanation()}
+        {this.renderBenefitStatement()}
         {this.renderEmphasisStatement()}
         {this.renderVideoSection()}
         {this.renderAgenda()}
