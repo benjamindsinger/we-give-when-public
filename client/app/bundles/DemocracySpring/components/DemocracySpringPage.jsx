@@ -101,21 +101,20 @@ export default class DemocracySpringPage extends React.Component {
       <div style={{flex: 1}}>
         <div style={{
           width: '80%',
-          margin: '30px auto',
+          margin: '20px auto',
           position: 'relative',
-          padding: '30px 0',
+          padding: 20
         }}>
-          <div style={{width: '100%', position: 'relative', bottom: 30}}>
-            <p style={{lineHeight: 0, float: 'left'}}>
-              $534 raised, 302 backers
-            </p>
-            <p style={{lineHeight: 0, float: 'right'}}>
-              $1000 goal, 17 days left
-            </p>
-          </div>
+          <h3 style={{color: '#1c407b', lineHeight: '7.5px'}}>
+            $534 raised
+          </h3>
+          <p style={{color: '#1c407b', lineHeight: '7.5px'}}>
+            of $1000 goal
+          </p>
           <div style={{
             backgroundColor: '#ccc',
             height: '10px',
+            margin: '20px 0'
           }}>
             <div style={{
               backgroundColor: 'rgb(67, 222, 31)',
@@ -123,6 +122,12 @@ export default class DemocracySpringPage extends React.Component {
               width: '55%'
             }} />
           </div>
+          <p style={{color: '#1c407b', lineHeight: '7.5px'}}>
+            371 backers
+          </p>
+          <p style={{color: 'red', lineHeight: '7.5px'}}>
+            17 days left
+          </p>
         </div>
       </div>
     );
