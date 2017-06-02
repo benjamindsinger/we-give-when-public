@@ -263,6 +263,9 @@ export default class DemocracySpringPage extends React.Component {
           <h1 className="subheadline">
             The Democrats need a shakeup
           </h1>
+
+          <br/>
+
           <div style={{fontSize: '1.25em'}}>
 
             <p>Despite a cataclysmic defeat in the 2016 election and the awesome rise of a new progressive and people-powered movement on the left, the DNC is still holding on to the old centrist and corporate-backed strategies that gave us President Trump and across-the-board Republican control of our government.</p>
@@ -290,6 +293,9 @@ export default class DemocracySpringPage extends React.Component {
           <h1 className="subheadline">
             Here's How This Campaign Works:
           </h1>
+
+          <br/>
+
           <div style={{fontSize: '1.25em'}}>
             <p>Every day Tom Perez and the DNC fails to break with Big Money, you chip in to help us organize the movement that will FORCE them to change.</p>
 
