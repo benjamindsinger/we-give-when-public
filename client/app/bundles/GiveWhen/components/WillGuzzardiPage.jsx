@@ -52,9 +52,7 @@ export default class WillGuzzardiPage extends React.Component {
 
         <div className="text red">
           <h1 className="headline">
-            Democrats
-            <br/>
-            Need Big Change
+            Elect Candidates Who Fight For $15
           </h1>
           <div className="headline_underline"></div>
           <p style={{color: 'white', lineHeight: '1.5em'}}>
