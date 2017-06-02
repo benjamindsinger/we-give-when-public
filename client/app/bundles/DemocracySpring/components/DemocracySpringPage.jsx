@@ -446,8 +446,10 @@ export default class DemocracySpringPage extends React.Component {
           <div style={{textAlign: 'center'}}>
             <p style={{fontWeight: 'bold'}}>share</p>
 
-            <img id="twitter-logo" src="/twitter-logo-white.svg"
+            <img className="social-sharing" src="/twitter-logo-white.svg"
                  style={{height: 100, width: 100}} />
+            <img className="social-sharing" src="/facebook-logo-purple.svg"
+                 style={{height: 60, width: 60, position: 'relative', bottom: 20}} />
           </div>
         </div>
       </div>
