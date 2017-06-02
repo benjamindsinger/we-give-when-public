@@ -1,0 +1,30 @@
+$red: #f90016;
+$darkblue: #1c407b;
+$green: #01943b;
+$lightblue: #0948bc;
+
+.color_scheme__red_blue {
+
+  .text.color__bright {
+    background-color: $red;
+    color: white;
+  }
+
+  .text.color__calm {
+    background-color: $darkblue;
+    color: white;
+  }
+}
+
+.color_scheme__green_blue {
+
+  .text.color__bright {
+    background-color: $lightblue;
+    color: white;
+  }
+
+  .text.color__calm {
+    background-color: $green;
+    color: white;
+  }
+}

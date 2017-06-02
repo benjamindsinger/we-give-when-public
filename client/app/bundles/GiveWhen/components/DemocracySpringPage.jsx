@@ -50,7 +50,7 @@ export default class DemocracySpringPage extends React.Component {
       <div className="section flex">
         <img src="/democracy-spring-headline-long.jpg" />
 
-        <div className="text red">
+        <div className="text color__bright">
           <h1 className="headline">
             Democrats
             <br/>
@@ -316,7 +316,7 @@ export default class DemocracySpringPage extends React.Component {
   renderEmphasisStatement () {
     return (
       <div className="section flex">
-        <div className="text red">
+        <div className="text color__bright">
           <h3 className="content_headline">
             Speak Up. Stand Up. Support the Movement.
           </h3>

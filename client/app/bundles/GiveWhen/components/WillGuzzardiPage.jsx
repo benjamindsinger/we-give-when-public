@@ -50,13 +50,13 @@ export default class WillGuzzardiPage extends React.Component {
       <div className="section flex">
         <img src="/democracy-spring-headline-long.jpg" />
 
-        <div className="text red">
+        <div className="text color__bright">
           <h1 className="headline">
             Elect Candidates Who Fight For $15
           </h1>
           <div className="headline_underline"></div>
           <p style={{color: 'white', lineHeight: '1.5em'}}>
-            Despite an overwhelming appetite for bold progressive change, the DNC continues to support an agenda backed by Big Money donors instead of everyday people. Let's build a movement to force a change.
+            Big business is pulling the strings. Let’s fight back to support the people’s candidates.
           </p>
         </div>
       </div>

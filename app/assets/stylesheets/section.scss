@@ -16,19 +16,9 @@ $darkblue: #1c407b;
   flex: 1;
 }
 
-.section.flex div.text {
+.section.flex .text {
   flex: 1;
   padding: 30px 60px;
-}
-
-div.red {
-  background-color: $red;
-  color: white;
-}
-
-div.darkblue {
-  background-color: $darkblue;
-  color: white;
 }
 
 @media screen and (min-width: $breakpoint-m) {
