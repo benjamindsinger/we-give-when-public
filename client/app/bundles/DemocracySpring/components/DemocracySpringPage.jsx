@@ -261,7 +261,7 @@ export default class DemocracySpringPage extends React.Component {
           margin: '0 auto',
         }}>
           <h1 className="subheadline">
-            The Democrats need a shakeup.
+            The Democrats need a shakeup
           </h1>
           <div style={{fontSize: '1.25em'}}>
 
