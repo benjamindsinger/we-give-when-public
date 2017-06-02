@@ -36,7 +36,7 @@ div.darkblue {
     flex-direction: row;
   }
 
-  .section.flex img:not(.big) {
+  .section.flex img:not(.big):not(#twitter-logo) {
     flex: 0;
     height: 420px;
   }

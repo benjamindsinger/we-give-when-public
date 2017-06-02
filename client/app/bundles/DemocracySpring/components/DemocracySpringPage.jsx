@@ -440,16 +440,20 @@ export default class DemocracySpringPage extends React.Component {
             <p style={{fontStyle: 'italic'}}>Onward,</p>
             <p style={{fontStyle: 'italic'}}>The Democracy Spring Team</p>
           </div>
+
+          <br/>
+
+          <div style={{textAlign: 'center'}}>
+            <p style={{fontWeight: 'bold'}}>share</p>
+
+            <img id="twitter-logo" src="/twitter-logo-white.svg"
+                 style={{height: 100, width: 100}} />
+          </div>
         </div>
       </div>
     );
   }
 
-  renderSignature () {
-    return (
-      null
-    );
-  }
 
   renderSocial () {
     return (
