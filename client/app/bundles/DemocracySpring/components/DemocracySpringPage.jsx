@@ -158,7 +158,7 @@ export default class DemocracySpringPage extends React.Component {
             margin: '0 auto',
             width: '85%',
           }}>
-            {this.renderSelectorButton('¢50', false)}
+            {this.renderSelectorButton('50¢', false)}
             {this.renderSelectorButton('$1', true)}
             {this.renderSelectorButton('$3', false)}
             {this.renderSelectorButton('...', false)}
@@ -241,7 +241,7 @@ export default class DemocracySpringPage extends React.Component {
           fontSize: '1.25em'
         }}>
           <p style={{fontWeight: 'bold', display: 'inline', height: '100px'}}>
-            Sign up as an automatic responder and you'll get monthly updates from one of the organizers we hire to help force the Democrats to break with Big Money.
+            <span className="action_button">Sign up</span> as an automatic responder and you'll get monthly updates from one of the organizers we hire to help force the Democrats to break with Big Money.
           </p>
         </div>
       </div>

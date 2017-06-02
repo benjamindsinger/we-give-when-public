@@ -30,15 +30,31 @@ $darkblue: #1c407b;
     font-weight: bold;
   }
 
-  .action_button {
-    border: 2px solid #f90016;
-    cursor: pointer;
-    padding: 5px 7.5px;
-    transition: background-color 0.5s ease;
-  }
+}
 
-  .action_button:hover {
-    background-color: #f90016;
-    color: white;
-  }
+.action_button {
+  border: 2px solid #f90016;
+  cursor: pointer;
+  padding: 5px 7.5px;
+  transition: background-color 0.5s ease;
+}
+
+.action_button:hover {
+  background-color: #f90016;
+  color: white;
+}
+
+.action_button.darkblue {
+  cursor: pointer;
+  padding: 5px 7.5px;
+  transition: background-color 0.5s ease;
+  background-color: $darkblue;
+  border: 2px solid $darkblue;
+  color: white;
+}
+
+.action_button.darkblue:hover {
+  background-color: white;
+  border: 2px solid $darkblue;
+  color: $darkblue;
 }
