@@ -54,7 +54,7 @@ export default class DemocracySpringPage extends React.Component {
           </h1>
           <div className="headline_underline"></div>
           <p style={{color: 'white', lineHeight: '1.5em'}}>
-            Despite an overwhelming appetite for bold progressive change, the DNC continues to support an agenda backed by Big Money donors instead of everyday people. Let's make them pay.
+            Despite an overwhelming appetite for bold progressive change, the DNC continues to support an agenda backed by Big Money donors instead of everyday people. Let's build a movement to force a change.
           </p>
         </div>
       </div>
