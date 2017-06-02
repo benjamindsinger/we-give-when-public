@@ -294,13 +294,8 @@ export default class DemocracySpringPage extends React.Component {
 
   renderEmphasisStatement () {
     return (
-      <div style={{
-        display: 'flex',
-        backgroundColor: '#f90016',
-        color: 'white',
-        width: '100%'
-      }}>
-        <div style={{flex: 1, padding: '30px 60px', height: 360}}>
+      <div className="section flex">
+        <div className="text red">
           <h3 className="content_headline">
             Speak Up. Stand Up. Support the Movement.
           </h3>
@@ -315,8 +310,7 @@ export default class DemocracySpringPage extends React.Component {
 
           <p>Support the campaign, then share. Let’s build this movement.</p>
         </div>
-        <img src="/democracy-spring-marching.jpg"
-             style={{flex: 0, height: 420}}/>
+        <img src="/democracy-spring-marching.jpg" />
       </div>
     );
   }
