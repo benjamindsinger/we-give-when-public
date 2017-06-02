@@ -34,7 +34,7 @@ export default class DemocracySpringPage extends React.Component {
         {this.renderLogo()}
         <div id="call_to_action_sentence">
           <p>
-            I will <span className="action_button">give $1/day</span> until the DNC breaks with Big Money.
+            <span className="action_button">Give $1/day</span> until the DNC breaks with Big Money.
           </p>
         </div>
       </div>
