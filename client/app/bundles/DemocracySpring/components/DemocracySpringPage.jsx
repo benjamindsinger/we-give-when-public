@@ -27,6 +27,7 @@ export default class DemocracySpringPage extends React.Component {
         {this.renderVideoSection()}
         {this.renderDetailedAgenda()}
         {this.renderClosingLetter()}
+        {this.renderFooter()}
       </div>
     );
   }
@@ -456,10 +457,16 @@ export default class DemocracySpringPage extends React.Component {
     );
   }
 
-
-  renderSocial () {
+  renderFooter () {
     return (
-      null
+      <div style={{
+        padding: 20,
+        textAlign: 'center',
+        backgroundColor: '#f1f6f9',
+        color: '#686d6e'
+      }}>
+        <p>created by <span style={{fontWeight: 'bold'}}>Give When</span></p>
+      </div>
     );
   }
 
