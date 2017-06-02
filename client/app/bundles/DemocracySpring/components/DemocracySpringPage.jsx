@@ -255,7 +255,7 @@ export default class DemocracySpringPage extends React.Component {
   renderStatementOfPurpose () {
     return (
       <div style={{
-        background: '#1c407b',
+        background: 'url("/Blue-over-capitol.jpg")',
         color: 'white'
       }}>
         <div style={{
