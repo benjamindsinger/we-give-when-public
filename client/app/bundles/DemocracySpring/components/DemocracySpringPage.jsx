@@ -411,14 +411,14 @@ export default class DemocracySpringPage extends React.Component {
                   textTransform: 'uppercase',
                   color: '#f90016',
                   textDecoration: 'underline',
-                  marginBottom: 20
+                  marginBottom: 40
                 }}>
               THE DEMOCRACY SPRING MOVEMENT HOUSE
             </h3>
           </div>
 
           <div style={{
-            width: '85%',
+            width: '66%',
             margin: '0 auto',
             fontSize: '1.125em'
           }}>
@@ -431,6 +431,14 @@ export default class DemocracySpringPage extends React.Component {
 
             <p>Please make a contribution and share this page with your friends, family, and co-workers. </p>
 
+            <br/>
+
+            <p style={{fontStyle: 'italic'}}>Thank you!</p>
+
+            <br/>
+
+            <p style={{fontStyle: 'italic'}}>Onward,</p>
+            <p style={{fontStyle: 'italic'}}>The Democracy Spring Team</p>
           </div>
         </div>
       </div>
