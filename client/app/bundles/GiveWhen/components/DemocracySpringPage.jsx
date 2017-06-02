@@ -16,7 +16,7 @@ export default class DemocracySpringPage extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="color_scheme__red_blue">
         {this.renderNavbar()}
         {this.renderHeadlineSection()}
         {this.renderGiveWhen()}
@@ -36,7 +36,7 @@ export default class DemocracySpringPage extends React.Component {
     return (
       <div className="navbar">
         {this.renderLogo()}
-        <div id="call_to_action_sentence">
+        <div id="sentence">
           <p>
             <span className="action_button">Give $1/day</span> until the DNC breaks with Big Money.
           </p>

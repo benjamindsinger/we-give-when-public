@@ -16,7 +16,7 @@ export default class WillGuzzardiPage extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="color_scheme__green_blue">
         {this.renderNavbar()}
         {this.renderHeadlineSection()}
         {this.renderGiveWhen()}
@@ -36,9 +36,9 @@ export default class WillGuzzardiPage extends React.Component {
     return (
       <div className="navbar">
         {this.renderLogo()}
-        <div className="sentence call_to_action guzzardi_green">
+        <div id="sentence">
           <p>
-            <span className="action_button">Give $1/day</span> to Fight for $15.
+            <span className="action_button">Give $1 every time</span> an anti-living-wage corporation writes a campaign check.
           </p>
         </div>
       </div>
