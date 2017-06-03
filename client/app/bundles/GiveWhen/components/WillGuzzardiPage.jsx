@@ -66,7 +66,7 @@ export default class WillGuzzardiPage extends React.Component {
   renderLogo () {
     return (
       <div className="logo" style={{ margin: '20px', height: '50px' }}>
-        <img src='/dem-spring-logo-blue-small.png'
+        <img src='/guzzardi-logo-small.jpg'
              style={{ margin: '10px' }}/>
       </div>
     );
