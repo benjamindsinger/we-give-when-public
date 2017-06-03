@@ -216,10 +216,7 @@ export default class WillGuzzardiPage extends React.Component {
 
   renderStatementOfPurpose () {
     return (
-      <div style={{
-        background: 'url("/Blue-over-capitol.jpg")',
-        color: 'white'
-      }}>
+      <div>
         <div style={{
           padding: 30,
           width: '60%',
