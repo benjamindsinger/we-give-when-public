@@ -248,52 +248,29 @@ export default class WillGuzzardiPage extends React.Component {
     return (
       <div className="section flex">
         <div className="text">
-
-          <div style={{textAlign: 'center', width: '100%'}}>
-            <h3 className="content_headline"
-                style={{
-                  textTransform: 'uppercase',
-                  color: '#f90016',
-                  textDecoration: 'underline',
-                  marginBottom: 40
-                }}>
-              THE DEMOCRACY SPRING MOVEMENT HOUSE
-            </h3>
-          </div>
-
           <div style={{
             width: '66%',
             margin: '0 auto',
-            fontSize: '1.125em'
+            fontSize: '1.125em',
+            color: '#0948bc'
           }}>
 
-            <p>Democracy Spring is building a 50-state nonviolent army of grassroots volunteers to defend democracy from Trump and the GOP and to take over the Democratic Party with bold progressives. We're using militant, nonviolent civil resistance to fight for a democracy that works for all of us, not just the wealthiest 1%.</p>
+            <p style={{ textTransform: 'uppercase', fontWeight: 'bold' }}>
+              We Need Our Voices To Be Just As Loud As Theirs
+            </p>
 
-            <p>To make that vision a reality, we are dramatically expanding our dedicated staff of full-time organizers who will be training, coaching and supporting our local volunteer leaders from across the country. The most efficient, cost-effective way we know to do that is to put all of those organizers under one roof: we are going to rent a Movement House in Washington DC for one year to spearhead the political revolution. </p>
+            <p>
+              Every time an anti-living-wage corporate interest writes a big campaign check, donate to support candidates who Fight for $15.
+            </p>
 
-            <p>If we meet our goal of $100 per day, we will raise $36,500 over the year, enough to pay for at least half of one year’s rent for a Movement House that will support more than a dozen full-time organizers – people committing their lives to the struggle for democracy. </p>
+            <p style={{ textTransform: 'uppercase', fontWeight: 'bold' }}>
+              We need to respond immediately, in time for our candidates to campaign this summer for their primaries
+            </p>
 
-            <p>Please make a contribution and share this page with your friends, family, and co-workers. </p>
+            <p>
+              At the end of each month, depending on the number of checks written by corporate interests and the monthly maximum donation you set for yourself, we'll process your donation and put it to work immediately to campaign for our candidates.
+            </p>
 
-            <br/>
-
-            <p style={{fontStyle: 'italic'}}>Thank you!</p>
-
-            <br/>
-
-            <p style={{fontStyle: 'italic'}}>Onward,</p>
-            <p style={{fontStyle: 'italic'}}>The Democracy Spring Team</p>
-          </div>
-
-          <br/>
-
-          <div style={{textAlign: 'center'}}>
-            <p style={{fontWeight: 'bold'}}>share</p>
-
-            <img className="social-sharing" src="/twitter-logo-white.svg"
-                 style={{height: 100, width: 100}} />
-            <img className="social-sharing" src="/facebook-logo-purple.svg"
-                 style={{height: 60, width: 60, position: 'relative', bottom: 20}} />
           </div>
         </div>
       </div>
