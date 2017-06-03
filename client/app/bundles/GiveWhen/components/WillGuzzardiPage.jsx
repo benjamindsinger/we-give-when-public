@@ -197,11 +197,13 @@ export default class WillGuzzardiPage extends React.Component {
     return (
       <div style={{
         width: '100%',
+        backgroundColor: '#0948bc',
+        color: 'white'
       }}>
         <div style={{
           width: '70%',
-          margin: '30px auto',
-          padding: '30px 0',
+          margin: '0 auto',
+          padding: '60px 0',
           textAlign: 'center',
           fontSize: '1.25em'
         }}>
