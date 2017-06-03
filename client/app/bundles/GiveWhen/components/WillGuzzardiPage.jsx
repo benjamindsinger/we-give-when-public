@@ -47,8 +47,6 @@ export default class WillGuzzardiPage extends React.Component {
   renderHeadlineSection () {
     return (
       <div className="section flex headline__section">
-        <img src="/fightfor15photo.jpg" />
-
         <div className="text color__bright">
           <h1>
             Elect Candidates Who Fight For $15
@@ -58,6 +56,8 @@ export default class WillGuzzardiPage extends React.Component {
             Big business is pulling the strings. Let’s fight back to support the people’s candidates.
           </p>
         </div>
+
+        <img src="/fightfor15photo.jpg" />
       </div>
     );
   }
