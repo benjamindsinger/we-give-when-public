@@ -126,9 +126,9 @@ export default class DemocracySpringPage extends React.Component {
   renderGive () {
     return (
       <div className="give_when__subsection" id="give">
-        <div style={{ width: '85%', margin: '0 auto' }}>
-          <h3 style={{ textTransform: 'uppercase' }}>Give</h3>
-          <p style={{ fontSize: '1.125em' }}>
+        <div className="wrapper">
+          <h3>Give</h3>
+          <p>
             To support a progressive takeover of the Democratic Party
           </p>
           <div style={{
@@ -155,9 +155,9 @@ export default class DemocracySpringPage extends React.Component {
   renderWhen () {
     return (
       <div className="give_when__subsection" id="when">
-        <div style={{ width: '85%', margin: '0 auto' }}>
-          <h3 style={{ textTransform: 'uppercase' }}>When</h3>
-          <p style={{ fontSize: '1.125em' }}>
+        <div className="wrapper">
+          <h3>When</h3>
+          <p>
             Every day the DNC fails to break with Big Money
           </p>
           <div style={{

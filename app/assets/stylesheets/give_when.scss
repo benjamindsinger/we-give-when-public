@@ -4,6 +4,19 @@
     flex: 1;
     color: #1c407b;
     padding: 20px;
+
+    p {
+      font-size: 1.125em;
+    }
+
+    h3 {
+      text-transform: uppercase;
+    }
+
+    .wrapper {
+      width: 85%;
+      margin: 0 auto;
+    }
   }
 
   .give_when__subsection:not(#progress-bar) {

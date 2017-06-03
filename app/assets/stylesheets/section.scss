@@ -24,16 +24,22 @@ $darkblue: #1c407b;
 @media screen and (min-width: $breakpoint-m) {
   .section.flex {
     flex-direction: row;
-  }
 
-  .section.flex img:not(.big):not(#twitter-logo) {
-    flex: 0;
-    height: 360px;
-  }
+    img {
+      flex: 0;
+    }
 
-  .section.flex img.big {
-    flex: 0;
-    min-height: 360px;
+    img:not(.big):not(#twitter-logo) {
+      height: 360px;
+    }
+
+    img.big {
+      min-height: 360px;
+    }
+
+    .text {
+      height: 300px;
+    }
   }
 }
 
