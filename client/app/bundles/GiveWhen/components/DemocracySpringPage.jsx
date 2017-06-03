@@ -74,16 +74,6 @@ export default class DemocracySpringPage extends React.Component {
     );
   }
 
-  renderCallToActionButton () {
-    return (
-      <button className="call_to_action">
-        Give $1/Day
-        <div className="call_to_action_shading" />
-        <div className="call_to_action_background" />
-      </button>
-    );
-  }
-
   renderContinueButton () {
     return (
       <button className="continue">
