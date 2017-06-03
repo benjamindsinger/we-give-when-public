@@ -125,7 +125,7 @@ export default class WillGuzzardiPage extends React.Component {
         <div class="wrapper">
           <h3>Give</h3>
           <p>
-            To support a progressive takeover of the Democratic Party
+            Chip in to support candidates who Fight for $15
           </p>
           <div style={{
             margin: '0 auto',
@@ -154,7 +154,7 @@ export default class WillGuzzardiPage extends React.Component {
         <div>
           <h3>When</h3>
           <p>
-            Every day the DNC fails to break with Big Money
+            Every time an anti-living-wage writes a campaign check
           </p>
           <div style={{
             margin: '0 auto',
