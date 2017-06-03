@@ -215,7 +215,10 @@ export default class WillGuzzardiPage extends React.Component {
 
   renderStatementOfPurpose () {
     return (
-      <div>
+      <div style={{
+        backgroundColor: '#01943b',
+        color: 'white'
+      }}>
         <div style={{
           padding: 30,
           width: '60%',
@@ -227,8 +230,13 @@ export default class WillGuzzardiPage extends React.Component {
 
           <br/>
 
-          <div style={{fontSize: '1.25em'}}>
+          <div style={{
+            border: '2px solid white'
+          }}></div>
 
+          <br/>
+
+          <div style={{fontSize: '1.25em'}}>
             <p>Walmart, McDonalds, the Chamber of Commerce, the Restaurant Association, and the Retail Merchants are some of the groups we're up against.</p>
           </div>
         </div>

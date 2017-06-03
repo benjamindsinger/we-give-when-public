@@ -10,15 +10,15 @@ $darkblue: #1c407b;
 .section.flex {
   display: flex;
   width: 100%;
-}
 
-.section.flex div {
-  flex: 1;
-}
+  div {
+    flex: 1;
+  }
 
-.section.flex .text {
-  flex: 1;
-  padding: 30px 60px;
+  .text {
+    flex: 1;
+    padding: 30px 60px;
+  }
 }
 
 @media screen and (min-width: $breakpoint-m) {
