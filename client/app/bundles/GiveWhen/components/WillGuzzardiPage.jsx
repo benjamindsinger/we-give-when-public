@@ -48,7 +48,7 @@ export default class WillGuzzardiPage extends React.Component {
   renderHeadlineSection () {
     return (
       <div className="section flex">
-        <img src="/democracy-spring-headline-long.jpg" />
+        <img src="/fightfor15photo.jpg" />
 
         <div className="text color__bright">
           <h1 className="headline">
