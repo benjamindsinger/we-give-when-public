@@ -123,7 +123,7 @@ export default class DemocracySpringPage extends React.Component {
 
   renderGiveWhen () {
     return (
-      <div className="section flex">
+      <div className="section flex give_when__section">
         {this.renderGive()}
         {this.renderArrowShape()}
         {this.renderWhen()}
@@ -135,14 +135,7 @@ export default class DemocracySpringPage extends React.Component {
 
   renderGive () {
     return (
-      <div
-        style={{
-        flex: 1,
-        color: '#1c407b',
-        textAlign: 'center',
-        backgroundColor: '#eef3f6',
-        padding: '40px 20px'
-      }}>
+      <div className="give_when__subsection" id="give">
         <div style={{ width: '85%', margin: '0 auto' }}>
           <h3 style={{ textTransform: 'uppercase' }}>Give</h3>
           <p style={{ fontSize: '1.125em' }}>
@@ -171,14 +164,7 @@ export default class DemocracySpringPage extends React.Component {
 
   renderWhen () {
     return (
-      <div id="when"
-           style={{
-             flex: 1,
-             color: '#1c407b',
-             textAlign: 'center',
-             backgroundColor: 'white',
-             padding: '40px 20px'
-           }}>
+      <div className="give_when__subsection" id="when">
         <div style={{ width: '85%', margin: '0 auto' }}>
           <h3 style={{ textTransform: 'uppercase' }}>When</h3>
           <p style={{ fontSize: '1.125em' }}>

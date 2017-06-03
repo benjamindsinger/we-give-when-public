@@ -83,12 +83,11 @@ export default class WillGuzzardiPage extends React.Component {
 
   renderProgressBar () {
     return (
-      <div style={{flex: 1}}>
+      <div className="give_when__subsection" id="progress-bar">
         <div style={{
           width: '80%',
-          margin: '20px auto',
+          margin: '40px auto',
           position: 'relative',
-          padding: '40px 20px'
         }}>
           <h3 style={{color: '#1c407b', lineHeight: '7.5px'}}>
             $53 raised
@@ -120,7 +119,7 @@ export default class WillGuzzardiPage extends React.Component {
 
   renderGiveWhen () {
     return (
-      <div className="section flex">
+      <div className="section flex give_when__section">
         {this.renderGive()}
         {this.renderArrowShape()}
         {this.renderWhen()}
@@ -132,14 +131,7 @@ export default class WillGuzzardiPage extends React.Component {
 
   renderGive () {
     return (
-      <div
-        style={{
-        flex: 1,
-        color: '#1c407b',
-        textAlign: 'center',
-        backgroundColor: '#eef3f6',
-        padding: '40px 20px'
-      }}>
+      <div className="give_when__subsection" id="give">
         <div style={{ width: '85%', margin: '0 auto' }}>
           <h3 style={{ textTransform: 'uppercase' }}>Give</h3>
           <p style={{ fontSize: '1.125em' }}>
@@ -168,14 +160,7 @@ export default class WillGuzzardiPage extends React.Component {
 
   renderWhen () {
     return (
-      <div id="when"
-           style={{
-             flex: 1,
-             color: '#1c407b',
-             textAlign: 'center',
-             backgroundColor: 'white',
-             padding: '40px 20px'
-           }}>
+      <div className="give_when__subsection" id="when">
         <div style={{ width: '85%', margin: '0 auto' }}>
           <h3 style={{ textTransform: 'uppercase' }}>When</h3>
           <p style={{ fontSize: '1.125em' }}>

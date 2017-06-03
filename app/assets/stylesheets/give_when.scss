@@ -1,0 +1,17 @@
+.give_when__section {
+
+  .give_when__subsection {
+    flex: 1;
+    color: #1c407b;
+    padding: 20px;
+  }
+
+  .give_when__subsection:not(#progress-bar) {
+    text-align: center;
+  }
+
+  #give.give_when__subsection {
+    background-color: #eef3f6;
+  }
+
+}
