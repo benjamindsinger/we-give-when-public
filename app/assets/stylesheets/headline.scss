@@ -1,11 +1,22 @@
-.headline {
-  text-transform: uppercase;
-  font-size: 60px;
-  margin-bottom: 0;
-}
+.headline__section {
 
-.headline_underline {
-  border: 2px solid white;
+  h1 {
+    text-transform: uppercase;
+    font-size: 60px;
+    margin-bottom: 0;
+  }
+
+  .divider__line {
+    border: 2px solid white;
+  }
+
+  .text {
+    p {
+      color: white;
+      line-height: 1.5em;
+      font-size: 1.25em;
+    }
+  }
 }
 
 .subheadline {

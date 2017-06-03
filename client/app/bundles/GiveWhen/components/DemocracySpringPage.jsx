@@ -47,7 +47,7 @@ export default class DemocracySpringPage extends React.Component {
 
   renderHeadlineSection () {
     return (
-      <div className="section flex">
+      <div className="section flex headline__section">
         <img src="/democracy-spring-headline-long.jpg" />
 
         <div className="text color__bright">
@@ -56,8 +56,8 @@ export default class DemocracySpringPage extends React.Component {
             <br/>
             Need Big Change
           </h1>
-          <div className="headline_underline"></div>
-          <p style={{color: 'white', lineHeight: '1.5em'}}>
+          <div className="divider__line"></div>
+          <p>
             Despite an overwhelming appetite for bold progressive change, the DNC continues to support an agenda backed by Big Money donors instead of everyday people. Let's build a movement to force a change.
           </p>
         </div>

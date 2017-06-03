@@ -24,7 +24,6 @@ export default class WillGuzzardiPage extends React.Component {
         {this.renderHowItWorks()}
         {this.renderBenefitStatement()}
         {this.renderEmphasisStatement()}
-        {this.renderVideoSection()}
         {this.renderDetailedAgenda()}
         {this.renderClosingLetter()}
         {this.renderFooter()}
@@ -47,15 +46,15 @@ export default class WillGuzzardiPage extends React.Component {
 
   renderHeadlineSection () {
     return (
-      <div className="section flex">
+      <div className="section flex headline__section">
         <img src="/fightfor15photo.jpg" />
 
         <div className="text color__bright">
-          <h1 className="headline">
+          <h1>
             Elect Candidates Who Fight For $15
           </h1>
-          <div className="headline_underline"></div>
-          <p style={{color: 'white', lineHeight: '1.5em'}}>
+          <div className="divider__line"></div>
+          <p>
             Big business is pulling the strings. Let’s fight back to support the people’s candidates.
           </p>
         </div>
@@ -330,24 +329,6 @@ export default class WillGuzzardiPage extends React.Component {
           <p>Support the campaign, then share. Let’s build this movement.</p>
         </div>
         <img src="/democracy-spring-marching.jpg" />
-      </div>
-    );
-  }
-
-  renderVideoSection () {
-    return (
-      <div style={{
-        padding: 30,
-        width: '80%',
-        margin: '0 auto',
-        textAlign: 'center'
-      }}>
-        <h2 className="subheadline" style={{ color: '#1c407b' }}>
-          Watch CNN's 4-minute piece on our 2016 DNC accountability actions:
-        </h2>
-        <br/>
-        <br/>
-        <iframe width="100%" height="500px" src="https://www.youtube.com/embed/lIH-tZEPw8k"></iframe>
       </div>
     );
   }
