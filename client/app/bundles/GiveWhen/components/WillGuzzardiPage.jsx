@@ -71,16 +71,6 @@ export default class WillGuzzardiPage extends React.Component {
     );
   }
 
-  renderContinueButton () {
-    return (
-      <button className="continue">
-        Continue
-        <div className="continue_shading" />
-        <div className="continue_background" />
-      </button>
-    );
-  }
-
   renderProgressBar () {
     return (
       <div className="give_when__subsection" id="progress-bar">

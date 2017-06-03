@@ -74,16 +74,6 @@ export default class DemocracySpringPage extends React.Component {
     );
   }
 
-  renderContinueButton () {
-    return (
-      <button className="continue">
-        Continue
-        <div className="continue_shading" />
-        <div className="continue_background" />
-      </button>
-    );
-  }
-
   renderProgressBar () {
     return (
       <div style={{flex: 1}}>
