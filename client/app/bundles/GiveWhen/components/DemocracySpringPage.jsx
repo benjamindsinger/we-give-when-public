@@ -369,8 +369,8 @@ export default class DemocracySpringPage extends React.Component {
 
   renderClosingLetter () {
     return (
-      <div className="section flex">
-        <div className="text">
+      <div>
+        <div>
 
           <div style={{textAlign: 'center', width: '100%'}}>
             <h3 className="content_headline"
