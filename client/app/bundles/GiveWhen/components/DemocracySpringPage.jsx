@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Footer from './Footer.jsx';
+import Header from './Header.jsx';
+
 export default class DemocracySpringPage extends React.Component {
   displayName: 'DemocracySpring';
 
@@ -17,7 +20,7 @@ export default class DemocracySpringPage extends React.Component {
   render () {
     return (
       <div className="color_scheme__red_blue">
-        {this.renderNavbar()}
+        {this.renderHeader()}
         {this.renderHeadlineSection()}
         {this.renderGiveWhen()}
         {this.renderStatementOfPurpose()}
@@ -32,16 +35,11 @@ export default class DemocracySpringPage extends React.Component {
     );
   }
 
-  renderNavbar () {
+  renderHeader () {
     return (
-      <div className="navbar">
-        {this.renderLogo()}
-        <div id="sentence">
-          <p>
-            <span className="action_button">Give $1/day</span> until the DNC breaks with Big Money.
-          </p>
-        </div>
-      </div>
+      <Header givePhrase="Give $1/day"
+              whenPhrase="until the DNC breaks with Big Money"
+              logoImgPath="/dem-spring-logo-blue-small.png" />
     );
   }
 
@@ -61,15 +59,6 @@ export default class DemocracySpringPage extends React.Component {
             Despite an overwhelming appetite for bold progressive change, the DNC continues to support an agenda backed by Big Money donors instead of everyday people. Let's build a movement to force a change.
           </p>
         </div>
-      </div>
-    );
-  }
-
-  renderLogo () {
-    return (
-      <div className="logo" style={{ margin: '20px', height: '50px' }}>
-        <img src='/dem-spring-logo-blue-small.png'
-             style={{ margin: '10px' }}/>
       </div>
     );
   }

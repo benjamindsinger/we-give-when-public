@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Footer from './Footer.jsx';
+import Header from './Header.jsx';
 
 export default class WillGuzzardiPage extends React.Component {
   displayName: 'WillGuzzardiPage';
@@ -19,7 +20,7 @@ export default class WillGuzzardiPage extends React.Component {
   render () {
     return (
       <div className="color_scheme__green_blue">
-        {this.renderNavbar()}
+        {this.renderHeader()}
         {this.renderHeadlineSection()}
         {this.renderGiveWhen()}
         {this.renderStatementOfPurpose()}
@@ -30,16 +31,11 @@ export default class WillGuzzardiPage extends React.Component {
     );
   }
 
-  renderNavbar () {
+  renderHeader () {
     return (
-      <div className="navbar">
-        {this.renderLogo()}
-        <div id="sentence">
-          <p>
-            <span className="action_button">Give $1 every time</span> an anti-living-wage corporation writes a campaign check.
-          </p>
-        </div>
-      </div>
+      <Header givePhrase="Give $1 every time"
+        whenPhrase="an anti-living-wage corporation writes a campaign check"
+        logoImgPath="/guzzardi-logo-small.jpg" />
     );
   }
 
@@ -57,15 +53,6 @@ export default class WillGuzzardiPage extends React.Component {
         </div>
 
         <img src="/fightfor15photo.jpg" />
-      </div>
-    );
-  }
-
-  renderLogo () {
-    return (
-      <div className="logo" style={{ margin: '20px', height: '50px' }}>
-        <img src='/guzzardi-logo-small.jpg'
-             style={{ margin: '10px' }}/>
       </div>
     );
   }
