@@ -128,7 +128,7 @@ export default class WillGuzzardiPage extends React.Component {
             </p>
             <div style={{
               margin: '0 auto',
-              width: '85%',
+              width: '75%',
             }}>
               {this.renderSelectorButton('50¢', false)}
               {this.renderSelectorButton('$1', true)}
@@ -139,11 +139,11 @@ export default class WillGuzzardiPage extends React.Component {
 
           <div style={{clear: 'both'}}>
             <p>
-              Monthly maximum:
+              Set a monthly maximum:
             </p>
             <div style={{
               margin: '0 auto',
-              width: '85%',
+              width: '75%',
             }}>
               {this.renderSelectorButton('$20', false)}
               {this.renderSelectorButton('$30', true)}
