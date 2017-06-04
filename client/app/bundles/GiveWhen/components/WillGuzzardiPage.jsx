@@ -121,17 +121,35 @@ export default class WillGuzzardiPage extends React.Component {
       <div className="give_when__subsection" id="give">
         <div class="wrapper">
           <h3>Give</h3>
-          <p>
-            Chip in to support candidates who Fight for $15
-          </p>
-          <div style={{
-            margin: '0 auto',
-            width: '85%',
-          }}>
-            {this.renderSelectorButton('50¢', false)}
-            {this.renderSelectorButton('$1', true)}
-            {this.renderSelectorButton('$3', false)}
-            {this.renderSelectorButton('...', false)}
+
+          <div style={{clear: 'both'}}>
+            <p>
+              Chip in to support candidates who Fight for $15:
+            </p>
+            <div style={{
+              margin: '0 auto',
+              width: '85%',
+            }}>
+              {this.renderSelectorButton('50¢', false)}
+              {this.renderSelectorButton('$1', true)}
+              {this.renderSelectorButton('$3', false)}
+              {this.renderSelectorButton('...', false)}
+            </div>
+          </div>
+
+          <div style={{clear: 'both'}}>
+            <p>
+              Monthly maximum:
+            </p>
+            <div style={{
+              margin: '0 auto',
+              width: '85%',
+            }}>
+              {this.renderSelectorButton('$20', false)}
+              {this.renderSelectorButton('$30', true)}
+              {this.renderSelectorButton('$40', false)}
+              {this.renderSelectorButton('...', false)}
+            </div>
           </div>
         </div>
       </div>
