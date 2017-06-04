@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Footer from './Footer.jsx';
+
 export default class WillGuzzardiPage extends React.Component {
   displayName: 'WillGuzzardiPage';
 
@@ -297,14 +299,7 @@ export default class WillGuzzardiPage extends React.Component {
 
   renderFooter () {
     return (
-      <div style={{
-        padding: 20,
-        textAlign: 'center',
-        backgroundColor: '#f1f6f9',
-        color: '#686d6e'
-      }}>
-        <p>created by <span style={{fontWeight: 'bold'}}>Give When</span></p>
-      </div>
+      <Footer />
     );
   }
 

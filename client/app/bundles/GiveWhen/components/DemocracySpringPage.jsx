@@ -425,14 +425,7 @@ export default class DemocracySpringPage extends React.Component {
 
   renderFooter () {
     return (
-      <div style={{
-        padding: 20,
-        textAlign: 'center',
-        backgroundColor: '#f1f6f9',
-        color: '#686d6e'
-      }}>
-        <p>created by <span style={{fontWeight: 'bold'}}>Give When</span></p>
-      </div>
+      <Footer />
     );
   }
 
