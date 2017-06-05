@@ -1,6 +1,12 @@
 <% if @crowd_fund.id == 1 %>
   <%= react_component(
         "DemocracySpringPage",
+
+        props: {
+          crowdFundId: 1,
+          stripePublishableKey: 'pk_test_W0fKQhoRyGPP1BcWF9kX7hJz',
+        },
+
         trace: nil,
         replay_console: nil
       )
@@ -8,6 +14,12 @@
 <% elsif @crowd_fund.id == 2 %>
   <%= react_component(
         "WillGuzzardiPage",
+
+        props: {
+          crowdFundId: 2,
+          stripePublishableKey: 'pk_test_W0fKQhoRyGPP1BcWF9kX7hJz',
+        },
+
         trace: nil,
         replay_console: nil
       )

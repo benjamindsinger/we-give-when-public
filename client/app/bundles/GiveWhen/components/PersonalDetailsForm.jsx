@@ -9,6 +9,7 @@ export default class PersonalDetailsForm extends React.Component {
     // Form functions
     onType: PropTypes.func.isRequired,
     onClickEdit: PropTypes.func.isRequired,
+    onClickContinue: PropTypes.func.isRequired,
 
     // Form details
     email: PropTypes.string.isRequired,
@@ -97,7 +98,8 @@ export default class PersonalDetailsForm extends React.Component {
           </div>
 
           <div className="action_button_big"
-               style={{margin: '60px auto 40px auto'}}>
+               style={{margin: '60px auto 40px auto'}}
+               onClick={this.props.onClickContinue}>
             continue →
           </div>
 

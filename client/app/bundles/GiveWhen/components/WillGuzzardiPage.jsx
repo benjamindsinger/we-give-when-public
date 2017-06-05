@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import _ from 'lodash';
 
 import PersonalDetailsForm from './PersonalDetailsForm.jsx';
+import CardDetailsForm from './CardDetailsForm.jsx';
 
 import Footer from './Footer.jsx';
 import Header from './Header.jsx';
@@ -43,7 +45,7 @@ export default class WillGuzzardiPage extends React.Component {
     this.setState({ step: step });
   }
 
-  onTypePersonDetailsFormInput (property, e) {
+  onTypeFormInput (property, e) {
     let updatedState = Object.assign({}, this.state);
 
     updatedState[property] = e.target.value;
@@ -63,16 +65,33 @@ export default class WillGuzzardiPage extends React.Component {
     });
   }
 
+  funderDetails () {
+    const funderProperties = [
+      'firstName', 'lastName', 'occupation', 'employer', 'email', 'phone',
+      'address', 'city', 'usState', 'zip',
+    ];
+
+    return _.pick(this.state, funderProperties);
+  }
+
+  crowdFundMembershipDetails () {
+    const crowdFundMembershipProperties = [
+      'amountPerTimeInCents', 'monthlyMaximumInCents', 'coverFees',
+    ];
+
+    const properties = _.pick(this.state, crowdFundMembershipProperties);
+
+    return _.merge(properties, { crowdFundId: this.props.crowdFundId });
+  }
+
   render () {
     const step = this.state.step;
 
     switch (step) {
-      case 0:
-        return this.renderSignUpPage();
-      case 1:
-        return this.renderPersonalDetailsPage();
-      default:
-        return this.renderSignUpPage();
+      case 0:  return this.renderSignUpPage();
+      case 1:  return this.renderPersonalDetailsPage();
+      case 2:  return this.renderCardDetailsPage();
+      default: return this.renderSignUpPage();
     }
   }
 
@@ -94,10 +113,12 @@ export default class WillGuzzardiPage extends React.Component {
     return (
       <div className="color_scheme__green_blue">
         {this.renderHeader()}
+
         <PersonalDetailsForm
           /* UI functions */
-          onType={this.onTypePersonDetailsFormInput.bind(this)}
+          onType={this.onTypeFormInput.bind(this)}
           onClickEdit={this.onChangeStep.bind(this, 0)}
+          onClickContinue={this.onChangeStep.bind(this, 2)}
 
           /* Personal details */
           email={this.state.email}
@@ -115,6 +136,32 @@ export default class WillGuzzardiPage extends React.Component {
           selectedAmountInCents={this.state.selectedAmountInCents}
           selectedMonthlyMaximumInCents={this.state.selectedMonthlyMaximumInCents}
         />
+
+        {this.renderFooter()}
+      </div>
+    );
+  }
+
+  renderCardDetailsPage () {
+    return (
+      <div className="color_scheme__green_blue">
+        {this.renderHeader()}
+
+        <CardDetailsForm
+          /* UI functions */
+          onType={this.onTypeFormInput.bind(this)}
+          onClickEdit={this.onChangeStep.bind(this, 0)}
+          /* Data for form */
+          funderDetails={this.funderDetails()}
+          crowdFundMembershipDetails={this.crowdFundMembershipDetails()}
+          coverFees={true}
+          stripePublishableKey={this.props.stripePublishableKey}
+
+          /* Selected amounts */
+          selectedAmountInCents={this.state.selectedAmountInCents}
+          selectedMonthlyMaximumInCents={this.state.selectedMonthlyMaximumInCents}
+        />
+
         {this.renderFooter()}
       </div>
     );
