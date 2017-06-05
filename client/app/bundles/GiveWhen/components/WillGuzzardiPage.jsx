@@ -41,6 +41,14 @@ export default class WillGuzzardiPage extends React.Component {
     this.setState({ step: step });
   }
 
+  onTypeFormInput (property, e) {
+    let updatedState = Object.assign({}, this.state);
+
+    updatedState[property] = e.target.value;
+
+    this.setState(updatedState);
+  }
+
   render () {
     const step = this.state.step;
 
@@ -73,6 +81,7 @@ export default class WillGuzzardiPage extends React.Component {
       <div className="color_scheme__green_blue">
         {this.renderHeader()}
         <PersonalDetailsForm
+          onTypeFormInput={this.onTypeFormInput.bind(this)}
           email={this.state.email}
           firstName={this.state.firstName}
           lastName={this.state.lastName}
