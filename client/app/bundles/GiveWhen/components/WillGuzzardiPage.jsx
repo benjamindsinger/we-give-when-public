@@ -423,7 +423,9 @@ export default class WillGuzzardiPage extends React.Component {
           <br/>
 
           <div style={{fontSize: '1.25em'}}>
-            <p>Walmart, McDonalds, the Chamber of Commerce, the Restaurant Association, and the Retail Merchants are some of the groups we're up against.</p>
+            <p>
+              Walmart, McDonalds, the Chamber of Commerce, the Restaurant Association, and the Retail Merchants are 5 groups we’re up against. Every time they write a check of $100 or more, we need 100 people to automatically chip in to fight back.
+            </p>
           </div>
         </div>
       </div>
@@ -451,6 +453,11 @@ export default class WillGuzzardiPage extends React.Component {
             At the end of each month, depending on the number of checks written by corporate interests and the monthly maximum donation you set for yourself, we'll process your donation and put it to work immediately to campaign for our candidates.
           </p>
 
+          <p>At the end of each month, based on the number of checks written by corporate interests and the monthly max donation you set for yourself, we’ll process your donation and put it to work immediately to campaign for our candidates.</p>
+
+          <p>The funds go to the Committee to Elect Will Guzzardi, which supports the Fight for $15 and donates to candidates who also support the Fight for $15. The corporate donations are tracked via the Illinois Sunshine database, which is an open portal to track online donations.</p>
+
+          <p>Paid for by the Committee to Elect Will Guzzardi. A copy of our report filed with the State Board of Elections is (or will be) available on the Board's official website (www.elections.il.gov) or for purchase from the State Board of Elections, Springfield, Illinois.</p>
         </div>
       </div>
     );
