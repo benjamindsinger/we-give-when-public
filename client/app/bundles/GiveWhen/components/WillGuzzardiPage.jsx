@@ -6,6 +6,8 @@ import PersonalDetailsForm from './PersonalDetailsForm.jsx';
 import Footer from './Footer.jsx';
 import Header from './Header.jsx';
 
+import Money from '../helpers/money.jsx';
+
 export default class WillGuzzardiPage extends React.Component {
   displayName: 'WillGuzzardiPage';
 
@@ -20,8 +22,8 @@ export default class WillGuzzardiPage extends React.Component {
       step: 0,
 
       // Amount summary
-      selectedAmountInCents: null,
-      selectedMonthlyMaximumInCents: null,
+      selectedAmountInCents: 300,
+      selectedMonthlyMaximumInCents: 4500,
 
       // Form details
       email: '',
@@ -47,6 +49,18 @@ export default class WillGuzzardiPage extends React.Component {
     updatedState[property] = e.target.value;
 
     this.setState(updatedState);
+  }
+
+  onSelectAmount (amountInCents) {
+    this.setState({
+      selectedAmountInCents: amountInCents
+    });
+  }
+
+  onSelectMonthlyMaximum (amountInCents) {
+    this.setState({
+      selectedMonthlyMaximumInCents: amountInCents
+    });
   }
 
   render () {
@@ -175,10 +189,10 @@ export default class WillGuzzardiPage extends React.Component {
               Chip in to support candidates who Fight for $15:
             </p>
             <div className="selector__button__row">
-              {this.renderSelectorButton('$1', false)}
-              {this.renderSelectorButton('$3', true)}
-              {this.renderSelectorButton('$15', false)}
-              {this.renderSelectorButton('...', false)}
+              {this.renderAmountButton(100)}
+              {this.renderAmountButton(300)}
+              {this.renderAmountButton(1500)}
+              {this.renderAmountButton(3500)}
             </div>
           </div>
 
@@ -187,10 +201,10 @@ export default class WillGuzzardiPage extends React.Component {
               Monthly maximum:
             </p>
             <div className="selector__button__row">
-              {this.renderSelectorButton('$15', false)}
-              {this.renderSelectorButton('$45', true)}
-              {this.renderSelectorButton('$150', false)}
-              {this.renderSelectorButton('...', false)}
+              {this.renderMaximumAmountButton(1500)}
+              {this.renderMaximumAmountButton(4500)}
+              {this.renderMaximumAmountButton(15000)}
+              {this.renderMaximumAmountButton(20000)}
             </div>
           </div>
       </div>
@@ -237,13 +251,30 @@ export default class WillGuzzardiPage extends React.Component {
     );
   }
 
-  renderSelectorButton (amount, selected) {
+  renderAmountButton (amount) {
+    const selected = (amount === this.state.selectedAmountInCents);
+
     const className = selected ?
                       'amount_selector_button selected' :
                       'amount_selector_button';
     return (
-      <div className={className}>
-        {amount}
+      <div className={className}
+           onClick={this.onSelectAmount.bind(this, amount)}>
+        ${Money.renderAmountInCentsAsDollars(amount)}
+      </div>
+    );
+  }
+
+  renderMaximumAmountButton (amount) {
+    const selected = (amount === this.state.selectedMonthlyMaximumInCents);
+
+    const className = selected ?
+                      'amount_selector_button selected' :
+                      'amount_selector_button';
+    return (
+      <div className={className}
+           onClick={this.onSelectMonthlyMaximum.bind(this, amount)}>
+        ${Money.renderAmountInCentsAsDollars(amount)}
       </div>
     );
   }
