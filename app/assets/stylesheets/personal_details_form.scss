@@ -16,6 +16,25 @@ $lightblue: #0948bc;
 
   .personal__details__form {
     padding: 40px;
+  }
+
+  @media (min-width: $breakpoint-m) {
+    .personal__details__form.card__details__form {
+      padding: 40px;
+    }
+  }
+
+  @media (max-width: $breakpoint-m) {
+    .personal__details__form.card__details__form {
+      padding: 40px 0;
+
+      .summary {
+        padding: 0 20px;
+      }
+    }
+  }
+
+  .personal__details__form {
 
     .summary {
       margin-bottom: 10px;
