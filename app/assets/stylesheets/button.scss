@@ -30,6 +30,16 @@ $lightblue: #0948bc;
     position: relative;
     left: 10px;
   }
+
+  .dollar.selected {
+    background-color: #1c407b;
+    color: white;
+  }
+}
+
+.amount_selector_button.custom__selector.selected {
+  background-color: #1c407b;
+  color: white;
 }
 
 input.custom__selector {
@@ -46,6 +56,11 @@ input.custom__selector {
 
   /* Surpress Safari etc. from messing with styles */
   -webkit-appearance: none;
+}
+
+input.custom__selector.selected {
+  background-color: #1c407b;
+  color: white;
 }
 
 input.custom__selector:focus {

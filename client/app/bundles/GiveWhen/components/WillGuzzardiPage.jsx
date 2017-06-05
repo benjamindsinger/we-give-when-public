@@ -21,13 +21,17 @@ export default class WillGuzzardiPage extends React.Component {
 
     this.state = {
       step: 0,
+
       // Amount summary
       selectedAmountInCents: 300,
       selectedMonthlyMaximumInCents: 4500,
+      customAmountEntered: false,
+      customMaximumEntered: false,
       coverFees: true,
-      errorMessages: [],
+
 
       // Form details
+      errorMessages: [],
       email: '',
       firstName: '',
       lastName: '',
@@ -102,13 +106,29 @@ export default class WillGuzzardiPage extends React.Component {
 
   onSelectAmount (amountInCents) {
     this.setState({
-      selectedAmountInCents: amountInCents
+      selectedAmountInCents: amountInCents,
+      customAmountEntered: false,
     });
   }
 
   onSelectMonthlyMaximum (amountInCents) {
     this.setState({
-      selectedMonthlyMaximumInCents: amountInCents
+      selectedMonthlyMaximumInCents: amountInCents,
+      customMaximumEntered: false,
+    });
+  }
+
+  onTypeCustomAmount (e) {
+    this.setState({
+      selectedAmountInCents: e.target.value,
+      customAmountEntered: true,
+    });
+  }
+
+  onTypeCustomMaximum (e) {
+    this.setState({
+      selectedMonthlyMaximumInCents: e.target.value,
+      customMaximumEntered: true,
     });
   }
 
@@ -385,19 +405,33 @@ export default class WillGuzzardiPage extends React.Component {
   }
 
   renderCustomAmountButton () {
+    const selected = this.state.customAmountEntered ? 'selected' : '';
+    const inputClass = `custom__selector ${selected}`;
+    const divClass = `amount_selector_button custom__selector ${selected}`;
+
     return (
-      <div className='amount_selector_button custom__selector'>
-        <span className="dollar">$</span>
-        <input type='text' className='custom__selector' placeholder='___' />
+      <div className={divClass}>
+        <span className='dollar'>$</span>
+        <input type='text'
+               onChange={this.onTypeCustomAmount.bind(this)}
+               className={inputClass}
+               placeholder='___' />
       </div>
     );
   }
 
   renderCustomMaximumAmountButton () {
+    const selected = this.state.customMaximumEntered ? 'selected' : '';
+    const inputClass = `custom__selector ${selected}`;
+    const divClass = `amount_selector_button custom__selector ${selected}`;
+
     return (
-      <div className='amount_selector_button custom__selector'>
-        <span className="dollar">$</span>
-        <input type='text' className='custom__selector' placeholder='___' />
+      <div className={divClass}>
+        <span className='dollar'>$</span>
+        <input type='text'
+               onChange={this.onTypeCustomMaximum.bind(this)}
+               className={inputClass}
+               placeholder='___' />
       </div>
     );
   }
