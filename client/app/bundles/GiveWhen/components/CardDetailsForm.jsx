@@ -108,7 +108,7 @@ export default class CardDetailsForm extends React.Component {
 
   renderStripeForm () {
     return (
-      <div className="personal__details__form__wrapper color_scheme__white_blue">
+      <div className="personal__details__form__wrapper color_scheme__white_blue card__details__form">
         <div className="personal__details__form card__details__form">
 
           <div className="summary">
@@ -125,7 +125,10 @@ export default class CardDetailsForm extends React.Component {
             </p>
           </div>
 
-          <form id="payment-form">
+          <form id="payment-form"
+                style={{
+                  margin: '60px 0'
+                }}>
             <div style={{
               backgroundColor: 'white',
               height: 40,

@@ -9,6 +9,10 @@ $darkblue: #1c407b;
 $green: #01943b;
 $lightblue: #0948bc;
 
+.personal__details__form__wrapper.card__details__form {
+  min-height: 75vh; /* Because there's not much content on this page*/
+}
+
 .personal__details__form__wrapper {
   background-color: $lightblue;
   width: 100%;
