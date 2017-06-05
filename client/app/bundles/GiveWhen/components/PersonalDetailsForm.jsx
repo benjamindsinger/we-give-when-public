@@ -62,24 +62,15 @@ export default class PersonalDetailsForm extends React.Component {
                    placeholder="ZIP" />
           </div>
 
-
-        {
-          /*
-
-
-        <div>
-        </div>
-
-        <div>
-          <div className="twin-inputs">
-
+          <div className="long__input">
             <input type="text"
+                   /*
                    onChange={this.props.onType.bind(this, 'phone')}
                    value={this.props.phone}
+                    */
                    placeholder="Phone" />
+
           </div>
-        </div>
-        */}
         </div>
       </div>
     );

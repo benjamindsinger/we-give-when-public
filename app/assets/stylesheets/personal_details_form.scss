@@ -1,3 +1,12 @@
+$breakpoint-xs: 350px;
+$breakpoint-s: 500px;
+$breakpoint-m: 1100px;
+$breakpoint-l: 1300px;
+$breakpoint-xl: 1850px;
+
+$red: #f90016;
+$darkblue: #1c407b;
+$green: #01943b;
 $lightblue: #0948bc;
 
 .personal__details__form__wrapper {
@@ -24,8 +33,16 @@ $lightblue: #0948bc;
         margin-bottom: 15px;
       }
 
-      input:first-of-type {
-        margin-right: 15px;
+      @media (min-width: $breakpoint-m) {
+        input:first-of-type {
+          margin-right: 15px;
+        }
+      }
+    }
+
+    @media (max-width: $breakpoint-m) {
+      .input__row {
+        flex-direction: column;
       }
     }
 
