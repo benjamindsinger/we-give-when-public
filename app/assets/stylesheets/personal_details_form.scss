@@ -10,8 +10,7 @@ $lightblue: #0948bc;
     .long__input {
       input {
         width: 100%;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin: 15px 0;
       }
     }
 
@@ -21,8 +20,8 @@ $lightblue: #0948bc;
 
       input {
         flex: 1;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin-top: 15px;
+        margin-bottom: 15px;
       }
 
       input:first-of-type {
@@ -31,7 +30,7 @@ $lightblue: #0948bc;
     }
 
     input[type="text"], select {
-      height: 35px;
+      height: 40px;
       border: none;
       border-radius: 5px;
       font-family: Helvetica;
