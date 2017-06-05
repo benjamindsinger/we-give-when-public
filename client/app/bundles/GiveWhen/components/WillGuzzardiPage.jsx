@@ -95,7 +95,11 @@ export default class WillGuzzardiPage extends React.Component {
       <div className="color_scheme__green_blue">
         {this.renderHeader()}
         <PersonalDetailsForm
+          /* UI functions */
           onTypeFormInput={this.onTypeFormInput.bind(this)}
+          onClickEdit={this.onChangeStep.bind(this, 0)}
+
+          /* Personal details */
           email={this.state.email}
           firstName={this.state.firstName}
           lastName={this.state.lastName}
@@ -106,6 +110,8 @@ export default class WillGuzzardiPage extends React.Component {
           phone={this.state.phone}
           occupation={this.state.occupation}
           employer={this.state.employer}
+
+          /* Selected amounts */
           selectedAmountInCents={this.state.selectedAmountInCents}
           selectedMonthlyMaximumInCents={this.state.selectedMonthlyMaximumInCents}
         />

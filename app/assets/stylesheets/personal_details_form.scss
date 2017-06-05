@@ -12,9 +12,26 @@ $lightblue: #0948bc;
 .personal__details__form__wrapper {
   background-color: $lightblue;
   width: 100%;
+  color: white;
 
   .personal__details__form {
     padding: 40px;
+
+    .summary {
+      margin-bottom: 10px;
+
+      p {
+        font-size: 1.25em;
+        margin: 8px 0;
+      }
+
+      a.edit {
+        cursor: pointer;
+        text-decoration: underline;
+        font-size: 16px;
+        margin-left: 10px;
+      }
+    }
 
     .long__input {
       input {

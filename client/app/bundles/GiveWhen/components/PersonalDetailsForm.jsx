@@ -8,6 +8,7 @@ export default class PersonalDetailsForm extends React.Component {
   static propTypes = {
     // Form functions
     onTypeFormInput: PropTypes.func.isRequired,
+    onClickEdit: PropTypes.func.isRequired,
 
     // Form details
     email: PropTypes.string.isRequired,
@@ -31,12 +32,18 @@ export default class PersonalDetailsForm extends React.Component {
       <div className="personal__details__form__wrapper color_scheme__white_blue">
         <div className="personal__details__form">
 
-          <div style={{color: 'white'}}>
-            Trigger amount: ${Money.renderAmountInCentsAsDollars(this.props.selectedAmountInCents)}
-          </div>
+          <div className="summary">
+            <p>Fight back amount: ${Money.renderAmountInCentsAsDollars(this.props.selectedAmountInCents)}
+              <a className="edit" onClick={this.props.onClickEdit}>
+                [edit]
+              </a>
+            </p>
 
-          <div style={{color: 'white'}}>
-            Monthly maximum: ${Money.renderAmountInCentsAsDollars(this.props.selectedMonthlyMaximumInCents)}
+            <p>Monthly maximum amount: ${Money.renderAmountInCentsAsDollars(this.props.selectedMonthlyMaximumInCents)}
+              <a className="edit" onClick={this.props.onClickEdit}>
+                [edit]
+              </a>
+            </p>
           </div>
 
           <div className="long__input">
