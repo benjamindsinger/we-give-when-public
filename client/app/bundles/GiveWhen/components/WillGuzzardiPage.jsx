@@ -287,15 +287,8 @@ export default class WillGuzzardiPage extends React.Component {
 
   renderStatementOfPurpose () {
     return (
-      <div style={{
-        backgroundColor: '#01943b',
-        color: 'white'
-      }}>
-        <div style={{
-          padding: 30,
-          width: '60%',
-          margin: '0 auto',
-        }}>
+      <div className="section flex">
+        <div className="text color__calm narrow big">
           <h1 className="subheadline">
             As long as big business pulls the strings in Springfield, we'll never raise the minimum wage
           </h1>

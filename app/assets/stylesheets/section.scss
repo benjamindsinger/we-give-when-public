@@ -24,6 +24,10 @@ $darkblue: #1c407b;
     .text {
       padding: 30px 60px;
     }
+
+    .text.narrow {
+      padding: 40px 200px;
+    }
   }
 
   @media (max-width: $breakpoint-m) {
@@ -49,7 +53,7 @@ $darkblue: #1c407b;
       min-height: 360px;
     }
 
-    .text {
+    .text:not(.big) {
       height: 300px;
     }
   }
