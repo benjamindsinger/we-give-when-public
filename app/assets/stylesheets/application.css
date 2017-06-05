@@ -19,6 +19,7 @@
  *= require headline
  *= require header
  *= require personal_details_form
+ *= require progress_bar
  *= require section
  *= require sentence
  *= require social

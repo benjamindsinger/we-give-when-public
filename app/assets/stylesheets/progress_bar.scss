@@ -1,0 +1,11 @@
+.progress__bar {
+  background-color: #ccc;
+  height: 10px;
+  margin: 20px 0;
+
+  .progress__bar__inner {
+    height: 10px;
+    background-color: lighten(#01943b, 7.5%);
+    width: 55%;
+  }
+}

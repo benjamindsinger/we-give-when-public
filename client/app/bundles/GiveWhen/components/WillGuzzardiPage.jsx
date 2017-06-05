@@ -140,17 +140,8 @@ export default class WillGuzzardiPage extends React.Component {
           <p style={{color: '#1c407b', lineHeight: '7.5px'}}>
             of $100 goal
           </p>
-          <div style={{
-            backgroundColor: '#ccc',
-            height: '10px',
-            margin: '20px 0'
-          }}>
-            <div style={{
-              backgroundColor: 'rgb(67, 222, 31)',
-              height: '10px',
-              width: '55%'
-            }} />
-          </div>
+          <div className="progress__bar">
+            <div className="progress__bar__inner" /></div>
           <p style={{color: '#1c407b', lineHeight: '7.5px'}}>
             53 backers
           </p>
