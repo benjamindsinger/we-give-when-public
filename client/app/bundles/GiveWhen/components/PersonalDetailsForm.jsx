@@ -7,6 +7,7 @@ export default class PersonalDetailsForm extends React.Component {
     return (
       <div className="personal__details__form__wrapper">
         <div className="personal__details__form">
+
           <div className="long__input">
             <input type="text"
                    /*
@@ -15,19 +16,27 @@ export default class PersonalDetailsForm extends React.Component {
                     */
                    placeholder="Email address" />
           </div>
+
+          <div className="input__row">
+
+            <input type="text"
+                   /*
+                   onChange={this.props.onType.bind(this, 'firstName')}
+                   value={this.props.firstName}
+                    */
+                   placeholder="First Name" />
+
+            <input type="text"
+                   /*
+                   onChange={this.props.onType.bind(this, 'lastName')}
+                   value={this.props.lastName}
+                    */
+                   placeholder="Last Name" />
+          </div>
         {
           /*
         <div>
           <div className="twin-inputs">
-            <input type="text"
-                   onChange={this.props.onType.bind(this, 'firstName')}
-                   value={this.props.firstName}
-                   placeholder="First Name" />
-
-            <input type="text"
-                   onChange={this.props.onType.bind(this, 'lastName')}
-                   value={this.props.lastName}
-                   placeholder="Last Name" />
           </div>
         </div>
 

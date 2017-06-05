@@ -7,13 +7,32 @@ $lightblue: #0948bc;
   .personal__details__form {
     padding: 40px;
 
-    .long__input input {
+    .long__input {
+      input {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .input__row {
+      display: flex;
       width: 100%;
+
+      input {
+        flex: 1;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      input:first-of-type {
+        margin-right: 15px;
+      }
     }
 
     input[type="text"], select {
-      height: 30px;
-      border: 3px solid white;
+      height: 35px;
+      border: none;
       border-radius: 5px;
       font-family: Helvetica;
       font-size: 20px;
@@ -21,7 +40,6 @@ $lightblue: #0948bc;
 
       /* Surpress Safari etc. from messing with styles */
       -webkit-appearance: none;
-      border-radius: 4px;
     }
   }
 }
