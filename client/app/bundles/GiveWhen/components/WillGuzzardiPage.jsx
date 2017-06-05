@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import PersonalDetailsForm from './PersonalDetailsForm.jsx';
+
 import Footer from './Footer.jsx';
 import Header from './Header.jsx';
 
@@ -16,6 +18,22 @@ export default class WillGuzzardiPage extends React.Component {
 
     this.state = {
       step: 0
+
+      // Amount summary
+      selectedAmount: null,
+      selectedMonthlyMaximum: null,
+
+      // Form details
+      email: null,
+      firstName: null,
+      lastName: null,
+      address: null,
+      city: null,
+      usState: null,
+      zip: null,
+      phone: null,
+      occupation: null,
+      employer: null,
     };
   }
 
@@ -54,9 +72,7 @@ export default class WillGuzzardiPage extends React.Component {
     return (
       <div className="color_scheme__green_blue">
         {this.renderHeader()}
-        <div>
-          Sign up yo
-        </div>
+        <PersonalDetailsForm />
         {this.renderFooter()}
       </div>
     );
