@@ -170,14 +170,11 @@ export default class WillGuzzardiPage extends React.Component {
       <div className="give_when__subsection" id="give">
           <h3>Give</h3>
 
-          <div style={{clear: 'both'}}>
+          <div style={{clear: 'both', marginTop: 15}}>
             <p>
               Chip in to support candidates who Fight for $15:
             </p>
-            <div style={{
-              margin: '0 auto',
-              width: '75%',
-            }}>
+            <div className="selector__button__row">
               {this.renderSelectorButton('50¢', false)}
               {this.renderSelectorButton('$1', true)}
               {this.renderSelectorButton('$3', false)}
@@ -185,14 +182,11 @@ export default class WillGuzzardiPage extends React.Component {
             </div>
           </div>
 
-          <div style={{clear: 'both'}}>
+          <div style={{clear: 'both', marginTop: 60, marginBottom: 40}}>
             <p>
-              Set a monthly maximum:
+              Monthly maximum:
             </p>
-            <div style={{
-              margin: '0 auto',
-              width: '75%',
-            }}>
+            <div className="selector__button__row">
               {this.renderSelectorButton('$20', false)}
               {this.renderSelectorButton('$30', true)}
               {this.renderSelectorButton('$40', false)}

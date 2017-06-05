@@ -1,3 +1,15 @@
+$breakpoint-xs: 350px;
+$breakpoint-s: 500px;
+$breakpoint-m: 1100px;
+$breakpoint-l: 1300px;
+$breakpoint-xl: 1850px;
+
+$red: #f90016;
+$darkblue: #1c407b;
+$green: #01943b;
+$lightblue: #0948bc;
+
+
 .give_when__section {
 
   .give_when__subsection {
@@ -23,8 +35,16 @@
     text-align: center;
   }
 
-  #give.give_when__subsection {
+  .give_when__subsection#give {
     background-color: #eef3f6;
+    flex-direction: column;
+
+    .selector__button__row {
+      margin: 0 auto;
+      text-align: center;
+      height: 24px;
+      width: 310px;
+    }
   }
 
 }
