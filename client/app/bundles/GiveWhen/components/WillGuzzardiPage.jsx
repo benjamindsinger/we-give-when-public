@@ -20,8 +20,8 @@ export default class WillGuzzardiPage extends React.Component {
       step: 0
 
       // Amount summary
-      selectedAmount: null,
-      selectedMonthlyMaximum: null,
+      selectedAmountInCents: null,
+      selectedMonthlyMaximumInCents: null,
 
       // Form details
       email: null,
