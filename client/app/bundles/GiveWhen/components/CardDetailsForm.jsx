@@ -3,6 +3,8 @@ import React from 'react';
 
 import Money from '../helpers/money.jsx';
 
+import SocialSharingPage from './SocialSharingPage.jsx';
+
 export default class CardDetailsForm extends React.Component {
 
   static propTypes = {
@@ -124,9 +126,7 @@ export default class CardDetailsForm extends React.Component {
 
   renderTokenSaveSuccess () {
     return (
-      <div className="personal__details__form__wrapper color_scheme__white_blue card__details__form below__fixed__navbar">
-        Sign Up Successful!
-      </div>
+      <SocialSharingPage />
     );
   }
 

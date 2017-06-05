@@ -1,3 +1,32 @@
 .social-sharing {
   cursor: pointer;
 }
+
+.thank__you {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.social__sharing__button {
+  cursor: pointer;
+  width: 420px;
+  margin: 40px auto;
+  padding: 20px;
+  height: 30px;
+  font-size: 1.45em;
+  border: 1px solid white;
+  text-align: center;
+}
+
+.social__sharing__button.facebook {
+  background-color: #3b5998;
+}
+
+.social__sharing__button.twitter {
+  background-color: #1da1f2;
+}
+
+.social__sharing__button.email {
+  background-color: lighten(#01943b, 7.5%);
+}
+
