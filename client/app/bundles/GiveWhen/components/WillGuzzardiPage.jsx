@@ -424,7 +424,10 @@ export default class WillGuzzardiPage extends React.Component {
 
           <div style={{fontSize: '1.25em'}}>
             <p>
-              Walmart, McDonalds, the Chamber of Commerce, the Restaurant Association, and the Retail Merchants are 5 groups we’re up against. Every time they write a check of $100 or more, we need 100 people to automatically chip in to fight back.
+              Walmart, McDonalds, the Chamber of Commerce, the Restaurant Association, and the Retail Merchants are 5 groups we’re up against.
+            </p>
+            <p>
+              Every time they write a check of $100 or more, we need 100 people to automatically chip in to fight back.
             </p>
           </div>
         </div>
