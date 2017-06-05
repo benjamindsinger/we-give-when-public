@@ -175,9 +175,9 @@ export default class WillGuzzardiPage extends React.Component {
               Chip in to support candidates who Fight for $15:
             </p>
             <div className="selector__button__row">
-              {this.renderSelectorButton('50¢', false)}
-              {this.renderSelectorButton('$1', true)}
-              {this.renderSelectorButton('$3', false)}
+              {this.renderSelectorButton('$1', false)}
+              {this.renderSelectorButton('$3', true)}
+              {this.renderSelectorButton('$15', false)}
               {this.renderSelectorButton('...', false)}
             </div>
           </div>
@@ -187,9 +187,9 @@ export default class WillGuzzardiPage extends React.Component {
               Monthly maximum:
             </p>
             <div className="selector__button__row">
-              {this.renderSelectorButton('$20', false)}
-              {this.renderSelectorButton('$30', true)}
-              {this.renderSelectorButton('$40', false)}
+              {this.renderSelectorButton('$15', false)}
+              {this.renderSelectorButton('$45', true)}
+              {this.renderSelectorButton('$150', false)}
               {this.renderSelectorButton('...', false)}
             </div>
           </div>
@@ -210,7 +210,7 @@ export default class WillGuzzardiPage extends React.Component {
         <div>
           <h3>When</h3>
           <p>
-            Every time an anti-living-wage writes a campaign check
+            Every time an anti-living-wage writes a campaign check to an Illinois politician
           </p>
           <span className='action_button_big'
                onClick={this.onChangeStep.bind(this, 1)}>
