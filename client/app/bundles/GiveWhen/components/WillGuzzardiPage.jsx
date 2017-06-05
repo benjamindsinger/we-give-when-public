@@ -106,6 +106,8 @@ export default class WillGuzzardiPage extends React.Component {
           phone={this.state.phone}
           occupation={this.state.occupation}
           employer={this.state.employer}
+          selectedAmountInCents={this.state.selectedAmountInCents}
+          selectedMonthlyMaximumInCents={this.state.selectedMonthlyMaximumInCents}
         />
         {this.renderFooter()}
       </div>

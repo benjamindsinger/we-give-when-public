@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Money from '../helpers/money.jsx';
+
 export default class PersonalDetailsForm extends React.Component {
 
   static propTypes = {
@@ -18,12 +20,24 @@ export default class PersonalDetailsForm extends React.Component {
     phone: PropTypes.string.isRequired,
     occupation: PropTypes.string.isRequired,
     employer: PropTypes.string.isRequired,
+
+    // Amounts
+    selectedAmountInCents: PropTypes.number.isRequired,
+    selectedMonthlyMaximumInCents: PropTypes.number.isRequired,
   };
 
   render () {
     return (
       <div className="personal__details__form__wrapper color_scheme__white_blue">
         <div className="personal__details__form">
+
+          <div style={{color: 'white'}}>
+            Trigger amount: ${Money.renderAmountInCentsAsDollars(this.props.selectedAmountInCents)}
+          </div>
+
+          <div style={{color: 'white'}}>
+            Monthly maximum: ${Money.renderAmountInCentsAsDollars(this.props.selectedMonthlyMaximumInCents)}
+          </div>
 
           <div className="long__input">
             <input type="text"
