@@ -22,5 +22,6 @@
  *= require section
  *= require sentence
  *= require social
+ *= require type
  *= require_self
  */

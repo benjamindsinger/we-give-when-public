@@ -312,31 +312,24 @@ export default class WillGuzzardiPage extends React.Component {
   renderClosingLetter () {
     return (
       <div className="section flex">
-        <div className="text">
-          <div style={{
-            width: '66%',
-            margin: '0 auto',
-            fontSize: '1.125em',
-            color: '#0948bc'
-          }}>
+        <div className="text narrow big plain">
 
-            <p style={{ textTransform: 'uppercase', fontWeight: 'bold' }}>
-              We Need Our Voices To Be Just As Loud As Theirs
-            </p>
+          <p style={{ textTransform: 'uppercase', fontWeight: 'bold' }}>
+            We Need Our Voices To Be Just As Loud As Theirs
+          </p>
 
-            <p>
-              Every time an anti-living-wage corporate interest writes a big campaign check, donate to support candidates who Fight for $15.
-            </p>
+          <p>
+            Every time an anti-living-wage corporate interest writes a big campaign check, donate to support candidates who Fight for $15.
+          </p>
 
-            <p style={{ textTransform: 'uppercase', fontWeight: 'bold' }}>
-              We need to respond immediately, in time for our candidates to campaign this summer for their primaries
-            </p>
+          <p style={{ textTransform: 'uppercase', fontWeight: 'bold' }}>
+            We need to respond immediately, in time for our candidates to campaign this summer for their primaries
+          </p>
 
-            <p>
-              At the end of each month, depending on the number of checks written by corporate interests and the monthly maximum donation you set for yourself, we'll process your donation and put it to work immediately to campaign for our candidates.
-            </p>
+          <p>
+            At the end of each month, depending on the number of checks written by corporate interests and the monthly maximum donation you set for yourself, we'll process your donation and put it to work immediately to campaign for our candidates.
+          </p>
 
-          </div>
         </div>
       </div>
     );
