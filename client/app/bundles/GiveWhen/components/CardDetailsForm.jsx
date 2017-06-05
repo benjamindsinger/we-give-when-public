@@ -151,7 +151,6 @@ export default class CardDetailsForm extends React.Component {
               backgroundColor: 'white',
               height: 40,
               border: 'none',
-              borderRadius: 5,
               fontFamily: 'Helvetica',
               fontSize: 20,
               color: 'black',
