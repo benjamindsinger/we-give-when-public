@@ -3,25 +3,53 @@ import React from 'react';
 
 export default class Header extends React.Component {
 
+  static propTypes = {
+    showButton: PropTypes.bool.isRequired,
+  };
+
   render () {
     return (
       <div className="header">
+        {this.renderLogo()}
+        {this.renderActionSentence()}
+      </div>
+    );
+  }
 
-        <div className="logo" style={{ margin: '20px', height: '50px' }}>
-          <img src={this.props.logoImgPath}
-               style={{ margin: '10px' }}/>
-        </div>
+  renderLogo () {
+    return (
+      <div className="logo" style={{ margin: '20px', height: '50px' }}>
+        <img src={this.props.logoImgPath}
+             style={{ margin: '10px' }}/>
+      </div>
+    );
+  }
 
-        <div className="sentence">
-          <p>
-            {this.props.whenPhrase} <span className="action_button"
-                                          style={{padding: 10, marginRight: 2}}
-                  onClick={this.props.onClickActionButton}>
-              {this.props.givePhrase} →
-            </span>
-          </p>
-        </div>
+  renderActionSentence () {
+    return (this.props.showButton) ? this.renderSentenceWithButton()
+                                   : this.renderPlainSentence();
+  }
 
+  renderSentenceWithButton () {
+    return (
+      <div className="sentence">
+        <p>
+          {this.props.whenPhrase} <span className="action_button"
+                                        style={{padding: 10, marginRight: 2}}
+                onClick={this.props.onClickActionButton}>
+            {this.props.givePhrase} →
+          </span>
+        </p>
+      </div>
+    );
+  }
+
+  renderPlainSentence () {
+    return (
+      <div className="sentence">
+        <p>
+          {this.props.whenPhrase} {this.props.givePhrase}.
+        </p>
       </div>
     );
   }

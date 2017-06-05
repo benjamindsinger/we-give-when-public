@@ -145,7 +145,7 @@ export default class WillGuzzardiPage extends React.Component {
   renderSignUpPage () {
     return (
       <div className="color_scheme__green_blue">
-        {this.renderHeader()}
+        {this.renderHeader(true)}
         {this.renderHeadlineSection()}
         {this.renderGiveWhen()}
         {this.renderStatementOfPurpose()}
@@ -160,7 +160,7 @@ export default class WillGuzzardiPage extends React.Component {
   renderPersonalDetailsPage () {
     return (
       <div className="color_scheme__green_blue">
-        {this.renderHeader()}
+        {this.renderHeader(false)}
 
         <PersonalDetailsForm
           /* UI functions */
@@ -194,7 +194,7 @@ export default class WillGuzzardiPage extends React.Component {
   renderCardDetailsPage () {
     return (
       <div className="color_scheme__green_blue">
-        {this.renderHeader()}
+        {this.renderHeader(false)}
 
         <CardDetailsForm
           /* UI functions */
@@ -216,12 +216,13 @@ export default class WillGuzzardiPage extends React.Component {
     );
   }
 
-  renderHeader () {
+  renderHeader (showButton) {
     return (
       <Header givePhrase="fight back"
         whenPhrase="Every time an anti-living-wage corporation writes a campaign check,"
         logoImgPath="/guzzardi-logo-small.jpg"
         onClickActionButton={this.onChangeStep.bind(this, 1)}
+        showButton={showButton}
       />
     );
   }
