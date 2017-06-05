@@ -12,7 +12,7 @@ export default class Header extends React.Component {
                style={{ margin: '10px' }}/>
         </div>
 
-        <div id="sentence">
+        <div className="sentence">
           <p>
             {this.props.whenPhrase} <span className="action_button"
                                           style={{padding: 10, marginRight: 2}}

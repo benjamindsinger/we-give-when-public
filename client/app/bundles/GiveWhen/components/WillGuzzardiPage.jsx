@@ -153,6 +153,7 @@ export default class WillGuzzardiPage extends React.Component {
         {this.renderStatementOfPurpose()}
         {this.renderBenefitStatement()}
         {this.renderClosingLetter()}
+        {this.renderExtraSentenceForMobile()}
         {this.renderFooter()}
       </div>
     );
@@ -440,27 +441,52 @@ export default class WillGuzzardiPage extends React.Component {
       <div className="section flex">
         <div className="text narrow big plain">
 
-          <p style={{ textTransform: 'uppercase', fontWeight: 'bold' }}>
-            We Need Our Voices To Be Just As Loud As Theirs
-          </p>
-
-          <p>
-            Every time an anti-living-wage corporate interest writes a big campaign check, donate to support candidates who Fight for $15.
-          </p>
-
-          <p style={{ textTransform: 'uppercase', fontWeight: 'bold' }}>
-            We need to respond immediately, in time for our candidates to campaign this summer for their primaries
+          <p style={{ fontWeight: 'bold' }}>
+            We need to respond immediately so our candidates can campaign this summer in the primaries.
           </p>
 
           <p>
             At the end of each month, depending on the number of checks written by corporate interests and the monthly maximum donation you set for yourself, we'll process your donation and put it to work immediately to campaign for our candidates.
           </p>
 
-          <p>At the end of each month, based on the number of checks written by corporate interests and the monthly max donation you set for yourself, we’ll process your donation and put it to work immediately to campaign for our candidates.</p>
+          <p>At the end of each month, based on the number of checks written by corporate interests and your monthly maximum donation, we’ll process your donation and put it to work immediately to campaign for our candidates.</p>
 
-          <p>The funds go to the Committee to Elect Will Guzzardi, which supports the Fight for $15 and donates to candidates who also support the Fight for $15. The corporate donations are tracked via the Illinois Sunshine database, which is an open portal to track online donations.</p>
+          <div style={{
+            border: '1px solid #0948bc',
+            padding: 20,
+            margin: '60px 0 40px 0'
+          }}>
+            <p>Funds go to the Committee to Elect Will Guzzardi, which supports the Fight for $15 and donates to candidates who also support the Fight for $15.</p>
 
-          <p>Paid for by the Committee to Elect Will Guzzardi. A copy of our report filed with the State Board of Elections is (or will be) available on the Board's official website (www.elections.il.gov) or for purchase from the State Board of Elections, Springfield, Illinois.</p>
+            <p>Anti-living-wage corporate donations are tracked via Illinois Sunshine database, an open portal that tracks campaign finance.</p>
+
+            <p>Paid for by the Committee to Elect Will Guzzardi. A copy of our report filed with the State Board of Elections is (or will be) available on the Board's official website (www.elections.il.gov) or for purchase from the State Board of Elections, Springfield, Illinois.</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  renderExtraSentenceForMobile () {
+    const whenPhrase = "Every time an anti-living-wage corporation writes a campaign check,";
+    const givePhrase = "fight back";
+
+    return (
+      <div className="section mobile__only sentence reverse__colors"
+           style={{
+            margin: 0,
+            padding: 30
+           }}>
+        <div className="text">
+          <div className="sentence" style={{textAlign: 'center'}}>
+            <p>
+              {whenPhrase} <span className="action_button"
+                                            style={{padding: 10, marginRight: 2}}
+                    onClick={this.onChangeStep.bind(this, 1)}>
+                {givePhrase} →
+              </span>
+            </p>
+          </div>
         </div>
       </div>
     );

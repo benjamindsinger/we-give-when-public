@@ -13,6 +13,12 @@ $darkblue: #1c407b;
   }
 }
 
+@media (min-width: $breakpoint-m) {
+  .section.mobile__only {
+    display: none;
+  }
+}
+
 .section.flex {
   display: flex;
   width: 100%;

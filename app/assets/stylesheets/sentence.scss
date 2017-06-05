@@ -8,7 +8,7 @@ $red: #f90016;
 $darkblue: #1c407b;
 $green: #01943b;
 
-.color_scheme__red_blue #sentence {
+.color_scheme__red_blue .sentence {
   color: $red;
 
   .action_button {
@@ -21,7 +21,7 @@ $green: #01943b;
   }
 }
 
-.color_scheme__green_blue #sentence {
+.color_scheme__green_blue .sentence {
   color: $green;
 
   .action_button {
@@ -37,21 +37,42 @@ $green: #01943b;
   }
 }
 
+.color_scheme__green_blue .sentence.reverse__colors {
+  color: white;
+  background-color: $green;
+
+  p {
+    color: white;
+  }
+
+  .action_button {
+    border: 2px solid $green;
+    background-color: white;
+    color: $green;
+  }
+
+  .action_button:hover {
+    border: 2px solid white;
+    background-color: $green;
+    color: white;
+  }
+}
+
 @media (min-width: $breakpoint-m) {
-  #sentence {
+  .header .sentence {
     float: right;
   }
 }
 
 @media (max-width: $breakpoint-m) {
-  #sentence {
+  .header .sentence {
     text-align: center;
     line-height: 1.95em;
     margin: 20px 40px;
   }
 }
 
-#sentence {
+.sentence {
   font-size: 1.175em;
   margin: 20px;
 
