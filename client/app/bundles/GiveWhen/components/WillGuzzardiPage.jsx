@@ -118,16 +118,16 @@ export default class WillGuzzardiPage extends React.Component {
     });
   }
 
-  onTypeCustomAmount (e) {
+  onTypeCustomDollarAmount (e) {
     this.setState({
-      selectedAmountInCents: e.target.value,
+      selectedAmountInCents: (e.target.value * 100),
       customAmountEntered: true,
     });
   }
 
-  onTypeCustomMaximum (e) {
+  onTypeCustomDollarMaximum (e) {
     this.setState({
-      selectedMonthlyMaximumInCents: e.target.value,
+      selectedMonthlyMaximumInCents: (e.target.value * 100),
       customMaximumEntered: true,
     });
   }
@@ -413,7 +413,7 @@ export default class WillGuzzardiPage extends React.Component {
       <div className={divClass}>
         <span className='dollar'>$</span>
         <input type='text'
-               onChange={this.onTypeCustomAmount.bind(this)}
+               onChange={this.onTypeCustomDollarAmount.bind(this)}
                className={inputClass}
                placeholder='___' />
       </div>
@@ -429,7 +429,7 @@ export default class WillGuzzardiPage extends React.Component {
       <div className={divClass}>
         <span className='dollar'>$</span>
         <input type='text'
-               onChange={this.onTypeCustomMaximum.bind(this)}
+               onChange={this.onTypeCustomDollarMaximum.bind(this)}
                className={inputClass}
                placeholder='___' />
       </div>
