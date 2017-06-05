@@ -22,10 +22,10 @@ export default class WillGuzzardiPage extends React.Component {
 
     this.state = {
       step: 0,
-
       // Amount summary
       selectedAmountInCents: 300,
       selectedMonthlyMaximumInCents: 4500,
+      coverFees: true,
 
       // Form details
       email: '',
@@ -154,7 +154,7 @@ export default class WillGuzzardiPage extends React.Component {
           /* Data for form */
           funderDetails={this.funderDetails()}
           crowdFundMembershipDetails={this.crowdFundMembershipDetails()}
-          coverFees={true}
+          coverFees={this.state.coverFees}
           stripePublishableKey={this.props.stripePublishableKey}
 
           /* Selected amounts */
