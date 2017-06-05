@@ -229,7 +229,8 @@ export default class WillGuzzardiPage extends React.Component {
 
   renderHeadlineSection () {
     return (
-      <div className="section flex headline__section">
+      <div className="section flex headline__section"
+           style={{marginTop: 105}}>
         <div className="text color__bright">
           <h1>
             Elect Candidates Who Fight For $15
