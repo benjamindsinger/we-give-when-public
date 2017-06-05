@@ -3,6 +3,26 @@ import React from 'react';
 
 export default class SocialSharingPage extends React.Component {
 
+  twitterMessage () {
+    return "Every time an anti-living wage corp (@mcdonalds @walmart...) writes a campaign check, let's fight back ➡ https://wegivewhen.com/campaigns/fight-for-15 #fightfor15";
+  }
+
+  uriEncodedTwitterMessage () {
+    const message = this.twitterMessage();
+
+    return encodeURIComponent(message);
+  }
+
+  twitterHref () {
+    const message = this.uriEncodedTwitterMessage();
+
+    return `https://twitter.com/intent/tweet?text=${message}`;
+  }
+
+  goTweet () {
+    window.location.href = this.twitterHref();
+  }
+
   render () {
     return (
       <div className="personal__details__form__wrapper color_scheme__white_blue card__details__form below__fixed__navbar"
@@ -19,7 +39,8 @@ export default class SocialSharingPage extends React.Component {
           {this.renderFacebookLogo()}
           <span>Share your support</span>
         </div>
-        <div className="social__sharing__button twitter">
+        <div className="social__sharing__button twitter"
+             onClick={this.goTweet}>
           {this.renderTwitterLogo()}
           <span>Tweet your support</span>
         </div>
