@@ -14,7 +14,10 @@ export default class Header extends React.Component {
 
         <div id="sentence">
           <p>
-            <span className="action_button">{this.props.givePhrase}</span> {this.props.whenPhrase}.
+            <span className="action_button"
+                  onClick={this.props.onClickActionButton}>
+              {this.props.givePhrase}
+            </span> {this.props.whenPhrase}.
           </p>
         </div>
 
@@ -28,4 +31,5 @@ Header.propTypes = {
   givePhrase: React.PropTypes.string.isRequired,
   whenPhrase: React.PropTypes.string.isRequired,
   logoImgPath: React.PropTypes.string.isRequired,
+  onClickActionButton: React.PropTypes.func.isRequired,
 };
