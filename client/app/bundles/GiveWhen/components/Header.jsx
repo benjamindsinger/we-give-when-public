@@ -5,7 +5,7 @@ export default class Header extends React.Component {
 
   render () {
     return (
-      <div className="navbar">
+      <div className="header">
 
         <div className="logo" style={{ margin: '20px', height: '50px' }}>
           <img src={this.props.logoImgPath}

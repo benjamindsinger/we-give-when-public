@@ -17,7 +17,7 @@
  *= require give_when
  *= require button
  *= require headline
- *= require navbar
+ *= require header
  *= require personal_details_form
  *= require section
  *= require sentence
