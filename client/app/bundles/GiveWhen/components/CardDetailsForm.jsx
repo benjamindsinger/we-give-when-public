@@ -90,6 +90,38 @@ export default class CardDetailsForm extends React.Component {
     }
   }
 
+  donationAmountInWords () {
+    const selectedAmountInDollars = Money.renderAmountInCentsAsDollars(this.props.selectedAmountInCents);
+    const maximumAmountInDollars = Money.renderAmountInCentsAsDollars(this.props.selectedMonthlyMaximumInCents);
+
+    return `$${selectedAmountInDollars}/trigger up to $${maximumAmountInDollars}/mo`;
+  }
+
+  processingAmount () {
+    const maximumAmountInCents = this.props.selectedMonthlyMaximumInCents;
+
+    return (maximumAmountInCents * .084) + 30;
+  }
+
+  processingAmountInWords () {
+    const processingAmount = this.processingAmount();
+
+    return `Up to $${Money.renderAmountInCentsAsDollars(processingAmount)}/mo`;
+  }
+
+  totalAmount () {
+    const maximumAmountInCents = this.props.selectedMonthlyMaximumInCents;
+    const processingAmount = this.processingAmount();
+
+    return maximumAmountInCents + processingAmount;
+  }
+
+  totalAmountInWords () {
+    const totalAmount = this.totalAmount();
+
+    return `Up to $${Money.renderAmountInCentsAsDollars(totalAmount)}/mo`;
+  }
+
   renderTokenSaveSuccess () {
     return (
       <div className="personal__details__form__wrapper color_scheme__white_blue card__details__form below__fixed__navbar">
@@ -136,38 +168,46 @@ export default class CardDetailsForm extends React.Component {
               <div id="card-errors"></div>
             </div>
 
-            <table className="checkout__area" style={{
-              margin: '40px auto',
-            }}>
-              <tbody>
-                <tr>
-                  <td>
-                    Donation
-                  </td>
-                  <td>
-                    ${Money.renderAmountInCentsAsDollars(this.props.selectedAmountInCents)} up to  ${Money.renderAmountInCentsAsDollars(this.props.selectedMonthlyMaximumInCents)}/mo
-                    <a className="edit" onClick={this.props.onClickEdit}>
-                      [edit]
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Processing fee
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Maximum total
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="checkout__area">
 
-            <button id="submit-stripe"
-                    className="action_button_big">
-              submit →
-            </button>
+              <div className="divider__line"></div>
+
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      Donation
+                    </td>
+                    <td>
+                      {this.donationAmountInWords()} <a className="edit" onClick={this.props.onClickEdit}>
+                        [edit]
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Processing cost
+                    </td>
+                    <td>
+                      {this.processingAmountInWords()}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Maximum total
+                    </td>
+                    <td>
+                      {this.totalAmountInWords()}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <button id="submit-stripe"
+                      className="action_button_big">
+                submit →
+              </button>
+            </div>
           </form>
         </div>
       </div>

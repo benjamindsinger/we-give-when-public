@@ -13,6 +13,7 @@
  *= require variables
  *= require arrow
  *= require baseline
+ *= require checkout
  *= require color
  *= require give_when
  *= require button
