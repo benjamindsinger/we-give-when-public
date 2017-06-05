@@ -19,10 +19,6 @@ export default class SocialSharingPage extends React.Component {
     return `https://twitter.com/intent/tweet?text=${message}`;
   }
 
-  goTweet () {
-    window.location.href = this.twitterHref();
-  }
-
   render () {
     return (
       <div className="personal__details__form__wrapper color_scheme__white_blue card__details__form below__fixed__navbar"
@@ -39,11 +35,11 @@ export default class SocialSharingPage extends React.Component {
           {this.renderFacebookLogo()}
           <span>Share your support</span>
         </div>
-        <div className="social__sharing__button twitter"
-             onClick={this.goTweet}>
+        <a className="social__sharing__button twitter"
+             href={this.twitterHref()}>
           {this.renderTwitterLogo()}
           <span>Tweet your support</span>
-        </div>
+        </a>
         <div className="social__sharing__button email">
           <span>Email</span>
         </div>

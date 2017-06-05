@@ -24,6 +24,9 @@
 
 .social__sharing__button.twitter {
   background-color: #1da1f2;
+  display: inherit;
+  text-decoration: none;
+  color: white;
 }
 
 .social__sharing__button.email {
