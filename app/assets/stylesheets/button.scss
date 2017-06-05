@@ -28,7 +28,7 @@ $lightblue: #0948bc;
   color: white;
 }
 
-.action_button_when {
+.action_button_big {
   font-size: 1.45em;
   font-weight: bold;
   transition: background-color 0.5s ease;
@@ -36,20 +36,35 @@ $lightblue: #0948bc;
   padding: 10px 0;
   margin: 30px auto;
   display: block;
-  max-width: 200px;
+  width: 200px;
   text-align: center;
 }
 
 .color_scheme__green_blue {
 
-  .action_button_when {
+  .action_button_big {
     background-color: white;
     color: $green;
     border: 2px solid $green;
   }
 
-  .action_button_when:hover {
+  .action_button_big:hover {
     background-color: $green;
     color: white;
+  }
+}
+
+.color_scheme__white_blue {
+
+  .action_button_big {
+    background-color: white;
+    color: $lightblue;
+    border: 2px solid $lightblue;
+  }
+
+  .action_button_big:hover {
+    background-color: $lightblue;
+    color: white;
+    border: 2px solid white;
   }
 }

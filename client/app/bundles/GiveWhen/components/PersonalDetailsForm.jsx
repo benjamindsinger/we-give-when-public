@@ -22,7 +22,7 @@ export default class PersonalDetailsForm extends React.Component {
 
   render () {
     return (
-      <div className="personal__details__form__wrapper">
+      <div className="personal__details__form__wrapper color_scheme__white_blue">
         <div className="personal__details__form">
 
           <div className="long__input">
@@ -88,6 +88,12 @@ export default class PersonalDetailsForm extends React.Component {
                    placeholder="Phone" />
 
           </div>
+
+          <div className="action_button_big"
+               style={{margin: '60px auto 40px auto'}}>
+            continue →
+          </div>
+
         </div>
       </div>
     );

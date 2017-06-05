@@ -227,7 +227,7 @@ export default class WillGuzzardiPage extends React.Component {
           <p>
             Every time an anti-living-wage writes a campaign check
           </p>
-          <span className='action_button_when'
+          <span className='action_button_big'
                onClick={this.onChangeStep.bind(this, 1)}>
             continue →
           </span>
