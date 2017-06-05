@@ -10,6 +10,7 @@ export default class PersonalDetailsForm extends React.Component {
     onType: PropTypes.func.isRequired,
     onClickEdit: PropTypes.func.isRequired,
     onClickContinue: PropTypes.func.isRequired,
+    errorMessages: PropTypes.array.isRequired,
 
     // Form details
     email: PropTypes.string.isRequired,
@@ -97,6 +98,8 @@ export default class PersonalDetailsForm extends React.Component {
 
           </div>
 
+          {this.renderErrors()}
+
           <div className="action_button_big"
                style={{margin: '60px auto 40px auto'}}
                onClick={this.props.onClickContinue}>
@@ -104,6 +107,29 @@ export default class PersonalDetailsForm extends React.Component {
           </div>
 
         </div>
+      </div>
+    );
+  }
+
+  renderErrorMessage (message) {
+    return (
+      <p>{message}</p>
+    );
+  }
+
+  renderErrors () {
+    const errorMessages = this.props.errorMessages;
+
+    if (errorMessages.length === 0) return null;
+
+    return (
+      <div style={{
+        padding: 20,
+        margin: 20,
+        backgroundColor: 'white',
+        color: 'red',
+      }}>
+        {errorMessages.map(this.renderErrorMessage)}
       </div>
     );
   }

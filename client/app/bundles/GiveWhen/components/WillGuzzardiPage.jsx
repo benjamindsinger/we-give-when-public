@@ -26,6 +26,7 @@ export default class WillGuzzardiPage extends React.Component {
       selectedAmountInCents: 300,
       selectedMonthlyMaximumInCents: 4500,
       coverFees: true,
+      errorMessages: [],
 
       // Form details
       email: '',
@@ -41,7 +42,55 @@ export default class WillGuzzardiPage extends React.Component {
     };
   }
 
+  errorsToErrorMessages (errors) {
+    const errorsToNames = {
+      'email': 'email',
+      'firstName': 'first name',
+      'lastName': 'last name',
+      'address': 'address',
+      'city': 'city',
+      'zip': 'ZIP code',
+      'phone': 'phone number',
+      'occupation': 'occupation',
+      'employer': 'employer'
+    };
+
+    return errors.map((error) => {
+      return  `Please enter your ${errorsToNames[error]}.`;
+    });
+  }
+
   onChangeStep (step) {
+    this.setState({ step: step });
+  }
+
+  checkRequiredField (field) {
+    console.log('field', field);
+    return (this.state[field]);
+  }
+
+  onChangeStepFromPersonalDetails (step) {
+    const required = [
+      'email',
+      'firstName',
+      'lastName',
+      'address',
+      'city',
+      'zip',
+      'phone',
+      'occupation',
+      'employer',
+    ];
+
+    const errors = required.filter((field) => {
+      return !(this.state[field]);
+    }, this);
+
+
+    if (errors.length > 0) return this.setState({
+      errorMessages: this.errorsToErrorMessages(errors)
+    });
+
     this.setState({ step: step });
   }
 
@@ -118,7 +167,8 @@ export default class WillGuzzardiPage extends React.Component {
           /* UI functions */
           onType={this.onTypeFormInput.bind(this)}
           onClickEdit={this.onChangeStep.bind(this, 0)}
-          onClickContinue={this.onChangeStep.bind(this, 2)}
+          onClickContinue={this.onChangeStepFromPersonalDetails.bind(this, 2)}
+          errorMessages={this.state.errorMessages}
 
           /* Personal details */
           email={this.state.email}
