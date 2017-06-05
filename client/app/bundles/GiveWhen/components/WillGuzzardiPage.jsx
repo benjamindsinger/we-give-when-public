@@ -17,7 +17,7 @@ export default class WillGuzzardiPage extends React.Component {
     super(props);
 
     this.state = {
-      step: 0
+      step: 0,
 
       // Amount summary
       selectedAmountInCents: null,
