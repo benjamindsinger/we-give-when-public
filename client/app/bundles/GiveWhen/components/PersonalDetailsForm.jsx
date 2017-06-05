@@ -35,13 +35,13 @@ export default class PersonalDetailsForm extends React.Component {
         <div className="personal__details__form">
 
           <div className="summary">
-            <p>Fight back amount: ${Money.renderAmountInCentsAsDollars(this.props.selectedAmountInCents)}
+            <p>Fight back amount: ${Money.renderAmountInCentsAsRoundDollars(this.props.selectedAmountInCents)}
               <a className="edit" onClick={this.props.onClickEdit}>
                 [edit]
               </a>
             </p>
 
-            <p>Monthly maximum amount: ${Money.renderAmountInCentsAsDollars(this.props.selectedMonthlyMaximumInCents)}
+            <p>Monthly maximum amount: ${Money.renderAmountInCentsAsRoundDollars(this.props.selectedMonthlyMaximumInCents)}
               <a className="edit" onClick={this.props.onClickEdit}>
                 [edit]
               </a>

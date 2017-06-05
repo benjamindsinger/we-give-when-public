@@ -93,8 +93,8 @@ export default class CardDetailsForm extends React.Component {
   }
 
   donationAmountInWords () {
-    const selectedAmountInDollars = Money.renderAmountInCentsAsDollars(this.props.selectedAmountInCents);
-    const maximumAmountInDollars = Money.renderAmountInCentsAsDollars(this.props.selectedMonthlyMaximumInCents);
+    const selectedAmountInDollars = Money.renderAmountInCentsAsExactChange(this.props.selectedAmountInCents);
+    const maximumAmountInDollars = Money.renderAmountInCentsAsExactChange(this.props.selectedMonthlyMaximumInCents);
 
     return `$${selectedAmountInDollars}/trigger up to $${maximumAmountInDollars}/mo`;
   }
@@ -107,8 +107,9 @@ export default class CardDetailsForm extends React.Component {
 
   processingAmountInWords () {
     const processingAmount = this.processingAmount();
+    const processingAmountAsDollars = Money.renderAmountInCentsAsExactChange(processingAmount);
 
-    return `Up to $${Money.renderAmountInCentsAsDollars(processingAmount)}/mo`;
+    return `Up to $${processingAmountAsDollars}/mo`;
   }
 
   totalAmount () {
@@ -120,8 +121,9 @@ export default class CardDetailsForm extends React.Component {
 
   totalAmountInWords () {
     const totalAmount = this.totalAmount();
+    const totalAmountAsDollars = Money.renderAmountInCentsAsExactChange(totalAmount);
 
-    return `Up to $${Money.renderAmountInCentsAsDollars(totalAmount)}/mo`;
+    return `Up to $${totalAmountAsDollars}/mo`;
   }
 
   renderTokenSaveSuccess () {

@@ -385,7 +385,7 @@ export default class WillGuzzardiPage extends React.Component {
     return (
       <div className={className}
            onClick={this.onSelectAmount.bind(this, amount)}>
-        ${Money.renderAmountInCentsAsDollars(amount)}
+        ${Money.renderAmountInCentsAsRoundDollars(amount)}
       </div>
     );
   }
@@ -399,7 +399,7 @@ export default class WillGuzzardiPage extends React.Component {
     return (
       <div className={className}
            onClick={this.onSelectMonthlyMaximum.bind(this, amount)}>
-        ${Money.renderAmountInCentsAsDollars(amount)}
+        ${Money.renderAmountInCentsAsRoundDollars(amount)}
       </div>
     );
   }
