@@ -98,6 +98,20 @@ export default class PersonalDetailsForm extends React.Component {
 
           </div>
 
+          <div className="input__row">
+
+            <input type="text"
+                   onChange={this.props.onType.bind(this, 'occupation')}
+                   value={this.props.occupation}
+                   placeholder="Occupation" />
+
+            <input type="text"
+                   onChange={this.props.onType.bind(this, 'employer')}
+                   value={this.props.employer}
+                   placeholder="Employer" />
+          </div>
+
+
           {this.renderErrors()}
 
           <div className="action_button_big"

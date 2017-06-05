@@ -111,20 +111,6 @@ export default class CardDetailsForm extends React.Component {
       <div className="personal__details__form__wrapper color_scheme__white_blue card__details__form below__fixed__navbar">
         <div className="personal__details__form card__details__form">
 
-          <div className="summary">
-            <p>Fight back amount: ${Money.renderAmountInCentsAsDollars(this.props.selectedAmountInCents)}
-              <a className="edit" onClick={this.props.onClickEdit}>
-                [edit]
-              </a>
-            </p>
-
-            <p>Monthly maximum amount: ${Money.renderAmountInCentsAsDollars(this.props.selectedMonthlyMaximumInCents)}
-              <a className="edit" onClick={this.props.onClickEdit}>
-                [edit]
-              </a>
-            </p>
-          </div>
-
           <form id="payment-form"
                 style={{
                   margin: '60px 0'
@@ -150,15 +136,33 @@ export default class CardDetailsForm extends React.Component {
               <div id="card-errors"></div>
             </div>
 
-            <div className="payment-options-group">
-              <div>
-                <input type="checkbox"
-                       checked={this.props.coverFees} />
-                <label htmlFor="cover-fees">
-                  Cover platform and payment processing fees.
-                </label>
-              </div>
-            </div>
+            <table className="checkout__area" style={{
+              margin: '40px auto',
+            }}>
+              <tbody>
+                <tr>
+                  <td>
+                    Donation
+                  </td>
+                  <td>
+                    ${Money.renderAmountInCentsAsDollars(this.props.selectedAmountInCents)} up to  ${Money.renderAmountInCentsAsDollars(this.props.selectedMonthlyMaximumInCents)}/mo
+                    <a className="edit" onClick={this.props.onClickEdit}>
+                      [edit]
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Processing fee
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Maximum total
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
             <button id="submit-stripe"
                     className="action_button_big">
