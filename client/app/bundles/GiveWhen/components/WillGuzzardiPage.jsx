@@ -24,16 +24,16 @@ export default class WillGuzzardiPage extends React.Component {
       selectedMonthlyMaximumInCents: null,
 
       // Form details
-      email: null,
-      firstName: null,
-      lastName: null,
-      address: null,
-      city: null,
-      usState: null,
-      zip: null,
-      phone: null,
-      occupation: null,
-      employer: null,
+      email: '',
+      firstName: '',
+      lastName: '',
+      address: '',
+      city: '',
+      usState: '',
+      zip: '',
+      phone: '',
+      occupation: '',
+      employer: '',
     };
   }
 

@@ -3,6 +3,23 @@ import React from 'react';
 
 export default class PersonalDetailsForm extends React.Component {
 
+  static propTypes = {
+    // Form functions
+    onTypeFormInput: PropTypes.func.isRequired,
+
+    // Form details
+    email: PropTypes.string.isRequired,
+    firstName: PropTypes.string.isRequired,
+    lastName: PropTypes.string.isRequired,
+    address: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+    usState: PropTypes.string.isRequired,
+    zip: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired,
+    occupation: PropTypes.string.isRequired,
+    employer: PropTypes.string.isRequired,
+  };
+
   render () {
     return (
       <div className="personal__details__form__wrapper">
