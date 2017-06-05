@@ -206,6 +206,7 @@ export default class WillGuzzardiPage extends React.Component {
           selectedMonthlyMaximumInCents={this.state.selectedMonthlyMaximumInCents}
         />
 
+        {this.renderDisclaimer()}
         {this.renderFooter()}
       </div>
     );
@@ -231,6 +232,7 @@ export default class WillGuzzardiPage extends React.Component {
           selectedMonthlyMaximumInCents={this.state.selectedMonthlyMaximumInCents}
         />
 
+        {this.renderDisclaimer()}
         {this.renderFooter()}
       </div>
     );
@@ -489,23 +491,35 @@ export default class WillGuzzardiPage extends React.Component {
 
   renderClosingLetter () {
     return (
-      <div className="section flex">
+      <div>
+        <div className="section">
+          <div className="text narrow big plain">
+
+            <p style={{ fontWeight: 'bold' }}>
+              We need to respond immediately so our candidates can campaign this summer in the primaries.
+            </p>
+
+            <p>
+              At the end of each month, depending on the number of checks written by corporate interests and the monthly maximum donation you set for yourself, we'll process your donation and put it to work immediately to campaign for our candidates.
+            </p>
+
+            <p>At the end of each month, based on the number of checks written by corporate interests and your monthly maximum donation, we’ll process your donation and put it to work immediately to campaign for our candidates.</p>
+
+          </div>
+
+        </div>
+        {this.renderDisclaimer()}
+      </div>
+    );
+  }
+
+  renderDisclaimer () {
+    return (
+      <div className="section">
         <div className="text narrow big plain">
-
-          <p style={{ fontWeight: 'bold' }}>
-            We need to respond immediately so our candidates can campaign this summer in the primaries.
-          </p>
-
-          <p>
-            At the end of each month, depending on the number of checks written by corporate interests and the monthly maximum donation you set for yourself, we'll process your donation and put it to work immediately to campaign for our candidates.
-          </p>
-
-          <p>At the end of each month, based on the number of checks written by corporate interests and your monthly maximum donation, we’ll process your donation and put it to work immediately to campaign for our candidates.</p>
-
           <div style={{
             border: '1px solid #0948bc',
             padding: 20,
-            margin: '60px 0 40px 0'
           }}>
             <p>Funds go to the Committee to Elect Will Guzzardi, which supports the Fight for $15 and donates to candidates who also support the Fight for $15.</p>
 
