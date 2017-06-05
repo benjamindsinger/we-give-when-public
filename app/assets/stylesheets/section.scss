@@ -19,6 +19,18 @@ $darkblue: #1c407b;
     flex: 1;
     padding: 30px 60px;
   }
+
+  @media (min-width: $breakpoint-m) {
+    .text {
+      padding: 30px 60px;
+    }
+  }
+
+  @media (max-width: $breakpoint-m) {
+    .text {
+      padding: 30px;
+    }
+  }
 }
 
 @media screen and (min-width: $breakpoint-m) {

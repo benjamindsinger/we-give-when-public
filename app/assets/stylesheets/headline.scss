@@ -1,9 +1,29 @@
+$breakpoint-xs: 350px;
+$breakpoint-s: 500px;
+$breakpoint-m: 1100px;
+$breakpoint-l: 1300px;
+$breakpoint-xl: 1850px;
+
+$red: #f90016;
+$darkblue: #1c407b;
+
 .headline__section {
 
   h1 {
     text-transform: uppercase;
-    font-size: 60px;
     margin-bottom: 0;
+  }
+
+  @media (min-width: $breakpoint-m) {
+    h1 {
+      font-size: 60px;
+    }
+  }
+
+  @media (max-width: $breakpoint-m) {
+    h1 {
+      font-size: 2.4em;
+    }
   }
 
   .divider__line {
@@ -20,9 +40,20 @@
 }
 
 .subheadline {
-  font-size: 50px;
   text-transform: uppercase;
   margin-bottom: 0;
+}
+
+@media (min-width: $breakpoint-m) {
+  .subheadline {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: $breakpoint-m) {
+  .subheadline {
+    font-size: 2.25em;
+  }
 }
 
 .content_headline {
