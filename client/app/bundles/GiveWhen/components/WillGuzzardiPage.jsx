@@ -100,8 +100,8 @@ export default class WillGuzzardiPage extends React.Component {
 
   renderHeader () {
     return (
-      <Header givePhrase="Give $1 every time"
-        whenPhrase="an anti-living-wage corporation writes a campaign check"
+      <Header givePhrase="fight back"
+        whenPhrase="Every time an anti-living-wage corporation writes a campaign check,"
         logoImgPath="/guzzardi-logo-small.jpg"
         onClickActionButton={this.onChangeStep.bind(this, 1)}
       />

@@ -14,10 +14,11 @@ export default class Header extends React.Component {
 
         <div id="sentence">
           <p>
-            <span className="action_button"
+            {this.props.whenPhrase} <span className="action_button"
+                                          style={{padding: 10, marginRight: 2}}
                   onClick={this.props.onClickActionButton}>
-              {this.props.givePhrase}
-            </span> {this.props.whenPhrase}.
+              {this.props.givePhrase} →
+            </span>
           </p>
         </div>
 
