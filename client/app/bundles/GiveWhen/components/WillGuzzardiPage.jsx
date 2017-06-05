@@ -14,10 +14,29 @@ export default class WillGuzzardiPage extends React.Component {
   constructor(props, _railsContext) {
     super(props);
 
-    this.state = { name: this.props.name };
+    this.state = {
+      step: 0
+    };
+  }
+
+  onChangeStep (step) {
+    this.setState({ step: step });
   }
 
   render () {
+    const step = this.state.step;
+
+    switch (step) {
+      case 0:
+        return this.renderSignUpPage();
+      case 1:
+        return this.renderPersonalDetailsPage();
+      default:
+        return this.renderSignUpPage();
+    }
+  }
+
+  renderSignUpPage () {
     return (
       <div className="color_scheme__green_blue">
         {this.renderHeader()}
@@ -26,6 +45,18 @@ export default class WillGuzzardiPage extends React.Component {
         {this.renderStatementOfPurpose()}
         {this.renderBenefitStatement()}
         {this.renderClosingLetter()}
+        {this.renderFooter()}
+      </div>
+    );
+  }
+
+  renderPersonalDetailsPage () {
+    return (
+      <div className="color_scheme__green_blue">
+        {this.renderHeader()}
+        <div>
+          Sign up yo
+        </div>
         {this.renderFooter()}
       </div>
     );
@@ -108,7 +139,6 @@ export default class WillGuzzardiPage extends React.Component {
   renderGive () {
     return (
       <div className="give_when__subsection" id="give">
-        <div class="wrapper">
           <h3>Give</h3>
 
           <div style={{clear: 'both'}}>
@@ -140,7 +170,6 @@ export default class WillGuzzardiPage extends React.Component {
               {this.renderSelectorButton('...', false)}
             </div>
           </div>
-        </div>
       </div>
     );
   }
@@ -164,7 +193,10 @@ export default class WillGuzzardiPage extends React.Component {
             margin: '0 auto',
             width: 140,
           }}>
-            {this.renderSelectorButton('continue →', true)}
+            <div className='amount_selector_button selected'
+                 onClick={this.onChangeStep.bind(this, 1)}>
+              continue →
+            </div>
           </div>
         </div>
       </div>
