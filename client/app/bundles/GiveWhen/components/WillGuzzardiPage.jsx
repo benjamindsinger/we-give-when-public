@@ -43,7 +43,7 @@ export default class WillGuzzardiPage extends React.Component {
     this.setState({ step: step });
   }
 
-  onTypeFormInput (property, e) {
+  onTypePersonDetailsFormInput (property, e) {
     let updatedState = Object.assign({}, this.state);
 
     updatedState[property] = e.target.value;
@@ -96,7 +96,7 @@ export default class WillGuzzardiPage extends React.Component {
         {this.renderHeader()}
         <PersonalDetailsForm
           /* UI functions */
-          onTypeFormInput={this.onTypeFormInput.bind(this)}
+          onType={this.onTypePersonDetailsFormInput.bind(this)}
           onClickEdit={this.onChangeStep.bind(this, 0)}
 
           /* Personal details */
