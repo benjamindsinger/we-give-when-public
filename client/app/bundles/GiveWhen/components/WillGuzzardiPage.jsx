@@ -14,7 +14,6 @@ export default class WillGuzzardiPage extends React.Component {
   displayName: 'WillGuzzardiPage';
 
   static propTypes = {
-    // name: PropTypes.string.isRequired,
   };
 
   constructor(props, _railsContext) {
@@ -65,7 +64,6 @@ export default class WillGuzzardiPage extends React.Component {
   }
 
   checkRequiredField (field) {
-    console.log('field', field);
     return (this.state[field]);
   }
 
