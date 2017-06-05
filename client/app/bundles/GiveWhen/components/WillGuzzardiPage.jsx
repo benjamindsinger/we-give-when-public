@@ -72,7 +72,18 @@ export default class WillGuzzardiPage extends React.Component {
     return (
       <div className="color_scheme__green_blue">
         {this.renderHeader()}
-        <PersonalDetailsForm />
+        <PersonalDetailsForm
+          email={this.state.email}
+          firstName={this.state.firstName}
+          lastName={this.state.lastName}
+          address={this.state.address}
+          city={this.state.city}
+          usState={this.state.usState}
+          zip={this.state.zip}
+          phone={this.state.phone}
+          occupation={this.state.occupation}
+          employer={this.state.employer}
+        />
         {this.renderFooter()}
       </div>
     );
