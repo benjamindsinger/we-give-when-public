@@ -315,7 +315,7 @@ export default class DemocracySpringPage extends React.Component {
         <img src="/democracy-spring-capitol-small.jpg"
              className="big" />
 
-        <div className="text darkblue">
+        <div className="text color__calm big">
           <h3 className="content_headline">
             Support this campaign if you think the democrats must:
           </h3>
