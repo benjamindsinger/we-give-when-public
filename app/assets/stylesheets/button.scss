@@ -1,3 +1,14 @@
+$breakpoint-xs: 350px;
+$breakpoint-s: 500px;
+$breakpoint-m: 1100px;
+$breakpoint-l: 1300px;
+$breakpoint-xl: 1850px;
+
+$red: #f90016;
+$darkblue: #1c407b;
+$green: #01943b;
+$lightblue: #0948bc;
+
 .amount_selector_button {
   min-width: 35px;
   padding: 10px 15px;
@@ -17,3 +28,28 @@
   color: white;
 }
 
+.action_button_when {
+  font-size: 1.45em;
+  font-weight: bold;
+  transition: background-color 0.5s ease;
+  cursor: pointer;
+  padding: 10px 0;
+  margin: 30px auto;
+  display: block;
+  max-width: 200px;
+  text-align: center;
+}
+
+.color_scheme__green_blue {
+
+  .action_button_when {
+    background-color: white;
+    color: $green;
+    border: 2px solid $green;
+  }
+
+  .action_button_when:hover {
+    background-color: $green;
+    color: white;
+  }
+}
