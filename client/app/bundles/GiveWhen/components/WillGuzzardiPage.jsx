@@ -250,19 +250,19 @@ export default class WillGuzzardiPage extends React.Component {
       <div className="give_when__subsection" id="progress-bar">
         <div style={{
           width: '80%',
-          margin: '40px auto',
+          margin: '30px auto',
           position: 'relative',
         }}>
           <h3 style={{color: '#1c407b', lineHeight: '7.5px'}}>
-            $53 raised
+            53 backers
           </h3>
           <p style={{color: '#1c407b', lineHeight: '7.5px'}}>
-            of $100 goal
+            of 100 backer goal
           </p>
           <div className="progress__bar">
-            <div className="progress__bar__inner" /></div>
-          <p style={{color: '#1c407b', lineHeight: '7.5px'}}>
-            53 backers
+          <div className="progress__bar__inner" /></div>
+          <p style={{color: 'red', lineHeight: '7.5px'}}>
+            47 backers needed
           </p>
           <p style={{color: 'red', lineHeight: '7.5px'}}>
             17 days left
