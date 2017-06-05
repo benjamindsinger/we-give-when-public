@@ -92,7 +92,7 @@ export default class CardDetailsForm extends React.Component {
 
   renderTokenSaveSuccess () {
     return (
-      <div>
+      <div className="personal__details__form__wrapper color_scheme__white_blue card__details__form below__fixed__navbar">
         Sign Up Successful!
       </div>
     );
@@ -100,7 +100,7 @@ export default class CardDetailsForm extends React.Component {
 
   renderTokenSaveFail () {
     return (
-      <div>
+      <div className="personal__details__form__wrapper color_scheme__white_blue card__details__form below__fixed__navbar">
         Sign Up Failed :/
       </div>
     );
@@ -108,7 +108,7 @@ export default class CardDetailsForm extends React.Component {
 
   renderStripeForm () {
     return (
-      <div className="personal__details__form__wrapper color_scheme__white_blue card__details__form">
+      <div className="personal__details__form__wrapper color_scheme__white_blue card__details__form below__fixed__navbar">
         <div className="personal__details__form card__details__form">
 
           <div className="summary">

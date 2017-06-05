@@ -31,7 +31,7 @@ export default class PersonalDetailsForm extends React.Component {
 
   render () {
     return (
-      <div className="personal__details__form__wrapper color_scheme__white_blue">
+      <div className="personal__details__form__wrapper color_scheme__white_blue below__fixed__navbar">
         <div className="personal__details__form">
 
           <div className="summary">
