@@ -297,7 +297,7 @@ export default class WillGuzzardiPage extends React.Component {
               {this.renderAmountButton(100)}
               {this.renderAmountButton(300)}
               {this.renderAmountButton(1500)}
-              {this.renderAmountButton(3500)}
+              {this.renderCustomAmountButton()}
             </div>
           </div>
 
@@ -309,7 +309,7 @@ export default class WillGuzzardiPage extends React.Component {
               {this.renderMaximumAmountButton(1500)}
               {this.renderMaximumAmountButton(4500)}
               {this.renderMaximumAmountButton(15000)}
-              {this.renderMaximumAmountButton(20000)}
+              {this.renderCustomMaximumAmountButton()}
             </div>
           </div>
       </div>
@@ -380,6 +380,24 @@ export default class WillGuzzardiPage extends React.Component {
       <div className={className}
            onClick={this.onSelectMonthlyMaximum.bind(this, amount)}>
         ${Money.renderAmountInCentsAsDollars(amount)}
+      </div>
+    );
+  }
+
+  renderCustomAmountButton () {
+    return (
+      <div className='amount_selector_button custom__selector'>
+        <span className="dollar">$</span>
+        <input type='text' className='custom__selector' placeholder='___' />
+      </div>
+    );
+  }
+
+  renderCustomMaximumAmountButton () {
+    return (
+      <div className='amount_selector_button custom__selector'>
+        <span className="dollar">$</span>
+        <input type='text' className='custom__selector' placeholder='___' />
       </div>
     );
   }

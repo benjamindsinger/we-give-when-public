@@ -15,12 +15,40 @@ $lightblue: #0948bc;
   background-color: #eef3f6;
   font-family: Helvetica;
   float: left;
-  font-size: 1.125em;
+  font-size: 1.1em;
   font-weight: bold;
   margin: 5px;
   color: #1c407b;
   border: 1px solid #1c407b;
   cursor: pointer;
+}
+
+.amount_selector_button.custom__selector {
+  padding: 0;
+
+  .dollar {
+    position: relative;
+    left: 10px;
+  }
+}
+
+input.custom__selector {
+  background-color: #eef3f6;
+  border: none;
+  width: 40px;
+  padding: 6px 12px;
+  height: 29px;
+  font-family: Helvetica;
+  font-size: 1.125em;
+  color: #1c407b;
+  font-weight: bold;
+
+  /* Surpress Safari etc. from messing with styles */
+  -webkit-appearance: none;
+}
+
+input.custom__selector:focus {
+  outline: none;
 }
 
 .amount_selector_button.selected {
