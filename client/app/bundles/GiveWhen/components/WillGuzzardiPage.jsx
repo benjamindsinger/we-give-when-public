@@ -214,7 +214,7 @@ export default class WillGuzzardiPage extends React.Component {
           </p>
           <span className='action_button_big'
                onClick={this.onChangeStep.bind(this, 1)}>
-            continue →
+            fight back →
           </span>
         </div>
       </div>
