@@ -19,6 +19,16 @@ export default class SocialSharingPage extends React.Component {
     return `https://twitter.com/intent/tweet?text=${message}`;
   }
 
+  mailTo () {
+    const subject = 'Fight for $15';
+    const body = 'Hey: I just joined the campaign and I hope you will too. Let\'s fight back every time an anti-living wage corporation like McDonalds writes a campaign check: https://wegivewhen.com/campaigns/fight-for-15';
+
+    const encodedSubject = encodeURIComponent(subject);
+    const encodedBody = encodeURIComponent(body);
+
+    return `mailto:?subject=${encodedSubject}&body=${encodedBody}`;
+  }
+
   render () {
     return (
       <div className="personal__details__form__wrapper color_scheme__white_blue card__details__form below__fixed__navbar"
@@ -40,9 +50,10 @@ export default class SocialSharingPage extends React.Component {
           {this.renderTwitterLogo()}
           <span>Tweet your support</span>
         </a>
-        <div className="social__sharing__button email">
+        <a className="social__sharing__button email"
+           href={this.mailTo()}>
           <span>Email</span>
-        </div>
+        </a>
       </div>
     );
   }

@@ -31,5 +31,8 @@
 
 .social__sharing__button.email {
   background-color: lighten(#01943b, 7.5%);
+  display: inherit;
+  text-decoration: none;
+  color: white;
 }
 
