@@ -33,47 +33,41 @@ export default class PersonalDetailsForm extends React.Component {
                     */
                    placeholder="Last Name" />
           </div>
-        {
-          /*
-        <div>
-          <div className="twin-inputs">
+
+          <div className="long__input">
+            <input type="text"
+                   /*
+                   onChange={this.props.onType.bind(this, 'address')}
+                   value={this.props.address}
+                    */
+                   placeholder="Address" />
           </div>
-        </div>
 
-        <div>
-          <input type="text"
-                 onChange={this.props.onType.bind(this, 'address')}
-                 value={this.props.address}
-                 className="donor-details big"
-                 placeholder="Address" />
-        </div>
-
-        <div>
-          <div className="twin-inputs">
+          <div className="input__row">
 
             <input type="text"
+                   /*
                    onChange={this.props.onType.bind(this, 'city')}
                    value={this.props.city}
-                   className="donor-details small"
+                    */
                    style={{flex: 2}}
                    placeholder="City" />
 
-
-            <select className="donor-details small" style={{flex: 1}}
-                    onChange={this.props.onType.bind(this, 'usState')}>
-              <option selected disabled>State</option>
-              {usStates.map((state) => {
-                return <option key={state}>{state}</option>;
-              })}
-            </select>
-
             <input type="text"
                    style={{flex: 1}}
+                   /*
                    onChange={this.props.onType.bind(this, 'zip')}
                    value={this.props.zip}
-                   className="donor-details small"
+                    */
                    placeholder="ZIP" />
           </div>
+
+
+        {
+          /*
+
+
+        <div>
         </div>
 
         <div>
