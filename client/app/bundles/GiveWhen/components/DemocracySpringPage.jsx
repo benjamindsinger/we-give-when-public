@@ -36,12 +36,9 @@ export default class DemocracySpringPage extends React.Component {
       step: 0,
 
       // Amount summary
-      selectedAmountInCents: 300,
-      selectedMonthlyMaximumInCents: 4500,
+      selectedAmountInCents: 100,
       customAmountEntered: false,
-      customMaximumEntered: false,
       coverFees: true,
-
 
       // Form details
       errorMessages: [],
