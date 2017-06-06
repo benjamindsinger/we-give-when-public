@@ -77,10 +77,9 @@ input.custom__selector:focus {
   font-weight: bold;
   transition: background-color 0.5s ease;
   cursor: pointer;
-  padding: 10px 0;
+  padding: 10px;
   margin: 30px auto;
-  display: block;
-  width: 200px;
+  display: inline-block;
   text-align: center;
 }
 

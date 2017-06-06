@@ -142,7 +142,7 @@ export default class DemocracySpringPage extends React.Component {
 
   renderHeader (showButton) {
     return (
-      <Header givePhrase="fight back"
+      <Header givePhrase="force a change"
               whenPhrase="Until the DNC breaks with Big Money,"
               logoImgPath="/dem-spring-logo-blue-small.png"
               onClickActionButton={this.onChangeStep.bind(this, 1)}
@@ -171,34 +171,25 @@ export default class DemocracySpringPage extends React.Component {
     );
   }
 
+
   renderProgressBar () {
     return (
-      <div style={{flex: 1}}>
+      <div className="give_when__subsection" id="progress-bar">
         <div style={{
           width: '80%',
-          margin: '20px auto',
+          margin: '30px auto',
           position: 'relative',
-          padding: '40px 20px'
         }}>
           <h3 style={{color: '#1c407b', lineHeight: '7.5px'}}>
-            $53 raised
+            $53/day pledged
           </h3>
           <p style={{color: '#1c407b', lineHeight: '7.5px'}}>
             of $100 goal
           </p>
-          <div style={{
-            backgroundColor: '#ccc',
-            height: '10px',
-            margin: '20px 0'
-          }}>
-            <div style={{
-              backgroundColor: 'rgb(67, 222, 31)',
-              height: '10px',
-              width: '55%'
-            }} />
-          </div>
-          <p style={{color: '#1c407b', lineHeight: '7.5px'}}>
-            53 backers
+          <div className="progress__bar">
+          <div className="progress__bar__inner" /></div>
+          <p style={{color: 'red', lineHeight: '7.5px'}}>
+            $47/day needed
           </p>
           <p style={{color: 'red', lineHeight: '7.5px'}}>
             17 days left
@@ -259,7 +250,7 @@ export default class DemocracySpringPage extends React.Component {
           </p>
           <span className='action_button_big'
                onClick={this.onChangeStep.bind(this, 1)}>
-            fight back →
+            force a change →
           </span>
         </div>
       </div>
