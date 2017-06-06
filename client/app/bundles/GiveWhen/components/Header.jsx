@@ -5,6 +5,11 @@ export default class Header extends React.Component {
 
   static propTypes = {
     showButton: PropTypes.bool.isRequired,
+    logoImgPath: PropTypes.string.isRequired,
+    logoHeight: PropTypes.number.isRequired,
+    whenPhrase: PropTypes.string.isRequired,
+    givePhrase: PropTypes.string.isRequired,
+    onClickActionButton: PropTypes.func.isRequired,
   };
 
   render () {
@@ -18,9 +23,8 @@ export default class Header extends React.Component {
 
   renderLogo () {
     return (
-      <div className="logo" style={{ margin: '20px', height: '50px' }}>
-        <img src={this.props.logoImgPath}
-             style={{ margin: '10px' }}/>
+      <div className="logo">
+        <img src={this.props.logoImgPath} />
       </div>
     );
   }

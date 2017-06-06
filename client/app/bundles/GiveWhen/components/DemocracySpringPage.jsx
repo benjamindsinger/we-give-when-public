@@ -162,7 +162,7 @@ export default class DemocracySpringPage extends React.Component {
     return (
       <Header givePhrase="force a change"
               whenPhrase="Until the DNC breaks with Big Money,"
-              logoImgPath="/dem-spring-logo-blue-small.png"
+              logoImgPath="/dem-spring-logo-blue.png"
               onClickActionButton={UserEvents.onChangeStep.bind(this, 1)}
               showButton={showButton}
       />

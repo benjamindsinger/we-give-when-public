@@ -44,7 +44,6 @@ export default class WillGuzzardiPage extends React.Component {
       customMaximumEntered: false,
       coverFees: true,
 
-
       // Form details
       errorMessages: [],
       email: '',
@@ -166,7 +165,7 @@ export default class WillGuzzardiPage extends React.Component {
     return (
       <Header givePhrase="fight back"
         whenPhrase="Every time an anti-living-wage corporation writes a campaign check,"
-        logoImgPath="/guzzardi-logo-small.jpg"
+        logoImgPath="/guzzardi-logo-good.jpg"
         onClickActionButton={UserEvents.onChangeStep.bind(this, 1)}
         showButton={showButton}
       />

@@ -26,14 +26,23 @@ $darkblue: #1c407b;
 
   @media (min-width: $breakpoint-m) {
     .logo {
-      margin: 5px;
+      margin: 40px 30px;
       float: left;
+
+      img {
+        height: 35px;
+      }
     }
   }
 
   @media (max-width: $breakpoint-m) {
     .logo {
+      margin: 30px 0 10px 0;
       text-align: center;
+
+      img {
+        height: 30px;
+      }
     }
   }
 }
