@@ -14,23 +14,10 @@ export default {
     this.setState({ step: step });
   },
 
-  onChangeStepFromPersonalDetails: function (step) {
-    const required = [
-      'email',
-      'firstName',
-      'lastName',
-      'address',
-      'city',
-      'zip',
-      'phone',
-      'occupation',
-      'employer',
-    ];
-
-    const errors = required.filter((field) => {
+  onChangeStepFromPersonalDetails: function (step, funderRequiredDetails) {
+    const errors = funderRequiredDetails.filter((field) => {
       return !(this.state[field]);
     }, this);
-
 
     if (errors.length > 0) return this.setState({
       errorMessages: Errors.toErrorMessages(errors)

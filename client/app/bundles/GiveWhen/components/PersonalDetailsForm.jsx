@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import _ from 'lodash';
 
 import Money from '../helpers/money.jsx';
 
@@ -13,6 +14,7 @@ export default class PersonalDetailsForm extends React.Component {
     errorMessages: PropTypes.array.isRequired,
 
     // Form details
+    funderRequiredDetails: PropTypes.array.isRequired,
     email: PropTypes.string.isRequired,
     firstName: PropTypes.string.isRequired,
     lastName: PropTypes.string.isRequired,
@@ -33,87 +35,14 @@ export default class PersonalDetailsForm extends React.Component {
     return (
       <div className="personal__details__form__wrapper color_scheme__white_blue below__fixed__navbar">
         <div className="personal__details__form">
-
-          <div className="summary">
-            <p>Fight back amount: ${Money.renderAmountInCentsAsRoundDollars(this.props.selectedAmountInCents)}
-              <a className="edit" onClick={this.props.onClickEdit}>
-                [edit]
-              </a>
-            </p>
-
-            <p>Monthly maximum amount: ${Money.renderAmountInCentsAsRoundDollars(this.props.selectedMonthlyMaximumInCents)}
-              <a className="edit" onClick={this.props.onClickEdit}>
-                [edit]
-              </a>
-            </p>
-          </div>
-
-          <div className="long__input">
-            <input type="text"
-                   onChange={this.props.onType.bind(this, 'email')}
-                   value={this.props.email}
-                   placeholder="Email address" />
-          </div>
-
-          <div className="input__row">
-
-            <input type="text"
-                   onChange={this.props.onType.bind(this, 'firstName')}
-                   value={this.props.firstName}
-                   placeholder="First Name" />
-
-            <input type="text"
-                   onChange={this.props.onType.bind(this, 'lastName')}
-                   value={this.props.lastName}
-                   placeholder="Last Name" />
-          </div>
-
-          <div className="long__input">
-            <input type="text"
-                   onChange={this.props.onType.bind(this, 'address')}
-                   value={this.props.address}
-                   placeholder="Address" />
-          </div>
-
-          <div className="input__row">
-
-            <input type="text"
-                   onChange={this.props.onType.bind(this, 'city')}
-                   value={this.props.city}
-                   style={{flex: 2}}
-                   placeholder="City" />
-
-            <input type="text"
-                   style={{flex: 1}}
-                   onChange={this.props.onType.bind(this, 'zip')}
-                   value={this.props.zip}
-                   placeholder="ZIP" />
-          </div>
-
-          <div className="long__input">
-            <input type="text"
-                   onChange={this.props.onType.bind(this, 'phone')}
-                   value={this.props.phone}
-                   placeholder="Phone" />
-
-          </div>
-
-          <div className="input__row">
-
-            <input type="text"
-                   onChange={this.props.onType.bind(this, 'occupation')}
-                   value={this.props.occupation}
-                   placeholder="Occupation" />
-
-            <input type="text"
-                   onChange={this.props.onType.bind(this, 'employer')}
-                   value={this.props.employer}
-                   placeholder="Employer" />
-          </div>
-
-
+          {this.renderSummary()}
+          {this.renderEmail()}
+          {this.renderName()}
+          {this.renderAddress()}
+          {this.renderCityAndZip()}
+          {this.renderPhone()}
+          {this.renderOccupationAndEmployer()}
           {this.renderErrors()}
-
           <div className="action_button_big"
                style={{margin: '60px auto 40px auto'}}
                onClick={this.props.onClickContinue}>
@@ -121,6 +50,122 @@ export default class PersonalDetailsForm extends React.Component {
           </div>
 
         </div>
+      </div>
+    );
+  }
+
+  renderSummary () {
+    return (
+      <div className="summary">
+        <p>Fight back amount: ${Money.renderAmountInCentsAsRoundDollars(this.props.selectedAmountInCents)}
+          <a className="edit" onClick={this.props.onClickEdit}>
+            [edit]
+          </a>
+        </p>
+
+        <p>Monthly maximum amount: ${Money.renderAmountInCentsAsRoundDollars(this.props.selectedMonthlyMaximumInCents)}
+          <a className="edit" onClick={this.props.onClickEdit}>
+            [edit]
+          </a>
+        </p>
+      </div>
+    );
+  }
+
+  renderEmail () {
+    if (!_.includes(this.props.funderRequiredDetails, 'email')) return null;
+
+    return (
+      <div className="long__input">
+        <input type="text"
+               onChange={this.props.onType.bind(this, 'email')}
+               value={this.props.email}
+               placeholder="Email address" />
+      </div>
+    );
+  }
+
+  renderName () {
+    if (!_.includes(this.props.funderRequiredDetails, 'firstName')) return null;
+
+    return (
+      <div className="input__row">
+
+        <input type="text"
+               onChange={this.props.onType.bind(this, 'firstName')}
+               value={this.props.firstName}
+               placeholder="First Name" />
+
+        <input type="text"
+               onChange={this.props.onType.bind(this, 'lastName')}
+               value={this.props.lastName}
+               placeholder="Last Name" />
+      </div>
+    );
+  }
+
+  renderAddress () {
+    if (!_.includes(this.props.funderRequiredDetails, 'address')) return null;
+
+    return (
+      <div className="long__input">
+        <input type="text"
+               onChange={this.props.onType.bind(this, 'address')}
+               value={this.props.address}
+               placeholder="Address" />
+      </div>
+    );
+  }
+
+  renderCityAndZip () {
+    if (!_.includes(this.props.funderRequiredDetails, 'zip')) return null;
+
+    return (
+      <div className="input__row">
+
+        <input type="text"
+               onChange={this.props.onType.bind(this, 'city')}
+               value={this.props.city}
+               style={{flex: 2}}
+               placeholder="City" />
+
+        <input type="text"
+               style={{flex: 1}}
+               onChange={this.props.onType.bind(this, 'zip')}
+               value={this.props.zip}
+               placeholder="ZIP" />
+      </div>
+    );
+  }
+
+  renderPhone () {
+    if (!_.includes(this.props.funderRequiredDetails, 'phone')) return null;
+
+    return (
+      <div className="long__input">
+        <input type="text"
+               onChange={this.props.onType.bind(this, 'phone')}
+               value={this.props.phone}
+               placeholder="Phone" />
+      </div>
+    );
+  }
+
+  renderOccupationAndEmployer () {
+    if (!_.includes(this.props.funderRequiredDetails, 'occupation')) return null;
+
+    return (
+      <div className="input__row">
+
+        <input type="text"
+               onChange={this.props.onType.bind(this, 'occupation')}
+               value={this.props.occupation}
+               placeholder="Occupation" />
+
+        <input type="text"
+               onChange={this.props.onType.bind(this, 'employer')}
+               value={this.props.employer}
+               placeholder="Employer" />
       </div>
     );
   }

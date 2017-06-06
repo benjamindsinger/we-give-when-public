@@ -1,6 +1,8 @@
 export default {
 
-  funderDetails: function (state, props, requiredDetails) {
+  funderDetails: function (state, props) {
+    const requiredDetails = props.funderRequiredDetails;
+
     return _.pick(state, requiredDetails);
   },
 

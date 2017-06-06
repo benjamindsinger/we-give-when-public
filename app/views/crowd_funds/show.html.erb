@@ -5,6 +5,9 @@
         props: {
           crowdFundId: 1,
           stripePublishableKey: 'pk_test_W0fKQhoRyGPP1BcWF9kX7hJz',
+          funderRequiredDetails: [
+            'firstName', 'lastName', 'email', 'phone', 'zip',
+          ]
         },
 
         trace: nil,
@@ -18,6 +21,10 @@
         props: {
           crowdFundId: 2,
           stripePublishableKey: 'pk_test_W0fKQhoRyGPP1BcWF9kX7hJz',
+          funderRequiredDetails: [
+            'firstName', 'lastName', 'occupation', 'employer', 'email',
+            'phone', 'address', 'city', 'zip',
+          ]
         },
 
         trace: nil,
