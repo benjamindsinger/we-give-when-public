@@ -6,10 +6,10 @@
 
   <meta property="og:url" content="<%= @meta_og_url %>" />
   <meta property="og:image" content="<%= @meta_og_image %>" />
-  <meta property="og:title" content="<%= @meta_og_title %>" />
-  <meta property="og:description" content="<%= @meta_og_description %>" />
-  <meta name="twitter:card" content="<%= @meta_content_twitter_card %>" />
-  <meta name="twitter:image:src" content="<%= @meta_content_twitter_img_src %>" />
+  <meta property="og:title" content="<%= @crowd_fund.open_graph_title %>" />
+  <meta property="og:description" content="<%= @crowd_fund.open_graph_description %>" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image:src" content="<%= @meta_og_image %>" />
 
   <script src="https://js.stripe.com/v3/"></script>
 

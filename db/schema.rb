@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170531201423) do
+ActiveRecord::Schema.define(version: 20170606174838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,10 +58,13 @@ ActiveRecord::Schema.define(version: 20170531201423) do
     t.string   "name"
     t.json     "page_data"
     t.datetime "goal_date"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "cause_id"
-    t.string   "crowd_fund_type", null: false
+    t.string   "crowd_fund_type",        null: false
+    t.string   "open_graph_title"
+    t.string   "open_graph_description"
+    t.string   "twitter_message"
     t.index ["cause_id"], name: "index_crowd_funds_on_cause_id", using: :btree
   end
 
