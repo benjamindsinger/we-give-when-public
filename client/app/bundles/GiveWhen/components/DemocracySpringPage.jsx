@@ -20,6 +20,14 @@ export default class DemocracySpringPage extends React.Component {
     stripePublishableKey: PropTypes.string.isRequired,
   };
 
+  static funderRequiredDetails = [
+    'firstName',
+    'lastName',
+    'email',
+    'phone',
+    'zip',
+  ];
+
   constructor(props, _railsContext) {
     super(props);
 
@@ -127,7 +135,7 @@ export default class DemocracySpringPage extends React.Component {
           onClickEdit={UserEvents.onChangeStep.bind(this, 0)}
 
           /* Data for form */
-          funderDetails={DataCuts.funderDetails(this.state, this.props)}
+          funderDetails={DataCuts.funderDetails(this.state, this.props, this.requiredDetails)}
           crowdFundMembershipDetails={DataCuts.crowdFundMembershipDetails(this.state, this.props)}
           coverFees={this.state.coverFees}
           stripePublishableKey={this.props.stripePublishableKey}

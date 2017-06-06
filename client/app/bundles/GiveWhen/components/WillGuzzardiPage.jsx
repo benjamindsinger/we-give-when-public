@@ -20,6 +20,18 @@ export default class WillGuzzardiPage extends React.Component {
     stripePublishableKey: PropTypes.string.isRequired,
   };
 
+  static funderRequiredDetails = [
+    'firstName',
+    'lastName',
+    'occupation',
+    'employer',
+    'email',
+    'phone',
+    'address',
+    'city',
+    'zip',
+  ];
+
   constructor(props, _railsContext) {
     super(props);
 
@@ -47,24 +59,6 @@ export default class WillGuzzardiPage extends React.Component {
       occupation: '',
       employer: '',
     };
-  }
-
-  errorsToErrorMessages (errors) {
-    const errorsToNames = {
-      'email': 'email',
-      'firstName': 'first name',
-      'lastName': 'last name',
-      'address': 'address',
-      'city': 'city',
-      'zip': 'ZIP code',
-      'phone': 'phone number',
-      'occupation': 'occupation',
-      'employer': 'employer'
-    };
-
-    return errors.map((error) => {
-      return  `Please enter your ${errorsToNames[error]}.`;
-    });
   }
 
   checkRequiredField (field) {
@@ -143,7 +137,7 @@ export default class WillGuzzardiPage extends React.Component {
           onClickEdit={UserEvents.onChangeStep.bind(this, 0)}
 
           /* Data for form */
-          funderDetails={DataCuts.funderDetails(this.state, this.props)}
+          funderDetails={DataCuts.funderDetails(this.state, this.props, this.requiredDetails)}
           crowdFundMembershipDetails={DataCuts.crowdFundMembershipDetails(this.state, this.props)}
           coverFees={this.state.coverFees}
           stripePublishableKey={this.props.stripePublishableKey}

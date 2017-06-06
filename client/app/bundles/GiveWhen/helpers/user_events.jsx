@@ -1,3 +1,5 @@
+import Errors from './errors.jsx';
+
 export default {
 
   onTypeFormInput: function (property, e) {
@@ -31,7 +33,7 @@ export default {
 
 
     if (errors.length > 0) return this.setState({
-      errorMessages: this.errorsToErrorMessages(errors)
+      errorMessages: Errors.toErrorMessages(errors)
     });
 
     this.setState({ step: step });

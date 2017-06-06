@@ -1,12 +1,7 @@
 export default {
 
-  funderDetails: function (state, props) {
-    const funderProperties = [
-      'firstName', 'lastName', 'occupation', 'employer', 'email', 'phone',
-      'address', 'city', 'usState', 'zip',
-    ];
-
-    return _.pick(state, funderProperties);
+  funderDetails: function (state, props, requiredDetails) {
+    return _.pick(state, requiredDetails);
   },
 
   crowdFundMembershipDetails: function (state, props) {
