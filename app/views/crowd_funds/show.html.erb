@@ -1,36 +1,12 @@
-<% if @crowd_fund.id == 1 %>
-  <%= react_component(
-        "DemocracySpringPage",
-
-        props: {
-          crowdFundId: 1,
-          stripePublishableKey: @stripe_publishable_key,
-          funderRequiredDetails: [
-            'firstName', 'lastName', 'email', 'phone', 'zip',
-          ],
-          twitterMessage: @crowd_fund.twitter_message
-        },
-
-        trace: nil,
-        replay_console: nil
-      )
-  %>
-<% elsif @crowd_fund.id == 2 %>
-  <%= react_component(
-        "WillGuzzardiPage",
-
-        props: {
-          crowdFundId: 2,
-          stripePublishableKey: @stripe_publishable_key,
-          funderRequiredDetails: [
-            'firstName', 'lastName', 'occupation', 'employer', 'email',
-            'phone', 'address', 'city', 'zip',
-          ],
-          twitterMessage: @crowd_fund.twitter_message
-        },
-
-        trace: nil,
-        replay_console: nil
-      )
-  %>
-<% end %>
+<%= react_component(
+      @component_name,
+      props: {
+        crowdFundId: 2,
+        stripePublishableKey: @stripe_publishable_key,
+        funderRequiredDetails: @funder_required_details,
+        twitterMessage: @crowd_fund.twitter_message
+      },
+      trace: nil,
+      replay_console: nil
+    )
+%>

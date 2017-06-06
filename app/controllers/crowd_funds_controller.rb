@@ -16,8 +16,17 @@ class CrowdFundsController < ApplicationController
     @meta_content_twitter_card = "summary_large_image"
 
     if @crowd_fund.id == 1
+      @component_name = "DemocracySpringPage"
+      @funder_required_details = [
+        'firstName', 'lastName', 'email', 'phone', 'zip',
+      ]
       @meta_og_image = "#{Rails.root}/democracy-spring-capitol-small.jpg"
     elsif @crowd_fund.id == 2
+      @component_name = "WillGuzzardiPage"
+      @funder_required_details = [
+        'firstName', 'lastName', 'occupation', 'employer', 'email',
+        'phone', 'address', 'city', 'zip',
+      ]
       @meta_og_image = "#{Rails.root}/fightfor15photo.jpg"
     end
   end
