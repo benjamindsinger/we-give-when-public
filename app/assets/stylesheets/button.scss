@@ -84,6 +84,21 @@ input.custom__selector:focus {
   text-align: center;
 }
 
+.color_scheme__red_blue {
+
+  .action_button_big {
+    background-color: $red;
+    color: white;
+    border: 2px solid $red;
+  }
+
+  .action_button_big:hover {
+    background-color: white;
+    color: $red;
+    border: 2px solid white;
+  }
+}
+
 .color_scheme__green_blue {
 
   .action_button_big {

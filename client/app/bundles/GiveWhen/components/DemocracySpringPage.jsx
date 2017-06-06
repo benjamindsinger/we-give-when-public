@@ -1,8 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import _ from 'lodash';
+
+import PersonalDetailsForm from './PersonalDetailsForm.jsx';
+import CardDetailsForm from './CardDetailsForm.jsx';
 
 import Footer from './Footer.jsx';
 import Header from './Header.jsx';
+
+import Money from '../helpers/money.jsx';
 
 export default class DemocracySpringPage extends React.Component {
   displayName: 'DemocracySpring';
@@ -14,13 +20,51 @@ export default class DemocracySpringPage extends React.Component {
   constructor(props, _railsContext) {
     super(props);
 
-    this.state = { name: this.props.name };
+    this.state = {
+      step: 0,
+
+      // Amount summary
+      selectedAmountInCents: 300,
+      selectedMonthlyMaximumInCents: 4500,
+      customAmountEntered: false,
+      customMaximumEntered: false,
+      coverFees: true,
+
+
+      // Form details
+      errorMessages: [],
+      email: '',
+      firstName: '',
+      lastName: '',
+      address: '',
+      city: '',
+      usState: '',
+      zip: '',
+      phone: '',
+      occupation: '',
+      employer: '',
+    };
+  }
+
+  onChangeStep (step) {
+    this.setState({ step: step });
   }
 
   render () {
+    const step = this.state.step;
+
+    switch (step) {
+      case 0:  return this.renderSignUpPage();
+      case 1:  return this.renderPersonalDetailsPage();
+      case 2:  return this.renderCardDetailsPage();
+      default: return this.renderSignUpPage();
+    }
+  }
+
+  renderSignUpPage () {
     return (
       <div className="color_scheme__red_blue">
-        {this.renderHeader()}
+        {this.renderHeader(true)}
         {this.renderHeadlineSection()}
         {this.renderGiveWhen()}
         {this.renderStatementOfPurpose()}
@@ -35,11 +79,75 @@ export default class DemocracySpringPage extends React.Component {
     );
   }
 
-  renderHeader () {
+  renderPersonalDetailsPage () {
     return (
-      <Header givePhrase="Give $1/day"
-              whenPhrase="until the DNC breaks with Big Money"
-              logoImgPath="/dem-spring-logo-blue-small.png" />
+      <div className="color_scheme__red_blue">
+        {this.renderHeader(false)}
+
+        <PersonalDetailsForm
+          /* UI functions */
+          onType={this.onTypeFormInput.bind(this)}
+          onClickEdit={this.onChangeStep.bind(this, 0)}
+          onClickContinue={this.onChangeStepFromPersonalDetails.bind(this, 2)}
+          errorMessages={this.state.errorMessages}
+
+          /* Personal details */
+          email={this.state.email}
+          firstName={this.state.firstName}
+          lastName={this.state.lastName}
+          address={this.state.address}
+          city={this.state.city}
+          usState={this.state.usState}
+          zip={this.state.zip}
+          phone={this.state.phone}
+          occupation={this.state.occupation}
+          employer={this.state.employer}
+
+          /* Selected amounts */
+          selectedAmountInCents={this.state.selectedAmountInCents}
+          selectedMonthlyMaximumInCents={this.state.selectedMonthlyMaximumInCents}
+        />
+
+        {this.renderDisclaimer()}
+        {this.renderFooter()}
+      </div>
+    );
+  }
+
+  renderCardDetailsPage () {
+    return (
+      <div className="color_scheme__red_blue">
+        {this.renderHeader(false)}
+
+        <CardDetailsForm
+          /* UI functions */
+          onType={this.onTypeFormInput.bind(this)}
+          onClickEdit={this.onChangeStep.bind(this, 0)}
+          /* Data for form */
+          funderDetails={this.funderDetails()}
+          crowdFundMembershipDetails={this.crowdFundMembershipDetails()}
+          coverFees={this.state.coverFees}
+          stripePublishableKey={this.props.stripePublishableKey}
+
+          /* Selected amounts */
+          selectedAmountInCents={this.state.selectedAmountInCents}
+          selectedMonthlyMaximumInCents={this.state.selectedMonthlyMaximumInCents}
+        />
+
+        {this.renderDisclaimer()}
+        {this.renderFooter()}
+      </div>
+    );
+  }
+
+  renderHeader (showButton) {
+    return (
+      <Header givePhrase="fight back"
+              whenPhrase="Until the DNC breaks with Big Money,"
+              logoImgPath="/dem-spring-logo-blue-small.png"
+              onClickActionButton={this.onChangeStep.bind(this, 1)}
+              showButton={showButton}
+      />
     );
   }
 
@@ -149,12 +257,10 @@ export default class DemocracySpringPage extends React.Component {
           <p>
             Every day the DNC fails to break with Big Money
           </p>
-          <div style={{
-            margin: '0 auto',
-            width: 140,
-          }}>
-            {this.renderSelectorButton('continue →', true)}
-          </div>
+          <span className='action_button_big'
+               onClick={this.onChangeStep.bind(this, 1)}>
+            fight back →
+          </span>
         </div>
       </div>
     );
