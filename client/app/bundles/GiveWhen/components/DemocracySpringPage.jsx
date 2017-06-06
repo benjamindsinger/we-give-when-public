@@ -9,6 +9,7 @@ import Footer from './Footer.jsx';
 import Header from './Header.jsx';
 
 import Money from '../helpers/money.jsx';
+import UserEvents from '../helpers/user_events.jsx';
 
 export default class DemocracySpringPage extends React.Component {
   displayName: 'DemocracySpring';
@@ -86,9 +87,9 @@ export default class DemocracySpringPage extends React.Component {
 
         <PersonalDetailsForm
           /* UI functions */
-          onType={this.onTypeFormInput.bind(this)}
-          onClickEdit={this.onChangeStep.bind(this, 0)}
-          onClickContinue={this.onChangeStepFromPersonalDetails.bind(this, 2)}
+          onType={UserEvents.onTypeFormInput.bind(this)}
+          onClickEdit={UserEvents.onChangeStep.bind(this, 0)}
+          onClickContinue={UserEvents.onChangeStepFromPersonalDetails.bind(this, 2)}
           errorMessages={this.state.errorMessages}
 
           /* Personal details */
@@ -108,7 +109,6 @@ export default class DemocracySpringPage extends React.Component {
           selectedMonthlyMaximumInCents={this.state.selectedMonthlyMaximumInCents}
         />
 
-        {this.renderDisclaimer()}
         {this.renderFooter()}
       </div>
     );
@@ -121,8 +121,8 @@ export default class DemocracySpringPage extends React.Component {
 
         <CardDetailsForm
           /* UI functions */
-          onType={this.onTypeFormInput.bind(this)}
-          onClickEdit={this.onChangeStep.bind(this, 0)}
+          onType={UserEvents.onTypeFormInput.bind(this)}
+          onClickEdit={UserEvents.onChangeStep.bind(this, 0)}
           /* Data for form */
           funderDetails={this.funderDetails()}
           crowdFundMembershipDetails={this.crowdFundMembershipDetails()}
@@ -134,7 +134,6 @@ export default class DemocracySpringPage extends React.Component {
           selectedMonthlyMaximumInCents={this.state.selectedMonthlyMaximumInCents}
         />
 
-        {this.renderDisclaimer()}
         {this.renderFooter()}
       </div>
     );
@@ -145,7 +144,7 @@ export default class DemocracySpringPage extends React.Component {
       <Header givePhrase="force a change"
               whenPhrase="Until the DNC breaks with Big Money,"
               logoImgPath="/dem-spring-logo-blue-small.png"
-              onClickActionButton={this.onChangeStep.bind(this, 1)}
+              onClickActionButton={UserEvents.onChangeStep.bind(this, 1)}
               showButton={showButton}
       />
     );
@@ -249,7 +248,7 @@ export default class DemocracySpringPage extends React.Component {
             Every day the DNC fails to break with Big Money
           </p>
           <span className='action_button_big'
-               onClick={this.onChangeStep.bind(this, 1)}>
+               onClick={UserEvents.onChangeStep.bind(this, 1)}>
             force a change →
           </span>
         </div>
