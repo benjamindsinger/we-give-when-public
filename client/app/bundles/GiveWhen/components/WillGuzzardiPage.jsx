@@ -147,6 +147,9 @@ export default class WillGuzzardiPage extends React.Component {
 
           /* Social sharing */
           twitterMessage={this.props.twitterMessage}
+
+          /* Campaign type */
+          crowdFundType={this.props.crowdFundType}
         />
 
         {this.renderDisclaimer()}

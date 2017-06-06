@@ -4,6 +4,8 @@ import React from 'react';
 import Money from '../helpers/money.jsx';
 
 import SocialSharingPage from './SocialSharingPage.jsx';
+import SlingshotCheckout from './checkout/SlingshotCheckout.jsx';
+import CountdownCheckout from './checkout/CountdownCheckout.jsx';
 
 export default class CardDetailsForm extends React.Component {
 
@@ -19,7 +21,11 @@ export default class CardDetailsForm extends React.Component {
     crowdFundMembershipDetails: React.PropTypes.object.isRequired,
 
     /* Social sharing */
-    twitterMessage: React.PropTypes.string
+
+    twitterMessage: React.PropTypes.string,
+
+    /* Campaign type */
+    crowdFundType: React.PropTypes.string.isRequired
   };
 
   constructor (props) {
@@ -95,40 +101,6 @@ export default class CardDetailsForm extends React.Component {
     }
   }
 
-  donationAmountInWords () {
-    const selectedAmountInDollars = Money.renderAmountInCentsAsExactChange(this.props.selectedAmountInCents);
-    const maximumAmountInDollars = Money.renderAmountInCentsAsExactChange(this.props.selectedMonthlyMaximumInCents);
-
-    return `$${selectedAmountInDollars}/trigger up to $${maximumAmountInDollars}/mo`;
-  }
-
-  processingAmount () {
-    const maximumAmountInCents = this.props.selectedMonthlyMaximumInCents;
-
-    return (maximumAmountInCents * .084) + 30;
-  }
-
-  processingAmountInWords () {
-    const processingAmount = this.processingAmount();
-    const processingAmountAsDollars = Money.renderAmountInCentsAsExactChange(processingAmount);
-
-    return `Up to $${processingAmountAsDollars}/mo`;
-  }
-
-  totalAmount () {
-    const maximumAmountInCents = this.props.selectedMonthlyMaximumInCents;
-    const processingAmount = this.processingAmount();
-
-    return maximumAmountInCents + processingAmount;
-  }
-
-  totalAmountInWords () {
-    const totalAmount = this.totalAmount();
-    const totalAmountAsDollars = Money.renderAmountInCentsAsExactChange(totalAmount);
-
-    return `Up to $${totalAmountAsDollars}/mo`;
-  }
-
   renderTokenSaveSuccess () {
     return (
       <SocialSharingPage twitterMessage={this.props.twitterMessage} />
@@ -174,39 +146,9 @@ export default class CardDetailsForm extends React.Component {
 
             <div className="checkout__area">
 
+              {this.renderCheckoutTable()}
+
               <div className="divider__line"></div>
-
-              <table>
-                <tbody>
-                  <tr>
-                    <td>
-                      Donation
-                    </td>
-                    <td>
-                      {this.donationAmountInWords()} <a className="edit" onClick={this.props.onClickEdit}>
-                        [edit]
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Processing cost
-                    </td>
-                    <td>
-                      {this.processingAmountInWords()}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Maximum total
-                    </td>
-                    <td>
-                      {this.totalAmountInWords()}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-
               <div style={{textAlign: 'center'}}>
                 <button id="submit-stripe"
                         className="action_button_big">
@@ -217,6 +159,36 @@ export default class CardDetailsForm extends React.Component {
           </form>
         </div>
       </div>
+    );
+  }
+
+  renderCheckoutTable () {
+    const crowdFundType = this.props.crowdFundType;
+
+    switch (crowdFundType) {
+      case 'SLINGSHOT':
+        return this.renderSlingshotCheckout();
+      case 'COUNTDOWN':
+        return this.renderCountdownCheckout();
+    }
+  }
+
+  renderSlingshotCheckout () {
+    return (
+      <SlingshotCheckout
+        crowdFundType={this.props.crowdFundType}
+        selectedAmountInCents={this.props.selectedAmountInCents}
+        selectedMonthlyMaximumInCents={this.props.selectedMonthlyMaximumInCents}
+        onClickEdit={this.props.onClickEdit} />
+    );
+  }
+
+  renderCountdownCheckout () {
+    return (
+      <CountdownCheckout
+        crowdFundType={this.props.crowdFundType}
+        selectedAmountInCents={this.props.selectedAmountInCents}
+        onClickEdit={this.props.onClickEdit} />
     );
   }
 
