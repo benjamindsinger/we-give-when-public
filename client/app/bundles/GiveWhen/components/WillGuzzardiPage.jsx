@@ -453,7 +453,7 @@ export default class WillGuzzardiPage extends React.Component {
           fontSize: '1.25em'
         }}>
           <p style={{fontWeight: 'bold', display: 'inline', height: '100px'}}>
-            <span className="action_button">Sign up</span> as an automatic responder and you'll get monthly updates from one of the organizers we hire to help force the Democrats to break with Big Money.
+            <span className="action_button">Sign up</span> as an automatic responder and get monthly updates from one of the organizers we hire. ​
           </p>
         </div>
       </div>
