@@ -43,12 +43,13 @@ export default class PersonalDetailsForm extends React.Component {
           {this.renderPhone()}
           {this.renderOccupationAndEmployer()}
           {this.renderErrors()}
-          <div className="action_button_big"
-               style={{margin: '60px auto 40px auto'}}
-               onClick={this.props.onClickContinue}>
-            continue →
+          <div style={{textAlign: 'center'}}>
+            <div className="action_button_big"
+                 style={{margin: '40px auto'}}
+                 onClick={this.props.onClickContinue}>
+              continue →
+            </div>
           </div>
-
         </div>
       </div>
     );

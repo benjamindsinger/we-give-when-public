@@ -204,10 +204,12 @@ export default class CardDetailsForm extends React.Component {
                 </tbody>
               </table>
 
-              <button id="submit-stripe"
-                      className="action_button_big">
-                submit →
-              </button>
+              <div style={{textAlign: 'center'}}>
+                <button id="submit-stripe"
+                        className="action_button_big">
+                  submit →
+                </button>
+              </div>
             </div>
           </form>
         </div>
