@@ -41,10 +41,16 @@ export default class SocialSharingPage extends React.Component {
             Now please show your support and build the movement:
           </p>
         </div>
-        <div className="social__sharing__button facebook">
+        <div className="social__sharing__button facebook fb-like"
+          data-href="https://wegivewhen.com/campaigns/fight-for-15"
+          data-layout="standard"
+          data-action="like"
+          data-show-faces="true">
+        >
           {this.renderFacebookLogo()}
           <span>Share your support</span>
         </div>
+
         <a className="social__sharing__button twitter"
              href={this.twitterHref()}>
           {this.renderTwitterLogo()}
