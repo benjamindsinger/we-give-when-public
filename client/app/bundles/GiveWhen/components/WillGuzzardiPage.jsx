@@ -19,6 +19,7 @@ export default class WillGuzzardiPage extends React.Component {
     crowdFundId: PropTypes.number.isRequired,
     stripePublishableKey: PropTypes.string.isRequired,
     funderRequiredDetails: PropTypes.array.isRequired,
+    twitterMessage: PropTypes.string,
   };
 
   constructor(props, _railsContext) {
@@ -135,6 +136,9 @@ export default class WillGuzzardiPage extends React.Component {
           /* Selected amounts */
           selectedAmountInCents={this.state.selectedAmountInCents}
           selectedMonthlyMaximumInCents={this.state.selectedMonthlyMaximumInCents}
+
+          /* Social sharing */
+          twitterMessage={this.props.twitterMessage}
         />
 
         {this.renderDisclaimer()}

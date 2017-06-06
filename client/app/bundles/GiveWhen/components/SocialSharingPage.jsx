@@ -1,22 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import Twitter from '../helpers/twitter.jsx';
 
 export default class SocialSharingPage extends React.Component {
 
-  twitterMessage () {
-    return "Every time an anti-living wage corp (@mcdonalds @walmart...) writes a campaign check, let's fight back ➡ https://wegivewhen.com/campaigns/fight-for-15 #fightfor15";
-  }
+  static propTypes = {
+    twitterMessage: PropTypes.string,
+  };
 
-  uriEncodedTwitterMessage () {
-    const message = this.twitterMessage();
-
-    return encodeURIComponent(message);
-  }
-
-  twitterHref () {
-    const message = this.uriEncodedTwitterMessage();
-
-    return `https://twitter.com/intent/tweet?text=${message}`;
+  constructor(props) {
+    super(props);
   }
 
   mailTo () {
@@ -50,8 +43,8 @@ export default class SocialSharingPage extends React.Component {
         </div>
 
         <a className="social__sharing__button twitter"
-             href={this.twitterHref()}>
-          {this.renderTwitterLogo()}
+             href={Twitter.href(this.props.twitterMessage)}>
+          {Twitter.renderLogo()}
           <span style={{
             position: 'relative',
             bottom: '36px'
@@ -65,20 +58,6 @@ export default class SocialSharingPage extends React.Component {
           <span>Email</span>
         </a>
       </div>
-    );
-  }
-
-  renderTwitterLogo () {
-    return (
-      <img src="/twitter-logo-white.svg"
-           style={{
-            height: 60,
-            width: 60,
-            display: 'inline',
-            position: 'relative',
-            bottom: '15px'
-          }}
-      />
     );
   }
 

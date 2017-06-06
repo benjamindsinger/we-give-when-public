@@ -11,6 +11,7 @@ import Header from './Header.jsx';
 import Money from '../helpers/money.jsx';
 import UserEvents from '../helpers/user_events.jsx';
 import DataCuts from '../helpers/data_cuts.jsx';
+import Twitter from '../helpers/twitter.jsx';
 
 export default class DemocracySpringPage extends React.Component {
   displayName: 'DemocracySpring';
@@ -19,6 +20,7 @@ export default class DemocracySpringPage extends React.Component {
     crowdFundId: PropTypes.number.isRequired,
     stripePublishableKey: PropTypes.string.isRequired,
     funderRequiredDetails: PropTypes.array.isRequired,
+    twitterMessage: PropTypes.string,
   };
 
   constructor(props, _railsContext) {
@@ -137,6 +139,9 @@ export default class DemocracySpringPage extends React.Component {
           /* Selected amounts */
           selectedAmountInCents={this.state.selectedAmountInCents}
           selectedMonthlyMaximumInCents={this.state.selectedMonthlyMaximumInCents}
+
+          /* Social sharing */
+          twitterMessage={this.props.twitterMessage}
         />
 
         {this.renderFooter()}
@@ -501,8 +506,8 @@ export default class DemocracySpringPage extends React.Component {
           <br/>
 
           <a className="social__sharing__button twitter"
-               href={this.twitterHref()}>
-            {this.renderTwitterLogo()}
+               href={Twitter.href(this.props.twitterMessage)}>
+            {Twitter.renderLogo()}
             <span style={{
               position: 'relative',
               bottom: '36px'
@@ -520,36 +525,6 @@ export default class DemocracySpringPage extends React.Component {
         </div>
       </div>
     );
-  }
-
-  renderTwitterLogo () {
-    return (
-      <img src="/twitter-logo-white.svg"
-           style={{
-            height: 60,
-            width: 60,
-            display: 'inline',
-            position: 'relative',
-            bottom: '15px'
-          }}
-      />
-    );
-  }
-
-  twitterMessage () {
-    return "Every time an anti-living wage corp (@mcdonalds @walmart...) writes a campaign check, let's fight back ➡ https://wegivewhen.com/campaigns/fight-for-15 #fightfor15";
-  }
-
-  uriEncodedTwitterMessage () {
-    const message = this.twitterMessage();
-
-    return encodeURIComponent(message);
-  }
-
-  twitterHref () {
-    const message = this.uriEncodedTwitterMessage();
-
-    return `https://twitter.com/intent/tweet?text=${message}`;
   }
 
   renderFooter () {

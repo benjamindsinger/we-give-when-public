@@ -16,7 +16,10 @@ export default class CardDetailsForm extends React.Component {
 
     coverFees: React.PropTypes.bool.isRequired,
     funderDetails: React.PropTypes.object.isRequired,
-    crowdFundMembershipDetails: React.PropTypes.object.isRequired
+    crowdFundMembershipDetails: React.PropTypes.object.isRequired,
+
+    /* Social sharing */
+    twitterMessage: React.PropTypes.string
   };
 
   constructor (props) {
@@ -128,7 +131,7 @@ export default class CardDetailsForm extends React.Component {
 
   renderTokenSaveSuccess () {
     return (
-      <SocialSharingPage />
+      <SocialSharingPage twitterMessage={this.props.twitterMessage} />
     );
   }
 
