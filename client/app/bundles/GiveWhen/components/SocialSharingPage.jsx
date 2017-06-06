@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Twitter from '../helpers/twitter.jsx';
+import Facebook from '../helpers/facebook.jsx';
 
 export default class SocialSharingPage extends React.Component {
 
@@ -38,7 +39,7 @@ export default class SocialSharingPage extends React.Component {
 
         <div className="social__sharing__button facebook">
           <iframe style={{border: 'none', overflow: 'hidden'}}
-                  src="https://www.facebook.com/plugins/share_button.php?href=https://wegivewhen.com/campaigns/fight-for-15&layout=button_count&size=large&mobile_iframe=true&width=106&height=28&appId">
+                  src={Facebook.iframeSrc()}>
           </iframe>
         </div>
 
