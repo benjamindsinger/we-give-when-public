@@ -172,7 +172,7 @@ export default class DemocracySpringPage extends React.Component {
   renderHeadlineSection () {
     return (
       <div className="section flex headline__section below__fixed__navbar">
-        <img src="/democracy-spring-headline-long.jpg" />
+        <img src="/day-one-banner-small.jpeg" />
 
         <div className="text color__bright">
           <h1 className="headline">
