@@ -22,6 +22,8 @@ export default class WillGuzzardiPage extends React.Component {
     stripePublishableKey: PropTypes.string.isRequired,
     funderRequiredDetails: PropTypes.array.isRequired,
     twitterMessage: PropTypes.string,
+    suggestedEmailSubject: PropTypes.string,
+    suggestedEmailBody: PropTypes.string,
   };
 
   constructor(props, _railsContext) {
@@ -147,6 +149,8 @@ export default class WillGuzzardiPage extends React.Component {
 
           /* Social sharing */
           twitterMessage={this.props.twitterMessage}
+          suggestedEmailSubject={this.props.suggestedEmailSubject}
+          suggestedEmailBody={this.props.suggestedEmailBody}
 
           /* Campaign type */
           crowdFundType={this.props.crowdFundType}

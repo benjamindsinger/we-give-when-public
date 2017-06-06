@@ -7,6 +7,8 @@ export default class SocialSharingPage extends React.Component {
 
   static propTypes = {
     twitterMessage: PropTypes.string,
+    suggestedEmailSubject: PropTypes.string,
+    suggestedEmailBody: PropTypes.string,
   };
 
   constructor(props) {
@@ -14,13 +16,10 @@ export default class SocialSharingPage extends React.Component {
   }
 
   mailTo () {
-    const subject = 'Fight for $15';
-    const body = 'Hey: I just joined the campaign and I hope you will too. Let\'s fight back every time an anti-living wage corporation like McDonalds writes a campaign check: https://wegivewhen.com/campaigns/fight-for-15';
+    const subject = encodeURIComponent(this.props.suggestedEmailSubject);
+    const body = encodeURIComponent(this.props.suggestedEmailBody);
 
-    const encodedSubject = encodeURIComponent(subject);
-    const encodedBody = encodeURIComponent(body);
-
-    return `mailto:?subject=${encodedSubject}&body=${encodedBody}`;
+    return `mailto:?subject=${subject}&body=${body}`;
   }
 
   render () {

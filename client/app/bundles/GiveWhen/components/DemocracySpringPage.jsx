@@ -149,6 +149,8 @@ export default class DemocracySpringPage extends React.Component {
 
           /* Social sharing */
           twitterMessage={this.props.twitterMessage}
+          suggestedEmailSubject={this.props.suggestedEmailSubject}
+          suggestedEmailBody={this.props.suggestedEmailBody}
 
           /* Campaign type */
           crowdFundType={this.props.crowdFundType}

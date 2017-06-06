@@ -21,7 +21,8 @@ export default class CardDetailsForm extends React.Component {
     crowdFundMembershipDetails: React.PropTypes.object.isRequired,
 
     /* Social sharing */
-
+    suggestedEmailSubject: React.PropTypes.string,
+    suggestedEmailBody: React.PropTypes.string,
     twitterMessage: React.PropTypes.string,
 
     /* Campaign type */
@@ -103,7 +104,11 @@ export default class CardDetailsForm extends React.Component {
 
   renderTokenSaveSuccess () {
     return (
-      <SocialSharingPage twitterMessage={this.props.twitterMessage} />
+      <SocialSharingPage
+        twitterMessage={this.props.twitterMessage}
+        suggestedEmailSubject={this.props.suggestedEmailSubject}
+        suggestedEmailBody={this.props.suggestedEmailBody}
+      />
     );
   }
 
