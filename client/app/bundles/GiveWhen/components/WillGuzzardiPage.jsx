@@ -18,6 +18,7 @@ export default class WillGuzzardiPage extends React.Component {
 
   static propTypes = {
     crowdFundId: PropTypes.number.isRequired,
+    crowdFundType: PropTypes.string.isRequired,
     stripePublishableKey: PropTypes.string.isRequired,
     funderRequiredDetails: PropTypes.array.isRequired,
     twitterMessage: PropTypes.string,
