@@ -73,11 +73,11 @@ export default class PersonalDetailsForm extends React.Component {
     const triggerAmount = Money.renderAmountInCentsAsRoundDollars(this.props.selectedAmountInCents);
     const maxAmount = Money.renderAmountInCentsAsRoundDollars(this.props.selectedMonthlyMaximumInCents);
 
-    return `Fight back trigger amount: ${triggerAmount}, Monthly maximum amount: ${maxAmount}.`;
+    return `Fight back trigger amount: $${triggerAmount}, Monthly maximum amount: $${maxAmount}.`;
   }
 
   renderCountdownSummary () {
-    return `Fight back: ${Money.renderAmountInCentsAsRoundDollars(this.props.selectedAmountInCents)}/day`;
+    return `Fight back: $${Money.renderAmountInCentsAsRoundDollars(this.props.selectedAmountInCents)}/day`;
   }
 
   renderSummaryContent () {
