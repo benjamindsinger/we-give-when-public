@@ -33,6 +33,7 @@ export default class SocialSharingPage extends React.Component {
     return (
       <div className="personal__details__form__wrapper color_scheme__white_blue card__details__form below__fixed__navbar"
            style={{padding: 30}}>
+        <div id="fb-root"></div>
         <div className="thank__you">
           <p className="font__medium">
             Thanks for your donation!
@@ -41,21 +42,24 @@ export default class SocialSharingPage extends React.Component {
             Now please show your support and build the movement:
           </p>
         </div>
-        <div className="social__sharing__button facebook fb-like"
-          data-href="https://wegivewhen.com/campaigns/fight-for-15"
-          data-layout="standard"
-          data-action="like"
-          data-show-faces="true">
-        >
-          {this.renderFacebookLogo()}
-          <span>Share your support</span>
+
+        <div className="social__sharing__button facebook">
+          <iframe style={{border: 'none', overflow: 'hidden'}}
+                  src="https://www.facebook.com/plugins/share_button.php?href=https://wegivewhen.com/campaigns/fight-for-15&layout=button_count&size=large&mobile_iframe=true&width=106&height=28&appId">
+          </iframe>
         </div>
 
         <a className="social__sharing__button twitter"
              href={this.twitterHref()}>
           {this.renderTwitterLogo()}
-          <span>Tweet your support</span>
+          <span style={{
+            position: 'relative',
+            bottom: '36px'
+          }}>
+            Tweet your support
+          </span>
         </a>
+
         <a className="social__sharing__button email"
            href={this.mailTo()}>
           <span>Email</span>
@@ -70,8 +74,7 @@ export default class SocialSharingPage extends React.Component {
            style={{
             height: 60,
             width: 60,
-            display: 'block',
-            float: 'left',
+            display: 'inline',
             position: 'relative',
             bottom: '15px'
           }}

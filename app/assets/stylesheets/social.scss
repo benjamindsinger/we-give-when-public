@@ -18,8 +18,15 @@
   text-align: center;
 }
 
-.social__sharing__button.facebook {
-  background-color: #3b5998;
+.facebook {
+  background-color: #4267b2;
+
+  iframe {
+    transform: scale(1.85);
+    position: relative;
+    top: 53px;
+    left: 199px;
+  }
 }
 
 .social__sharing__button.twitter {
