@@ -10,12 +10,14 @@ import Header from './Header.jsx';
 
 import Money from '../helpers/money.jsx';
 import UserEvents from '../helpers/user_events.jsx';
+import DataCuts from '../helpers/data_cuts.jsx';
 
 export default class DemocracySpringPage extends React.Component {
   displayName: 'DemocracySpring';
 
   static propTypes = {
-    // name: PropTypes.string.isRequired,
+    crowdFundId: PropTypes.number.isRequired,
+    stripePublishableKey: PropTypes.string.isRequired,
   };
 
   constructor(props, _railsContext) {
@@ -123,9 +125,10 @@ export default class DemocracySpringPage extends React.Component {
           /* UI functions */
           onType={UserEvents.onTypeFormInput.bind(this)}
           onClickEdit={UserEvents.onChangeStep.bind(this, 0)}
+
           /* Data for form */
-          funderDetails={this.funderDetails()}
-          crowdFundMembershipDetails={this.crowdFundMembershipDetails()}
+          funderDetails={DataCuts.funderDetails(this.state, this.props)}
+          crowdFundMembershipDetails={DataCuts.crowdFundMembershipDetails(this.state, this.props)}
           coverFees={this.state.coverFees}
           stripePublishableKey={this.props.stripePublishableKey}
 

@@ -10,11 +10,14 @@ import Header from './Header.jsx';
 
 import Money from '../helpers/money.jsx';
 import UserEvents from '../helpers/user_events.jsx';
+import DataCuts from '../helpers/data_cuts.jsx';
 
 export default class WillGuzzardiPage extends React.Component {
   displayName: 'WillGuzzardiPage';
 
   static propTypes = {
+    crowdFundId: PropTypes.number.isRequired,
+    stripePublishableKey: PropTypes.string.isRequired,
   };
 
   constructor(props, _railsContext) {
@@ -66,25 +69,6 @@ export default class WillGuzzardiPage extends React.Component {
 
   checkRequiredField (field) {
     return (this.state[field]);
-  }
-
-  funderDetails () {
-    const funderProperties = [
-      'firstName', 'lastName', 'occupation', 'employer', 'email', 'phone',
-      'address', 'city', 'usState', 'zip',
-    ];
-
-    return _.pick(this.state, funderProperties);
-  }
-
-  crowdFundMembershipDetails () {
-    const crowdFundMembershipProperties = [
-      'amountPerTimeInCents', 'monthlyMaximumInCents', 'coverFees',
-    ];
-
-    const properties = _.pick(this.state, crowdFundMembershipProperties);
-
-    return _.merge(properties, { crowdFundId: this.props.crowdFundId });
   }
 
   render () {
@@ -159,8 +143,8 @@ export default class WillGuzzardiPage extends React.Component {
           onClickEdit={UserEvents.onChangeStep.bind(this, 0)}
 
           /* Data for form */
-          funderDetails={this.funderDetails()}
-          crowdFundMembershipDetails={this.crowdFundMembershipDetails()}
+          funderDetails={DataCuts.funderDetails(this.state, this.props)}
+          crowdFundMembershipDetails={DataCuts.crowdFundMembershipDetails(this.state, this.props)}
           coverFees={this.state.coverFees}
           stripePublishableKey={this.props.stripePublishableKey}
 
