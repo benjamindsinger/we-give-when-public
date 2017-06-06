@@ -9,6 +9,7 @@ import Footer from './Footer.jsx';
 import Header from './Header.jsx';
 
 import Money from '../helpers/money.jsx';
+import Buttons from '../helpers/buttons.jsx';
 import UserEvents from '../helpers/user_events.jsx';
 import DataCuts from '../helpers/data_cuts.jsx';
 import Twitter from '../helpers/twitter.jsx';
@@ -26,6 +27,9 @@ export default class DemocracySpringPage extends React.Component {
 
   constructor(props, _railsContext) {
     super(props);
+
+    this.renderAmountButton = Buttons.renderAmountButton.bind(this);
+    this.renderCustomAmountButton = Buttons.renderCustomAmountButton.bind(this);
 
     this.state = {
       step: 0,
@@ -224,21 +228,19 @@ export default class DemocracySpringPage extends React.Component {
   renderGive () {
     return (
       <div className="give_when__subsection" id="give">
-        <div className="wrapper">
           <h3>Give</h3>
-          <p>
-            To support a progressive takeover of the Democratic Party
-          </p>
-          <div style={{
-            margin: '0 auto',
-            width: '85%',
-          }}>
-            {this.renderSelectorButton('50¢', false)}
-            {this.renderSelectorButton('$1', true)}
-            {this.renderSelectorButton('$3', false)}
-            {this.renderSelectorButton('...', false)}
+
+          <div style={{clear: 'both', marginTop: 15}}>
+            <p>
+              To support a progressive takeover of the Democratic Party
+            </p>
+            <div className="selector__button__row">
+              {this.renderAmountButton(50)}
+              {this.renderAmountButton(100)}
+              {this.renderAmountButton(300)}
+              {this.renderCustomAmountButton()}
+            </div>
           </div>
-        </div>
       </div>
     );
   }
@@ -279,17 +281,6 @@ export default class DemocracySpringPage extends React.Component {
         float: 'right',
         flex: 0.005
       }}>
-      </div>
-    );
-  }
-
-  renderSelectorButton (amount, selected) {
-    const className = selected ?
-                      'amount_selector_button selected' :
-                      'amount_selector_button';
-    return (
-      <div className={className}>
-        {amount}
       </div>
     );
   }
