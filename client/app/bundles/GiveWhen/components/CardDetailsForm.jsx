@@ -131,15 +131,18 @@ export default class CardDetailsForm extends React.Component {
                 }}>
             <div style={{
               backgroundColor: 'white',
-              height: 40,
+              height: 50,
               border: 'none',
+              borderRadius: 6,
               fontFamily: 'Helvetica',
-              fontSize: 20,
+              boxShadow: '0 4px 4px rgba(0,0,0,0.12), 0 4px 4px rgba(0,0,0,0.24)',
+              fontSize: 22,
               color: 'black',
+              textIndent: 10,
             }}>
               <div id="card-element" style={{
                 position: 'relative',
-                top: '2px',
+                top: '7px',
                 left: '6px',
               }}>
                 {/* a Stripe Element will be inserted here.*/}
