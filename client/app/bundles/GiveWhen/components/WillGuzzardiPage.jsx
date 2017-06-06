@@ -9,6 +9,7 @@ import Footer from './Footer.jsx';
 import Header from './Header.jsx';
 
 import Money from '../helpers/money.jsx';
+import UserEvents from '../helpers/user_events.jsx';
 
 export default class WillGuzzardiPage extends React.Component {
   displayName: 'WillGuzzardiPage';
@@ -63,73 +64,8 @@ export default class WillGuzzardiPage extends React.Component {
     });
   }
 
-  onChangeStep (step) {
-    this.setState({ step: step });
-  }
-
   checkRequiredField (field) {
     return (this.state[field]);
-  }
-
-  onChangeStepFromPersonalDetails (step) {
-    const required = [
-      'email',
-      'firstName',
-      'lastName',
-      'address',
-      'city',
-      'zip',
-      'phone',
-      'occupation',
-      'employer',
-    ];
-
-    const errors = required.filter((field) => {
-      return !(this.state[field]);
-    }, this);
-
-
-    if (errors.length > 0) return this.setState({
-      errorMessages: this.errorsToErrorMessages(errors)
-    });
-
-    this.setState({ step: step });
-  }
-
-  onTypeFormInput (property, e) {
-    let updatedState = Object.assign({}, this.state);
-
-    updatedState[property] = e.target.value;
-
-    this.setState(updatedState);
-  }
-
-  onSelectAmount (amountInCents) {
-    this.setState({
-      selectedAmountInCents: amountInCents,
-      customAmountEntered: false,
-    });
-  }
-
-  onSelectMonthlyMaximum (amountInCents) {
-    this.setState({
-      selectedMonthlyMaximumInCents: amountInCents,
-      customMaximumEntered: false,
-    });
-  }
-
-  onTypeCustomDollarAmount (e) {
-    this.setState({
-      selectedAmountInCents: (e.target.value * 100),
-      customAmountEntered: true,
-    });
-  }
-
-  onTypeCustomDollarMaximum (e) {
-    this.setState({
-      selectedMonthlyMaximumInCents: (e.target.value * 100),
-      customMaximumEntered: true,
-    });
   }
 
   funderDetails () {
@@ -184,9 +120,9 @@ export default class WillGuzzardiPage extends React.Component {
 
         <PersonalDetailsForm
           /* UI functions */
-          onType={this.onTypeFormInput.bind(this)}
-          onClickEdit={this.onChangeStep.bind(this, 0)}
-          onClickContinue={this.onChangeStepFromPersonalDetails.bind(this, 2)}
+          onType={UserEvents.onTypeFormInput.bind(this)}
+          onClickEdit={UserEvents.onChangeStep.bind(this, 0)}
+          onClickContinue={UserEvents.onChangeStepFromPersonalDetails.bind(this, 2)}
           errorMessages={this.state.errorMessages}
 
           /* Personal details */
@@ -219,8 +155,9 @@ export default class WillGuzzardiPage extends React.Component {
 
         <CardDetailsForm
           /* UI functions */
-          onType={this.onTypeFormInput.bind(this)}
-          onClickEdit={this.onChangeStep.bind(this, 0)}
+          onType={UserEvents.onTypeFormInput.bind(this)}
+          onClickEdit={UserEvents.onChangeStep.bind(this, 0)}
+
           /* Data for form */
           funderDetails={this.funderDetails()}
           crowdFundMembershipDetails={this.crowdFundMembershipDetails()}
@@ -243,7 +180,7 @@ export default class WillGuzzardiPage extends React.Component {
       <Header givePhrase="fight back"
         whenPhrase="Every time an anti-living-wage corporation writes a campaign check,"
         logoImgPath="/guzzardi-logo-small.jpg"
-        onClickActionButton={this.onChangeStep.bind(this, 1)}
+        onClickActionButton={UserEvents.onChangeStep.bind(this, 1)}
         showButton={showButton}
       />
     );
@@ -354,7 +291,7 @@ export default class WillGuzzardiPage extends React.Component {
             Every time an anti-living-wage writes a campaign check to an Illinois politician
           </p>
           <span className='action_button_big'
-               onClick={this.onChangeStep.bind(this, 1)}>
+               onClick={UserEvents.onChangeStep.bind(this, 1)}>
             fight back →
           </span>
         </div>
@@ -386,7 +323,7 @@ export default class WillGuzzardiPage extends React.Component {
                       'amount_selector_button';
     return (
       <div className={className}
-           onClick={this.onSelectAmount.bind(this, amount)}>
+           onClick={UserEvents.onSelectAmount.bind(this, amount)}>
         ${Money.renderAmountInCentsAsRoundDollars(amount)}
       </div>
     );
@@ -400,7 +337,7 @@ export default class WillGuzzardiPage extends React.Component {
                       'amount_selector_button';
     return (
       <div className={className}
-           onClick={this.onSelectMonthlyMaximum.bind(this, amount)}>
+           onClick={UserEvents.onSelectMonthlyMaximum.bind(this, amount)}>
         ${Money.renderAmountInCentsAsRoundDollars(amount)}
       </div>
     );
@@ -415,7 +352,7 @@ export default class WillGuzzardiPage extends React.Component {
       <div className={divClass}>
         <span className='dollar'>$</span>
         <input type='text'
-               onChange={this.onTypeCustomDollarAmount.bind(this)}
+               onChange={UserEvents.onTypeCustomDollarAmount.bind(this)}
                className={inputClass}
                placeholder='___' />
       </div>
@@ -431,7 +368,7 @@ export default class WillGuzzardiPage extends React.Component {
       <div className={divClass}>
         <span className='dollar'>$</span>
         <input type='text'
-               onChange={this.onTypeCustomDollarMaximum.bind(this)}
+               onChange={UserEvents.onTypeCustomDollarMaximum.bind(this)}
                className={inputClass}
                placeholder='___' />
       </div>
@@ -547,7 +484,7 @@ export default class WillGuzzardiPage extends React.Component {
             <p>
               {whenPhrase} <span className="action_button"
                                             style={{padding: 10, marginRight: 2}}
-                    onClick={this.onChangeStep.bind(this, 1)}>
+                    onClick={UserEvents.onChangeStep.bind(this, 1)}>
                 {givePhrase} →
               </span>
             </p>
