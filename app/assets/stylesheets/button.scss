@@ -89,13 +89,13 @@ input.custom__selector:focus {
   .action_button_big {
     background-color: $red;
     color: white;
-    border: 2px solid $red;
+    border: 2px solid white;
   }
 
   .action_button_big:hover {
     background-color: white;
     color: $red;
-    border: 2px solid white;
+    border: 2px solid $red;
   }
 }
 
