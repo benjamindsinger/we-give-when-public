@@ -20,14 +20,14 @@ class CrowdFundsController < ApplicationController
       @funder_required_details = [
         'firstName', 'lastName', 'email', 'phone', 'zip',
       ]
-      @meta_og_image = "#{Rails.root}/democracy-spring-capitol-small.jpg"
+      @meta_og_image = "https://wegivewhen.com/democracy-spring-capitol-small.jpg"
     elsif @crowd_fund.id == 2
       @component_name = "WillGuzzardiPage"
       @funder_required_details = [
         'firstName', 'lastName', 'occupation', 'employer', 'email',
         'phone', 'address', 'city', 'zip',
       ]
-      @meta_og_image = "#{Rails.root}/fightfor15photo.jpg"
+      @meta_og_image = "https://wegivewhen.com/fightfor15photo.jpg"
     end
   end
 
