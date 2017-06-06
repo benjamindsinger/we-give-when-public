@@ -12,7 +12,7 @@ class CrowdFundsController < ApplicationController
 
     @stripe_publishable_key = "pk_test_W0fKQhoRyGPP1BcWF9kX7hJz"
 
-    @meta_og_url = "#{Rails.root}/#{@crowd_fund.slug}"
+    @meta_og_url = "https://wegivewhen.com/#{@crowd_fund.slug}"
     @meta_content_twitter_card = "summary_large_image"
 
     if @crowd_fund.id == 1
