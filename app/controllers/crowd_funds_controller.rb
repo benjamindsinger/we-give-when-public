@@ -9,16 +9,20 @@ class CrowdFundsController < ApplicationController
 
   def show
     @crowd_fund = CrowdFund.friendly.find(params[:id])
+    @meta_og_url = "#{Rails.root}/#{@crowd_fund.slug}"
+    @meta_content_twitter_card = "summary_large_image"
 
     if @crowd_fund.id == 1
+      @meta_og_image = "#{Rails.root}/democracy-spring-capitol-small.jpg"
+      @meta_og_title = "Democrats Need Big Change"
+      @meta_og_description = "Every day the DNC fails to break with Big Money interests, help #DemocracySpring build a movement to force a change."
     elsif @crowd_fund.id == 2
-      @meta_og_url = "#{Rails.root}/#{@crowd_fund.slug}"
       @meta_og_image = "#{Rails.root}/fightfor15photo.jpg"
       @meta_og_title = "Join Will Guzzardi in the fight for $15."
       @meta_og_description = "Every time an anti-living-wage corporation writes a campaign check, fight back."
-      @meta_content_twitter_card = "summary_large_image"
-      @meta_content_twitter_img_src = "#{Rails.root}/fightfor15photo.jpg"
     end
+
+    @meta_content_twitter_img_src = @meta_og_image
   end
 
   def dashboard
