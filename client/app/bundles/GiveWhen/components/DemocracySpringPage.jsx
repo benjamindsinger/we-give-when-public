@@ -518,13 +518,17 @@ export default class DemocracySpringPage extends React.Component {
 
           <div className="social__sharing__button facebook">
             <iframe style={{border: 'none', overflow: 'hidden'}}
-                    src="https://www.facebook.com/plugins/share_button.php?href=https://wegivewhen.com/campaigns/fight-for-15&layout=button_count&size=large&mobile_iframe=true&width=106&height=28&appId">
+                    src={this.facebookIframeSrc()}>
             </iframe>
           </div>
 
         </div>
       </div>
     );
+  }
+
+  facebookIframeSrc () {
+    return `https://www.facebook.com/plugins/share_button.php?href=${window.location.href}&layout=button_count&size=large&mobile_iframe=true&width=106&height=28&appId`;
   }
 
   renderFooter () {
