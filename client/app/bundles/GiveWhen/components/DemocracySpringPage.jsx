@@ -500,17 +500,56 @@ export default class DemocracySpringPage extends React.Component {
 
           <br/>
 
-          <div style={{textAlign: 'center'}}>
-            <p style={{fontWeight: 'bold'}}>share</p>
+          <a className="social__sharing__button twitter"
+               href={this.twitterHref()}>
+            {this.renderTwitterLogo()}
+            <span style={{
+              position: 'relative',
+              bottom: '36px'
+            }}>
+              Tweet your support
+            </span>
+          </a>
 
-            <img className="social-sharing" src="/twitter-logo-white.svg"
-                 style={{height: 100, width: 100}} />
-            <img className="social-sharing" src="/facebook-logo-purple.svg"
-                 style={{height: 60, width: 60, position: 'relative', bottom: 20}} />
+          <div className="social__sharing__button facebook">
+            <iframe style={{border: 'none', overflow: 'hidden'}}
+                    src="https://www.facebook.com/plugins/share_button.php?href=https://wegivewhen.com/campaigns/fight-for-15&layout=button_count&size=large&mobile_iframe=true&width=106&height=28&appId">
+            </iframe>
           </div>
+
         </div>
       </div>
     );
+  }
+
+  renderTwitterLogo () {
+    return (
+      <img src="/twitter-logo-white.svg"
+           style={{
+            height: 60,
+            width: 60,
+            display: 'inline',
+            position: 'relative',
+            bottom: '15px'
+          }}
+      />
+    );
+  }
+
+  twitterMessage () {
+    return "Every time an anti-living wage corp (@mcdonalds @walmart...) writes a campaign check, let's fight back ➡ https://wegivewhen.com/campaigns/fight-for-15 #fightfor15";
+  }
+
+  uriEncodedTwitterMessage () {
+    const message = this.twitterMessage();
+
+    return encodeURIComponent(message);
+  }
+
+  twitterHref () {
+    const message = this.uriEncodedTwitterMessage();
+
+    return `https://twitter.com/intent/tweet?text=${message}`;
   }
 
   renderFooter () {
