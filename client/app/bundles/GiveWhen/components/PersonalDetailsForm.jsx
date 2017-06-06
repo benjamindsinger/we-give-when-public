@@ -58,13 +58,11 @@ export default class PersonalDetailsForm extends React.Component {
   renderSummary () {
     return (
       <div className="summary">
-        <p>Fight back amount: ${Money.renderAmountInCentsAsRoundDollars(this.props.selectedAmountInCents)}
-          <a className="edit" onClick={this.props.onClickEdit}>
-            [edit]
-          </a>
-        </p>
+        <p>
+          Fight back amount: ${Money.renderAmountInCentsAsRoundDollars(this.props.selectedAmountInCents)},
 
-        <p>Monthly maximum amount: ${Money.renderAmountInCentsAsRoundDollars(this.props.selectedMonthlyMaximumInCents)}
+          Monthly maximum amount: ${Money.renderAmountInCentsAsRoundDollars(this.props.selectedMonthlyMaximumInCents)}.
+
           <a className="edit" onClick={this.props.onClickEdit}>
             [edit]
           </a>

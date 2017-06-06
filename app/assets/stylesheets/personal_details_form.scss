@@ -59,7 +59,7 @@ $lightblue: #0948bc;
     .long__input {
       input {
         width: 100%;
-        margin: 15px 0;
+        margin: 10px 0;
       }
     }
 
@@ -87,11 +87,12 @@ $lightblue: #0948bc;
     }
 
     input[type="text"], select {
-      height: 40px;
+      height: 50px;
       border: none;
+      border-radius: 6px;
       font-family: Helvetica;
-      box-shadow: 0 2px 3px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.24);
-      font-size: 20px;
+      box-shadow: 0 4px 4px rgba(0,0,0,0.12), 0 4px 4px rgba(0,0,0,0.24);
+      font-size: 22px;
       color: black;
       text-indent: 10px;
 
