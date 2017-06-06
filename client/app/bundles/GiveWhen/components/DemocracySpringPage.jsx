@@ -502,19 +502,13 @@ export default class DemocracySpringPage extends React.Component {
 
         <a className="social__sharing__button twitter"
              href={Twitter.href(this.props.twitterMessage)}>
-          {Twitter.renderLogo()}
-          <span style={{
-            position: 'relative',
-            bottom: '36px'
-          }}>
-            Tweet your support
-          </span>
+            {Twitter.renderLogo()}
+            <div>Tweet your support</div>
         </a>
 
         <div className="social__sharing__button facebook">
-          <iframe style={{border: 'none', overflow: 'hidden'}}
-                  src={Facebook.iframeSrc()}>
-          </iframe>
+          {Facebook.renderLogo()}
+          {Facebook.button()}
         </div>
 
       </div>

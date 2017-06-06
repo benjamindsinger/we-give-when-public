@@ -12,11 +12,13 @@ export default {
     return (
       <img src="/twitter-logo-white.svg"
            style={{
-            height: 60,
-            width: 60,
-            display: 'inline',
+            height: 50,
+            width: 50,
+            display: 'inline-block',
+            float: 'left',
             position: 'relative',
-            bottom: '15px'
+            bottom: 10,
+            right: 10
           }}
       />
     );

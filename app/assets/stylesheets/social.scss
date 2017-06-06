@@ -9,7 +9,7 @@
 
 .social__sharing__button {
   cursor: pointer;
-  width: 420px;
+  width: 280px;
   margin: 40px auto;
   padding: 20px;
   height: 30px;
@@ -20,13 +20,10 @@
 
 .facebook {
   background-color: #4267b2;
+}
 
-  iframe {
-    transform: scale(1.85);
-    position: relative;
-    top: 53px;
-    left: 199px;
-  }
+.facebook:hover {
+  background-color: #365899;
 }
 
 .social__sharing__button.twitter {

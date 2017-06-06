@@ -1,7 +1,42 @@
+import React from 'react';
+
 export default {
 
-  iframeSrc: function () {
-    return `https://www.facebook.com/plugins/share_button.php?href=${window.location.href}&layout=button_count&size=large&mobile_iframe=true&width=106&height=28&appId`;
-  }
+  currentUrl () {
+    return window.location.href;
+  },
+
+  facebookHref () {
+    return `https://www.facebook.com/sharer/sharer.php?u=${this.currentUrl()}&src=sdkpreparse`;
+  },
+
+  button: function () {
+    return (
+      <div className="fb-share-button"
+           data-href={this.currentUrl()}
+           data-layout="button_count"
+           data-size="large" data-mobile-iframe="true">
+        <a class="fb-xfbml-parse-ignore"
+           target="_blank"
+           style={{textDecoration: 'none', color: 'white'}}
+           href={this.facebookHref()}>
+          Share your support
+        </a>
+      </div>
+    );
+  },
+
+  renderLogo: function () {
+    return (
+      <img src="/facebook-logo-white.svg"
+           style={{
+            height: 30,
+            width: 30,
+            display: 'inline-block',
+            float: 'left'
+          }}
+      />
+    );
+  },
 
 }
