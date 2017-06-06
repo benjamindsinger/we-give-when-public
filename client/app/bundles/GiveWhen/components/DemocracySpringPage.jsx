@@ -12,6 +12,7 @@ import Money from '../helpers/money.jsx';
 import UserEvents from '../helpers/user_events.jsx';
 import DataCuts from '../helpers/data_cuts.jsx';
 import Twitter from '../helpers/twitter.jsx';
+import Facebook from '../helpers/facebook.jsx';
 
 export default class DemocracySpringPage extends React.Component {
   displayName: 'DemocracySpring';
@@ -518,17 +519,13 @@ export default class DemocracySpringPage extends React.Component {
 
           <div className="social__sharing__button facebook">
             <iframe style={{border: 'none', overflow: 'hidden'}}
-                    src={this.facebookIframeSrc()}>
+                    src={Facebook.iframeSrc()}>
             </iframe>
           </div>
 
         </div>
       </div>
     );
-  }
-
-  facebookIframeSrc () {
-    return `https://www.facebook.com/plugins/share_button.php?href=${window.location.href}&layout=button_count&size=large&mobile_iframe=true&width=106&height=28&appId`;
   }
 
   renderFooter () {
