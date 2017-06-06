@@ -500,11 +500,7 @@ export default class DemocracySpringPage extends React.Component {
 
         <br/>
 
-        <a className="social__sharing__button twitter"
-             href={Twitter.href(this.props.twitterMessage)}>
-            {Twitter.renderLogo()}
-            <div>Tweet your support</div>
-        </a>
+        {Twitter.renderButton(this.props.twitterMessage)}
 
         <div className="social__sharing__button facebook">
           {Facebook.renderLogo()}
