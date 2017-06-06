@@ -27,7 +27,7 @@ class CrowdFundsController < ApplicationController
         'firstName', 'lastName', 'occupation', 'employer', 'email',
         'phone', 'address', 'city', 'zip',
       ]
-      @meta_og_image = "https://wegivewhen.com/fightfor15photo.jpg"
+      @meta_og_image = "https://wegivewhen.com/fightfor15photoFB.jpg"
     end
   end
 
