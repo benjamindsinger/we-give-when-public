@@ -82,20 +82,4 @@ export default class SocialSharingPage extends React.Component {
     );
   }
 
-  renderFacebookLogo () {
-    return (
-      <img src="/facebook-logo-white.svg"
-           style={{
-            height: 40,
-            width: 40,
-            display: 'block',
-            float: 'left',
-            position: 'relative',
-            bottom: '5px'
-          }}
-      />
-    );
-  }
-
-
 };
