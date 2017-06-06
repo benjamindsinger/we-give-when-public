@@ -117,6 +117,7 @@ export default class DemocracySpringPage extends React.Component {
           employer={this.state.employer}
 
           /* Selected amounts */
+          crowdFundType={this.props.crowdFundType}
           selectedAmountInCents={this.state.selectedAmountInCents}
           selectedMonthlyMaximumInCents={this.state.selectedMonthlyMaximumInCents}
         />
