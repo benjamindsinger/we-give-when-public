@@ -25,7 +25,9 @@ export default class Disclaimer extends React.Component {
 
   renderParagraph (paragraph) {
     return (
-      <p>{paragraph}</p>
+      <p key={paragraph.substring(0,9)}>
+        {paragraph}
+      </p>
     );
   }
 
