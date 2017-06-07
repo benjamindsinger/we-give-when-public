@@ -76,12 +76,12 @@ crowd_funds = [
       # Content, header
       headerGivePhrase: 'fight back',
       headerWhenPhrase: 'Every time an anti-living-wage corporation writes a campaign check,',
-      headerLogoImgPath: '/guzzardi-logo-good.jpg',
+      headerLogoImgPath: 'https://s3-us-west-2.amazonaws.com/give-when/static-images/guzzardi-fight-for-15/guzzardi-logo-good.jpg',
 
       # Content, headline
       headline: 'Elect Candidates Who Fight For $15',
       subheadline: "Big business has money, but we have people. Every time an anti-living-wage corporation in Illinois writes a big check, we need hundreds of people to make a small donation to living-wage campaigns.",
-      headlineImgPath: '/fightfor15photo.jpg',
+      headlineImgPath: 'https://s3-us-west-2.amazonaws.com/give-when/static-images/guzzardi-fight-for-15/fightfor15photo.jpg',
 
       # Content, give when blocks
       giveStatement: 'Chip in to support candidates who Fight for $15:',
