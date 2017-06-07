@@ -7,13 +7,12 @@ export default {
   },
 
   crowdFundMembershipDetails: function (state, props) {
-    const crowdFundMembershipProperties = [
-      'amountPerTimeInCents', 'monthlyMaximumInCents', 'coverFees',
-    ];
-
-    const properties = _.pick(state, crowdFundMembershipProperties);
-
-    return _.merge(properties, { crowdFundId: props.crowdFundId });
+    return {
+      coverFees: true,
+      crowdFundId: props.crowdFundId,
+      amountPerTimeInCents: state.selectedAmountInCents,
+      monthlyMaximumInCents: state.selectedMonthlyMaximumInCents,
+    };
   },
 
 }
