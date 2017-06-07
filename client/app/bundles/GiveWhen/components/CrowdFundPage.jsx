@@ -114,11 +114,6 @@ export default class CrowdFundPage extends React.Component {
         {this.renderHeaderWithActionButton()}
         {this.renderHeadlineSection()}
         {this.renderGiveWhenBlocks()}
-        {this.renderStatementOfPurpose()}
-        {this.renderBenefitStatement()}
-        {this.renderClosingLetter()}
-        {this.renderExtraSentenceForMobile()}
-        {this.renderFooter()}
       </div>
     );
   }
@@ -154,14 +149,19 @@ export default class CrowdFundPage extends React.Component {
 
   renderGiveWhenBlocks () {
     return (
-      <GiveWhenBlocks crowdFundType={this.props.crowdFundType}
-                      giveStatement={this.props.giveStatement}
-                      whenStatement={this.props.whenStatement}
-                      givePhrase={this.props.givePhrase}
-                      progressStatusPhrase={this.props.progressStatusPhrase}
-                      progressGoalPhrase={this.props.progressGoalPhrase}
-                      progressLeftPhrase={this.props.progressLeftPhrase}
-                      progressTimePhrase={this.props.progressTimePhrase}
+      <GiveWhenBlocks
+        crowdFundType={this.props.crowdFundType}
+        giveStatement={this.props.giveStatement}
+        whenStatement={this.props.whenStatement}
+        givePhrase={this.props.givePhrase}
+        progressStatusPhrase={this.props.progressStatusPhrase}
+        progressGoalPhrase={this.props.progressGoalPhrase}
+        progressLeftPhrase={this.props.progressLeftPhrase}
+        progressTimePhrase={this.props.progressTimePhrase}
+        renderAmountButton={this.renderAmountButton}
+        renderMaximumAmountButton={this.renderMaximumAmountButton}
+        renderCustomAmountButton={this.renderCustomAmountButton}
+        renderCustomMaximumAmountButton={this.renderCustomMaximumAmountButton}
       />
     );
   }
@@ -232,130 +232,11 @@ export default class CrowdFundPage extends React.Component {
           crowdFundType={this.props.crowdFundType}
         />
 
-        {this.renderDisclaimer()}
         {this.renderFooter()}
       </div>
     );
   }
 
-  renderBenefitStatement () {
-    return (
-      <div style={{
-        width: '100%',
-        backgroundColor: '#0948bc',
-        color: 'white'
-      }}>
-        <div style={{
-          width: '70%',
-          margin: '0 auto',
-          padding: '60px 0',
-          textAlign: 'center',
-          fontSize: '1.25em'
-        }}>
-          <p style={{fontWeight: 'bold', display: 'inline', height: '100px'}}>
-            <span className="action_button">Sign up</span> as an automatic responder and get monthly updates from one of the organizers we hire. ​
-          </p>
-        </div>
-      </div>
-    );
-  }
-
-  renderStatementOfPurpose () {
-    return (
-      <div className="section flex">
-        <div className="text color__calm narrow big">
-          <h1 className="subheadline">
-            As long as big business pulls the strings in Springfield, we'll never raise the minimum wage
-          </h1>
-
-          <br/>
-
-          <div style={{
-            border: '2px solid white'
-          }}></div>
-
-          <br/>
-
-          <div style={{fontSize: '1.25em'}}>
-            <p>
-              Walmart, McDonalds, the Chamber of Commerce, the Restaurant Association, and the Retail Merchants are 5 groups we’re up against.
-            </p>
-            <p>
-              Every time they write a check of $100 or more, we need 100 people to automatically chip in to fight back.
-            </p>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  renderClosingLetter () {
-    return (
-      <div>
-        <div className="section">
-          <div className="text narrow big plain">
-
-            <p style={{ fontWeight: 'bold' }}>
-              We need to respond immediately so our candidates can campaign this summer in the primaries.
-            </p>
-
-            <p>
-              At the end of each month, depending on the number of checks written by corporate interests and the monthly maximum donation you set for yourself, we'll process your donation and put it to work immediately to campaign for our candidates.
-            </p>
-
-            <p>At the end of each month, based on the number of checks written by corporate interests and your monthly maximum donation, we’ll process your donation and put it to work immediately to campaign for our candidates.</p>
-
-          </div>
-
-        </div>
-        {this.renderDisclaimer()}
-      </div>
-    );
-  }
-
-  renderDisclaimer () {
-    return (
-      <div className="section">
-        <div className="text narrow big plain">
-          <div style={{
-            border: '1px solid #0948bc',
-            padding: 20,
-          }}>
-            <p>Funds go to the Committee to Elect Will Guzzardi, which supports the Fight for $15 and donates to candidates who also support the Fight for $15.</p>
-
-            <p>Anti-living-wage corporate donations are tracked via Illinois Sunshine database, an open portal that tracks campaign finance.</p>
-
-            <p>Paid for by the Committee to Elect Will Guzzardi. A copy of our report filed with the State Board of Elections is (or will be) available on the Board's official website (www.elections.il.gov) or for purchase from the State Board of Elections, Springfield, Illinois.</p>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  renderExtraSentenceForMobile () {
-    const whenPhrase = "Every time an anti-living-wage corporation writes a campaign check,";
-    const givePhrase = "fight back";
-
-    return (
-      <div className="section mobile__only sentence reverse__colors"
-           style={{
-            margin: 0,
-            padding: 30
-           }}>
-        <div className="text">
-          <div className="sentence" style={{textAlign: 'center'}}>
-            <p>
-              {whenPhrase} <span className="action_button"
-                                            style={{padding: 10, marginRight: 2}}
-                    onClick={UserEvents.onChangeStep.bind(this, 1)}>
-                {givePhrase} →
-              </span>
-            </p>
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   renderFooter () {
     return (
