@@ -26,7 +26,7 @@ export default class OnePanelContent extends React.Component {
           <br/>
 
           <div style={{fontSize: '1.25em'}}>
-            {this.props.paragraphs.map((paragraph) => this.renderParagraph)}
+            {this.props.paragraphs.map(this.renderParagraph)}
           </div>
         </div>
       </div>
