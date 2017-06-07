@@ -16,9 +16,9 @@ class CrowdFund < ApplicationRecord
     end
   end
 
-  def charge_funders
+  def charge_funders(number_of_triggers)
     crowd_fund_memberships.each do |membership|
-      membership.charge_funder
+      membership.charge_funder(number_of_triggers)
     end
   end
 
