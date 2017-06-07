@@ -21,9 +21,15 @@ export default class WillGuzzardiPage extends React.Component {
     crowdFundType: PropTypes.string.isRequired,
     stripePublishableKey: PropTypes.string.isRequired,
     funderRequiredDetails: PropTypes.array.isRequired,
+
+    // Social
     twitterMessage: PropTypes.string,
     suggestedEmailSubject: PropTypes.string,
     suggestedEmailBody: PropTypes.string,
+
+    // Defaults
+    defaultSelectedAmountInCents: PropTypes.number.isRequired,
+    defaultSelectedMonthlyMaximumInCents: PropTypes.number,
   };
 
   constructor(props, _railsContext) {
@@ -38,8 +44,8 @@ export default class WillGuzzardiPage extends React.Component {
       step: 0,
 
       // Amount summary
-      selectedAmountInCents: 300,
-      selectedMonthlyMaximumInCents: 4500,
+      selectedAmountInCents: props.defaultSelectedAmountInCents,
+      selectedMonthlyMaximumInCents: props.defaultSelectedMonthlyMaximumInCents,
       customAmountEntered: false,
       customMaximumEntered: false,
       coverFees: true,

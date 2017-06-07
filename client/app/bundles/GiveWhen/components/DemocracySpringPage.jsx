@@ -23,7 +23,14 @@ export default class DemocracySpringPage extends React.Component {
     crowdFundType: PropTypes.string.isRequired,
     stripePublishableKey: PropTypes.string.isRequired,
     funderRequiredDetails: PropTypes.array.isRequired,
+
+    // Social
     twitterMessage: PropTypes.string,
+    suggestedEmailSubject: PropTypes.string,
+    suggestedEmailBody: PropTypes.string,
+
+    // Defaults
+    defaultSelectedAmountInCents: PropTypes.number.isRequired,
   };
 
   constructor(props, _railsContext) {
@@ -36,7 +43,7 @@ export default class DemocracySpringPage extends React.Component {
       step: 0,
 
       // Amount summary
-      selectedAmountInCents: 100,
+      selectedAmountInCents: props.defaultSelectedAmountInCents,
       customAmountEntered: false,
       coverFees: true,
 
