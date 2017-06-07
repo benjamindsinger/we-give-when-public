@@ -117,7 +117,7 @@ export default class GiveWhenBlocks extends React.Component {
           </p>
           <span className='action_button_big'
                onClick={UserEvents.onChangeStep.bind(this, 1)}>
-            {this.props.givePhrase}
+            {this.props.givePhrase} →
           </span>
         </div>
       </div>

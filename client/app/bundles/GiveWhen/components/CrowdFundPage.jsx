@@ -28,9 +28,9 @@ export default class CrowdFundPage extends React.Component {
     suggestedEmailSubject: PropTypes.string,
     suggestedEmailBody: PropTypes.string,
 
-    // Initial
-    initialAmountInCents: PropTypes.number,
-    initialMonthlyMaximumInCents: PropTypes.number,
+    // Defaults
+    defaultSelectedAmountInCents: PropTypes.number.isRequired,
+    defaultSelectedMonthlyMaximumInCents: PropTypes.number,
 
     // Colors
     colorScheme: PropTypes.string.isRequired,
@@ -69,8 +69,8 @@ export default class CrowdFundPage extends React.Component {
       errorMessages: [],
 
       // Amount summary
-      selectedAmountInCents: this.props.initialAmountInCents,
-      selectedMonthlyMaximumInCents: this.props.initialMonthlyMaximumInCents,
+      selectedAmountInCents: props.defaultSelectedAmountInCents,
+      selectedMonthlyMaximumInCents: props.defaultSelectedMonthlyMaximumInCents,
       customAmountEntered: false,
       customMaximumEntered: false,
       coverFees: true,
@@ -153,7 +153,7 @@ export default class CrowdFundPage extends React.Component {
         crowdFundType={this.props.crowdFundType}
         giveStatement={this.props.giveStatement}
         whenStatement={this.props.whenStatement}
-        givePhrase={this.props.givePhrase}
+        givePhrase={this.props.headerGivePhrase}
         progressStatusPhrase={this.props.progressStatusPhrase}
         progressGoalPhrase={this.props.progressGoalPhrase}
         progressLeftPhrase={this.props.progressLeftPhrase}
