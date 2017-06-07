@@ -7,18 +7,24 @@ class CrowdFundMembership < ApplicationRecord
   end
 
   def charge_funder(number_of_triggers)
-    amount = amount_to_charge(number_of_triggers)
-    our_fee = amount * 0.055
-    source = funder.stripe_customer_id
-    connected_stripe_account_id = crowd_fund.cause.stripe_account_id
+    amount_in_cents = amount_to_charge(number_of_triggers)
+    our_fee_in_cents = (amount_in_cents * 0.055).to_i  # No fractional U.S. cents
+
+    customer = funder.stripe_customer_id
+    connected_stripe_account = crowd_fund.cause.stripe_account_id
+
+    token = Stripe::Token.create(
+      { customer: customer },
+      { stripe_account: connected_stripe_account }
+    )
 
     Stripe::Charge.create({
         currency: "usd",
-        amount: amount,
-        source: source,
-        application_fee: our_fee
+        amount: amount_in_cents,
+        source: token.id,
+        application_fee: our_fee_in_cents
       },
-      stripe_account: connected_stripe_account_id
+      stripe_account: connected_stripe_account
     )
   end
 
@@ -60,7 +66,8 @@ class CrowdFundMembership < ApplicationRecord
     end
 
     def add_stripe_fees(amount)
-      (amount * 1.084) + 30
+      # Must return an integer, no fractional U.S. cents
+      ((amount * 1.084) + 30).to_i
     end
 
     def monthly_maximum_after_fees
