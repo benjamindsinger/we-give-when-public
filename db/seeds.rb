@@ -75,6 +75,23 @@ crowd_funds = [
       progressGoalPhrase: 'of 100 backer goal',
       progressLeftPhrase: '47 backers needed',
       progressTimePhrase: '17 days left',
+      contentSections: [
+        {
+          type: 'one_panel'
+        },
+        {
+          type: 'statement'
+        },
+        {
+          type: 'letter'
+        },
+        {
+          type: 'disclaimer'
+        },
+        {
+          type: 'final_ask'
+        },
+      ]
     }
   }
 ]
