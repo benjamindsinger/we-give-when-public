@@ -4,12 +4,14 @@ import React from 'react';
 export default class Header extends React.Component {
 
   static propTypes = {
-    showButton: PropTypes.bool.isRequired,
     logoImgPath: PropTypes.string.isRequired,
     logoHeight: PropTypes.number.isRequired,
     whenPhrase: PropTypes.string.isRequired,
     givePhrase: PropTypes.string.isRequired,
-    onClickActionButton: PropTypes.func.isRequired,
+
+    // Header button can be active or just plain text
+    showButton: PropTypes.bool.isRequired,
+    onClickActionButton: PropTypes.func,
   };
 
   render () {
