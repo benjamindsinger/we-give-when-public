@@ -77,7 +77,12 @@ crowd_funds = [
       progressTimePhrase: '17 days left',
       contentSections: [
         {
-          type: 'one_panel'
+          type: 'one_panel',
+          headline: "As long as big business pulls the strings in Springfield, we'll never raise the minimum wage",
+          paragraphs: [
+            "Walmart, McDonalds, the Chamber of Commerce, the Restaurant Association, and the Retail Merchants are 5 groups we’re up against.",
+            "Every time they write a check of $100 or more, we need 100 people to automatically chip in to fight back."
+          ],
         },
         {
           type: 'statement'
