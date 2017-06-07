@@ -3,6 +3,8 @@ class Cause < ActiveRecord::Base
   has_many :crowd_funds
 
   def create_stripe_account
+    return if stripe_account_id.present?
+
     acct = Stripe::Account.create({
       country: "US",
       type: "custom"
