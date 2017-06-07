@@ -192,7 +192,6 @@ export default class CrowdFundPage extends React.Component {
 
   renderContentSections () {
     const contentSections = this.props.contentSections;
-    console.log('contentSections', contentSections)
 
     return contentSections.map((section) => {
       return this.renderContentBlock(section);
