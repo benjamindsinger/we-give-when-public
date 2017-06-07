@@ -7,6 +7,12 @@ class Cause < ActiveRecord::Base
       country: "US",
       type: "custom"
     })
+
+    stripe_account_id = acct["id"]
+
+    update!(
+      stripe_account_id: stripe_account_id
+    )
   end
 
 end
