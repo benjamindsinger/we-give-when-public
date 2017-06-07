@@ -9,6 +9,11 @@ import GiveWhenBlocks from './GiveWhenBlocks.jsx';
 import Footer from './Footer.jsx';
 import Header from './Header.jsx';
 
+import OnePanelContent from './sections/OnePanelContent.jsx';
+import Statement from './sections/Statement.jsx';
+import Letter from './sections/Letter.jsx';
+import Disclaimer from './sections/Disclaimer.jsx';
+
 import Money from '../helpers/money.jsx';
 import Buttons from '../helpers/buttons.jsx';
 import UserEvents from '../helpers/user_events.jsx';
@@ -54,6 +59,9 @@ export default class CrowdFundPage extends React.Component {
     progressGoalPhrase: PropTypes.string.isRequired,
     progressLeftPhrase: PropTypes.string.isRequired,
     progressTimePhrase: PropTypes.string.isRequired,
+
+    // -- Content, sections
+    contentSections: PropTypes.array.isRequired,
   };
 
   constructor(props, _railsContext) {
@@ -114,6 +122,7 @@ export default class CrowdFundPage extends React.Component {
         {this.renderHeaderWithActionButton()}
         {this.renderHeadlineSection()}
         {this.renderGiveWhenBlocks()}
+        {this.renderContentSections()}
       </div>
     );
   }
@@ -163,6 +172,74 @@ export default class CrowdFundPage extends React.Component {
         renderCustomAmountButton={this.renderCustomAmountButton}
         renderCustomMaximumAmountButton={this.renderCustomMaximumAmountButton}
       />
+    );
+  }
+
+  renderContentSections () {
+    const contentSections = this.props.contentSections;
+    console.log('contentSections', contentSections)
+
+    return contentSections.map((section) => {
+      return this.renderContentBlock(section);
+    });
+  }
+
+  renderContentBlock (section) {
+    const sectionType = section.type;
+
+    switch (sectionType) {
+      case 'one_panel':
+        return this.renderOnePanelContent(section);
+      case 'statement':
+        return this.renderStatementContent(section);
+      case 'letter':
+        return this.renderLetterContent(section);
+      case 'disclaimer':
+        return this.renderDisclaimer(section);
+    }
+  }
+
+  renderOnePanelContent (section) {
+    const headline = section.headline;
+    const paragraphs = section.paragraphs;
+
+    if (!headline || !paragraphs) return null;
+
+    return (
+      <OnePanelContent headline={headline} paragraphs={paragraphs} />
+    );
+  }
+
+  renderStatementContent (section) {
+    const content = section.content;
+
+    if (!content) return null;
+
+    return (
+      <Statement content={content} />
+    );
+  }
+
+  renderLetterContent (section) {
+    const headline = section.headline;
+    const paragraphs = section.paragraphs;
+
+    if (!headline || !paragraphs) return null;
+
+    return (
+      <Letter
+        headline={headline} paragraphs={paragraphs}
+      />
+    );
+  }
+
+  renderDisclaimer (section) {
+    const paragraphs = section.paragraphs;
+
+    if (!paragraphs) return null;
+
+    return (
+      <Disclaimer paragraphs={paragraphs} />
     );
   }
 
