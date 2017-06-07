@@ -10,7 +10,7 @@ class CrowdFundsController < ApplicationController
   def show
     @crowd_fund = CrowdFund.friendly.find(params[:id])
 
-    @stripe_publishable_key = "pk_test_W0fKQhoRyGPP1BcWF9kX7hJz"
+    @stripe_publishable_key = ENV['STRIPE_PUBLISHABLE_KEY']
 
     @meta_og_url = "https://wegivewhen.com/#{@crowd_fund.slug}"
     @meta_content_twitter_card = "summary_large_image"
