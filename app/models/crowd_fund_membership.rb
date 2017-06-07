@@ -8,7 +8,7 @@ class CrowdFundMembership < ApplicationRecord
 
   def charge_funder(number_of_triggers)
     amount = amount_to_charge(number_of_triggers)
-    our_fee = amount_to_charge * 0.055
+    our_fee = amount * 0.055
     source = funder.stripe_customer_id
     connected_stripe_account_id = crowd_fund.cause.stripe_account_id
 
