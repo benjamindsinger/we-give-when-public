@@ -75,6 +75,13 @@ crowd_funds = [
       progressGoalPhrase: 'of 100 backer goal',
       progressLeftPhrase: '47 backers needed',
       progressTimePhrase: '17 days left',
+
+      disclaimerParagraphs: [
+        "Funds go to the Committee to Elect Will Guzzardi, which supports the Fight for $15 and donates to candidates who also support the Fight for $15.",
+        "Anti-living-wage corporate donations are tracked via Illinois Sunshine database, an open portal that tracks campaign finance.",
+        "Paid for by the Committee to Elect Will Guzzardi. A copy of our report filed with the State Board of Elections is (or will be) available on the Board's official website (www.elections.il.gov) or for purchase from the State Board of Elections, Springfield, Illinois.",
+      ],
+
       contentSections: [
         {
           type: 'one_panel',
@@ -85,17 +92,19 @@ crowd_funds = [
           ],
         },
         {
-          type: 'statement'
+          type: 'statement',
+          content: 'Sign up as an automatic responder and get monthly updates from one of the organizers we hire.'
         },
         {
-          type: 'letter'
+          type: 'letter',
+          headline: 'We need to respond immediately so our candidates can campaign this summer in the primaries.',
+          paragraphs: [
+            "At the end of each month, depending on the number of checks written by corporate interests and the monthly maximum donation you set for yourself, we'll process your donation and put it to work immediately to campaign for our candidates.",
+          ]
         },
-        {
-          type: 'disclaimer'
-        },
-        {
-          type: 'final_ask'
-        },
+        # {
+        #   type: 'final_ask'
+        # },
       ]
     }
   }

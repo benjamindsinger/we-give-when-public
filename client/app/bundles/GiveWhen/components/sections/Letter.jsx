@@ -16,14 +16,16 @@ export default class Letter extends React.Component {
           <p style={{ fontWeight: 'bold' }}>
             {this.props.headline}
           </p>
-          {this.renderParagraphs()}
+          {this.props.paragraphs.map(this.renderParagraph)}
         </div>
       </div>
     );
   }
 
-  renderParagraphs () {
-    return this.props.paragraphs.map((paragraph) => this.renderParagraph);
+  renderParagraph (paragraph) {
+    return (
+      <p>{paragraph}</p>
+    );
   }
 
 };

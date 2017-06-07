@@ -1,9 +1,9 @@
 import ReactOnRails from 'react-on-rails';
 
 import DemocracySpringPage from '../components/DemocracySpringPage';
-import WillGuzzardiPage from '../components/WillGuzzardiPage';
+import CrowdFundPage from '../components/CrowdFundPage';
 
 ReactOnRails.register({
   DemocracySpringPage,
-  WillGuzzardiPage
+  CrowdFundPage
 });

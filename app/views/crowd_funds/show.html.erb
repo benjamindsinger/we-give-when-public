@@ -14,6 +14,31 @@
         twitterMessage: @crowd_fund.twitter_message,
         suggestedEmailSubject: @crowd_fund.suggested_email_subject,
         suggestedEmailBody: @crowd_fund.suggested_email_body,
+
+        # Colors
+        colorScheme: @crowd_fund.page_data.fetch("colorScheme"),
+
+        # Content, header
+        headerGivePhrase: @crowd_fund.page_data.fetch("headerGivePhrase"),
+        headerWhenPhrase: @crowd_fund.page_data.fetch("headerWhenPhrase"),
+        headerLogoImgPath: @crowd_fund.page_data.fetch("headerLogoImgPath"),
+
+        # Content, headline
+        headline: @crowd_fund.page_data.fetch("headline"),
+        subheadline: @crowd_fund.page_data.fetch("subheadline"),
+        headlineImgPath: @crowd_fund.page_data.fetch("headlineImgPath"),
+
+        # Content, give when blocks
+        giveStatement: @crowd_fund.page_data.fetch("giveStatement"),
+        whenStatement: @crowd_fund.page_data.fetch("whenStatement"),
+        progressStatusPhrase: @crowd_fund.page_data.fetch("progressStatusPhrase"),
+        progressGoalPhrase: @crowd_fund.page_data.fetch("progressGoalPhrase"),
+        progressLeftPhrase: @crowd_fund.page_data.fetch("progressLeftPhrase"),
+        progressTimePhrase: @crowd_fund.page_data.fetch("progressTimePhrase"),
+
+        # Content, sections
+        contentSections: @crowd_fund.page_data.fetch("contentSections"),
+        disclaimerParagraphs: @crowd_fund.page_data.fetch("disclaimerParagraphs")
       },
       trace: nil,
       replay_console: nil

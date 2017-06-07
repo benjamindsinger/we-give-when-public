@@ -21,6 +21,8 @@ export default class GiveWhenBlocks extends React.Component {
     progressLeftPhrase: PropTypes.string.isRequired,
     progressTimePhrase: PropTypes.string.isRequired,
 
+    onClickGive: PropTypes.func.isRequired,
+
     renderAmountButton: PropTypes.func.isRequired,
     renderMaximumAmountButton: PropTypes.func.isRequired,
     renderCustomAmountButton: PropTypes.func.isRequired,
@@ -116,7 +118,7 @@ export default class GiveWhenBlocks extends React.Component {
             {this.props.whenStatement}
           </p>
           <span className='action_button_big'
-               onClick={UserEvents.onChangeStep.bind(this, 1)}>
+                onClick={this.props.onClickGive}>
             {this.props.givePhrase} →
           </span>
         </div>

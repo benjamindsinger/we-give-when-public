@@ -16,7 +16,7 @@ export default class Disclaimer extends React.Component {
             border: '1px solid #0948bc',
             padding: 20,
           }}>
-          {this.props.paragraphs.map((paragraph) => this.renderParagraph)}
+          {this.props.paragraphs.map(this.renderParagraph)}
           </div>
         </div>
       </div>

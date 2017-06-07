@@ -22,7 +22,7 @@ class CrowdFundsController < ApplicationController
       ]
       @meta_og_image = "https://wegivewhen.com/democracy-spring-capitol-small.jpg"
     elsif @crowd_fund.id == 2
-      @component_name = "WillGuzzardiPage"
+      @component_name = "CrowdFundPage"
       @funder_required_details = [
         'firstName', 'lastName', 'occupation', 'employer', 'email',
         'phone', 'address', 'city', 'zip',

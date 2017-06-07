@@ -62,6 +62,7 @@ export default class CrowdFundPage extends React.Component {
 
     // -- Content, sections
     contentSections: PropTypes.array.isRequired,
+    disclaimerParagraphs: PropTypes.array.isRequired,
   };
 
   constructor(props, _railsContext) {
@@ -71,6 +72,7 @@ export default class CrowdFundPage extends React.Component {
     this.renderMaximumAmountButton = Buttons.renderMaximumAmountButton.bind(this);
     this.renderCustomAmountButton = Buttons.renderCustomAmountButton.bind(this);
     this.renderCustomMaximumAmountButton = Buttons.renderCustomMaximumAmountButton.bind(this);
+    this.onClickGive = UserEvents.onChangeStep.bind(this, 1);
 
     this.state = {
       step: 0,
@@ -123,6 +125,8 @@ export default class CrowdFundPage extends React.Component {
         {this.renderHeadlineSection()}
         {this.renderGiveWhenBlocks()}
         {this.renderContentSections()}
+        {this.renderDisclaimer()}
+        {this.renderFooter()}
       </div>
     );
   }
@@ -134,6 +138,16 @@ export default class CrowdFundPage extends React.Component {
         logoImgPath={this.props.headerLogoImgPath}
         onClickActionButton={UserEvents.onChangeStep.bind(this, 1)}
         showButton={true}
+      />
+    );
+  }
+
+  renderHeaderWithoutActionButton () {
+    return (
+      <Header givePhrase={this.props.headerGivePhrase}
+        whenPhrase={this.props.headerWhenPhrase}
+        logoImgPath={this.props.headerLogoImgPath}
+        showButton={false}
       />
     );
   }
@@ -167,6 +181,7 @@ export default class CrowdFundPage extends React.Component {
         progressGoalPhrase={this.props.progressGoalPhrase}
         progressLeftPhrase={this.props.progressLeftPhrase}
         progressTimePhrase={this.props.progressTimePhrase}
+        onClickGive={this.onClickGive}
         renderAmountButton={this.renderAmountButton}
         renderMaximumAmountButton={this.renderMaximumAmountButton}
         renderCustomAmountButton={this.renderCustomAmountButton}
@@ -194,8 +209,6 @@ export default class CrowdFundPage extends React.Component {
         return this.renderStatementContent(section);
       case 'letter':
         return this.renderLetterContent(section);
-      case 'disclaimer':
-        return this.renderDisclaimer(section);
     }
   }
 
@@ -233,8 +246,8 @@ export default class CrowdFundPage extends React.Component {
     );
   }
 
-  renderDisclaimer (section) {
-    const paragraphs = section.paragraphs;
+  renderDisclaimer () {
+    const paragraphs = this.props.disclaimerParagraphs;
 
     if (!paragraphs) return null;
 
@@ -246,7 +259,7 @@ export default class CrowdFundPage extends React.Component {
   renderPersonalDetailsPage () {
     return (
       <div className="color_scheme__green_blue">
-        {this.renderHeader(false)}
+        {this.renderHeaderWithoutActionButton()}
 
         <PersonalDetailsForm
           /* UI functions */
@@ -283,7 +296,7 @@ export default class CrowdFundPage extends React.Component {
   renderCardDetailsPage () {
     return (
       <div className="color_scheme__green_blue">
-        {this.renderHeader(false)}
+        {this.renderHeaderWithoutActionButton()}
 
         <CardDetailsForm
           /* UI functions */
@@ -309,6 +322,7 @@ export default class CrowdFundPage extends React.Component {
           crowdFundType={this.props.crowdFundType}
         />
 
+        {this.renderDisclaimer()}
         {this.renderFooter()}
       </div>
     );
