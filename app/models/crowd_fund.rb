@@ -16,4 +16,10 @@ class CrowdFund < ApplicationRecord
     end
   end
 
+  def charge_funders
+    crowd_fund_memberships.each do |membership|
+      membership.charge_funder
+    end
+  end
+
 end
