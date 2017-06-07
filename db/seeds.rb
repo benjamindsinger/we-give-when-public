@@ -65,12 +65,12 @@ crowd_funds = [
 
       # Content, headline
       headline: 'Elect Candidates Who Fight For $15',
-      subheadline: 'Big business is pulling the strings. Let’s fight back to support the people’s candidates.',
+      subheadline: "Big business has money, but we have people. Every time an anti-living-wage corporation in Illinois writes a big check, we need hundreds of people to make a small donation to living-wage campaigns.",
       headlineImgPath: '/fightfor15photo.jpg',
 
       # Content, give when blocks
       giveStatement: 'Chip in to support candidates who Fight for $15:',
-      whenStatement: 'Every time an anti-living-wage writes a campaign check to an Illinois politician',
+      whenStatement: 'Every time an anti-living-wage corporation or PAC writes a campaign check to an Illinois politician...',
       progressStatusPhrase: '53 backers',
       progressGoalPhrase: 'of 100 backer goal',
       progressLeftPhrase: '47 backers needed',
@@ -87,7 +87,8 @@ crowd_funds = [
           type: 'one_panel',
           headline: "As long as big business pulls the strings in Springfield, we'll never raise the minimum wage",
           paragraphs: [
-            "Walmart, McDonalds, the Chamber of Commerce, the Restaurant Association, and the Retail Merchants are 5 groups we’re up against.",
+            "The Illinois legislature passed a $15 minimum wage this year. But Governor Rauner has promised to veto it, and big business will fight to make sure that veto stands.",
+            "Walmart, McDonalds, the Chamber of Commerce, the Restaurant Association, and the Retail Merchants will be giving heavily to legislators to win their opposition to $15/hr.",
             "Every time they write a check of $100 or more, we need 100 people to automatically chip in to fight back."
           ],
         },
@@ -100,6 +101,8 @@ crowd_funds = [
           headline: 'We need to respond immediately so our candidates can campaign this summer in the primaries.',
           paragraphs: [
             "At the end of each month, depending on the number of checks written by corporate interests and the monthly maximum donation you set for yourself, we'll process your donation and put it to work immediately to campaign for our candidates.",
+
+            "We'll send you a receipt and information each month about which corporations gave how much, and how your contribution helped fight back."
           ]
         },
         # {
