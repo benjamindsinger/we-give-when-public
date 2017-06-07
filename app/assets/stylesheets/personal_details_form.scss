@@ -18,18 +18,14 @@ $lightblue: #0948bc;
   width: 100%;
   color: white;
 
-  .personal__details__form {
-    padding: 40px;
-  }
-
   @media (min-width: $breakpoint-m) {
-    .personal__details__form.card__details__form {
+    .personal__details__form {
       padding: 40px;
     }
   }
 
   @media (max-width: $breakpoint-m) {
-    .personal__details__form.card__details__form {
+    .personal__details__form {
       padding: 40px 0;
 
       .summary {

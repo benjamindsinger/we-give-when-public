@@ -24,8 +24,7 @@ export default class SocialSharingPage extends React.Component {
 
   render () {
     return (
-      <div className="personal__details__form__wrapper color_scheme__white_blue card__details__form below__fixed__navbar"
-           style={{padding: 30}}>
+      <div className="personal__details__form__wrapper color_scheme__white_blue card__details__form below__fixed__navbar">
         <div id="fb-root"></div>
         <div className="thank__you">
           <p className="font__medium">
