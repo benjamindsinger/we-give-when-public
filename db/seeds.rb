@@ -1,6 +1,20 @@
+causes = [
+  {
+    id: 1,
+    name: 'Democracy Spring'
+  },
+  {
+    id: 2,
+    name: 'Committee to Elect Will Guzzardi'
+  }
+]
+
+Cause.create!(causes)
+
 crowd_funds = [
   {
     id: 1,
+    cause_id: 1,
     name: 'Democracy Spring',
     crowd_fund_type: 'COUNTDOWN',
 
@@ -40,6 +54,7 @@ crowd_funds = [
 
   {
     id: 2,
+    cause_id: 2,
     name: 'Fight for $15',
     crowd_fund_type: 'SLINGSHOT',
 
