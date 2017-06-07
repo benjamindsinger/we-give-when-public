@@ -49,6 +49,8 @@ crowd_funds = [
       progressGoalPhrase: 'of $100 goal',
       progressLeftPhrase: ' $47/day needed',
       progressTimePhrase: '17 days left',
+      contentSections: [], # TK
+      disclaimerParagraphs: [] # TK
     }
   },
 
