@@ -2,19 +2,22 @@ export default {
 
   toErrorMessages (errors) {
     const errorsToNames = {
-      'email': 'email',
-      'firstName': 'first name',
-      'lastName': 'last name',
-      'address': 'address',
-      'city': 'city',
-      'zip': 'ZIP code',
-      'phone': 'phone number',
-      'occupation': 'occupation',
-      'employer': 'employer'
+      'email': 'your email',
+      'firstName': 'your first name',
+      'lastName': 'your last name',
+      'address': 'your address',
+      'city': 'your city',
+      'zip': 'your ZIP code',
+      'phone': 'your phone number',
+      'occupation': 'your occupation',
+      'employer': 'your employer',
+      'zip_numeric': 'a numeric zip code',
+      'zip_five': 'a 5-digit zip code',
+      'email_valid': 'a valid email',
     };
 
     return errors.map((error) => {
-      return  `Please enter your ${errorsToNames[error]}.`;
+      return  `Please enter ${errorsToNames[error]}.`;
     });
   }
 
