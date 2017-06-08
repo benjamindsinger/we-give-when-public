@@ -40,7 +40,7 @@ export default {
     return (
       <div className={divClass}>
         <span className='dollar'>$</span>
-        <input type='text'
+        <input type='tel'
                onChange={UserEvents.onTypeCustomDollarAmount.bind(this)}
                className={inputClass}
                placeholder='___' />
@@ -56,7 +56,7 @@ export default {
     return (
       <div className={divClass}>
         <span className='dollar'>$</span>
-        <input type='text'
+        <input type='tel'
                onChange={UserEvents.onTypeCustomDollarMaximum.bind(this)}
                className={inputClass}
                placeholder='___' />

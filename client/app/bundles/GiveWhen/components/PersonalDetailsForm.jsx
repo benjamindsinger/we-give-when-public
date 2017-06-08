@@ -96,7 +96,7 @@ export default class PersonalDetailsForm extends React.Component {
 
     return (
       <div className="long__input">
-        <input type="text"
+        <input type="email"
                onChange={this.props.onType.bind(this, 'email')}
                value={this.props.email}
                placeholder="Email address" />
