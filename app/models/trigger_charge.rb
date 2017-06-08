@@ -32,7 +32,11 @@ class TriggerCharge
   end
 
   def our_fee_in_cents
-    (amount_before_fees * 0.055).to_i  # No fractional U.S. cents
+    if amount_after_fees > monthly_maximum_after_fees
+      (@crowd_fund_membership.monthly_maximum_in_cents * 0.055).to_i
+    else
+      (amount_before_fees * 0.055).to_i
+    end
   end
 
   def token
