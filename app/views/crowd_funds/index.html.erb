@@ -1,0 +1,21 @@
+<div class="page__wrapper">
+  <div class="hero">
+    <img src='/heart.svg' height="80" width="80" style="position: relative; top: 15px; left: 30px;" />
+    Give<span style="font-weight: bold;">When</span>
+  </div>
+
+  <div class="tagline">
+    <div>Trigger-based fundraising so you can</div>
+    <div class="tagline__strong">take on powerful forces and change the world.</div>
+  </div>
+
+  <div style="text-align: center; margin: 60px 40px; font-size: 30px;">
+    <strong>Our Campaigns:</strong>
+    <% @crowd_funds.each do |crowd_fund| %>
+      <div style="margin: 20px 0;">
+        <%= link_to crowd_fund.name, crowd_fund_url(crowd_fund) %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
