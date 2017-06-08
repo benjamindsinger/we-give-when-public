@@ -27,7 +27,7 @@ class TriggerCharge
   end
 
   def our_fee_in_cents
-    (amount_to_charge * 0.055).to_i  # No fractional U.S. cents
+    (amount_before_fees * 0.055).to_i  # No fractional U.S. cents
   end
 
   def token
