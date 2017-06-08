@@ -31,6 +31,9 @@ class TriggerCharge
   end
 
   def token
+    raise "No stripe customer ID in our database!" unless customer
+    raise "No stripe cause ID in our database!" unless connected_stripe_account_id
+
     Stripe::Token.create(
       {
         customer: customer,
