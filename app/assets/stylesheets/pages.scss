@@ -1,0 +1,28 @@
+.page__wrapper {
+  margin: 30px 40px;
+
+  .hero {
+    font-size: 4em;
+    font-family: Helvetica;
+  }
+
+  .tagline {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 20px 0;
+  }
+
+  .tagline__strong {
+    font-weight: bold;
+  }
+
+  .what__its__about {
+    margin: 60px auto;
+    width: 60%;
+    text-align: justify;
+  }
+
+  .all__the__examples td {
+    padding-right: 40px;
+  }
+}
