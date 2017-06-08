@@ -75,6 +75,13 @@ $green: #01943b;
   }
 }
 
+.sentence.plain {
+  p {
+    font-size: 1em;
+    font-weight: normal;
+  }
+}
+
 .sentence {
   font-size: 1.175em;
   margin: 20px;

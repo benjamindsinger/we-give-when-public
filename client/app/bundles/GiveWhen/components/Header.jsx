@@ -52,7 +52,7 @@ export default class Header extends React.Component {
 
   renderPlainSentence () {
     return (
-      <div className="sentence">
+      <div className="sentence plain">
         <p>
           {this.props.whenPhrase} {this.props.givePhrase}.
         </p>

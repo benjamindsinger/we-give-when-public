@@ -8,7 +8,6 @@ $red: #f90016;
 $darkblue: #1c407b;
 
 .header {
-  min-height: 105px;
   background-color: white;
   width: 100%;
   z-index: 100;
@@ -37,7 +36,7 @@ $darkblue: #1c407b;
 
   @media (max-width: $breakpoint-m) {
     .logo {
-      margin: 30px 0 10px 0;
+      margin: 30px 0;
       text-align: center;
 
       img {
