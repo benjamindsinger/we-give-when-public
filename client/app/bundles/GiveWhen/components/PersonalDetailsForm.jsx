@@ -32,6 +32,10 @@ export default class PersonalDetailsForm extends React.Component {
     crowdFundType: PropTypes.string.isRequired,
   };
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render () {
     return (
       <div className="personal__details__form__wrapper color_scheme__white_blue below__fixed__navbar">
