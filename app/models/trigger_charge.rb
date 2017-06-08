@@ -10,13 +10,18 @@ class TriggerCharge
         currency: "usd",
         amount: amount_to_charge,
         source: token.id,
-        application_fee: our_fee_in_cents
+        application_fee: our_fee_in_cents,
+        statement_descriptor: statement_descriptor
       },
       stripe_account: connected_stripe_account_id
     )
   end
 
   private
+
+  def statement_descriptor
+    @crowd_fund_membership.crowd_fund.name
+  end
 
   def amount_to_charge
     if amount_after_fees > monthly_maximum_after_fees
