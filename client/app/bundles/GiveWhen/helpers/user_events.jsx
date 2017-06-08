@@ -19,18 +19,26 @@ export default {
       return !(this.state[field]);
     }, this);
 
+    if (5 > this.state.address.length) {
+      errors.push('address_length');
+    }
+
+    if (10 > this.state.phone.length) {
+      errors.push('phone_length');
+    }
+
     if (isNaN(parseFloat(this.state.zip)) || !isFinite(this.state.zip)) {
-      errors.push('zip_numeric')
+      errors.push('zip_numeric');
     }
 
     if (this.state.zip.length !== 5) {
-      errors.push('zip_five')
+      errors.push('zip_five');
     }
 
     const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     if (!emailRegex.test(this.state.email)) {
-      errors.push('email_valid')
+      errors.push('email_valid');
     }
 
     if (errors.length > 0) return this.setState({
