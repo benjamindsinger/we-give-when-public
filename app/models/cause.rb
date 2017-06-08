@@ -17,4 +17,8 @@ class Cause < ActiveRecord::Base
     )
   end
 
+  def retrieve_stripe_account
+    Stripe::Account.retrieve(stripe_account_id)
+  end
+
 end
