@@ -70,8 +70,8 @@
   },
 
     // Defaults
-  "default_selected_amount_in_cents": 300,
-  "default_selected_monthly_maximum_in_cents": 4500,
+  "default_selected_amount_in_cents": 400,
+  "default_selected_monthly_maximum_in_cents": 5000,
 
   // Social
   "open_graph_title": "Join Will Guzzardi in the fight for $15.",
