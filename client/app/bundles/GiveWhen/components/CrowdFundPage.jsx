@@ -182,7 +182,11 @@ export default class CrowdFundPage extends React.Component {
           </p>
         </div>
 
-        <img src={this.props.headlineImgPath} />
+        <div className="text" style={{
+          background: `url("${this.props.headlineImgPath}")`,
+          backgroundSize: 'cover',
+          minHeight: 400
+        }}></div>
       </div>
     );
   }

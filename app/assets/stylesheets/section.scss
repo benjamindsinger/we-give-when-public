@@ -55,36 +55,21 @@ $darkblue: #1c407b;
   }
 }
 
+.section.flex img {
+  /*flex: 0;*/
+  display: block;
+  /*max-width: 100%;*/
+}
+
 @media screen and (min-width: $breakpoint-m) {
   .section.flex {
     flex-direction: row;
-
-    img {
-      flex: 0;
-    }
-
-    img:not(.big):not(#twitter-logo) {
-      height: 360px;
-    }
-
-    img.big {
-      min-height: 360px;
-    }
-
-    .text:not(.big) {
-      height: 300px;
-    }
   }
 }
 
 @media screen and (max-width: $breakpoint-m) {
   .section.flex {
     flex-direction: column;
-  }
-
-  .section.flex img {
-    flex: 0;
-    max-width: 100%;
   }
 }
 
