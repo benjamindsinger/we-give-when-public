@@ -42,8 +42,13 @@ $lightblue: #0948bc;
     .selector__button__row {
       margin: 0 auto;
       text-align: center;
-      height: 24px;
-      width: 330px;
+      display: flex;
+    }
+
+    @media (max-width: $breakpoint-m) {
+      .selector__button__row {
+        flex-direction: column;
+      }
     }
 
     p {
