@@ -1,6 +1,27 @@
-.page__wrapper {
-  margin: 30px 40px;
+$breakpoint-xs: 350px;
+$breakpoint-s: 500px;
+$breakpoint-m: 1100px;
+$breakpoint-l: 1300px;
+$breakpoint-xl: 1850px;
 
+$red: #f90016;
+$darkblue: #1c407b;
+$green: #01943b;
+$lightblue: #0948bc;
+
+@media (min-width: $breakpoint-m) {
+  .page__wrapper {
+    margin: 40px;
+  }
+}
+
+@media (max-width: $breakpoint-m) {
+  .page__wrapper {
+    margin: 10px;
+  }
+}
+
+.page__wrapper {
   .hero {
     font-size: 4em;
     font-family: Helvetica;
@@ -16,13 +37,59 @@
     font-weight: bold;
   }
 
-  .what__its__about {
-    margin: 60px auto;
-    width: 60%;
-    text-align: justify;
+  @media (min-width: $breakpoint-m) {
+    .what__its__about {
+      width: 60%;
+      margin: 60px auto;
+      text-align: justify;
+    }
+  }
+
+  @media (max-width: $breakpoint-m) and (min-width: $breakpoint-s) {
+    .what__its__about {
+      width: 85%;
+      margin: 60px auto;
+      text-align: justify;
+    }
+  }
+
+  @media (max-width: $breakpoint-s) {
+    .what__its__about {
+      width: 95%;
+      margin: 60px auto;
+      text-align: left;
+    }
   }
 
   .all__the__examples td {
     padding-right: 40px;
+    padding-top: 20px;
+  }
+}
+
+.pages, .causes, .crowd_funds.index {
+  color: black;
+  text-align: center;
+  font-size: 20px;
+  background-color: yellow;
+
+  .causes__header {
+    height: 80px;
+    width: 100%;
+    background-color: yellow;
+
+    #give-when-logo {
+      float: left;
+      font-size: 30px;
+      margin: 10px 20px;
+
+      #when {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .cause__name {
+    font-size: 25px;
   }
 }
