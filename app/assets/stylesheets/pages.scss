@@ -23,8 +23,35 @@ $lightblue: #0948bc;
 
 .page__wrapper {
   .hero {
-    font-size: 4em;
     font-family: Helvetica;
+  }
+
+  @media (min-width: $breakpoint-m) {
+    .hero {
+      font-size: 4em;
+    }
+
+    #heart {
+      height: 80px;
+      width: 80px;
+      position: relative;
+      top: 15px;
+      left: 30px;
+    }
+  }
+
+  @media (max-width: $breakpoint-m) {
+    .hero {
+      font-size: 2.5em;
+    }
+
+    #heart {
+      height: 50px;
+      width: 50px;
+      position: relative;
+      left: 10px;
+      top: 5px;
+    }
   }
 
   .tagline {
@@ -91,5 +118,19 @@ $lightblue: #0948bc;
 
   .cause__name {
     font-size: 25px;
+  }
+}
+
+.homepage__column {
+  text-align: center;
+  margin: 40px;
+  font-size: 30px;
+  display: flex;
+  width: 100
+}
+
+@media (max-width: $breakpoint-m) {
+  .homepage__column {
+    flex-direction: column;
   }
 }
