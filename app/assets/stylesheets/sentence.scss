@@ -1,7 +1,7 @@
 $breakpoint-xs: 350px;
 $breakpoint-s: 500px;
 $breakpoint-m: 1100px;
-$breakpoint-l: 1300px;
+$breakpoint-l: 1400px;
 $breakpoint-xl: 1850px;
 
 $red: #f90016;
@@ -61,13 +61,13 @@ $green: #01943b;
   }
 }
 
-@media (min-width: $breakpoint-m) {
+@media (min-width: $breakpoint-l) {
   .header .sentence {
     float: right;
   }
 }
 
-@media (max-width: $breakpoint-m) {
+@media (max-width: $breakpoint-l) {
   .header .sentence {
     text-align: center;
     line-height: 1.95em;
