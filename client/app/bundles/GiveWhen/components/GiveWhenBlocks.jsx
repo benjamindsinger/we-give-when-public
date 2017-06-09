@@ -140,6 +140,17 @@ export default class GiveWhenBlocks extends React.Component {
     );
   }
 
+  renderAssurance () {
+    const message = "We will charge you monthly, send you a summary email first, and never charge more than the maximum amount you set.";
+
+     return (
+       <div data-tooltip={message}
+            style={{ fontSize: '0.9em' }}>
+         how will it work?
+       </div>
+     );
+   }
+
   renderArrowShape () {
     return (
       <div className="arrow_box" style={{flex: 0}}>
