@@ -144,7 +144,7 @@ export default class GiveWhenBlocks extends React.Component {
           </p>
           <div className="selector__button__row">
             {this.props.monthlyMaxOptionsInCents.map((cents) => {
-              return this.props.renderAmountButton(cents);
+              return this.props.renderMaximumAmountButton(cents);
             }, this)}
             {this.props.renderCustomMaximumAmountButton()}
           </div>
