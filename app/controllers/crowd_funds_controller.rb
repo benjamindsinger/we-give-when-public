@@ -14,17 +14,19 @@ class CrowdFundsController < ApplicationController
 
     if @crowd_fund.id == 1
       @component_name = "DemocracySpringPage"
-      @funder_required_details = [
-        'firstName', 'lastName', 'email', 'phone', 'zip',
-      ]
-      @meta_og_image = "https://wegivewhen.com/democracy-spring-capitol-small.jpg"
-    elsif @crowd_fund.id == 2
+    else
       @component_name = "CrowdFundPage"
+    end
+
+    if @crowd_fund.id == 2
       @funder_required_details = [
         'firstName', 'lastName', 'occupation', 'employer', 'email',
         'phone', 'address', 'city', 'zip',
       ]
-      @meta_og_image = "https://wegivewhen.com/fightfor15photoFB.jpg"
+    else
+      @funder_required_details = [
+        'firstName', 'lastName', 'email', 'phone', 'zip',
+      ]
     end
   end
 
