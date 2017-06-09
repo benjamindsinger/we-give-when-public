@@ -9,6 +9,8 @@ export default class Disclaimer extends React.Component {
   };
 
   render () {
+    if (this.props.paragraphs.length === 0) return null;
+
     return (
       <div className="section">
         <div className="text narrow big plain">
