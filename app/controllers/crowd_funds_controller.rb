@@ -10,9 +10,6 @@ class CrowdFundsController < ApplicationController
   def show
     @crowd_fund = CrowdFund.friendly.find(params[:id])
 
-    @stripe_publishable_key = ENV['STRIPE_PUBLISHABLE_KEY']
-    @component_name = "CrowdFundPage"
-
     if @crowd_fund.id == 2
       @funder_required_details = [
         'firstName', 'lastName', 'occupation', 'employer', 'email',

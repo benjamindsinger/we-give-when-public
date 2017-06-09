@@ -1,9 +1,9 @@
 <%= react_component(
-      @component_name,
+      "CrowdFundPage",
       props: {
         crowdFundId: @crowd_fund.id,
         crowdFundType: @crowd_fund.crowd_fund_type,
-        stripePublishableKey: @stripe_publishable_key,
+        stripePublishableKey: ENV['STRIPE_PUBLISHABLE_KEY'],
         funderRequiredDetails: @funder_required_details,
 
         # Defaults
