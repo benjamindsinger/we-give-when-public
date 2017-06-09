@@ -45,7 +45,6 @@ $lightblue: #0948bc;
 input.custom__selector {
   background-color: #eef3f6;
   border: none;
-  width: 55px;
   padding: 6px 12px;
   height: 29px;
   font-family: Helvetica;
@@ -58,6 +57,17 @@ input.custom__selector {
   -webkit-appearance: none;
 }
 
+@media (min-width: $breakpoint-m) {
+  input.custom__selector {
+    width: 55px;
+  }
+}
+
+@media (max-width: $breakpoint-m) {
+  input.custom__selector {
+    width: 35px;
+  }
+}
 input.custom__selector.selected {
   background-color: #1c407b;
   color: white;
