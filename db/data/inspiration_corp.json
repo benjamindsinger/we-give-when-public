@@ -1,41 +1,30 @@
 {
-  "id": 2,
-  "cause_id": 2,
-  "cause_name": "Fight for $15",
+  "id": 3,
+  "cause_id": 3,
+  "cause_name": "Inspiration Corporation",
 
-  "name": "Fight for $15",
+  "name": "Inspiration Corporation",
   "crowd_fund_type": "SLINGSHOT",
-
-  // Defaults
-  "default_selected_amount_in_cents": 300,
-  "default_selected_monthly_maximum_in_cents": 4500,
-
-  // Social
-  "open_graph_title": "Join Will Guzzardi in the fight for $15.",
-  "open_graph_description": "Every time an anti-living-wage corporation writes a campaign check, fight back.",
-  "twitter_message": "Every time an anti-living wage corp (@mcdonalds @walmart...) writes a campaign check, let's fight back ➡ https://wegivewhen.com/campaigns/fight-for-15 #fightfor15",
-  "suggested_email_subject": "Fight for $15",
-  "suggested_email_body": "Hey: I just joined the campaign and I hope you will too. Let\"s fight back every time an anti-living wage corporation like McDonalds writes a campaign check: https://wegivewhen.com/campaigns/fight-for-15",
 
   // JSON for landing page
   "page_data": {
-    "colorScheme": "green_blue",
+    "colorScheme": "red_blue",
 
     // # Content, header
-    "headerGivePhrase": "fight back",
-    "headerWhenPhrase": "Every time an anti-living-wage corporation writes a campaign check,",
-    "headerLogoImgPath": "https://s3-us-west-2.amazonaws.com/give-when/static-images/guzzardi-fight-for-15/guzzardi-logo-good.jpg",
-    "headerLogoImgSize": 35,
+    "headerWhenPhrase": "Every time we enroll a Chicagoan struggling with poverty into our programs,",
+    "headerGivePhrase": "get them on their feet",
+    "headerLogoImgPath": "https://s3-us-west-2.amazonaws.com/give-when/static-images/inspiration-corp/inspiration_logo.GIF",
 
     // # Content, headline
-    "headline": "Elect Candidates Who Fight For $15",
-    "subheadline": "Big business has money, but we have people. Every time an anti-living-wage corporation in Illinois writes a big check, we need hundreds of people to make a small donation to living-wage campaigns.",
-    "headlineImgPath": "https://s3-us-west-2.amazonaws.com/give-when/static-images/guzzardi-fight-for-15/fightfor15photo.jpg",
-    "headlineLoud": true,
+    "headline": "Political budget battles left Chicagoans in homelessness and poverty. But we can change that.",
+    "headlineLoud": false,
+    "subheadline": "The budget battles in Springfield and Washington D.C. have left big holes in our budget and more people in need. Let’s respond and help our neighbors get back on their feet.",
+    "headlineImgPath": "https://s3-us-west-2.amazonaws.com/give-when/static-images/inspiration-corp/kitchen-1-original.jpg",
+    "headerLogoImgSize": 50,
 
     // # Content, give when blocks
-    "giveStatement": "Chip in to support candidates who Fight for $15:",
-    "whenStatement": "Every time an anti-living-wage corporation or PAC writes a campaign check to an Illinois politician...",
+    "giveStatement": "Help Illinoisans working to overcome poverty get back on their feet",
+    "whenStatement": "Every time we enroll an Illinoisan experiencing homelessness and poverty into our programs",
     "progressStatusPhrase": "53 backers",
     "progressGoalPhrase": "of 100 backer goal",
     "progressLeftPhrase": "47 backers needed",
@@ -71,5 +60,16 @@
         ]
       }
     ]
-  }
+  },
+
+    // Defaults
+  "default_selected_amount_in_cents": 300,
+  "default_selected_monthly_maximum_in_cents": 4500,
+
+  // Social
+  "open_graph_title": "Join Will Guzzardi in the fight for $15.",
+  "open_graph_description": "Every time an anti-living-wage corporation writes a campaign check, fight back.",
+  "twitter_message": "Every time an anti-living wage corp (@mcdonalds @walmart...) writes a campaign check, let's fight back ➡ https://wegivewhen.com/campaigns/fight-for-15 #fightfor15",
+  "suggested_email_subject": "Fight for $15",
+  "suggested_email_body": "Hey: I just joined the campaign and I hope you will too. Let\"s fight back every time an anti-living wage corporation like McDonalds writes a campaign check: https://wegivewhen.com/campaigns/fight-for-15"
 }

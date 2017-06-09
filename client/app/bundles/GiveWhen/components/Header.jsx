@@ -26,7 +26,8 @@ export default class Header extends React.Component {
   renderLogo () {
     return (
       <div className="logo">
-        <img src={this.props.logoImgPath} />
+        <img src={this.props.logoImgPath}
+             style={{height: this.props.logoHeight}}/>
       </div>
     );
   }

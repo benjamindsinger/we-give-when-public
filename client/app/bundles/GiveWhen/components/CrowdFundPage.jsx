@@ -49,8 +49,10 @@ export default class CrowdFundPage extends React.Component {
 
     // -- Content, headline
     headline: PropTypes.string.isRequired,
+    headlineLoud: PropTypes.bool.isRequired,
     subheadline: PropTypes.string.isRequired,
     headlineImgPath: PropTypes.string.isRequired,
+    headerLogoImgSize: PropTypes.number.isRequired,
 
     // -- Content, give when blocks
     giveStatement: PropTypes.string.isRequired,
@@ -136,6 +138,7 @@ export default class CrowdFundPage extends React.Component {
       <Header givePhrase={this.props.headerGivePhrase}
         whenPhrase={this.props.headerWhenPhrase}
         logoImgPath={this.props.headerLogoImgPath}
+        logoHeight={this.props.headerLogoImgSize}
         onClickActionButton={UserEvents.onChangeStep.bind(this, 1)}
         showButton={true}
       />
@@ -147,16 +150,22 @@ export default class CrowdFundPage extends React.Component {
       <Header givePhrase={this.props.headerGivePhrase}
         whenPhrase={this.props.headerWhenPhrase}
         logoImgPath={this.props.headerLogoImgPath}
+        logoHeight={this.props.headerLogoImgSize}
         showButton={false}
       />
     );
+  }
+
+  headlineClassName () {
+    if (this.props.headlineLoud) return 'loud';
+    return '';
   }
 
   renderHeadlineSection () {
     return (
       <div className="section flex headline__section below__fixed__navbar">
         <div className="text color__bright">
-          <h1>
+          <h1 className={this.headlineClassName()}>
             {this.props.headline}
           </h1>
           <div className="divider__line"></div>

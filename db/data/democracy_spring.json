@@ -25,11 +25,13 @@
     "headerGivePhrase": "force a change",
     "headerWhenPhrase": "Until the DNC breaks with Big Money,",
     "headerLogoImgPath": "/dem-spring-logo-blue.png",
+    "headerLogoImgSize": 35,
 
     // Content, headline
     "headline": "Democrats Need Big Change",
     "subheadline": "Despite an overwhelming appetite for bold progressive change, the DNC continues to support an agenda backed by Big Money donors instead of everyday people. Let's build a movement to force a change.",
       "headlineImgPath": "/day-one-banner-small.jpeg",
+    "headlineLoud": true,
 
     // # Content, give when blocks
     "giveStatement": "To support a progressive takeover of the Democratic Party",

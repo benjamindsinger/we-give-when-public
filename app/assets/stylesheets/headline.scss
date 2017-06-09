@@ -10,13 +10,20 @@ $darkblue: #1c407b;
 .headline__section {
 
   h1 {
-    text-transform: uppercase;
     margin-bottom: 0;
   }
 
+  h1.loud {
+    text-transform: uppercase;
+  }
+
   @media (min-width: $breakpoint-m) {
-    h1 {
+    h1.loud {
       font-size: 60px;
+    }
+
+    h1:not(.loud) {
+      font-size: 2.4em;
     }
   }
 
