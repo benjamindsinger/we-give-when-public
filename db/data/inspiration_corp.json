@@ -28,10 +28,11 @@
     // # Content, give when blocks
     "giveStatement": "Help Illinoisans working to overcome poverty get back on their feet",
     "whenStatement": "Every time we enroll an Illinoisan experiencing homelessness and poverty into our programs",
-    "progressStatusPhrase": "53 backers",
-    "progressGoalPhrase": "of 100 backer goal",
-    "progressLeftPhrase": "47 backers needed",
-    "progressTimePhrase": "17 days left",
+
+    "progressStatusPhrase": "$129 raised",
+    "progressGoalPhrase": "of $250 goal",
+    "progressLeftPhrase": "64 backers",
+    "progressTimePhrase": "19 days to go",
 
     "disclaimerParagraphs": [
       "Inspiration Corporation is a non-profit 501(c)(3) organization. Donations are tax-deductible for federal income tax purposes. Our federal tax ID number is 36-3673980. Once enrolled, your gift will be made automatically each month. We will also remove you from our mailing lists, which means no more fundraising letters."
