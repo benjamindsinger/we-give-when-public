@@ -238,7 +238,9 @@ export default class CrowdFundPage extends React.Component {
       case 'democracy_spring_agenda':
         return <DemocracySpringAgenda />;
       case 'democracy_spring_letter':
-        return <DemocracySpringLetter />;
+        return <DemocracySpringLetter
+          twitterMessage={this.props.twitterMessage}
+        />;
     }
   }
 
