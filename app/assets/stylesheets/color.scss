@@ -5,6 +5,11 @@ $lightblue: #0948bc;
 
 .color_scheme__red_blue {
 
+  .text.color__headline {
+    background-color: $darkblue;
+    color: white;
+  }
+
   .text.color__bright {
     background-color: $red;
     color: white;
@@ -18,7 +23,7 @@ $lightblue: #0948bc;
 
 .color_scheme__green_blue {
 
-  .text.color__bright {
+  .text.color__bright, .text.color__headline {
     background-color: $lightblue;
     color: white;
   }
