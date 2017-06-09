@@ -46,7 +46,7 @@ export default class OnePanelContent extends React.Component {
 
   renderParagraph (paragraph) {
     return (
-      <p key={paragraph.substring(0,9)}>
+      <p key={paragraph.substring(0,20)}>
         {paragraph}
       </p>
     );
