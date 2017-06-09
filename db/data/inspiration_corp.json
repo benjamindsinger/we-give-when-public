@@ -10,6 +10,9 @@
   "page_data": {
     "colorScheme": "red_blue",
 
+    "optionsInCents": [200, 400, 2000],
+    "monthlyMaxOptionsInCents": [2500, 5000, 25000],
+
     // # Content, header
     "headerWhenPhrase": "Every time we enroll a Chicagoan struggling with poverty into our programs,",
     "headerGivePhrase": "get them on their feet",
