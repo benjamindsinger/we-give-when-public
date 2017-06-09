@@ -58,9 +58,12 @@ export default class GiveWhenBlocks extends React.Component {
             width: 35,
             margin: '0 auto',
             position: 'relative',
-            top: 10
+            top: 10,
+            left: 4
           }}>
-        <path d="M74,55.1c-2.5,3-4.9,5.7-24,20.9l0,0l0,0C30.8,60.8,28.5,58.1,26,55.1c-9.2-11-6.7-23.4,0.6-28.6c6.5-4.6,15.7-2.9,23.4,5.9  c7.7-8.7,16.9-10.5,23.4-5.9C80.7,31.7,83.3,44.1,74,55.1z">
+        <path
+          fill="#1c407b"
+          d="M74,55.1c-2.5,3-4.9,5.7-24,20.9l0,0l0,0C30.8,60.8,28.5,58.1,26,55.1c-9.2-11-6.7-23.4,0.6-28.6c6.5-4.6,15.7-2.9,23.4,5.9  c7.7-8.7,16.9-10.5,23.4-5.9C80.7,31.7,83.3,44.1,74,55.1z">
         </path>
       </svg>
     );
@@ -73,14 +76,17 @@ export default class GiveWhenBlocks extends React.Component {
             height: 25,
             width: 25,
             position: 'relative',
-            top: 2,
-            left: 5
+            top: 4,
+            left: 10
           }}>
-        <path d="M-861,962.2h-7.9v8.9c0,3.8-3.1,6.9-6.9,6.9s-6.9-3.1-6.9-6.9v-8.9h-32.5v8.9c0,3.8-3.1,6.9-6.9,6.9s-6.9-3.1-6.9-6.9     v-8.9h-8c-4.5,0-8.1,3.6-8.1,8.1v70.1c0,4.5,3.6,8.1,8.1,8.1h76c4.5,0,8.1-3.6,8.1-8.1v-70.1C-852.9,965.8-856.5,962.2-861,962.2     z M-857.6,992.6v13.9H-882v-13.9H-857.6z M-911.3,1025.2v-13.9h24.6v13.9H-911.3z M-886.7,1029.9v14h-24.6v-14H-886.7z      M-916,1025.2h-24.5v-13.9h24.5V1025.2z M-911.3,1006.6v-13.9h24.6v13.9H-911.3z M-882,1011.3h24.4v13.9H-882V1011.3z      M-916,992.6v13.9h-24.5v-13.9H-916z M-940.4,1040.4v-10.5h24.5v14h-21C-938.9,1043.8-940.4,1042.3-940.4,1040.4z M-861,1043.8     h-21v-14h24.4v10.5C-857.6,1042.3-859.1,1043.8-861,1043.8z">
+        <path fill="#1c407b"
+          d="M-861,962.2h-7.9v8.9c0,3.8-3.1,6.9-6.9,6.9s-6.9-3.1-6.9-6.9v-8.9h-32.5v8.9c0,3.8-3.1,6.9-6.9,6.9s-6.9-3.1-6.9-6.9     v-8.9h-8c-4.5,0-8.1,3.6-8.1,8.1v70.1c0,4.5,3.6,8.1,8.1,8.1h76c4.5,0,8.1-3.6,8.1-8.1v-70.1C-852.9,965.8-856.5,962.2-861,962.2     z M-857.6,992.6v13.9H-882v-13.9H-857.6z M-911.3,1025.2v-13.9h24.6v13.9H-911.3z M-886.7,1029.9v14h-24.6v-14H-886.7z      M-916,1025.2h-24.5v-13.9h24.5V1025.2z M-911.3,1006.6v-13.9h24.6v13.9H-911.3z M-882,1011.3h24.4v13.9H-882V1011.3z      M-916,992.6v13.9h-24.5v-13.9H-916z M-940.4,1040.4v-10.5h24.5v14h-21C-938.9,1043.8-940.4,1042.3-940.4,1040.4z M-861,1043.8     h-21v-14h24.4v10.5C-857.6,1042.3-859.1,1043.8-861,1043.8z">
         </path>
-        <path d="M-922.1,974.4c1.9,0,3.4-1.5,3.4-3.4v-14.2c0-1.9-1.5-3.4-3.4-3.4c-1.9,0-3.4,1.5-3.4,3.4v14.2     C-925.5,972.9-924,974.4-922.1,974.4z">
+        <path fill="#1c407b"
+          d="M-922.1,974.4c1.9,0,3.4-1.5,3.4-3.4v-14.2c0-1.9-1.5-3.4-3.4-3.4c-1.9,0-3.4,1.5-3.4,3.4v14.2     C-925.5,972.9-924,974.4-922.1,974.4z">
         </path>
-        <path d="M-875.8,974.4c1.9,0,3.4-1.5,3.4-3.4v-14.2c0-1.9-1.5-3.4-3.4-3.4s-3.4,1.5-3.4,3.4v14.2     C-879.1,972.9-877.6,974.4-875.8,974.4z">
+        <path fill="#1c407b"
+          d="M-875.8,974.4c1.9,0,3.4-1.5,3.4-3.4v-14.2c0-1.9-1.5-3.4-3.4-3.4s-3.4,1.5-3.4,3.4v14.2     C-879.1,972.9-877.6,974.4-875.8,974.4z">
         </path>
       </svg>
     );
@@ -110,7 +116,8 @@ export default class GiveWhenBlocks extends React.Component {
     return (
       <div className="give_when__subsection" id="give">
         <h3 style={{marginTop: 10}}>
-          Give {this.renderHeartIcon()}
+          Give
+          {this.renderHeartIcon()}
         </h3>
 
         <div style={{clear: 'both', marginTop: 15}}>
@@ -144,9 +151,11 @@ export default class GiveWhenBlocks extends React.Component {
     const message = "We will charge you 1x per month, send you a summary email first, and never charge more than the maximum amount you set.";
 
      return (
-       <p data-tooltip={message}>
-         <span style={{fontStyle: 'italic'}}>how will it work?</span>
-       </p>
+       <div data-tooltip={message}>
+         <span style={{fontStyle: 'italic'}}>
+            How will it work?
+          </span>
+       </div>
      );
    }
 
@@ -171,12 +180,13 @@ export default class GiveWhenBlocks extends React.Component {
       <div className="give_when__subsection" id="when">
         <div>
           <h3>
-            When {this.renderCalendarIcon()}
+            When
+            {this.renderCalendarIcon()}
           </h3>
           <p>
             {this.props.whenStatement}
           </p>
-          <br/>
+          {this.renderContinueButton()}
           {this.renderAssurance()}
         </div>
       </div>
@@ -204,10 +214,9 @@ export default class GiveWhenBlocks extends React.Component {
       <div className="give_when__subsection" id="progress-bar">
         <div style={{
           width: '80%',
-          margin: '0 auto',
+          margin: '30px auto',
           position: 'relative',
         }}>
-          {this.renderContinueButton()}
           <h3 style={{color: '#1c407b', lineHeight: '7.5px'}}>
             {this.props.progressStatusPhrase}
           </h3>
