@@ -14,14 +14,9 @@ data_sources.each do |data_source|
   str = File.read("#{Rails.root}/db/data/" + data_source)
   json = JSON.parse(str)
 
-  cause = Cause.create!(
-    id: json["cause_id"],
-    name: json["cause_name"]
-  )
+  cause = Cause.create!(id: json["cause_id"], name: json["cause_name"])
 
   crowd_fund_attributes = json.except("cause_name", "cause_id")
 
-  crowd_fund = CrowdFund.create!(
-    {cause: cause}.merge(crowd_fund_attributes)
-  )
+  crowd_fund = CrowdFund.create!({cause: cause}.merge(crowd_fund_attributes))
 end
