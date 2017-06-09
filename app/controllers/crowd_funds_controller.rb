@@ -12,9 +12,6 @@ class CrowdFundsController < ApplicationController
 
     @stripe_publishable_key = ENV['STRIPE_PUBLISHABLE_KEY']
 
-    @meta_og_url = "https://wegivewhen.com/#{@crowd_fund.slug}"
-    @meta_content_twitter_card = "summary_large_image"
-
     if @crowd_fund.id == 1
       @component_name = "DemocracySpringPage"
       @funder_required_details = [

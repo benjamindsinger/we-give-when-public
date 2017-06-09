@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <% if @crowd_fund.present? %>
-    <meta property="og:url" content="<%= @meta_og_url %>" />
+    <meta property="og:url" content="<%= "https://wegivewhen.com/#{@crowd_fund.slug}" %>" />
     <meta property="og:image" content="<%= @meta_og_image %>" />
     <meta property="og:title" content="<%= @crowd_fund.open_graph_title %>" />
     <meta property="og:description" content="<%= @crowd_fund.open_graph_description %>" />
