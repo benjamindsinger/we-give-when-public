@@ -40,9 +40,9 @@
     // # Content, give when blocks
     "giveStatement": "To support a progressive takeover of the Democratic Party",
     "whenStatement": "Every day the DNC fails to break with Big Money",
-    "progressStatusPhrase": "$53/day pledged",
+    "progressStatusPhrase": "$53",
     "progressGoalPhrase": "of $100 goal",
-    "progressLeftPhrase": " $47/day needed",
+    "progressLeftPhrase": " $47",
     "progressTimePhrase": "17 days left",
     "contentSections": [
 

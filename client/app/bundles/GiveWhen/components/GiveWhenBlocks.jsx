@@ -98,7 +98,10 @@ export default class GiveWhenBlocks extends React.Component {
   renderGiveForCountdown () {
     return (
       <div className="give_when__subsection" id="give">
-        <h3>Give</h3>
+        <h3 style={{marginTop: 10}}>
+          Give
+          {this.renderHeartIcon()}
+        </h3>
 
         <div style={{clear: 'both', marginTop: 15}}>
           <p>
@@ -182,7 +185,7 @@ export default class GiveWhenBlocks extends React.Component {
     return (
       <div className="give_when__subsection" id="when">
         <div>
-          <h3>
+          <h3 style={{}}>
             When
             {this.renderCalendarIcon()}
           </h3>
