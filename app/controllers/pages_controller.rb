@@ -1,6 +1,12 @@
 class PagesController < ApplicationController
 
-  def home
+  def privacy
+  end
+
+  def terms
+  end
+
+  def sign_up
   end
 
 end
