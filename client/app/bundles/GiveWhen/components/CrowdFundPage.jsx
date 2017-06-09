@@ -164,7 +164,7 @@ export default class CrowdFundPage extends React.Component {
   renderHeadlineSection () {
     return (
       <div className="section flex headline__section below__fixed__navbar">
-        <div className="text color__bright">
+        <div className="text color__headline">
           <h1 className={this.headlineClassName()}>
             {this.props.headline}
           </h1>
@@ -223,11 +223,14 @@ export default class CrowdFundPage extends React.Component {
   renderOnePanelContent (section) {
     const headline = section.headline;
     const paragraphs = section.paragraphs;
+    const colorType = section.colorType;
 
     if (!headline || !paragraphs) return null;
 
     return (
-      <OnePanelContent headline={headline} paragraphs={paragraphs} />
+      <OnePanelContent headline={headline}
+                       paragraphs={paragraphs}
+                       colorType={colorType} />
     );
   }
 

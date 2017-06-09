@@ -7,12 +7,23 @@ export default class OnePanelContent extends React.Component {
   static propTypes = {
     headline: PropTypes.string.isRequired,
     paragraphs: PropTypes.array.isRequired,
+    colorType: PropTypes.string
   };
+
+  divClassName () {
+    return `text ${this.colorClassName()} narrow big`;
+  }
+
+  colorClassName () {
+    if (this.props.colorType === 'color__bright') return 'color__bright';
+
+    return 'color__calm';
+  }
 
   render () {
     return (
       <div className="section flex">
-        <div className="text color__calm narrow big">
+        <div className={this.divClassName()}>
           <h1 className="subheadline">
             {this.props.headline}
           </h1>
