@@ -31,32 +31,35 @@
     "progressTimePhrase": "17 days left",
 
     "disclaimerParagraphs": [
-      "Funds go to the Committee to Elect Will Guzzardi, which supports the Fight for $15 and donates to candidates who also support the Fight for $15.",
-      "Anti-living-wage corporate donations are tracked via Illinois Sunshine database, an open portal that tracks campaign finance.",
-      "Paid for by the Committee to Elect Will Guzzardi. A copy of our report filed with the State Board of Elections is (or will be) available on the Board's official website (www.elections.il.gov) or for purchase from the State Board of Elections, Springfield, Illinois."
+      "Inspiration Corporation is a non-profit 501(c)(3) organization. Donations are tax-deductible for federal income tax purposes. Our federal tax ID number is 36-3673980. Once enrolled, your gift will be made automatically each month. We will also remove you from our mailing lists, which means no more fundraising letters."
     ],
 
     "contentSections": [
       {
         "type": "one_panel",
-        "headline": "As long as big business pulls the strings in Springfield, we'll never raise the minimum wage",
+        "headline": "Our Mission",
         "paragraphs": [
-          "The Illinois legislature passed a $15 minimum wage this year. But Governor Rauner has promised to veto it, and big business will fight to make sure that veto stands.",
-          "Walmart, McDonalds, the Chamber of Commerce, the Restaurant Association, and the Retail Merchants will be giving heavily to legislators to win their opposition to $15/hr.",
-          "Every time they write a check of $100 or more, we need 100 people to automatically chip in to fight back."
+          "In an atmosphere of dignity and respect, Inspiration Corporation helps people who are affected by homelessness and poverty to improve their lives and increase self-sufficiency through the provision of social services, employment training and housing.",
+          "Each year, Inspiration Corporation works with Chicagoans who are characterized by chronic homelessness, unemployment or underemployment, mental illness, substance addiction, and social isolation. These individuals all share the strength to move beyond their current situation and toward self-sufficiency."
         ]
       },
       {
-        "type": "statement",
-        "content": "Sign up as an automatic responder and get monthly updates from one of the organizers we hire."
+        "type": "one_panel",
+        "headline": "Our Programs",
+        "colorType": "color__bright",
+        "paragraphs": [
+          "Our Housing Services program offers rent subsidies and case management with wraparound supportive services for 104 units of supportive housing citywide.",
+          "Our  Foodservice Training program offers hard and soft skills job training, transitional jobs, and placement and retention services, providing opportunities for job seekers affected by homelessness and deep poverty to obtain the skills and services needed to become employed. We operate a social enterprise restaurant and catering business called Inspiration Kitchens in East Garfield Park where our students get real, on-the-job experience. Check us out on Yelp!",
+          "At Inspiration Cafe in Uptown we serve meals in a restaurant-style setting and provides supportive services in an environment designed to help individuals on their journeys toward self-sufficiency."
+        ]
       },
       {
         "type": "letter",
-        "headline": "We need to respond immediately so our candidates can campaign this summer in the primaries.",
+        "headline": "Who We Serve",
         "paragraphs": [
-          "At the end of each month, depending on the number of checks written by corporate interests and the monthly maximum donation you set for yourself, we'll process your donation and put it to work immediately to campaign for our candidates.",
-
-          "We'll send you a receipt and information each month about which corporations gave how much, and how your contribution helped fight back."
+          "Because Inspiration Corporation practices a harm reduction approach and provides services to people who are not housed or who have physical, emotional, or experiential barriers to employment, those who do not succeed in other programs are often referred to Inspiration Corporation. This willingness to help the highest-need Chicagoans to improve their lives distinguishes Inspiration Corporation from other programs in its peer group.",
+          "At the time of enrollment, a majority of Inspiration Corporation’s program participants are homeless. Upon entry, many are living in emergency shelters, interim housing, single-room occupancy units, or on the street. Homelessness self-perpetuates by creating barriers to maintaining personal hygiene, work-appropriate clothing, and consistent access to phones, voicemail and Internet.",
+          "All participants share a determination to improve their situation, with qualities of resilience, resourcefulness and a depth of life experience. Inspiration Corporation’s client-centered service provision model provides flexibility to address the complex challenges and support the unique strengths of each participant."
         ]
       }
     ]
@@ -73,3 +76,9 @@
   "suggested_email_subject": "Fight for $15",
   "suggested_email_body": "Hey: I just joined the campaign and I hope you will too. Let\"s fight back every time an anti-living wage corporation like McDonalds writes a campaign check: https://wegivewhen.com/campaigns/fight-for-15"
 }
+
+$2/$4/$20
+
+Set a monthly max:
+
+$25/$50/$250
