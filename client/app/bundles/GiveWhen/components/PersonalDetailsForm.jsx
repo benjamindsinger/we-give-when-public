@@ -44,8 +44,8 @@ export default class PersonalDetailsForm extends React.Component {
           {this.renderEmail()}
           {this.renderName()}
           {this.renderAddress()}
-          {this.renderCityAndZip()}
-          {this.renderPhone()}
+          {this.renderCity()}
+          {this.renderPhoneAndZip()}
           {this.renderOccupationAndEmployer()}
           {this.renderErrors()}
           <div style={{textAlign: 'center'}}>
@@ -136,8 +136,8 @@ export default class PersonalDetailsForm extends React.Component {
     );
   }
 
-  renderCityAndZip () {
-    if (!_.includes(this.props.funderRequiredDetails, 'zip')) return null;
+  renderCity () {
+    if (!_.includes(this.props.funderRequiredDetails, 'city')) return null;
 
     return (
       <div className="input__row">
@@ -145,27 +145,28 @@ export default class PersonalDetailsForm extends React.Component {
         <input type="text"
                onChange={this.props.onType.bind(this, 'city')}
                value={this.props.city}
-               style={{flex: 2}}
                placeholder="City" />
 
-        <input type="text"
-               style={{flex: 1}}
-               onChange={this.props.onType.bind(this, 'zip')}
-               value={this.props.zip}
-               placeholder="ZIP" />
       </div>
     );
   }
 
-  renderPhone () {
+  renderPhoneAndZip () {
     if (!_.includes(this.props.funderRequiredDetails, 'phone')) return null;
 
     return (
-      <div className="long__input">
+      <div className="input__row">
+
+        <input type="text"
+               onChange={this.props.onType.bind(this, 'zip')}
+               value={this.props.zip}
+               placeholder="ZIP code (5-digits)" />
+
         <input type="text"
                onChange={this.props.onType.bind(this, 'phone')}
                value={this.props.phone}
                placeholder="Phone" />
+
       </div>
     );
   }

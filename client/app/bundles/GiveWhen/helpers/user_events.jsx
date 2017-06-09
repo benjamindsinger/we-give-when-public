@@ -19,19 +19,19 @@ export default {
       return !(this.state[field]);
     }, this);
 
-    if (5 > this.state.address.length) {
+    if (funderRequiredDetails.indexOf('address') > -1 && 5 > this.state.address.length) {
       errors.push('address_length');
     }
 
-    if (10 > this.state.phone.length) {
+    if (funderRequiredDetails.indexOf('phone') > -1 && 10 > this.state.phone.length) {
       errors.push('phone_length');
     }
 
-    if (isNaN(parseFloat(this.state.zip)) || !isFinite(this.state.zip)) {
+    if (funderRequiredDetails.indexOf('zip') > -1 && isNaN(parseFloat(this.state.zip)) || !isFinite(this.state.zip)) {
       errors.push('zip_numeric');
     }
 
-    if (this.state.zip.length !== 5) {
+    if (funderRequiredDetails.indexOf('zip') > -1 && this.state.zip.length !== 5) {
       errors.push('zip_five');
     }
 
