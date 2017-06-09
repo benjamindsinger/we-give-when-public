@@ -6,14 +6,13 @@ export default class Statement extends React.Component {
 
   static propTypes = {
     content: PropTypes.string.isRequired,
+    colorType: PropTypes.string.isRequired,
   };
 
   render () {
     return (
-      <div style={{
+      <div className="statement color__dark" style={{
         width: '100%',
-        backgroundColor: '#0948bc',
-        color: 'white'
       }}>
         <div style={{
           width: '70%',
