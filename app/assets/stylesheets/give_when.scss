@@ -48,6 +48,7 @@ $lightblue: #0948bc;
     @media (max-width: $breakpoint-m) {
       .selector__button__row {
         flex-direction: column;
+        width: 33%;
       }
     }
 
