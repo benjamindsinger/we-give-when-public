@@ -474,7 +474,6 @@ export default class DemocracySpringPage extends React.Component {
               style={{
                 textTransform: 'uppercase',
                 color: '#f90016',
-                textDecoration: 'underline',
                 marginBottom: 40
               }}>
             THE DEMOCRACY SPRING MOVEMENT HOUSE

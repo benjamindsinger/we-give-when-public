@@ -10,14 +10,20 @@ import Footer from './Footer.jsx';
 import Header from './Header.jsx';
 
 import OnePanelContent from './sections/OnePanelContent.jsx';
+import TwoPanelContent from './sections/TwoPanelContent.jsx';
 import Statement from './sections/Statement.jsx';
 import Letter from './sections/Letter.jsx';
 import Disclaimer from './sections/Disclaimer.jsx';
+import Video from './sections/Video.jsx';
+import DemocracySpringAgenda from './sections/DemocracySpringAgenda.jsx'
+import DemocracySpringLetter from './sections/DemocracySpringLetter.jsx'
 
 import Money from '../helpers/money.jsx';
 import Buttons from '../helpers/buttons.jsx';
 import UserEvents from '../helpers/user_events.jsx';
 import DataCuts from '../helpers/data_cuts.jsx';
+import Twitter from '../helpers/twitter.jsx';
+import Facebook from '../helpers/facebook.jsx';
 
 export default class CrowdFundPage extends React.Component {
   displayName: 'CrowdFundPage';
@@ -36,6 +42,8 @@ export default class CrowdFundPage extends React.Component {
     // Defaults
     defaultSelectedAmountInCents: PropTypes.number.isRequired,
     defaultSelectedMonthlyMaximumInCents: PropTypes.number,
+    optionsInCents: PropTypes.array,
+    monthlyMaxOptionsInCents: PropTypes.array,
 
     // Colors
     colorScheme: PropTypes.string.isRequired,
@@ -186,15 +194,21 @@ export default class CrowdFundPage extends React.Component {
         giveStatement={this.props.giveStatement}
         whenStatement={this.props.whenStatement}
         givePhrase={this.props.headerGivePhrase}
+
         progressStatusPhrase={this.props.progressStatusPhrase}
         progressGoalPhrase={this.props.progressGoalPhrase}
         progressLeftPhrase={this.props.progressLeftPhrase}
         progressTimePhrase={this.props.progressTimePhrase}
-        onClickGive={this.onClickGive}
+
         renderAmountButton={this.renderAmountButton}
         renderMaximumAmountButton={this.renderMaximumAmountButton}
         renderCustomAmountButton={this.renderCustomAmountButton}
         renderCustomMaximumAmountButton={this.renderCustomMaximumAmountButton}
+
+        optionsInCents={this.props.optionsInCents}
+        monthlyMaxOptionsInCents={this.props.monthlyMaxOptionsInCents}
+
+        onClickGive={this.onClickGive}
       />
     );
   }
@@ -217,6 +231,14 @@ export default class CrowdFundPage extends React.Component {
         return this.renderStatementContent(section);
       case 'letter':
         return this.renderLetterContent(section);
+      case 'two_panel':
+        return this.renderTwoPanelContent(section);
+      case 'video':
+        return this.renderVideo(section);
+      case 'democracy_spring_agenda':
+        return <DemocracySpringAgenda />;
+      case 'democracy_spring_letter':
+        return <DemocracySpringLetter />;
     }
   }
 
@@ -230,7 +252,8 @@ export default class CrowdFundPage extends React.Component {
     return (
       <OnePanelContent headline={headline}
                        paragraphs={paragraphs}
-                       colorType={colorType} />
+                       colorType={colorType}
+                       backgroungImgUrl={section.backgroungImgUrl} />
     );
   }
 
@@ -253,6 +276,31 @@ export default class CrowdFundPage extends React.Component {
     return (
       <Letter
         headline={headline} paragraphs={paragraphs}
+      />
+    );
+  }
+
+  renderTwoPanelContent (section) {
+    const headline = section.headline;
+    const paragraphs = section.paragraphs;
+    const imgUrl = section.imgUrl;
+
+    if (!headline || !paragraphs || !imgUrl) return null;
+
+    return (
+      <TwoPanelContent
+        headline={headline}
+        paragraphs={paragraphs}
+        imgUrl={imgUrl}
+      />
+    );
+  }
+
+  renderVideo (section) {
+    return (
+      <Video
+        headline={section.headline}
+        paragraphs={section.youTubeId}
       />
     );
   }

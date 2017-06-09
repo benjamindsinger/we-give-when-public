@@ -11,12 +11,7 @@ class CrowdFundsController < ApplicationController
     @crowd_fund = CrowdFund.friendly.find(params[:id])
 
     @stripe_publishable_key = ENV['STRIPE_PUBLISHABLE_KEY']
-
-    if @crowd_fund.id == 1
-      @component_name = "DemocracySpringPage"
-    else
-      @component_name = "CrowdFundPage"
-    end
+    @component_name = "CrowdFundPage"
 
     if @crowd_fund.id == 2
       @funder_required_details = [

@@ -19,17 +19,21 @@
 
   // JSON for landing page
   "page_data": {
+
+    // Options
+    "optionsInCents": [50, 100, 300],
+
     "colorScheme": "red_blue",
 
     // Content, header
-    "headerGivePhrase": "force a change",
-    "headerWhenPhrase": "Until the DNC breaks with Big Money,",
+    "headerWhenPhrase": "Force the Democrats to break with Big Money.",
+    "headerGivePhrase": "Join the fight",
     "headerLogoImgPath": "/dem-spring-logo-blue.png",
     "headerLogoImgSize": 35,
 
     // Content, headline
     "headline": "Democrats Need Big Change",
-    "subheadline": "Despite an overwhelming appetite for bold progressive change, the DNC continues to support an agenda backed by Big Money donors instead of everyday people. Let's build a movement to force a change.",
+    "subheadline": "The American people are hungry for bold progressive change, yet the DNC continues to support a corporate agenda backed by Big Money donors. Let’s force them to break with Big Money.",
       "headlineImgPath": "/day-one-banner-small.jpeg",
     "headlineLoud": true,
 
@@ -40,7 +44,56 @@
     "progressGoalPhrase": "of $100 goal",
     "progressLeftPhrase": " $47/day needed",
     "progressTimePhrase": "17 days left",
-    "contentSections": [], // TK
-    "disclaimerParagraphs": []  // TK
+    "contentSections": [
+
+      {
+        "type": "one_panel",
+        "headline": "THE DEMOCRATS NEED A SHAKEUP",
+        "backgroungImgUrl": "/Blue-over-capitol.jpg",
+        "paragraphs": [
+          "Despite a cataclysmic defeat in the 2016 election and the awesome rise of a new progressive and people-powered movement on the left, the DNC is still holding on to the old centrist and corporate-backed strategies that gave us President Trump and across-the-board Republican control of our government.",
+          "There is a simple reason for this – money. As long as the DNC is dependent on billionaire campaign contributors and corporate lobbyists, they will never represent everyday working people.",
+          "The DNC needs to break with Big Money, once and for all. How? By adopting a simple, universal standard that would ensure that a supermajority of the money they raise comes exclusively from small donors, not corporations and billionaires. This would be the party’s declaration of independence from Big Money, placing power back into the hands of Democratic voters."
+        ]
+      },
+
+      {
+        "type": "one_panel",
+        "colorType": "color__bright",
+        "headline": "HERE'S HOW THIS CAMPAIGN WORKS:",
+        "paragraphs": [
+          "Every day Tom Perez and the DNC fails to break with Big Money, you chip in to help us organize the movement that will FORCE them to change.",
+          "Every day the DNC fails to take action, we grow stronger. The day the DNC decides to breaks with Big Money and represent the people, this campaign ends and you’re not charged another dime. That’s it.",
+          "If we meet our fundraising goal by July 4th, we’ll be able to rent a Movement House headquarters in Washington DC that will support over a dozen full-time organizers, committed to a progressive takeover of the Democratic Party.",
+          "They will organize hundreds of local volunteers to protest and disrupt corporate candidates and establishment party bosses, while lifting up bold progressive champions fighting for the soul of the party."
+        ]
+      },
+      {
+        "type": "statement",
+        "content": "Sign up as an automatic responder and you'll get monthly updates from one of our organizers."
+      },
+      {
+        "type": "two_panel",
+        "headline": "SPEAK UP. STAND UP. SUPPORT THE MOVEMENT.",
+        "imgUrl": "/democracy-spring-marching.jpg",
+        "paragraphs": [
+          "We need a true People's Party. Tell Democrats at every level of government that this is the kind of change we need to protect our people and defend our democracy.",
+          "Support the campaign, then share. Let’s build this movement."
+        ]
+      },
+      {
+        "type": "video",
+        "youTubeId": "lIH-tZEPw8k",
+        "headline": "WATCH CNN’S 4-MINUTE CLIP OF OUR CIVIL DISOBEDIENCE CAMPAIGN AT THE DNC"
+      },
+      {
+        "type": "democracy_spring_agenda"
+      },
+      {
+        "type": "democracy_spring_letter"
+      }
+    ],
+    "disclaimerParagraphs": [
+    ]  // TK
   }
 }

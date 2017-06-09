@@ -10,6 +10,9 @@
         defaultSelectedAmountInCents: @crowd_fund.default_selected_amount_in_cents,
         defaultSelectedMonthlyMaximumInCents: @crowd_fund.default_selected_monthly_maximum_in_cents,
 
+        optionsInCents: @crowd_fund.page_data.fetch("optionsInCents"),
+        monthlyMaxOptionsInCents: @crowd_fund.page_data.fetch("monthlyMaxOptionsInCents", nil),
+
         # Social
         twitterMessage: @crowd_fund.twitter_message,
         suggestedEmailSubject: @crowd_fund.suggested_email_subject,

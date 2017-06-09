@@ -16,8 +16,7 @@ export default {
            data-href={this.currentUrl()}
            data-layout="button_count"
            data-size="large" data-mobile-iframe="true">
-        <a className="fb-xfbml-parse-ignore"
-           target="_blank"
+        <a target="_blank"
            style={{textDecoration: 'none', color: 'white'}}
            href={this.facebookHref()}>
           Share your support

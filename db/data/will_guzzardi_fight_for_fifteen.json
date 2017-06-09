@@ -21,6 +21,9 @@
   "page_data": {
     "colorScheme": "green_blue",
 
+    "optionsInCents": [100, 300, 1500],
+    "monthlyMaxOptionsInCents": [1500, 4500, 15000],
+
     // # Content, header
     "headerGivePhrase": "fight back",
     "headerWhenPhrase": "Every time an anti-living-wage corporation writes a campaign check,",

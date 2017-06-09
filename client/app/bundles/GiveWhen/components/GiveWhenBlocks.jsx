@@ -23,6 +23,9 @@ export default class GiveWhenBlocks extends React.Component {
 
     onClickGive: PropTypes.func.isRequired,
 
+    optionsInCents: PropTypes.array.isRequired,
+    monthlyMaxOptionsInCents: PropTypes.array,
+
     renderAmountButton: PropTypes.func.isRequired,
     renderMaximumAmountButton: PropTypes.func.isRequired,
     renderCustomAmountButton: PropTypes.func.isRequired,
@@ -102,9 +105,9 @@ export default class GiveWhenBlocks extends React.Component {
             {this.props.giveStatement}
           </p>
           <div className="selector__button__row">
-            {this.props.renderAmountButton(100)}
-            {this.props.renderAmountButton(300)}
-            {this.props.renderAmountButton(1500)}
+            {this.props.optionsInCents.map((cents) => {
+              return this.props.renderAmountButton(cents);
+            }, this)}
             {this.props.renderCustomAmountButton()}
           </div>
         </div>
@@ -125,9 +128,9 @@ export default class GiveWhenBlocks extends React.Component {
             {this.props.giveStatement}
           </p>
           <div className="selector__button__row">
-            {this.props.renderAmountButton(100)}
-            {this.props.renderAmountButton(300)}
-            {this.props.renderAmountButton(1500)}
+            {this.props.optionsInCents.map((cents) => {
+              return this.props.renderAmountButton(cents);
+            }, this)}
             {this.props.renderCustomAmountButton()}
           </div>
         </div>
@@ -137,9 +140,9 @@ export default class GiveWhenBlocks extends React.Component {
             Monthly maximum:
           </p>
           <div className="selector__button__row">
-            {this.props.renderMaximumAmountButton(1500)}
-            {this.props.renderMaximumAmountButton(4500)}
-            {this.props.renderMaximumAmountButton(15000)}
+            {this.props.monthlyMaxOptionsInCents.map((cents) => {
+              return this.props.renderAmountButton(cents);
+            }, this)}
             {this.props.renderCustomMaximumAmountButton()}
           </div>
         </div>

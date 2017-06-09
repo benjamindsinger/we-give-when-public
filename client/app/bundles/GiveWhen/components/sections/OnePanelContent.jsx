@@ -7,7 +7,8 @@ export default class OnePanelContent extends React.Component {
   static propTypes = {
     headline: PropTypes.string.isRequired,
     paragraphs: PropTypes.array.isRequired,
-    colorType: PropTypes.string
+    colorType: PropTypes.string,
+    backgroungImgUrl: PropTypes.string
   };
 
   divClassName () {
@@ -20,10 +21,17 @@ export default class OnePanelContent extends React.Component {
     return 'color__calm';
   }
 
+  divStyle () {
+    if (this.props.backgroungImgUrl) {
+      return { background: `url("${this.props.backgroungImgUrl}")` };
+    }
+  }
+
   render () {
     return (
       <div className="section flex">
-        <div className={this.divClassName()}>
+        <div className={this.divClassName()}
+             style={this.divStyle()}>
           <h1 className="subheadline">
             {this.props.headline}
           </h1>
