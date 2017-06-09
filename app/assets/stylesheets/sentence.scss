@@ -12,15 +12,15 @@ $green: #01943b;
   color: $red;
 
   .action_button {
-    border: 2px solid $red;
-    background-color: white;
-    color: $red;
-  }
-
-  .action_button:hover {
     border: 2px solid white;
     background-color: $red;
     color: white;
+  }
+
+  .action_button:hover {
+    border: 2px solid $red;
+    background-color: white;
+    color: $red;
   }
 }
 
