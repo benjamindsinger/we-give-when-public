@@ -1,0 +1,71 @@
+{
+  "id": 2,
+  "cause_id": 2,
+  "name": "Fight for $15",
+  "crowd_fund_type": "SLINGSHOT",
+
+  // Defaults
+  "default_selected_amount_in_cents": 300,
+  "default_selected_monthly_maximum_in_cents": 4500,
+
+  // Social
+  "open_graph_title": "Join Will Guzzardi in the fight for $15.",
+  "open_graph_description": "Every time an anti-living-wage corporation writes a campaign check, fight back.",
+  "twitter_message": "Every time an anti-living wage corp (@mcdonalds @walmart...) writes a campaign check, let's fight back ➡ https://wegivewhen.com/campaigns/fight-for-15 #fightfor15",
+  "suggested_email_subject": "Fight for $15",
+  "suggested_email_body": "Hey: I just joined the campaign and I hope you will too. Let\"s fight back every time an anti-living wage corporation like McDonalds writes a campaign check: https://wegivewhen.com/campaigns/fight-for-15",
+
+  // JSON for landing page
+  "page_data": {
+    "colorScheme": "green_blue",
+
+    // # Content, header
+    "headerGivePhrase": "fight back",
+    "headerWhenPhrase": "Every time an anti-living-wage corporation writes a campaign check,",
+    "headerLogoImgPath": "https://s3-us-west-2.amazonaws.com/give-when/static-images/guzzardi-fight-for-15/guzzardi-logo-good.jpg",
+
+    // # Content, headline
+    "headline": "Elect Candidates Who Fight For $15",
+    "subheadline": "Big business has money, but we have people. Every time an anti-living-wage corporation in Illinois writes a big check, we need hundreds of people to make a small donation to living-wage campaigns.",
+    "headlineImgPath": "https://s3-us-west-2.amazonaws.com/give-when/static-images/guzzardi-fight-for-15/fightfor15photo.jpg",
+
+    // # Content, give when blocks
+    "giveStatement": "Chip in to support candidates who Fight for $15:",
+    "whenStatement": "Every time an anti-living-wage corporation or PAC writes a campaign check to an Illinois politician...",
+    "progressStatusPhrase": "53 backers",
+    "progressGoalPhrase": "of 100 backer goal",
+    "progressLeftPhrase": "47 backers needed",
+    "progressTimePhrase": "17 days left",
+
+    "disclaimerParagraphs": [
+      "Funds go to the Committee to Elect Will Guzzardi, which supports the Fight for $15 and donates to candidates who also support the Fight for $15.",
+      "Anti-living-wage corporate donations are tracked via Illinois Sunshine database, an open portal that tracks campaign finance.",
+      "Paid for by the Committee to Elect Will Guzzardi. A copy of our report filed with the State Board of Elections is (or will be) available on the Board's official website (www.elections.il.gov) or for purchase from the State Board of Elections, Springfield, Illinois.",
+    ],
+
+    "contentSections": [
+      {
+        "type": "one_panel",
+        "headline": "As long as big business pulls the strings in Springfield, we'll never raise the minimum wage",
+        "paragraphs": [
+          "The Illinois legislature passed a $15 minimum wage this year. But Governor Rauner has promised to veto it, and big business will fight to make sure that veto stands.",
+          "Walmart, McDonalds, the Chamber of Commerce, the Restaurant Association, and the Retail Merchants will be giving heavily to legislators to win their opposition to $15/hr.",
+          "Every time they write a check of $100 or more, we need 100 people to automatically chip in to fight back."
+        ],
+      },
+      {
+        "type": "statement",
+        "content": "Sign up as an automatic responder and get monthly updates from one of the organizers we hire."
+      },
+      {
+        "type": "letter",
+        "headline": "We need to respond immediately so our candidates can campaign this summer in the primaries.",
+        "paragraphs": [
+          "At the end of each month, depending on the number of checks written by corporate interests and the monthly maximum donation you set for yourself, we'll process your donation and put it to work immediately to campaign for our candidates.",
+
+          "We'll send you a receipt and information each month about which corporations gave how much, and how your contribution helped fight back."
+        ]
+      }
+    ]
+  }
+}
