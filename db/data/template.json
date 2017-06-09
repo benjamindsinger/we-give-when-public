@@ -1,0 +1,54 @@
+{
+  "id": ,
+  "cause_id": ,
+  "cause_name": "",
+
+  "name": "",
+  "crowd_fund_type": "",
+
+  // JSON for landing page
+  "page_data": {
+    "colorScheme": "",
+
+    "optionsInCents": [],
+    "monthlyMaxOptionsInCents": [],
+
+    // # Content, header
+    "headerWhenPhrase": "",
+    "headerGivePhrase": "",
+    "headerLogoImgPath": "",
+
+    // # Content, headline
+    "headline": "",
+    "headlineLoud": false,
+    "subheadline": "",
+    "headlineImgPath": "",
+    "headerLogoImgSize": 50,
+
+    // # Content, give when blocks
+    "giveStatement": "",
+    "whenStatement": "",
+
+    "progressStatusPhrase": "$",
+    "progressGoalPhrase": "",
+    "progressLeftPhrase": "",
+    "progressTimePhrase": "",
+
+    "disclaimerParagraphs": [
+    ],
+
+    "contentSections": [
+    ]
+  },
+
+    // Defaults
+  "default_selected_amount_in_cents": null,
+  "default_selected_monthly_maximum_in_cents": null,
+
+  // Social
+  "open_graph_title": "",
+  "open_graph_description": "",
+  "twitter_message": "",
+  "suggested_email_subject": "",
+  "suggested_email_body": ""
+}
