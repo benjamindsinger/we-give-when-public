@@ -141,13 +141,12 @@ export default class GiveWhenBlocks extends React.Component {
   }
 
   renderAssurance () {
-    const message = "We will charge you monthly, send you a summary email first, and never charge more than the maximum amount you set.";
+    const message = "We will charge you 1x per month, send you a summary email first, and never charge more than the maximum amount you set.";
 
      return (
-       <div data-tooltip={message}
-            style={{ fontSize: '0.9em' }}>
-         how will it work?
-       </div>
+       <p data-tooltip={message}>
+         <span style={{fontStyle: 'italic'}}>how will it work?</span>
+       </p>
      );
    }
 
@@ -155,6 +154,15 @@ export default class GiveWhenBlocks extends React.Component {
     return (
       <div className="arrow_box" style={{flex: 0}}>
       </div>
+    );
+  }
+
+  renderContinueButton () {
+    return (
+      <span className='action_button_big'
+            onClick={this.props.onClickGive}>
+        {this.props.givePhrase} →
+      </span>
     );
   }
 
@@ -168,10 +176,8 @@ export default class GiveWhenBlocks extends React.Component {
           <p>
             {this.props.whenStatement}
           </p>
-          <span className='action_button_big'
-                onClick={this.props.onClickGive}>
-            {this.props.givePhrase} →
-          </span>
+          <br/>
+          {this.renderAssurance()}
         </div>
       </div>
     );
@@ -198,9 +204,10 @@ export default class GiveWhenBlocks extends React.Component {
       <div className="give_when__subsection" id="progress-bar">
         <div style={{
           width: '80%',
-          margin: '30px auto',
+          margin: '0 auto',
           position: 'relative',
         }}>
+          {this.renderContinueButton()}
           <h3 style={{color: '#1c407b', lineHeight: '7.5px'}}>
             {this.props.progressStatusPhrase}
           </h3>
