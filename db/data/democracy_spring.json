@@ -28,18 +28,17 @@
 
     // Content, headline
     "headline": "Democrats Need Big Change",
-    "subheadline": "Despite an overwhelming appetite for bold progressive change, the DNC continues to support an agenda backed by Big Money donors instead of everyday people. Let\"s build a movement to force a change.",
+    "subheadline": "Despite an overwhelming appetite for bold progressive change, the DNC continues to support an agenda backed by Big Money donors instead of everyday people. Let's build a movement to force a change.",
       "headlineImgPath": "/day-one-banner-small.jpeg",
 
-      // #ontent, give when blocks
-      "giveStatement": "To support a progressive takeover of the Democratic Party",
-      "whenStatement": "Every day the DNC fails to break with Big Money",
-      "progressStatusPhrase": "$53/day pledged",
-      "progressGoalPhrase": "of $100 goal",
-      "progressLeftPhrase": " $47/day needed",
-      "progressTimePhrase": "17 days left",
-      "contentSections": [], // TK
-      "disclaimerParagraphs": []  // TK
-    }
+    // # Content, give when blocks
+    "giveStatement": "To support a progressive takeover of the Democratic Party",
+    "whenStatement": "Every day the DNC fails to break with Big Money",
+    "progressStatusPhrase": "$53/day pledged",
+    "progressGoalPhrase": "of $100 goal",
+    "progressLeftPhrase": " $47/day needed",
+    "progressTimePhrase": "17 days left",
+    "contentSections": [], // TK
+    "disclaimerParagraphs": []  // TK
   }
 }
