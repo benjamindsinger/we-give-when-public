@@ -160,7 +160,7 @@ export default class PersonalDetailsForm extends React.Component {
         <input type="text"
                onChange={this.props.onType.bind(this, 'zip')}
                value={this.props.zip}
-               placeholder="ZIP code (5-digits)" />
+               placeholder="ZIP" />
 
         <input type="text"
                onChange={this.props.onType.bind(this, 'phone')}
