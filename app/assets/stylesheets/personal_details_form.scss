@@ -41,6 +41,7 @@ $lightblue: #0948bc;
       input {
         width: 100%;
         margin: 10px 0;
+        line-height: 50px; /* So that Firefox doesn't make it tiny */
       }
     }
 
@@ -50,8 +51,8 @@ $lightblue: #0948bc;
 
       input {
         flex: 1;
-        margin-top: 15px;
-        margin-bottom: 15px;
+        margin: 10px 0;
+        line-height: 50px; /* So that Firefox doesn't make it tiny */
       }
 
       @media (min-width: $breakpoint-m) {
