@@ -40,7 +40,7 @@
     "subheadline": "Help us raise $250 to transform one life at a time.",
     "headlineImgPath": "https://s3-us-west-2.amazonaws.com/give-when/static-images/a-safe-haven/Landscaping-several-guys-shorter-cropped.jpg",
     "headerLogoImgSize": 50,
-    "largeHeadlineText": false,
+    "largeHeadlineText": true,
 
     // # Content, give when blocks
     "giveStatement": "Help us transform a life",
