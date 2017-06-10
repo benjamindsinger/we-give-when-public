@@ -10,7 +10,14 @@ $green: #01943b;
 $lightblue: #0948bc;
 
 .personal__details__form__wrapper.card__details__form {
-  min-height: 75vh; /* Because there's not much content on this page*/
+  min-height: 75vh; /* Because there's not much content on this page */
+  padding: 20px 0;  /* No horizontal padding so that stripe has room */
+}
+
+.personal__details__form__wrapper:not(.card__details__form) {
+  .personal__details__form {
+    padding: 20px;
+  }
 }
 
 .personal__details__form__wrapper {
@@ -19,7 +26,6 @@ $lightblue: #0948bc;
   color: white;
 
   .personal__details__form {
-    padding: 20px;
 
     .summary {
       margin: 20px 0;
