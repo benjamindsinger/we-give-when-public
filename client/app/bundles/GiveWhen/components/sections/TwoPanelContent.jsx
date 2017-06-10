@@ -26,7 +26,12 @@ export default class TwoPanelContent extends React.Component {
 
           {this.props.paragraphs.map(this.renderParagraph)}
         </div>
-        <img src={this.props.imgUrl} />
+
+        <div className="text" style={{
+          background: `url("${this.props.imgUrl}")`,
+          backgroundSize: 'cover',
+          minHeight: 400
+        }}></div>
       </div>
     );
   }
