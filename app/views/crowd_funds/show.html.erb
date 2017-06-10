@@ -36,10 +36,12 @@
         # Content, give when blocks
         giveStatement: @crowd_fund.page_data.fetch("giveStatement"),
         whenStatement: @crowd_fund.page_data.fetch("whenStatement"),
-        progressStatusPhrase: @crowd_fund.page_data.fetch("progressStatusPhrase"),
-        progressGoalPhrase: @crowd_fund.page_data.fetch("progressGoalPhrase"),
-        progressLeftPhrase: @crowd_fund.page_data.fetch("progressLeftPhrase"),
-        progressTimePhrase: @crowd_fund.page_data.fetch("progressTimePhrase"),
+
+        # Progress bar
+        progressStatusPhrase: @crowd_fund.progress_amount_phrase,
+        progressGoalPhrase: @crowd_fund.progress_goal_phrase,
+        progressLeftPhrase: @crowd_fund.progress_to_go_phase,
+        progressTimePhrase: @crowd_fund.progress_time_phrase,
 
         # Content, sections
         contentSections: @crowd_fund.page_data.fetch("contentSections"),

@@ -21,8 +21,20 @@ class CrowdFund < ApplicationRecord
     end
   end
 
+
+  def charge_funders_for_slingshot(number_of_triggers)
+    crowd_fund_memberships.each do |membership|
+      TriggerCharge.new(
+        crowd_fund_membership: membership,
+        number_of_triggers: number_of_triggers
+      ).charge_funder
+    end
+  end
+
+  # Goal & Progress bar
+
   def time_until_goal
-    goal_date - DateTime.current
+    (goal_date - DateTime.current).to_i / (24 * 60 * 60)
   end
 
   def progress_made_to_goal
@@ -34,7 +46,7 @@ class CrowdFund < ApplicationRecord
     end
   end
 
-  def progress_left_to_goal
+  def progress_to_go
     goal_amount - progress_made_to_goal
   end
 
@@ -47,13 +59,35 @@ class CrowdFund < ApplicationRecord
                           .inject(0, :+)
   end
 
-  def charge_funders_for_slingshot(number_of_triggers)
-    crowd_fund_memberships.each do |membership|
-      TriggerCharge.new(
-        crowd_fund_membership: membership,
-        number_of_triggers: number_of_triggers
-      ).charge_funder
+  def progress_amount_phrase
+    case goal_type
+    when "BACKERS"
+      "#{progress_made_to_goal}"
+    when "DOLLARS"
+      "$#{progress_made_to_goal}"
     end
+  end
+
+  def progress_goal_phrase
+    case goal_type
+    when "BACKERS"
+      "of #{goal_amount} backer goal"
+    when "DOLLARS"
+      "of $#{goal_amount} goal"
+    end
+  end
+
+  def progress_to_go_phase
+    case goal_type
+    when "BACKERS"
+      "#{progress_to_go} backers needed"
+    when "DOLLARS"
+      "$#{progress_to_go} needed"
+    end
+  end
+
+  def progress_time_phrase
+    "#{time_until_goal} days left"
   end
 
 end
