@@ -31,6 +31,10 @@ class CrowdFund < ApplicationRecord
     end
   end
 
+  def url
+    "https://wegivewhen.com/campaigns/#{slug}"
+  end
+
   # Goal & Progress bar
 
   def time_until_goal
