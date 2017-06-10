@@ -25,6 +25,7 @@ export default class CardDetailsForm extends React.Component {
     suggestedEmailSubject: PropTypes.string,
     suggestedEmailBody: PropTypes.string,
     twitterMessage: PropTypes.string,
+    hideFacebook: PropTypes.bool,
 
     /* Campaign type */
     crowdFundType: PropTypes.string.isRequired
@@ -109,6 +110,7 @@ export default class CardDetailsForm extends React.Component {
     return (
       <SocialSharingPage
         twitterMessage={this.props.twitterMessage}
+        hideFacebook={this.props.hideFacebook}
         suggestedEmailSubject={this.props.suggestedEmailSubject}
         suggestedEmailBody={this.props.suggestedEmailBody}
       />

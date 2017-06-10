@@ -36,6 +36,7 @@ export default class CrowdFundPage extends React.Component {
 
     // Social
     twitterMessage: PropTypes.string,
+    hideFacebook: PropTypes.bool,
     suggestedEmailSubject: PropTypes.string,
     suggestedEmailBody: PropTypes.string,
 
@@ -396,6 +397,7 @@ export default class CrowdFundPage extends React.Component {
 
           /* Social sharing */
           twitterMessage={this.props.twitterMessage}
+          hideFacebook={this.props.hideFacebook}
           suggestedEmailSubject={this.props.suggestedEmailSubject}
           suggestedEmailBody={this.props.suggestedEmailBody}
 

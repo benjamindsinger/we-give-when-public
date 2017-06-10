@@ -7,6 +7,7 @@ export default class SocialSharingPage extends React.Component {
 
   static propTypes = {
     twitterMessage: PropTypes.string,
+    hideFacebook: PropTypes.bool,
     suggestedEmailSubject: PropTypes.string,
     suggestedEmailBody: PropTypes.string,
   };
@@ -35,12 +36,8 @@ export default class SocialSharingPage extends React.Component {
           </p>
         </div>
 
-        {Twitter.renderButton(this.props.twitterMessage)}
-
-        <div className="social__sharing__button facebook">
-          {Facebook.renderLogo()}
-          {Facebook.button()}
-        </div>
+        {this.renderFacebook()}
+        {this.renderTwitter()}
 
         <a className="social__sharing__button email"
            href={this.mailTo()}>
@@ -48,6 +45,21 @@ export default class SocialSharingPage extends React.Component {
         </a>
       </div>
     );
+  }
+
+  renderFacebook () {
+    if (this.props.hideFacebook) return null;
+
+    return (
+      <div className="social__sharing__button facebook">
+        {Facebook.renderLogo()}
+        {Facebook.button()}
+      </div>
+    );
+  }
+
+  renderTwitter () {
+    return Twitter.renderButton(this.props.twitterMessage);
   }
 
 };
