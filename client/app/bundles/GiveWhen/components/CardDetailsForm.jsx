@@ -127,56 +127,54 @@ export default class CardDetailsForm extends React.Component {
       <div className="personal__details__form__wrapper color_scheme__white_blue card__details__form below__fixed__navbar">
         <div className="personal__details__form card__details__form">
 
-          <form id="payment-form"
-                style={{
-                  margin: '60px 0'
-                }}>
-            <div style={{
-              backgroundColor: 'white',
-              height: 50,
-              border: 'none',
-              borderRadius: 6,
-              fontFamily: 'Helvetica',
-              boxShadow: '0 4px 4px rgba(0,0,0,0.12), 0 4px 4px rgba(0,0,0,0.24)',
-              fontSize: 22,
-              color: 'black',
-              textIndent: 10,
-            }}>
-              <div id="card-element" style={{
-                position: 'relative',
-                top: '7px',
-                left: '6px',
+          <div id="payment-form-wrapper">
+            <form id="payment-form">
+              <div style={{
+                backgroundColor: 'white',
+                height: 50,
+                border: 'none',
+                borderRadius: 6,
+                fontFamily: 'Helvetica',
+                boxShadow: '0 4px 4px rgba(0,0,0,0.12), 0 4px 4px rgba(0,0,0,0.24)',
+                fontSize: 22,
+                color: 'black',
+                textIndent: 10,
               }}>
-                {/* a Stripe Element will be inserted here.*/}
-              </div>
-
-              {/* Used to display Element errors. */}
-              <div id="card-errors-wrapper"
-                style={{
-                  backgroundColor: 'white',
+                <div id="card-element" style={{
+                  position: 'relative',
+                  top: '7px',
+                  left: '6px',
                 }}>
-                <div id="card-errors" style={{
-                  margin: 20,
-                  color: 'red',
-                }}
-                ></div>
+                  {/* a Stripe Element will be inserted here.*/}
+                </div>
+
+                {/* Used to display Element errors. */}
+                <div id="card-errors-wrapper"
+                  style={{
+                    backgroundColor: 'white',
+                  }}>
+                  <div id="card-errors" style={{
+                    margin: 20,
+                    color: 'red',
+                  }}
+                  ></div>
+                </div>
               </div>
 
-            </div>
+              <div className="checkout__area">
 
-            <div className="checkout__area">
+                {this.renderCheckoutTable()}
 
-              {this.renderCheckoutTable()}
-
-              <div className="divider__line"></div>
-              <div style={{textAlign: 'center'}}>
-                <button id="submit-stripe"
-                        className="action_button_big">
-                  submit →
-                </button>
+                <div className="divider__line"></div>
+                <div style={{textAlign: 'center'}}>
+                  <button id="submit-stripe"
+                          className="action_button_big">
+                    submit →
+                  </button>
+                </div>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     );

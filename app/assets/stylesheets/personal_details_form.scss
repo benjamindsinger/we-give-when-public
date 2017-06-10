@@ -12,6 +12,13 @@ $lightblue: #0948bc;
 .personal__details__form__wrapper.card__details__form {
   min-height: 75vh; /* Because there's not much content on this page */
   padding: 20px 0;  /* No horizontal padding so that stripe has room */
+
+  @media (min-width: $breakpoint-l) {
+    #payment-form-wrapper {
+      width: 40%;
+      margin: 60px auto;
+    }
+  }
 }
 
 .personal__details__form__wrapper:not(.card__details__form) {
