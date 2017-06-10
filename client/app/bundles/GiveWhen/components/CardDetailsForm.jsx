@@ -151,7 +151,17 @@ export default class CardDetailsForm extends React.Component {
               </div>
 
               {/* Used to display Element errors. */}
-              <div id="card-errors"></div>
+              <div id="card-errors-wrapper"
+                style={{
+                  backgroundColor: 'white',
+                }}>
+                <div id="card-errors" style={{
+                  margin: 20,
+                  color: 'red',
+                }}
+                ></div>
+              </div>
+
             </div>
 
             <div className="checkout__area">
