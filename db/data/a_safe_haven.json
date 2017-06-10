@@ -1,0 +1,65 @@
+{
+  "id": 4,
+  "cause_id": 4,
+  "cause_name": "A Safe Haven",
+
+  "name": "A Safe Haven",
+  "crowd_fund_type": "SLINGSHOT",
+
+  // Progress
+  "goal_date": "09/Jul/2017",
+  "goal_type": "DOLLARS",
+  "goal_amount": 250,
+
+    // Defaults
+  "default_selected_amount_in_cents": 200,
+  "default_selected_monthly_maximum_in_cents": 6000,
+
+  // Social
+  "open_graph_title": "These Illinoisans will be homeless until we get them jobs.",
+  "open_graph_description": "Help us raise $250 to transform one life at a time. But we can change that.",
+  "twitter_message": "Help us raise $250 to transform one life at a time. ➡ https://wegivewhen.com/campaigns/a-safe-haven",
+  "suggested_email_subject": "These Illinoisans will be homeless until we get them jobs.",
+  "suggested_email_body": "Hey: I just joined the campaign and I hope you will too. ➡ https://wegivewhen.com/campaigns/a-safe-haven",
+
+  // JSON for landing page
+  "page_data": {
+    "colorScheme": "green_blue",
+
+    "optionsInCents": [100, 200, 500],
+    "monthlyMaxOptionsInCents": [3000, 6000, 15000],
+
+    // # Content, header
+    "headerWhenPhrase": "Every time we place a homeless Illinoisan into a job,",
+    "headerGivePhrase": "support automatically",
+    "headerLogoImgPath": "https://s3-us-west-2.amazonaws.com/give-when/static-images/a-safe-haven/a-safe-haven-logo.gif",
+
+    // # Content, headline
+    "headline": "These Illinoisans will be homeless until we get them jobs.",
+    "headlineLoud": false,
+    "subheadline": "Help us raise $250 to transform one life at a time.",
+    "headlineImgPath": "https://s3-us-west-2.amazonaws.com/give-when/static-images/a-safe-haven/a-safe-haven-landscaping-small.jpg",
+    "headerLogoImgSize": 50,
+    "largeHeadlineText": false,
+
+    // # Content, give when blocks
+    "giveStatement": "Help us transform a life",
+    "whenStatement": "Every time we place a homeless Illinoisan into a job",
+
+    "disclaimerParagraphs": [
+      "A Safe Haven is a non-profit 501(c)(3) organization. Donations are tax-deductible for federal income tax purposes."
+    ],
+
+    "contentSections": [
+      {
+        "type": "one_panel",
+        "headline": "More info on the campaign",
+        "paragraphs": [
+          "A Safe Haven helps people aspire, transform, and sustain their lives from homelessness to self-sufficiency with pride and purpose. A Safe Haven provides the tools for each individual to overcome the root causes of homelessness through a holistic, scalable model. A Safe Haven’s visible social and economic impact unites families, stabilizes neighborhoods and creates vibrant, viable communities.",
+          "Step up to transform our community--one life at a time--including veterans and mothers with children. Your generous gift will help individuals, who may have lost their way, get back on the right path at A Safe Haven. Whether at the beginning, middle, or end of their journey, your gift will help people achieve sustainable independence with pride and purpose.",
+        "These services cost $9,600 for the entire set of services including housing, education, and more. The $250 per job we secure will go a long way to fund our Workforce Development Department that develops relationships with employers and places our community members into immediately available jobs."
+        ]
+      }
+    ]
+  }
+}
