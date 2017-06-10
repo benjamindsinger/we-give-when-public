@@ -60,6 +60,7 @@ $lightblue: #0948bc;
 
     .input__row {
       display: flex;
+      display: -ms-flexbox;
       width: 100%;
 
       input {

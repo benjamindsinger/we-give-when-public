@@ -43,6 +43,7 @@ $lightblue: #0948bc;
       margin: 0 auto;
       text-align: center;
       display: flex;
+      display: -ms-flexbox;
     }
 
     @media (max-width: $breakpoint-m) {

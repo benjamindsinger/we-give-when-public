@@ -45,13 +45,16 @@ $darkblue: #1c407b;
 
 .section.flex {
   display: flex;
+  display: -ms-flexbox;
 
   div {
     flex: 1;
+    -ms-flex: 1;
   }
 
   .text {
     flex: 1;
+    -ms-flex: 1;
   }
 }
 

@@ -1,3 +1,4 @@
+
 $breakpoint-xs: 350px;
 $breakpoint-s: 500px;
 $breakpoint-m: 1100px;
@@ -126,6 +127,7 @@ $lightblue: #0948bc;
   margin: 40px;
   font-size: 30px;
   display: flex;
+  display: -ms-flexbox;
   width: 100;
 
   a {
