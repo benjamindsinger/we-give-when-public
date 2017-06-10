@@ -36,9 +36,9 @@
 
     // # Content, headline
     "headline": "These Illinoisans will be homeless until we get them jobs.",
-    "headlineLoud": false,
+    "headlineLoud": true,
     "subheadline": "Help us raise $250 to transform one life at a time.",
-    "headlineImgPath": "https://s3-us-west-2.amazonaws.com/give-when/static-images/a-safe-haven/a-safe-haven-landscaping-small.jpg",
+    "headlineImgPath": "https://s3-us-west-2.amazonaws.com/give-when/static-images/a-safe-haven/Landscaping-several-guys-shorter-cropped.jpg",
     "headerLogoImgSize": 50,
     "largeHeadlineText": false,
 
