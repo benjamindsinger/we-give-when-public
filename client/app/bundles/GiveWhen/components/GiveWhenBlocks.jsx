@@ -20,6 +20,7 @@ export default class GiveWhenBlocks extends React.Component {
     progressGoalPhrase: PropTypes.string.isRequired,
     progressLeftPhrase: PropTypes.string.isRequired,
     progressTimePhrase: PropTypes.string.isRequired,
+    progressFraction: PropTypes.number.isRequired,
 
     onClickGive: PropTypes.func.isRequired,
 
@@ -229,8 +230,14 @@ export default class GiveWhenBlocks extends React.Component {
           <p style={{color: '#1c407b', lineHeight: '7.5px'}}>
             {this.props.progressGoalPhrase}
           </p>
+
           <div className="progress__bar">
-          <div className="progress__bar__inner" /></div>
+            <div className="progress__bar__inner" style={{
+              width: `${this.props.progressFraction * 100}%`
+            }}>
+            </div>
+          </div>
+
           <p style={{color: 'red', lineHeight: '7.5px'}}>
             {this.props.progressLeftPhrase}
           </p>

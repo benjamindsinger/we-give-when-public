@@ -65,6 +65,7 @@ export default class CrowdFundPage extends React.Component {
     // -- Content, give when blocks
     giveStatement: PropTypes.string.isRequired,
     whenStatement: PropTypes.string.isRequired,
+    progressFraction: PropTypes.number.isRequired,
     progressStatusPhrase: PropTypes.string.isRequired,
     progressGoalPhrase: PropTypes.string.isRequired,
     progressLeftPhrase: PropTypes.string.isRequired,
@@ -203,7 +204,7 @@ export default class CrowdFundPage extends React.Component {
         progressGoalPhrase={this.props.progressGoalPhrase}
         progressLeftPhrase={this.props.progressLeftPhrase}
         progressTimePhrase={this.props.progressTimePhrase}
-
+        progressFraction={this.props.progressFraction}
         renderAmountButton={this.renderAmountButton}
         renderMaximumAmountButton={this.renderMaximumAmountButton}
         renderCustomAmountButton={this.renderCustomAmountButton}

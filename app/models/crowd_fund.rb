@@ -46,6 +46,10 @@ class CrowdFund < ApplicationRecord
     end
   end
 
+  def progress_fraction
+    progress_made_to_goal / goal_amount
+  end
+
   def progress_to_go
     goal_amount - progress_made_to_goal
   end
