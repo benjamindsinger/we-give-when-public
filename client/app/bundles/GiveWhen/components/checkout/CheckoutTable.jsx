@@ -4,10 +4,10 @@ import React from 'react';
 export default class CheckoutTable extends React.Component {
 
   static propTypes = {
-    donationAmountInWords: React.PropTypes.string.isRequired,
-    processingAmountInWords: React.PropTypes.string.isRequired,
-    totalAmountInWords: React.PropTypes.string.isRequired,
-    onClickEdit: React.PropTypes.func.isRequired,
+    donationAmountInWords: PropTypes.string.isRequired,
+    processingAmountInWords: PropTypes.string.isRequired,
+    totalAmountInWords: PropTypes.string.isRequired,
+    onClickEdit: PropTypes.func.isRequired,
   };
 
   render () {

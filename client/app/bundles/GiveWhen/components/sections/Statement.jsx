@@ -6,7 +6,6 @@ export default class Statement extends React.Component {
 
   static propTypes = {
     content: PropTypes.string.isRequired,
-    colorType: PropTypes.string.isRequired,
   };
 
   render () {

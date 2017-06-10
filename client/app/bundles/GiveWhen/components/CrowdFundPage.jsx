@@ -220,25 +220,25 @@ export default class CrowdFundPage extends React.Component {
   renderContentSections () {
     const contentSections = this.props.contentSections;
 
-    return contentSections.map((section) => {
-      return this.renderContentBlock(section);
+    return contentSections.map((section, index) => {
+      return this.renderContentBlock(section, index);
     });
   }
 
-  renderContentBlock (section) {
+  renderContentBlock (section, index) {
     const sectionType = section.type;
 
     switch (sectionType) {
       case 'one_panel':
-        return this.renderOnePanelContent(section);
+        return this.renderOnePanelContent(section, index);
       case 'statement':
-        return this.renderStatementContent(section);
+        return this.renderStatementContent(section, index);
       case 'letter':
-        return this.renderLetterContent(section);
+        return this.renderLetterContent(section, index);
       case 'two_panel':
-        return this.renderTwoPanelContent(section);
+        return this.renderTwoPanelContent(section, index);
       case 'video':
-        return this.renderVideo(section);
+        return this.renderVideo(section, index);
       case 'democracy_spring_agenda':
         return <DemocracySpringAgenda />;
       case 'democracy_spring_letter':
@@ -248,7 +248,7 @@ export default class CrowdFundPage extends React.Component {
     }
   }
 
-  renderOnePanelContent (section) {
+  renderOnePanelContent (section, index) {
     const headline = section.headline;
     const paragraphs = section.paragraphs;
     const colorType = section.colorType;
@@ -259,21 +259,23 @@ export default class CrowdFundPage extends React.Component {
       <OnePanelContent headline={headline}
                        paragraphs={paragraphs}
                        colorType={colorType}
-                       backgroungImgUrl={section.backgroungImgUrl} />
+                       backgroungImgUrl={section.backgroungImgUrl}
+                       key={index} />
     );
   }
 
-  renderStatementContent (section) {
+  renderStatementContent (section, index) {
     const content = section.content;
 
     if (!content) return null;
 
     return (
-      <Statement content={content} />
+      <Statement content={content}
+                 key={index} />
     );
   }
 
-  renderLetterContent (section) {
+  renderLetterContent (section, index) {
     const headline = section.headline;
     const paragraphs = section.paragraphs;
 
@@ -281,12 +283,14 @@ export default class CrowdFundPage extends React.Component {
 
     return (
       <Letter
-        headline={headline} paragraphs={paragraphs}
+        headline={headline}
+        paragraphs={paragraphs}
+        key={index}
       />
     );
   }
 
-  renderTwoPanelContent (section) {
+  renderTwoPanelContent (section, index) {
     const headline = section.headline;
     const paragraphs = section.paragraphs;
     const imgUrl = section.imgUrl;
@@ -298,15 +302,17 @@ export default class CrowdFundPage extends React.Component {
         headline={headline}
         paragraphs={paragraphs}
         imgUrl={imgUrl}
+        key={index}
       />
     );
   }
 
-  renderVideo (section) {
+  renderVideo (section, index) {
     return (
       <Video
         headline={section.headline}
         paragraphs={section.youTubeId}
+        key={index}
       />
     );
   }

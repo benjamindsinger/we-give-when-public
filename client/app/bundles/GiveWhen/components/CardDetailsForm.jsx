@@ -10,23 +10,23 @@ import CountdownCheckout from './checkout/CountdownCheckout.jsx';
 export default class CardDetailsForm extends React.Component {
 
   static propTypes = {
-    stripePublishableKey: React.PropTypes.string.isRequired,
+    stripePublishableKey: PropTypes.string.isRequired,
 
-    onType: React.PropTypes.func.isRequired,
-    selectedAmount: React.PropTypes.number.isRequired,
-    selectedMonthlyMaximum: React.PropTypes.number.isRequired,
+    onType: PropTypes.func.isRequired,
+    selectedAmount: PropTypes.number.isRequired,
+    selectedMonthlyMaximum: PropTypes.number.isRequired,
 
-    coverFees: React.PropTypes.bool.isRequired,
-    funderDetails: React.PropTypes.object.isRequired,
-    crowdFundMembershipDetails: React.PropTypes.object.isRequired,
+    coverFees: PropTypes.bool.isRequired,
+    funderDetails: PropTypes.object.isRequired,
+    crowdFundMembershipDetails: PropTypes.object.isRequired,
 
     /* Social sharing */
-    suggestedEmailSubject: React.PropTypes.string,
-    suggestedEmailBody: React.PropTypes.string,
-    twitterMessage: React.PropTypes.string,
+    suggestedEmailSubject: PropTypes.string,
+    suggestedEmailBody: PropTypes.string,
+    twitterMessage: PropTypes.string,
 
     /* Campaign type */
-    crowdFundType: React.PropTypes.string.isRequired
+    crowdFundType: PropTypes.string.isRequired
   };
 
   constructor (props) {

@@ -6,10 +6,10 @@ import CheckoutTable from './CheckoutTable.jsx';
 export default class SlingshotCheckout extends React.Component {
 
   static propTypes = {
-    crowdFundType: React.PropTypes.string.isRequired,
-    selectedAmountInCents: React.PropTypes.number.isRequired,
-    selectedMonthlyMaximumInCents: React.PropTypes.number.isRequired,
-    onClickEdit: React.PropTypes.func.isRequired,
+    crowdFundType: PropTypes.string.isRequired,
+    selectedAmountInCents: PropTypes.number.isRequired,
+    selectedMonthlyMaximumInCents: PropTypes.number.isRequired,
+    onClickEdit: PropTypes.func.isRequired,
   };
 
   asExactChange (amount) {

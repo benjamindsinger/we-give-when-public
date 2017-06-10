@@ -62,10 +62,3 @@ export default class Header extends React.Component {
   }
 
 };
-
-Header.propTypes = {
-  givePhrase: React.PropTypes.string.isRequired,
-  whenPhrase: React.PropTypes.string.isRequired,
-  logoImgPath: React.PropTypes.string.isRequired,
-  onClickActionButton: React.PropTypes.func.isRequired,
-};
