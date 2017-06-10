@@ -10,6 +10,11 @@
   "default_selected_amount_in_cents": 300,
   "default_selected_monthly_maximum_in_cents": 4500,
 
+  // Progress
+  "goal_date": "30/Aug/018",
+  "goal_type": "BACKERS",
+  "goal_amount": 100,
+
   // Social
   "open_graph_title": "Join Will Guzzardi in the fight for $15.",
   "open_graph_description": "Every time an anti-living-wage corporation writes a campaign check, fight back.",
@@ -39,10 +44,6 @@
     // # Content, give when blocks
     "giveStatement": "Chip in to support candidates who Fight for $15:",
     "whenStatement": "Every time an anti-living-wage corporation or PAC writes a campaign check to an Illinois politician...",
-    "progressStatusPhrase": "53 backers",
-    "progressGoalPhrase": "of 100 backer goal",
-    "progressLeftPhrase": "47 backers needed",
-    "progressTimePhrase": "17 days left",
 
     "disclaimerParagraphs": [
       "Funds go to the Committee to Elect Will Guzzardi, which supports the Fight for $15 and donates to candidates who also support the Fight for $15.",
