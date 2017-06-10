@@ -3,7 +3,9 @@ import React from 'react';
 export default {
 
   currentUrl () {
-    return window.location.href;
+    const url = window.location.href;
+
+    return encodeURIComponent(url);
   },
 
   facebookHref () {
