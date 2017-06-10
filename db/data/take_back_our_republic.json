@@ -1,0 +1,76 @@
+{
+  "id": 5,
+  "cause_id": 5,
+  "cause_name": "Take Back Our Republic",
+
+  "name": "Take Back Our Republic",
+  "crowd_fund_type": "SLINGSHOT",
+
+  // Progress
+  "goal_date": "09/Jul/2017",
+  "goal_type": "BACKERS",
+  "goal_amount": 100,
+
+    // Defaults
+  "default_selected_amount_in_cents": 300,
+  "default_selected_monthly_maximum_in_cents": 4500,
+
+  // Social
+  "open_graph_title": "Support the conservative movement for campaign finance reform.",
+  "open_graph_description": "Americans of BOTH parties can take back our country from big money special interests.",
+  "twitter_message": "Americans of BOTH parties can take back our country from big money special interests. ➡ https://wegivewhen.com/campaigns/take-back-our-republic",
+  "suggested_email_subject": "Americans of BOTH parties can take back our country from big money special interests.",
+  "suggested_email_body": "Hey: I just joined the campaign and I hope you will too. Support the conservative movement for campaign finance reform ➡ https://wegivewhen.com/campaigns/take-back-our-republic",
+
+  // JSON for landing page
+  "page_data": {
+    "colorScheme": "red_blue",
+
+    "optionsInCents": [100, 300, 1000],
+    "monthlyMaxOptionsInCents": [1500, 4500, 15000],
+
+    // # Content, header
+    "headerWhenPhrase": "Every time the press covers our conservative movement for campaign finance reform,",
+    "headerGivePhrase": "support automatically",
+    "headerLogoImgPath": "https://s3-us-west-2.amazonaws.com/give-when/static-images/take-back-our-republic/take-back-logo.png",
+
+    // # Content, headline
+    "headline": "Support the conservative movement for campaign finance reform",
+    "headlineLoud": false,
+    "subheadline": "The political establishment reports conservatives do not really want political reform. We’re running media-savvy campaigns to show them that rank-and-file Americans of BOTH parties can take back our country from big money special interests.",
+    "headlineImgPath": "https://s3-us-west-2.amazonaws.com/give-when/static-images/take-back-our-republic/tbor-rally-small.jpeg",
+    "headerLogoImgSize": 35,
+    "largeHeadlineText": false,
+
+    // # Content, give when blocks
+    "giveStatement": "Support media-savvy conservative pressure for campaign finance reform",
+    "whenStatement": "Every time there is media coverage of Take Back Our Republic (TV, radio, or newspaper)",
+
+    "disclaimerParagraphs": [
+      "Paid for by Take Back Our Republic, takeback.org. Donations to Take Back are tax deductible for federal income tax purposes."
+    ],
+
+    "contentSections": [
+      {
+        "type": "one_panel",
+        "headline": "More info on the campaign",
+        "paragraphs": [
+          "We are lifelong conservatives and Republicans. Through our political work over the last 30 years, we’ve watched big donors and special interests make grassroots activists irrelevant. It’s time to change that.",
+          "Take Back Our Republic was founded by veteran conservative strategist John Pudner. John jump-started the campaign of Dave Brat, who unseated U.S. House Majority Leader Eric Cantor in 2014 in one of the most unprecedented upsets in political history. Their campaign platform included ending big money special interest control of Congress.",
+          "Throughout his career, John saw firsthand the influence of money on politics—the manipulation of the system and the loopholes that have allowed dark money to transform our elections. What should be a citizen-centered system has been distorted so that now, in most cases, only select major corporate donors and union bosses are the true winners.",
+          "With a desire to now reform the system instead of circumventing it, John is leading a team of ex-political wonks to help change the very industry in which they once thrived.",
+          "We need to raise $2,000/month to help cover travel and staffing costs to advocate for the following policies and campaigns across America in 2017-18:",
+          "Ban secret credit card donations to political campaigns, including from foreign nationals or government contractors",
+          "28th amendment to the Constitution legalizing campaign contribution limits, to reverse Buckley v. Valeo and Citizens United v. FEC",
+          "Federal tax credit for small-dollar political donations, similar to the Reagan-era tax credit, to encourage citizen investment in our elections",
+          "Accountability for conflicts of interest for public officials",
+          "Reforms in 10 states, including closing the LLC loophole, prohibiting retribution against citizens who participate in politics, increasing transparency for large campaign contributions, and banning or limiting gifts from lobbyists",
+          "Thank you for your support.",
+          "We believe that individual participation in the American political system is the best way to preserve and strengthen our liberty.",
+          "And with your help, we’ll show the big money political establishment that grassroots conservatives across America really do want to drain the swamp.",
+          "Gratefully, The whole team at Take Back Our Republic"
+        ]
+      }
+    ]
+  }
+}
