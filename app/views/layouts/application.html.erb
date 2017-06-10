@@ -3,7 +3,6 @@
 <head>
   <title>GiveWhen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <% if @crowd_fund.present? %>
     <meta property="og:url" content="<%= "https://wegivewhen.com/#{@crowd_fund.slug}" %>" />
     <meta property="og:image" content="<%= @meta_og_image %>" />
@@ -15,6 +14,7 @@
 
   <script src="https://js.stripe.com/v3/"></script>
 
+  <%= favicon_link_tag '/favicon-96x96.png' %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
