@@ -312,7 +312,7 @@ export default class CrowdFundPage extends React.Component {
     return (
       <Video
         headline={section.headline}
-        paragraphs={section.youTubeId}
+        youTubeId={section.youTubeId}
         key={index}
       />
     );

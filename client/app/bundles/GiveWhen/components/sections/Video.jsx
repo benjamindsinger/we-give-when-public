@@ -26,7 +26,10 @@ export default class Video extends React.Component {
         </h2>
         <br/>
         <br/>
-        <iframe width="100%" height="500px" src={this.youTubeIframeSrc()}></iframe>
+        <iframe width="100%"
+                height="500px"
+                src={this.youTubeIframeSrc()}>
+        </iframe>
       </div>
     );
   }
