@@ -174,17 +174,22 @@ export default class PersonalDetailsForm extends React.Component {
     if (!_.includes(this.props.funderRequiredDetails, 'occupation')) return null;
 
     return (
-      <div className="input__row">
+      <div>
+        <div style={{textAlign: 'center', margin: '4px 0'}}>
+          Campaign finance law requires us to collect your occupation and employer.
+        </div>
 
-        <input type="text"
-               onChange={this.props.onType.bind(this, 'occupation')}
-               value={this.props.occupation}
-               placeholder="Occupation" />
+        <div className="input__row">
+          <input type="text"
+                 onChange={this.props.onType.bind(this, 'occupation')}
+                 value={this.props.occupation}
+                 placeholder="Occupation" />
 
-        <input type="text"
-               onChange={this.props.onType.bind(this, 'employer')}
-               value={this.props.employer}
-               placeholder="Employer" />
+          <input type="text"
+                 onChange={this.props.onType.bind(this, 'employer')}
+                 value={this.props.employer}
+                 placeholder="Employer" />
+        </div>
       </div>
     );
   }
