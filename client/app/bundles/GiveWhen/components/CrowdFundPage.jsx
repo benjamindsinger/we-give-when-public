@@ -323,7 +323,7 @@ export default class CrowdFundPage extends React.Component {
 
   renderPersonalDetailsPage () {
     return (
-      <div className="color_scheme__green_blue">
+      <div className={this.colorSchemeClassName()}>
         {this.renderHeaderWithoutActionButton()}
 
         <PersonalDetailsForm
@@ -360,7 +360,7 @@ export default class CrowdFundPage extends React.Component {
 
   renderCardDetailsPage () {
     return (
-      <div className="color_scheme__green_blue">
+      <div className={this.colorSchemeClassName()}>
         {this.renderHeaderWithoutActionButton()}
 
         <CardDetailsForm
