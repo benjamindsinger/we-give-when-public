@@ -31,13 +31,13 @@
 
     // # Content, header
     "headerGivePhrase": "fight back",
-    "headerWhenPhrase": "Every time they prop up a candidate to block a $15 minimum wage,",
+    "headerWhenPhrase": "Every time they buy off a candidate to prevent a $15 minimum wage,",
     "headerLogoImgPath": "https://s3-us-west-2.amazonaws.com/give-when/static-images/guzzardi-fight-for-15/guzzardi-logo-good.jpg",
     "headerLogoImgSize": 35,
 
     // # Content, headline
     "headline": "Big business spends millions to keep Illinoisans poor",
-    "subheadline": "Big business has money, but we have people. Every time an anti-living-wage corporation in Illinois writes a big check, we need hundreds of people to make a small donation to living-wage campaigns.",
+    "subheadline": "Big business has money — we have people. Every time an anti-living-wage corporation in Illinois writes a $100+ check, we need 100 people like you to make a small donation to living-wage campaigns.",
     "headlineImgPath": "https://s3-us-west-2.amazonaws.com/give-when/static-images/guzzardi-fight-for-15/McDonalds-and-Capitol-800x500.jpg",
     "headlineLoud": true,
     "largeHeadlineText": true,
