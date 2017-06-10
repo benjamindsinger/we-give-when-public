@@ -41,6 +41,7 @@
     "subheadline": "The American people are hungry for bold progressive change, yet the DNC continues to support a corporate agenda backed by Big Money donors. Let’s force them to break with Big Money.",
       "headlineImgPath": "/day-one-banner-small.jpeg",
     "headlineLoud": true,
+    "largeHeadlineText": false,
 
     // # Content, give when blocks
     "giveStatement": "To support a progressive takeover of the Democratic Party",

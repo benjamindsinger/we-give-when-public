@@ -40,6 +40,7 @@
     "subheadline": "Big business has money, but we have people. Every time an anti-living-wage corporation in Illinois writes a big check, we need hundreds of people to make a small donation to living-wage campaigns.",
     "headlineImgPath": "https://s3-us-west-2.amazonaws.com/give-when/static-images/guzzardi-fight-for-15/McDonalds-and-Capitol-800x500.jpg",
     "headlineLoud": true,
+    "largeHeadlineText": true,
 
     // # Content, give when blocks
     "giveStatement": "Chip in to support candidates who Fight for $15:",

@@ -29,6 +29,7 @@
     "subheadline": "The budget battles in Springfield and Washington D.C. have left big holes in our budget and more people in need. Let’s respond and help our neighbors get back on their feet.",
     "headlineImgPath": "https://s3-us-west-2.amazonaws.com/give-when/static-images/inspiration-corp/kitchen-1-original.jpg",
     "headerLogoImgSize": 50,
+    "largeHeadlineText": false,
 
     // # Content, give when blocks
     "giveStatement": "Help Illinoisans working to overcome poverty get back on their feet",

@@ -57,6 +57,7 @@ export default class CrowdFundPage extends React.Component {
 
     // -- Content, headline
     headline: PropTypes.string.isRequired,
+    largeHeadlineText: PropTypes.bool.isRequired,
     headlineLoud: PropTypes.bool.isRequired,
     subheadline: PropTypes.string.isRequired,
     headlineImgPath: PropTypes.string.isRequired,
@@ -170,10 +171,17 @@ export default class CrowdFundPage extends React.Component {
     return '';
   }
 
+  headLineFlex () {
+    if (this.props.largeHeadlineText) return { flex: 2 };
+
+    return { flex: 1 };
+  }
+
   renderHeadlineSection () {
     return (
       <div className="section flex headline__section below__fixed__navbar">
-        <div className="text color__headline">
+
+        <div className="text color__headline" style={this.headLineFlex()}>
           <h1 className={this.headlineClassName()}>
             {this.props.headline}
           </h1>
@@ -184,6 +192,7 @@ export default class CrowdFundPage extends React.Component {
         </div>
 
         <div className="text" style={{
+          flex: 1,
           background: `url("${this.props.headlineImgPath}")`,
           backgroundSize: 'cover',
           minHeight: 400
