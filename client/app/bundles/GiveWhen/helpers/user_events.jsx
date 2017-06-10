@@ -27,6 +27,10 @@ export default {
       errors.push('phone_length');
     }
 
+    if (funderRequiredDetails.indexOf('usState') > -1 && this.state.usState.length !== 2) {
+      errors.push('state_length');
+    }
+
     if (funderRequiredDetails.indexOf('zip') > -1 && isNaN(parseFloat(this.state.zip)) || !isFinite(this.state.zip)) {
       errors.push('zip_numeric');
     }

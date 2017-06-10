@@ -62,8 +62,12 @@ $lightblue: #0948bc;
       }
 
       @media (min-width: $breakpoint-m) {
-        input:first-of-type {
+        input {
           margin-right: 15px;
+        }
+
+        input:last-of-type {
+          margin-right: 0;
         }
       }
     }

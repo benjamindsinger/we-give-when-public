@@ -41,11 +41,10 @@ export default class PersonalDetailsForm extends React.Component {
       <div className="personal__details__form__wrapper color_scheme__white_blue below__fixed__navbar">
         <div className="personal__details__form">
           {this.renderSummary()}
-          {this.renderEmail()}
           {this.renderName()}
           {this.renderAddress()}
-          {this.renderCity()}
-          {this.renderPhoneAndZip()}
+          {this.renderCityStateAndZip()}
+          {this.renderPhoneAndEmail()}
           {this.renderOccupationAndEmployer()}
           {this.renderErrors()}
           <div style={{textAlign: 'center'}}>
@@ -91,19 +90,6 @@ export default class PersonalDetailsForm extends React.Component {
     if (crowdFundType === 'COUNTDOWN') return this.renderCountdownSummary();
   }
 
-  renderEmail () {
-    if (!_.includes(this.props.funderRequiredDetails, 'email')) return null;
-
-    return (
-      <div className="long__input">
-        <input type="email"
-               onChange={this.props.onType.bind(this, 'email')}
-               value={this.props.email}
-               placeholder="Email address" />
-      </div>
-    );
-  }
-
   renderName () {
     if (!_.includes(this.props.funderRequiredDetails, 'firstName')) return null;
 
@@ -136,8 +122,10 @@ export default class PersonalDetailsForm extends React.Component {
     );
   }
 
-  renderCity () {
-    if (!_.includes(this.props.funderRequiredDetails, 'city')) return null;
+  renderCityStateAndZip () {
+    if (!_.includes(this.props.funderRequiredDetails, 'city') &&
+        !_.includes(this.props.funderRequiredDetails, 'state') &&
+        !_.includes(this.props.funderRequiredDetails, 'zip')) return null;
 
     return (
       <div className="input__row">
@@ -147,20 +135,31 @@ export default class PersonalDetailsForm extends React.Component {
                value={this.props.city}
                placeholder="City" />
 
-      </div>
-    );
-  }
-
-  renderPhoneAndZip () {
-    if (!_.includes(this.props.funderRequiredDetails, 'phone')) return null;
-
-    return (
-      <div className="input__row">
+        <input type="text"
+               onChange={this.props.onType.bind(this, 'usState')}
+               value={this.props.usState}
+               placeholder="State (i.e., IL)" />
 
         <input type="text"
                onChange={this.props.onType.bind(this, 'zip')}
                value={this.props.zip}
                placeholder="ZIP" />
+
+      </div>
+    );
+  }
+
+  renderPhoneAndEmail () {
+    if (!_.includes(this.props.funderRequiredDetails, 'phone') &&
+        !_.includes(this.props.funderRequiredDetails, 'email')) return null;
+
+    return (
+      <div className="input__row">
+
+        <input type="email"
+               onChange={this.props.onType.bind(this, 'email')}
+               value={this.props.email}
+               placeholder="Email" />
 
         <input type="text"
                onChange={this.props.onType.bind(this, 'phone')}

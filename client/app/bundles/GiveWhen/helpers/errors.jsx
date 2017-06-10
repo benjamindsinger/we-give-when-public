@@ -15,7 +15,8 @@ export default {
       'zip_five': 'a 5-digit zip code',
       'email_valid': 'a valid email',
       'address_length': 'a valid address',
-      'phone_length': 'a valid phone number (at least 10 digits)'
+      'phone_length': 'a valid phone number (at least 10 digits)',
+      'state_length': 'a two-digit state abbreviation'
     };
 
     return errors.map((error) => {

@@ -13,11 +13,11 @@ class CrowdFundsController < ApplicationController
     if @crowd_fund.id == 2
       @funder_required_details = [
         'firstName', 'lastName', 'occupation', 'employer', 'email',
-        'phone', 'address', 'city', 'zip',
+        'phone', 'address', 'city', 'usState', 'zip',
       ]
     else
       @funder_required_details = [
-        'firstName', 'lastName', 'email', 'phone', 'zip',
+        'firstName', 'lastName', 'email', 'phone', 'city', 'usState', 'zip',
       ]
     end
   end
