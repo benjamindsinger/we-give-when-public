@@ -25,6 +25,7 @@ $lightblue: #0948bc;
 
 .amount_selector_button.custom__selector {
   display: flex;
+  display: -ms-flexbox;
   padding: 0;
 
   .dollar {
