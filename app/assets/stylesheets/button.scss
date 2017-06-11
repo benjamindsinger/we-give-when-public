@@ -24,11 +24,13 @@ $lightblue: #0948bc;
 }
 
 .amount_selector_button.custom__selector {
+  display: flex;
   padding: 0;
 
   .dollar {
     position: relative;
     left: 10px;
+    top: 10px;
   }
 
   .dollar.selected {
@@ -46,7 +48,6 @@ input.custom__selector {
   background-color: #eef3f6;
   border: none;
   padding: 6px 12px;
-  height: 29px;
   font-family: Helvetica;
   font-size: 1.05em;
   color: #1c407b;
