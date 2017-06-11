@@ -142,5 +142,6 @@ $lightblue: #0948bc;
 @media (max-width: $breakpoint-m) {
   .homepage__column {
     flex-direction: column;
+    -ms-flex-direction: column;
   }
 }

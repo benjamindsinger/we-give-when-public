@@ -38,6 +38,7 @@ $lightblue: #0948bc;
   .give_when__subsection#give {
     background-color: #eef3f6;
     flex-direction: column;
+    -ms-flex-direction: column;
 
     .selector__button__row {
       margin: 0 auto;
@@ -49,6 +50,8 @@ $lightblue: #0948bc;
     @media (max-width: $breakpoint-m) {
       .selector__button__row {
         flex-direction: column;
+        -ms-flex-direction: column;
+
         width: 33%;
       }
     }
