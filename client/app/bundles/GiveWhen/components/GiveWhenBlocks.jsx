@@ -202,17 +202,7 @@ export default class GiveWhenBlocks extends React.Component {
 
   renderDividerLine () {
     return (
-      <div id="divider-line"
-        style={{
-        minHeight: 100,
-        margin: '15px 0',
-        width: 2,
-        backgroundColor: '#1c407b',
-        display: 'inline',
-        float: 'right',
-        flex: 0.005
-      }}>
-      </div>
+      <div id="give__when__vertical__divider"></div>
     );
   }
 
