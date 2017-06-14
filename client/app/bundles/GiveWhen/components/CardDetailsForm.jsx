@@ -3,6 +3,7 @@ import React from 'react';
 import 'whatwg-fetch';
 
 import Money from '../helpers/money.jsx';
+import Mixpanel from '../helpers/mixpanel.jsx';
 
 import SocialSharingPage from './SocialSharingPage.jsx';
 import SlingshotCheckout from './checkout/SlingshotCheckout.jsx';
@@ -100,7 +101,7 @@ export default class CardDetailsForm extends React.Component {
         if (data === 'ok') {
           this.setState({ tokenSaveOK: true });
 
-          mixpanel.track("GET_RESPONSE_FROM_STRIPE", {
+          Mixpanel.registerEvent("GET_RESPONSE_FROM_STRIPE", {
             base_url: window.location.origin,
             success: true,
           });
@@ -108,7 +109,7 @@ export default class CardDetailsForm extends React.Component {
         } else {
           this.setState({ tokenSaveFail: true });
 
-          mixpanel.track("GET_RESPONSE_FROM_STRIPE", {
+          Mixpanel.registerEvent("GET_RESPONSE_FROM_STRIPE", {
             base_url: window.location.origin,
             success: false,
           });

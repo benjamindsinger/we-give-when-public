@@ -1,4 +1,5 @@
 import Errors from './errors.jsx';
+import Mixpanel from './mixpanel.jsx';
 
 export default {
 
@@ -19,7 +20,7 @@ export default {
       2: 'CARD_DETAILS_PAGE'
     };
 
-    mixpanel.track("MOVE_THROUGH_DONATION_FORM", {
+    Mixpanel.registerEvent("MOVE_THROUGH_DONATION_FORM", {
       base_url: window.location.origin,
       step: step,
       step_name: stepsToStepNames[step]
@@ -69,7 +70,7 @@ export default {
       2: 'CARD_DETAILS_PAGE'
     };
 
-    mixpanel.track("MOVE_THROUGH_DONATION_FORM", {
+    Mixpanel.registerEvent("MOVE_THROUGH_DONATION_FORM", {
       base_url: window.location.origin,
       step: step,
       step_name: stepsToStepNames[step]
