@@ -12,6 +12,18 @@ export default {
 
   onChangeStep: function (step) {
     this.setState({ step: step });
+
+    const stepsToStepNames = {
+      0: 'INITIAL_PAGE',
+      1: 'PERSONAL_DETAILS_PAGE'
+      2: 'CARD_DETAILS_PAGE'
+    };
+
+    mixpanel.track("MOVE_THROUGH_DONATION_FORM", {
+      base_url: window.location.origin,
+      step: step,
+      step_name: stepsToStepNames[step]
+    });
   },
 
   onChangeStepFromPersonalDetails: function (step, funderRequiredDetails) {
@@ -50,6 +62,18 @@ export default {
     });
 
     this.setState({ step: step });
+
+    const stepsToStepNames = {
+      0: 'INITIAL_PAGE',
+      1: 'PERSONAL_DETAILS_PAGE'
+      2: 'CARD_DETAILS_PAGE'
+    };
+
+    mixpanel.track("MOVE_THROUGH_DONATION_FORM", {
+      base_url: window.location.origin,
+      step: step,
+      step_name: stepsToStepNames[step]
+    });
   },
 
   onSelectAmount: function (amountInCents) {

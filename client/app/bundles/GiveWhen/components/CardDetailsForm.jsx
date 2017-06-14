@@ -99,8 +99,20 @@ export default class CardDetailsForm extends React.Component {
       }).then(data => {
         if (data === 'ok') {
           this.setState({ tokenSaveOK: true });
+
+          mixpanel.track("GET_RESPONSE_FROM_STRIPE", {
+            base_url: window.location.origin,
+            success: true,
+          });
+
         } else {
           this.setState({ tokenSaveFail: true });
+
+          mixpanel.track("GET_RESPONSE_FROM_STRIPE", {
+            base_url: window.location.origin,
+            success: false,
+          });
+
         }
       });
     }
