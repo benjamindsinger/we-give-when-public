@@ -48,6 +48,8 @@
 
 </body>
 <script>
-  mixpanel.track("PAGE_VISIT");
+  mixpanel.track("PAGE_VISIT", {
+    base_url: window.location.origin
+  });
 </script>
 </html>
