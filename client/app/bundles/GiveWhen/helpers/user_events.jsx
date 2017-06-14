@@ -16,7 +16,7 @@ export default {
 
     const stepsToStepNames = {
       0: 'INITIAL_PAGE',
-      1: 'PERSONAL_DETAILS_PAGE'
+      1: 'PERSONAL_DETAILS_PAGE',
       2: 'CARD_DETAILS_PAGE'
     };
 
@@ -66,7 +66,7 @@ export default {
 
     const stepsToStepNames = {
       0: 'INITIAL_PAGE',
-      1: 'PERSONAL_DETAILS_PAGE'
+      1: 'PERSONAL_DETAILS_PAGE',
       2: 'CARD_DETAILS_PAGE'
     };
 
