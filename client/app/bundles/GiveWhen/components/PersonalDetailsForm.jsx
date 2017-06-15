@@ -15,6 +15,7 @@ export default class PersonalDetailsForm extends React.Component {
 
     // Form details
     funderRequiredDetails: PropTypes.array.isRequired,
+    funderDetails: PropTypes.object.isRequired,
     email: PropTypes.string.isRequired,
     firstName: PropTypes.string.isRequired,
     lastName: PropTypes.string.isRequired,

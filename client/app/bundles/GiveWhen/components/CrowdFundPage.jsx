@@ -352,6 +352,7 @@ export default class CrowdFundPage extends React.Component {
 
           /* Personal details */
           funderRequiredDetails={this.props.funderRequiredDetails}
+          funderDetails={DataCuts.funderDetails(this.state, this.props)}
           email={this.state.email}
           firstName={this.state.firstName}
           lastName={this.state.lastName}
