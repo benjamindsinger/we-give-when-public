@@ -51,10 +51,15 @@ $lightblue: #0948bc;
     }
 
     .long__input {
-      input {
+      div {
         width: 100%;
-        margin: 10px 0;
-        line-height: 50px; /* So that Firefox doesn't make it tiny */
+        margin: 5px 0;
+
+        input {
+          width: 100%;
+          margin: 5px 0;
+          line-height: 50px; /* So that Firefox doesn't make it tiny */
+        }
       }
     }
 
@@ -63,19 +68,24 @@ $lightblue: #0948bc;
       display: -ms-flexbox;
       width: 100%;
 
-      input {
+      div {
         flex: 1;
         -ms-flex: 1 0 auto;
-        margin: 10px 0;
-        line-height: 50px; /* So that Firefox doesn't make it tiny */
+        margin: 5px 0;
+
+        input {
+          width: 100%;
+          margin: 5px 0;
+          line-height: 50px; /* So that Firefox doesn't make it tiny */
+        }
       }
 
       @media (min-width: $breakpoint-m) {
-        input {
+        div {
           margin-right: 15px;
         }
 
-        input:last-of-type {
+        div:last-of-type {
           margin-right: 0;
         }
       }

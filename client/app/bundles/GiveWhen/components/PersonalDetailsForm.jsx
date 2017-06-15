@@ -90,21 +90,37 @@ export default class PersonalDetailsForm extends React.Component {
     if (crowdFundType === 'COUNTDOWN') return this.renderCountdownSummary();
   }
 
+  fieldToLabel (field) {
+    const snake = _.snakeCase(field);
+    const lower = _.replace(snake, '_', ' ');
+    const upper = _.capitalize(lower);
+
+    return upper;
+  }
+
+  renderInputFor (field, optionalLabel) {
+    return (
+      <div>
+        <span style={{
+          color: 'white',
+          textTransform: 'uppercase',
+        }}>
+          {optionalLabel || this.fieldToLabel(field)}
+        </span>
+        <input type="text"
+               onChange={this.props.onType.bind(this, field)}
+               value={this.props[field]} />
+      </div>
+    );
+  }
+
   renderName () {
     if (!_.includes(this.props.funderRequiredDetails, 'firstName')) return null;
 
     return (
       <div className="input__row">
-
-        <input type="text"
-               onChange={this.props.onType.bind(this, 'firstName')}
-               value={this.props.firstName}
-               placeholder="First Name" />
-
-        <input type="text"
-               onChange={this.props.onType.bind(this, 'lastName')}
-               value={this.props.lastName}
-               placeholder="Last Name" />
+        {this.renderInputFor('firstName')}
+        {this.renderInputFor('lastName')}
       </div>
     );
   }
@@ -114,10 +130,7 @@ export default class PersonalDetailsForm extends React.Component {
 
     return (
       <div className="long__input">
-        <input type="text"
-               onChange={this.props.onType.bind(this, 'address')}
-               value={this.props.address}
-               placeholder="Address" />
+        {this.renderInputFor('address')}
       </div>
     );
   }
@@ -129,22 +142,9 @@ export default class PersonalDetailsForm extends React.Component {
 
     return (
       <div className="input__row">
-
-        <input type="text"
-               onChange={this.props.onType.bind(this, 'city')}
-               value={this.props.city}
-               placeholder="City" />
-
-        <input type="text"
-               onChange={this.props.onType.bind(this, 'usState')}
-               value={this.props.usState}
-               placeholder="State (i.e., IL)" />
-
-        <input type="text"
-               onChange={this.props.onType.bind(this, 'zip')}
-               value={this.props.zip}
-               placeholder="ZIP" />
-
+        {this.renderInputFor('city')}
+        {this.renderInputFor('usState', 'US STATE (I.E., IL)')}
+        {this.renderInputFor('zip')}
       </div>
     );
   }
@@ -155,17 +155,8 @@ export default class PersonalDetailsForm extends React.Component {
 
     return (
       <div className="input__row">
-
-        <input type="email"
-               onChange={this.props.onType.bind(this, 'email')}
-               value={this.props.email}
-               placeholder="Email" />
-
-        <input type="text"
-               onChange={this.props.onType.bind(this, 'phone')}
-               value={this.props.phone}
-               placeholder="Phone" />
-
+        {this.renderInputFor('email')}
+        {this.renderInputFor('phone')}
       </div>
     );
   }
@@ -180,15 +171,8 @@ export default class PersonalDetailsForm extends React.Component {
         </div>
 
         <div className="input__row">
-          <input type="text"
-                 onChange={this.props.onType.bind(this, 'occupation')}
-                 value={this.props.occupation}
-                 placeholder="Occupation" />
-
-          <input type="text"
-                 onChange={this.props.onType.bind(this, 'employer')}
-                 value={this.props.employer}
-                 placeholder="Employer" />
+          {this.renderInputFor('occupation')}
+          {this.renderInputFor('employer')}
         </div>
       </div>
     );
