@@ -26,7 +26,7 @@ class CrowdFundsController < ApplicationController
     @crowd_fund = CrowdFund.includes(crowd_fund_memberships: [:funder])
                            .friendly.find(params[:id])
 
-    dashboard_headers = [
+    @membership_headers = [
       "Sign-Up Date",
       "Name",
       "Amount Per Event",
