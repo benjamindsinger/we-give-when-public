@@ -19,6 +19,7 @@
  *= require button
  *= require headline
  *= require header
+ *= require login
  *= require pages
  *= require personal_details_form
  *= require progress_bar
