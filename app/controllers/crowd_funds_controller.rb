@@ -1,3 +1,5 @@
+require 'csv'
+
 class CrowdFundsController < ApplicationController
 
   before_action :authenticate_cause_admin!, only: [:dashboard]
@@ -72,7 +74,7 @@ class CrowdFundsController < ApplicationController
 
   def csv_filename
     "#{@crowd_fund.name} - "\
-    "Give When - "\
+    "GiveWhen - "\
     "#{DateTime.current.strftime("%-m/%e/%y %r")}.csv"
   end
 

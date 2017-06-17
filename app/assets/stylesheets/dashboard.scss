@@ -1,0 +1,45 @@
+.dashboard.crowd_funds {
+  font-family: Helvetica;
+
+  .campaigner-navbar {
+    background-color: black;
+    color: white;
+    padding: 20px 0;
+
+    a, span {
+      color: white;
+      margin: 0 20px;
+    }
+  }
+
+  .summary-stats {
+    margin: 20px 20px 40px 20px;
+    font-size: 24px;
+
+    .summary-stat {
+      font-weight: bold;
+    }
+
+    div {
+      margin: 10px 0;
+    }
+  }
+
+  table {
+    margin: 20px;
+    border-collapse: collapse;
+
+    th {
+      text-align: left;
+    }
+
+    th, td {
+      padding: 10px 20px 10px 0;
+    }
+
+    thead, tr.odd {
+      background-color: #ffff99;
+    }
+  }
+}
+

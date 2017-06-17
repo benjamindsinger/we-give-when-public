@@ -15,6 +15,7 @@
  *= require baseline
  *= require checkout
  *= require color
+ *= require dashboard
  *= require give_when
  *= require button
  *= require headline
