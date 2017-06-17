@@ -10,4 +10,11 @@ class Funder < ApplicationRecord
       customer: stripe_customer_id,
     )
   end
+
+  def location_info
+    return "#{address}, #{city} #{us_state} #{zip}" if address
+
+    return "#{city} #{us_state} #{zip}"
+  end
+
 end

@@ -26,7 +26,7 @@ class CrowdFundMembership < ApplicationRecord
       "Employer",
       "Email",
       "Phone",
-      "Address",
+      "Location",
     ]
   end
 
@@ -40,7 +40,7 @@ class CrowdFundMembership < ApplicationRecord
       funder.employer,
       funder.email,
       funder.phone,
-      "#{funder.address}, #{funder.city} #{funder.us_state} #{funder.zip}",
+      funder.location_info,
     ]
   end
 
