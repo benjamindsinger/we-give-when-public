@@ -16,20 +16,6 @@ class CrowdFundMembership < ApplicationRecord
     Money.new(monthly_maximum_in_cents, "USD").format
   end
 
-  def self.dashboard_headers
-    [
-      "Sign-Up Date",
-      "Name",
-      "Amount Per Event",
-      "Monthly Maximum",
-      "Occupation",
-      "Employer",
-      "Email",
-      "Phone",
-      "Location",
-    ]
-  end
-
   def to_dashboard_row
     [
       sign_up_date,

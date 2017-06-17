@@ -37,7 +37,7 @@ class CrowdFundsController < ApplicationController
       "Employer",
       "Email",
       "Phone",
-      "Address",
+      "Location",
     ]
 
     @membership_rows = @crowd_fund.crowd_fund_memberships.order(created_at: :desc).map do |membership|
