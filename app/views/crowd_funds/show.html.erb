@@ -4,6 +4,8 @@
         crowdFundId: @crowd_fund.id,
         crowdFundType: @crowd_fund.crowd_fund_type,
         stripePublishableKey: ENV['STRIPE_PUBLISHABLE_KEY'],
+        airbrakeProjectId: ENV['AIRBRAKE_PROJECT_ID'],
+        airbrakeProjectKey: ENV['AIRBRAKE_PROJECT_KEY'],
         funderRequiredDetails: @funder_required_details,
 
         # Defaults

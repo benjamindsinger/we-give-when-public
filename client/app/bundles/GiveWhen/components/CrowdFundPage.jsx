@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import _ from 'lodash';
+import airbrakeJs from 'airbrake-js';
 
 import PersonalDetailsForm from './PersonalDetailsForm.jsx';
 import CardDetailsForm from './CardDetailsForm.jsx';
@@ -31,8 +32,10 @@ export default class CrowdFundPage extends React.Component {
   static propTypes = {
     crowdFundId: PropTypes.number.isRequired,
     crowdFundType: PropTypes.string.isRequired,
-    stripePublishableKey: PropTypes.string.isRequired,
     funderRequiredDetails: PropTypes.array.isRequired,
+    stripePublishableKey: PropTypes.string.isRequired,
+    airbrakeProjectId: PropTypes.string.isRequired,
+    airbrakeProjectKey: PropTypes.string.isRequired,
 
     // Social
     twitterMessage: PropTypes.string,
@@ -87,6 +90,11 @@ export default class CrowdFundPage extends React.Component {
     this.renderCustomMaximumAmountButton = Buttons.renderCustomMaximumAmountButton.bind(this);
     this.onClickGive = UserEvents.onChangeStep.bind(this, 1);
 
+    this.airbrake = new airbrakeJs({
+      projectId: this.props.airbrakeProjectId,
+      projectKey: this.props.airbrakeProjectKey
+    });
+
     this.state = {
       step: 0,
       errorMessages: [],
@@ -120,14 +128,23 @@ export default class CrowdFundPage extends React.Component {
     return `color_scheme__${this.props.colorScheme}`;
   }
 
-  render () {
-    const step = this.state.step;
+  notifyAirbrake (err) {
+    this.airbrake.notify(err);
+  }
 
-    switch (step) {
-      case 0:  return this.renderSignUpPage();
-      case 1:  return this.renderPersonalDetailsPage();
-      case 2:  return this.renderCardDetailsPage();
-      default: return this.renderSignUpPage();
+  render () {
+    try {
+      const step = this.state.step;
+
+      switch (step) {
+        case 0:  return this.renderSignUpPage();
+        case 1:  return this.renderPersonalDetailsPage();
+        case 2:  return this.renderCardDetailsPage();
+        default: return this.renderSignUpPage();
+      }
+    } catch (err) {
+      this.notifyAirbrake(err);
+      throw err;
     }
   }
 
@@ -385,6 +402,7 @@ export default class CrowdFundPage extends React.Component {
           /* UI functions */
           onType={UserEvents.onTypeFormInput.bind(this)}
           onClickEdit={UserEvents.onChangeStep.bind(this, 0)}
+          notifyAirbrake={this.notifyAirbrake.bind(this)}
 
           /* Data for form */
           funderDetails={DataCuts.funderDetails(this.state, this.props)}

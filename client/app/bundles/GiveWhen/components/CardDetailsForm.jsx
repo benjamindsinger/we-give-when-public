@@ -13,6 +13,7 @@ export default class CardDetailsForm extends React.Component {
 
   static propTypes = {
     stripePublishableKey: PropTypes.string.isRequired,
+    notifyAirbrake: PropTypes.func.isRequired,
 
     onType: PropTypes.func.isRequired,
     selectedAmount: PropTypes.number.isRequired,
@@ -108,6 +109,8 @@ export default class CardDetailsForm extends React.Component {
 
         } else {
           this.setState({ tokenSaveFail: true });
+
+          this.props.notifyAirbrake();
 
           Mixpanel.registerEvent("GET_RESPONSE_FROM_STRIPE", {
             base_url: window.location.origin,
