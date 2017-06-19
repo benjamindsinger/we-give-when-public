@@ -60,11 +60,26 @@
           "Throughout his career, John saw firsthand the influence of money on politics—the manipulation of the system and the loopholes that have allowed dark money to transform our elections. What should be a citizen-centered system has been distorted so that now, in most cases, only select major corporate donors and union bosses are the true winners.",
           "With a desire to now reform the system instead of circumventing it, John is leading a team of ex-political wonks to help change the very industry in which they once thrived.",
           "We need to raise $2,000/month to help cover travel and staffing costs to advocate for the following policies and campaigns across America in 2017-18:",
-          "Ban secret credit card donations to political campaigns, including from foreign nationals or government contractors",
-          "28th amendment to the Constitution legalizing campaign contribution limits, to reverse Buckley v. Valeo and Citizens United v. FEC",
-          "Federal tax credit for small-dollar political donations, similar to the Reagan-era tax credit, to encourage citizen investment in our elections",
-          "Accountability for conflicts of interest for public officials",
-          "Reforms in 10 states, including closing the LLC loophole, prohibiting retribution against citizens who participate in politics, increasing transparency for large campaign contributions, and banning or limiting gifts from lobbyists",
+          {
+            "type": "li",
+            "content": "Ban secret credit card donations to political campaigns, including from foreign nationals or government contractors"
+          },
+          {
+            "type": "li",
+            "content": "28th amendment to the Constitution legalizing campaign contribution limits, to reverse Buckley v. Valeo and Citizens United v. FEC"
+          },
+          {
+            "type": "li",
+            "content": "Federal tax credit for small-dollar political donations, similar to the Reagan-era tax credit, to encourage citizen investment in our elections"
+          },
+          {
+            "type": "li",
+            "content": "Accountability for conflicts of interest for public officials"
+          },
+          {
+            "type": "li",
+            "content": "Reforms in 10 states, including closing the LLC loophole, prohibiting retribution against citizens who participate in politics, increasing transparency for large campaign contributions, and banning or limiting gifts from lobbyists"
+          },
           "Thank you for your support.",
           "We believe that individual participation in the American political system is the best way to preserve and strengthen our liberty.",
           "And with your help, we’ll show the big money political establishment that grassroots conservatives across America really do want to drain the swamp.",
