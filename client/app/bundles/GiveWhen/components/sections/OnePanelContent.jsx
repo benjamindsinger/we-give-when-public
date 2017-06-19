@@ -54,9 +54,10 @@ export default class OnePanelContent extends React.Component {
 
   renderParagraph (paragraph) {
     if (paragraph.type === 'li') return (
-      <li key={paragraph.content.substring(0,20)}>
+      <p style={{margin: '25px 0 25px 50px'}}>
+        <span style={{ margin: '0 20px 0 0'}}>&#x273B;</span>
         {paragraph.content}
-      </li>
+      </p>
     );
 
     return (
