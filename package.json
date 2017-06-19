@@ -9,7 +9,9 @@
   "scripts": {
     "postinstall": "cd client && yarn install",
     "rails-server": "echo 'visit http://localhost:3000/hello_world' && foreman start -f Procfile.dev",
-    "test": "rspec"
+    "test": "rspec",
+    "lint": "eslint --fix --ext jsx --ext js -c .eslintrc client/app/bundles/GiveWhen; exit 0",
+    "lint-cloud": "eslint --ext jsx --ext js -c .eslintrc client/app/bundles/GiveWhen"
   },
   "dependencies": {
     "airbrake-js": "^0.9.0",

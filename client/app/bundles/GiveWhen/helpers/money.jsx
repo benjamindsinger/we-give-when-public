@@ -12,4 +12,4 @@ export default {
     return (amountInCents / 100).toFixed(2);
   }
 
-}
+};
