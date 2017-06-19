@@ -53,6 +53,12 @@ export default class OnePanelContent extends React.Component {
   }
 
   renderParagraph (paragraph) {
+    if (paragraph.type === 'li') return (
+      <li key={paragraph.content.substring(0,20)}>
+        {paragraph.content}
+      </li>
+    );
+
     return (
       <p key={paragraph.substring(0,20)}>
         {paragraph}
