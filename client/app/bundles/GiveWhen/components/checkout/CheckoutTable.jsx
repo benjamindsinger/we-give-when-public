@@ -45,4 +45,4 @@ export default class CheckoutTable extends React.Component {
     );
   }
 
-};
+}

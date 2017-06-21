@@ -33,4 +33,4 @@ export default class Disclaimer extends React.Component {
     );
   }
 
-};
+}

@@ -44,4 +44,4 @@ export default class TwoPanelContent extends React.Component {
     );
   }
 
-};
+}
