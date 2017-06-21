@@ -56,4 +56,4 @@ export default class SlingshotCheckout extends React.Component {
     );
   }
 
-};
+}

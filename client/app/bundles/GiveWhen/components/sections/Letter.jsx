@@ -30,4 +30,4 @@ export default class Letter extends React.Component {
     );
   }
 
-};
+}

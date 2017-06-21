@@ -202,4 +202,4 @@ export default class PersonalDetailsForm extends React.Component {
     );
   }
 
-};
+}

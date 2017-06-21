@@ -119,7 +119,7 @@ export default class CardDetailsForm extends React.Component {
 
         }
       });
-    }
+    };
   }
 
   renderTokenSaveSuccess () {
@@ -203,10 +203,10 @@ export default class CardDetailsForm extends React.Component {
     const crowdFundType = this.props.crowdFundType;
 
     switch (crowdFundType) {
-      case 'SLINGSHOT':
-        return this.renderSlingshotCheckout();
-      case 'COUNTDOWN':
-        return this.renderCountdownCheckout();
+    case 'SLINGSHOT':
+      return this.renderSlingshotCheckout();
+    case 'COUNTDOWN':
+      return this.renderCountdownCheckout();
     }
   }
 
@@ -239,5 +239,5 @@ export default class CardDetailsForm extends React.Component {
     }
   }
 
-};
+}
 

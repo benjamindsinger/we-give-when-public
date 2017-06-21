@@ -6,4 +6,4 @@ export default {
     mixpanel.track(eventName, eventData);
   }
 
-}
+};

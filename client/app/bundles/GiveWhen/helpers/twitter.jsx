@@ -13,18 +13,18 @@ export default {
            target="_blank">
            <img src="/twitter-logo-white.svg"
               style={{
-               height: 50,
-               width: 50,
-               display: 'inline-block',
-               float: 'left',
-               position: 'relative',
-               bottom: 10,
-               right: 10
-             }}
+                height: 50,
+                width: 50,
+                display: 'inline-block',
+                float: 'left',
+                position: 'relative',
+                bottom: 10,
+                right: 10
+              }}
           />
           <div>Tweet your support</div>
       </a>
     );
   }
 
-}
+};

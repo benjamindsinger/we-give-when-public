@@ -31,13 +31,13 @@ export default {
     return (
       <img src="/facebook-logo-white.svg"
            style={{
-            height: 30,
-            width: 30,
-            display: 'inline-block',
-            float: 'left'
-          }}
+             height: 30,
+             width: 30,
+             display: 'inline-block',
+             float: 'left'
+           }}
       />
     );
   },
 
-}
+};
