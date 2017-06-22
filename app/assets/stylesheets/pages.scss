@@ -133,9 +133,18 @@ $lightblue: #0948bc;
 
 .navlinks {
   float: right;
+  line-height: 140px;
+  vertical-align: middle;
+  margin-right: 60px;
 
   a {
     color: black;
+    margin-left: 20px;
+    text-decoration: none;
+  }
+
+  a:hover {
+    font-weight: bold;
   }
 }
 
