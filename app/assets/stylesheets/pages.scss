@@ -79,7 +79,7 @@ $lightblue: #0948bc;
 .our__campaigns {
   background-color: black;
   color: white;
-  padding: 40px 60px;
+  display: flex;
 
   h2 {
     font-weight: lighter;
@@ -91,6 +91,18 @@ $lightblue: #0948bc;
 
   a:hover {
     font-weight: bold;
+  }
+}
+
+@media (min-width: 800px) {
+  .our__campaigns {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 800px) {
+  .our__campaigns {
+    flex-direction: column;
   }
 }
 
@@ -119,7 +131,6 @@ $lightblue: #0948bc;
   }
 }
 
-
 .navlinks {
   float: right;
   margin: 45px 60px 0 0;
@@ -137,4 +148,15 @@ $lightblue: #0948bc;
 
 .get__in__touch {
   padding: 40px 60px;
+}
+
+.our__campaigns__text {
+  flex: 1;
+  padding: 40px 60px;
+}
+
+.capitol__background__image {
+  flex: 1;
+  background-image: url(https://s3-us-west-2.amazonaws.com/give-when/static-images/give-when/Yellow-over-capitol.jpg);
+  background-size: cover;
 }
