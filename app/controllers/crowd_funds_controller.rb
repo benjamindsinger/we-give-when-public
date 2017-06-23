@@ -6,7 +6,9 @@ class CrowdFundsController < ApplicationController
   before_action :check_crowd_fund_cause!, only: [:dashboard]
 
   def index
-    @crowd_funds = CrowdFund.all
+    @crowd_funds_by_popularity = CrowdFund.all.sort_by do |crowd_fund|
+      crowd_fund.crowd_fund_memberships.count
+    end.reverse
   end
 
   def show
