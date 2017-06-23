@@ -1,7 +1,17 @@
 <div class="page__wrapper">
-  <div class="hero">
-    <img src='/heart.svg' id="heart" />
-    Give<span style="font-weight: bold;">When</span>
+
+  <div class="navbar">
+    <div class="hero__area">
+      <img src='/heart.svg' id="heart" />
+      <span class="text">Give<span style="font-weight: bold;">When</span></span>
+    </div>
+
+    <div class="navlinks">
+      <%= link_to 'Home',
+                  '/' %>
+      <%= link_to 'Sign In',
+                  '/sign_in' %>
+    </div>
   </div>
 
   <div class="tagline">
