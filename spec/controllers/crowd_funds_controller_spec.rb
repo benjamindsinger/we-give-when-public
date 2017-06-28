@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe CrowdFundsController, type: :controller do
 
-  let(:cause) { Cause.create! }
+  let(:cause) { Cause.create!(name: 'Fight for Rights') }
 
   let(:crowd_fund) {
     CrowdFund.create!(
@@ -49,7 +49,7 @@ RSpec.describe CrowdFundsController, type: :controller do
       end
 
       context "cause admin for a different crowd fund" do
-        let(:some_other_cause) { Cause.create! }
+        let(:some_other_cause) { Cause.create!(name: 'Fight Against Rights') }
 
         let(:some_other_admin) {
           CauseAdmin.create!(
