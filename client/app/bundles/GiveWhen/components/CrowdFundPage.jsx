@@ -16,8 +16,8 @@ import Statement from './sections/Statement.jsx';
 import Letter from './sections/Letter.jsx';
 import Disclaimer from './sections/Disclaimer.jsx';
 import Video from './sections/Video.jsx';
-import DemocracySpringAgenda from './sections/DemocracySpringAgenda.jsx'
-import DemocracySpringLetter from './sections/DemocracySpringLetter.jsx'
+import DemocracySpringAgenda from './sections/DemocracySpringAgenda.jsx';
+import DemocracySpringLetter from './sections/DemocracySpringLetter.jsx';
 
 import Money from '../helpers/money.jsx';
 import Buttons from '../helpers/buttons.jsx';
@@ -137,10 +137,10 @@ export default class CrowdFundPage extends React.Component {
       const step = this.state.step;
 
       switch (step) {
-        case 0:  return this.renderSignUpPage();
-        case 1:  return this.renderPersonalDetailsPage();
-        case 2:  return this.renderCardDetailsPage();
-        default: return this.renderSignUpPage();
+      case 0:  return this.renderSignUpPage();
+      case 1:  return this.renderPersonalDetailsPage();
+      case 2:  return this.renderCardDetailsPage();
+      default: return this.renderSignUpPage();
       }
     } catch (err) {
       this.notifyAirbrake(err);
@@ -257,20 +257,20 @@ export default class CrowdFundPage extends React.Component {
     const sectionType = section.type;
 
     switch (sectionType) {
-      case 'one_panel':
-        return this.renderOnePanelContent(section, index);
-      case 'statement':
-        return this.renderStatementContent(section, index);
-      case 'letter':
-        return this.renderLetterContent(section, index);
-      case 'two_panel':
-        return this.renderTwoPanelContent(section, index);
-      case 'video':
-        return this.renderVideo(section, index);
-      case 'democracy_spring_agenda':
-        return <DemocracySpringAgenda />;
-      case 'democracy_spring_letter':
-        return <DemocracySpringLetter
+    case 'one_panel':
+      return this.renderOnePanelContent(section, index);
+    case 'statement':
+      return this.renderStatementContent(section, index);
+    case 'letter':
+      return this.renderLetterContent(section, index);
+    case 'two_panel':
+      return this.renderTwoPanelContent(section, index);
+    case 'video':
+      return this.renderVideo(section, index);
+    case 'democracy_spring_agenda':
+      return <DemocracySpringAgenda />;
+    case 'democracy_spring_letter':
+      return <DemocracySpringLetter
           twitterMessage={this.props.twitterMessage}
         />;
     }
