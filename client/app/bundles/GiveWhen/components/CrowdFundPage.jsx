@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import _ from 'lodash';
 import airbrakeJs from 'airbrake-js';
 
 import PersonalDetailsForm from './PersonalDetailsForm.jsx';
@@ -19,12 +18,9 @@ import Video from './sections/Video.jsx';
 import DemocracySpringAgenda from './sections/DemocracySpringAgenda.jsx';
 import DemocracySpringLetter from './sections/DemocracySpringLetter.jsx';
 
-import Money from '../helpers/money.jsx';
 import Buttons from '../helpers/buttons.jsx';
 import UserEvents from '../helpers/user_events.jsx';
 import DataCuts from '../helpers/data_cuts.jsx';
-import Twitter from '../helpers/twitter.jsx';
-import Facebook from '../helpers/facebook.jsx';
 
 export default class CrowdFundPage extends React.Component {
   displayName: 'CrowdFundPage';
@@ -132,6 +128,17 @@ export default class CrowdFundPage extends React.Component {
     this.airbrake.notify(err);
   }
 
+  headlineClassName () {
+    if (this.props.headlineLoud) return 'loud';
+    return '';
+  }
+
+  headLineFlex () {
+    if (this.props.largeHeadlineText) return { flex: 2 };
+
+    return { flex: 1 };
+  }
+
   render () {
     try {
       const step = this.state.step;
@@ -182,17 +189,6 @@ export default class CrowdFundPage extends React.Component {
         showButton={false}
       />
     );
-  }
-
-  headlineClassName () {
-    if (this.props.headlineLoud) return 'loud';
-    return '';
-  }
-
-  headLineFlex () {
-    if (this.props.largeHeadlineText) return { flex: 2 };
-
-    return { flex: 1 };
   }
 
   renderHeadlineSection () {

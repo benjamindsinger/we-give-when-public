@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import 'whatwg-fetch';
 
-import Money from '../helpers/money.jsx';
 import Mixpanel from '../helpers/mixpanel.jsx';
 
 import SocialSharingPage from './SocialSharingPage.jsx';
@@ -122,6 +121,16 @@ export default class CardDetailsForm extends React.Component {
     };
   }
 
+  render () {
+    if (this.state.tokenSaveOK === true) {
+      return this.renderTokenSaveSuccess();
+    } else if (this.state.tokenSaveFail === true) {
+      return this.renderTokenSaveFail();
+    } else {
+      return this.renderStripeForm();
+    }
+  }
+
   renderTokenSaveSuccess () {
     return (
       <SocialSharingPage
@@ -227,16 +236,6 @@ export default class CardDetailsForm extends React.Component {
         selectedAmountInCents={this.props.selectedAmountInCents}
         onClickEdit={this.props.onClickEdit} />
     );
-  }
-
-  render () {
-    if (this.state.tokenSaveOK === true) {
-      return this.renderTokenSaveSuccess();
-    } else if (this.state.tokenSaveFail === true) {
-      return this.renderTokenSaveFail();
-    } else {
-      return this.renderStripeForm();
-    }
   }
 
 }

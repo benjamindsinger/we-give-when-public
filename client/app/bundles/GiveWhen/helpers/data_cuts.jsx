@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export default {
 
   funderDetails: function (state, props) {

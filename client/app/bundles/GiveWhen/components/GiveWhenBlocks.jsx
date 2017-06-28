@@ -1,11 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import _ from 'lodash';
-
-import Money from '../helpers/money.jsx';
-import Buttons from '../helpers/buttons.jsx';
-import UserEvents from '../helpers/user_events.jsx';
-import DataCuts from '../helpers/data_cuts.jsx';
 
 export default class GiveWhenBlocks extends React.Component {
   displayName: 'GiveWhenBlocks';

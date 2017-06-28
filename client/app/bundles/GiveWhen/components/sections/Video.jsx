@@ -2,12 +2,13 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 export default class Video extends React.Component {
-  displayName: 'Video';
 
   static propTypes = {
     headline: PropTypes.string.isRequired,
     youTubeId: PropTypes.string.isRequired,
   };
+
+  static displayName = 'Video';
 
   youTubeIframeSrc () {
     return `https://www.youtube.com/embed/${this.props.youTubeId}`;
