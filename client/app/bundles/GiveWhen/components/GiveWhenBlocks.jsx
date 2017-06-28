@@ -231,9 +231,6 @@ export default class GiveWhenBlocks extends React.Component {
           <p style={{color: 'red', lineHeight: '7.5px'}}>
             {this.props.progressLeftPhrase}
           </p>
-          <p style={{color: 'red', lineHeight: '7.5px'}}>
-            {this.props.progressTimePhrase}
-          </p>
         </div>
       </div>
     );
