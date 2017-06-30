@@ -44,7 +44,7 @@ export default class CardDetailsForm extends React.Component {
   componentDidMount () {
     window.scrollTo(0, 0);
 
-    const stripe = Stripe(this.props.stripePublishableKey);
+    const stripe = window.Stripe(this.props.stripePublishableKey);
     const elements = stripe.elements();
 
     const style = {
