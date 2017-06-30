@@ -14,6 +14,10 @@ export default class CardDetailsForm extends React.Component {
     stripePublishableKey: PropTypes.string.isRequired,
     notifyAirbrake: PropTypes.func.isRequired,
 
+    selectedAmountInCents: PropTypes.number.isRequired,
+    selectedMonthlyMaximumInCents: PropTypes.number,
+    onClickEdit: PropTypes.func.isRequired,
+
     onType: PropTypes.func.isRequired,
     selectedAmount: PropTypes.number.isRequired,
     selectedMonthlyMaximum: PropTypes.number.isRequired,
