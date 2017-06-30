@@ -1,10 +1,14 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import Twitter from '../../helpers/twitter.jsx';
 import Facebook from '../../helpers/facebook.jsx';
 
 export default class DemocracySpringLetter extends React.Component {
-  displayName: 'DemocracySpringLetter';
+
+  static propTypes = {
+    twitterMessage: PropTypes.string.isRequired,
+  };
 
   render () {
     return (
