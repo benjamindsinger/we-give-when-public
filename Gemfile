@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'mini_racer', platforms: :ruby
 gem 'money'
 gem 'react_on_rails', '~> 7'
+gem 'rubocop', '~> 0.49.1', require: false
 gem 'sass-rails', '~> 5.0'
 gem 'stripe'
 gem 'uglifier', '>= 1.3.0'
