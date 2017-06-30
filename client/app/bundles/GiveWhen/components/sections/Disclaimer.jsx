@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 export default class Disclaimer extends React.Component {
-  displayName: 'Disclaimer';
 
   static propTypes = {
     paragraphs: PropTypes.array.isRequired,

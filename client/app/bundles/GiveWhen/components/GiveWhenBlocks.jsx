@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 export default class GiveWhenBlocks extends React.Component {
-  displayName: 'GiveWhenBlocks';
 
   static propTypes = {
     crowdFundType: PropTypes.string.isRequired,

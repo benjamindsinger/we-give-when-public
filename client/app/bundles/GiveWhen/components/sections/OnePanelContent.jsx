@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 export default class OnePanelContent extends React.Component {
-  displayName: 'OnePanelContent';
 
   static propTypes = {
     headline: PropTypes.string.isRequired,

@@ -23,7 +23,6 @@ import UserEvents from '../helpers/user_events.jsx';
 import DataCuts from '../helpers/data_cuts.jsx';
 
 export default class CrowdFundPage extends React.Component {
-  displayName: 'CrowdFundPage';
 
   static propTypes = {
     crowdFundId: PropTypes.number.isRequired,
