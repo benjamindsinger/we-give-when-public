@@ -6,3 +6,8 @@ dependencies:
   pre:
     - yarn add eslint@3.19.0 -g
     - yarn add eslint-plugin-react@latest -g
+
+test:
+  override:
+    - yarn test
+    - reek app
