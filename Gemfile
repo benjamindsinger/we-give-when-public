@@ -16,6 +16,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'mini_racer', platforms: :ruby
 gem 'money'
+gem 'reek'
 gem 'react_on_rails', '~> 7'
 gem 'rubocop', '~> 0.49.1', require: false
 gem 'sass-rails', '~> 5.0'
