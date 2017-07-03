@@ -49,4 +49,4 @@ export default class FacebookButton extends React.Component {
     );
   }
 
-};
+}
