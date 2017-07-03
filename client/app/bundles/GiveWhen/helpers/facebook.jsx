@@ -1,18 +1,27 @@
 import React from 'react';
 
-export default {
+export default class FacebookButton extends React.Component {
+
+  facebookHref () {
+    return `https://www.facebook.com/sharer/sharer.php?u=${this.currentUrl()}&src=sdkpreparse`;
+  }
 
   currentUrl () {
     const url = window.location.href;
 
     return encodeURIComponent(url);
-  },
+  }
 
-  facebookHref () {
-    return `https://www.facebook.com/sharer/sharer.php?u=${this.currentUrl()}&src=sdkpreparse`;
-  },
+  render () {
+    return (
+      <div>
+        {this.renderLogo()}
+        {this.renderButton()}
+      </div>
+    );
+  }
 
-  button: function () {
+  renderButton () {
     return (
       <div className="fb-share-button"
            data-href={this.currentUrl()}
@@ -25,9 +34,9 @@ export default {
         </a>
       </div>
     );
-  },
+  }
 
-  renderLogo: function () {
+  renderLogo () {
     return (
       <img src="/facebook-logo-white.svg"
            style={{
@@ -38,6 +47,6 @@ export default {
            }}
       />
     );
-  },
+  }
 
-};
+}

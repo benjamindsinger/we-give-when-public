@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Twitter from '../../helpers/twitter.jsx';
-import Facebook from '../../helpers/facebook.jsx';
+import FacebookButton from '../../helpers/facebook.jsx';
 
 export default class DemocracySpringLetter extends React.Component {
 
@@ -31,7 +31,7 @@ export default class DemocracySpringLetter extends React.Component {
           fontSize: '1.125em'
         }}>
 
-          <p>Democracy Spring is building a 50 state nonviolent army of grassroots volunteers to defend democracy from Trump and the GOP and to take over the Democratic Party with bold progressives. We're using militant, nonviolent civil resistance to fight for a democracy that works for all of us, not just the wealthiest 1%.</p>
+          <p>Democracy Spring is building a 50 state nonviolent army of grassroots volunteers to defend democracy from Trump and the GOP and to take over the Democratic Party with bold progressives. We are using militant, nonviolent civil resistance to fight for a democracy that works for all of us, not just the wealthiest 1%.</p>
 
           <p>To make that vision a reality, we are dramatically expanding our dedicated staff of full-time organizers who will be training, coaching and supporting our local volunteer leaders from across the country. The most efficient, cost-effective way we know to do that is to put all of those organizers under one roof: we are going to rent a Movement House in Washington DC for one year to spearhead the political revolution. </p>
 
@@ -54,8 +54,7 @@ export default class DemocracySpringLetter extends React.Component {
         <Twitter message={this.props.twitterMessage} />
 
         <div className="social__sharing__button facebook">
-          {Facebook.renderLogo()}
-          {Facebook.button()}
+          <FacebookButton />
         </div>
 
       </div>
