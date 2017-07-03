@@ -51,7 +51,7 @@ export default class DemocracySpringLetter extends React.Component {
 
         <br/>
 
-        {Twitter.renderButton(this.props.twitterMessage)}
+        <Twitter message={this.props.twitterMessage} />
 
         <div className="social__sharing__button facebook">
           {Facebook.renderLogo()}
