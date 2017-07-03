@@ -37,6 +37,14 @@ export default class PersonalDetailsForm extends React.Component {
     window.scrollTo(0, 0);
   }
 
+  fieldToLabel (field) {
+    const snake = _.snakeCase(field);
+    const lower = _.replace(snake, '_', ' ');
+    const upper = _.capitalize(lower);
+
+    return upper;
+  }
+
   render () {
     return (
       <div className="personal__details__form__wrapper color_scheme__white_blue below__fixed__navbar">
@@ -89,14 +97,6 @@ export default class PersonalDetailsForm extends React.Component {
 
     if (crowdFundType === 'SLINGSHOT') return this.renderSlingshotSummary();
     if (crowdFundType === 'COUNTDOWN') return this.renderCountdownSummary();
-  }
-
-  fieldToLabel (field) {
-    const snake = _.snakeCase(field);
-    const lower = _.replace(snake, '_', ' ');
-    const upper = _.capitalize(lower);
-
-    return upper;
   }
 
   renderInputFor (field, optionalLabel) {

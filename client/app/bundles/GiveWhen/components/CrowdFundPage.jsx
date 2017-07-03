@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import _ from 'lodash';
 import airbrakeJs from 'airbrake-js';
 
 import PersonalDetailsForm from './PersonalDetailsForm.jsx';
@@ -16,18 +15,14 @@ import Statement from './sections/Statement.jsx';
 import Letter from './sections/Letter.jsx';
 import Disclaimer from './sections/Disclaimer.jsx';
 import Video from './sections/Video.jsx';
-import DemocracySpringAgenda from './sections/DemocracySpringAgenda.jsx'
-import DemocracySpringLetter from './sections/DemocracySpringLetter.jsx'
+import DemocracySpringAgenda from './sections/DemocracySpringAgenda.jsx';
+import DemocracySpringLetter from './sections/DemocracySpringLetter.jsx';
 
-import Money from '../helpers/money.jsx';
 import Buttons from '../helpers/buttons.jsx';
 import UserEvents from '../helpers/user_events.jsx';
 import DataCuts from '../helpers/data_cuts.jsx';
-import Twitter from '../helpers/twitter.jsx';
-import Facebook from '../helpers/facebook.jsx';
 
 export default class CrowdFundPage extends React.Component {
-  displayName: 'CrowdFundPage';
 
   static propTypes = {
     crowdFundId: PropTypes.number.isRequired,
@@ -132,15 +127,26 @@ export default class CrowdFundPage extends React.Component {
     this.airbrake.notify(err);
   }
 
+  headlineClassName () {
+    if (this.props.headlineLoud) return 'loud';
+    return '';
+  }
+
+  headLineFlex () {
+    if (this.props.largeHeadlineText) return { flex: 2 };
+
+    return { flex: 1 };
+  }
+
   render () {
     try {
       const step = this.state.step;
 
       switch (step) {
-        case 0:  return this.renderSignUpPage();
-        case 1:  return this.renderPersonalDetailsPage();
-        case 2:  return this.renderCardDetailsPage();
-        default: return this.renderSignUpPage();
+      case 0:  return this.renderSignUpPage();
+      case 1:  return this.renderPersonalDetailsPage();
+      case 2:  return this.renderCardDetailsPage();
+      default: return this.renderSignUpPage();
       }
     } catch (err) {
       this.notifyAirbrake(err);
@@ -182,17 +188,6 @@ export default class CrowdFundPage extends React.Component {
         showButton={false}
       />
     );
-  }
-
-  headlineClassName () {
-    if (this.props.headlineLoud) return 'loud';
-    return '';
-  }
-
-  headLineFlex () {
-    if (this.props.largeHeadlineText) return { flex: 2 };
-
-    return { flex: 1 };
   }
 
   renderHeadlineSection () {
@@ -257,20 +252,20 @@ export default class CrowdFundPage extends React.Component {
     const sectionType = section.type;
 
     switch (sectionType) {
-      case 'one_panel':
-        return this.renderOnePanelContent(section, index);
-      case 'statement':
-        return this.renderStatementContent(section, index);
-      case 'letter':
-        return this.renderLetterContent(section, index);
-      case 'two_panel':
-        return this.renderTwoPanelContent(section, index);
-      case 'video':
-        return this.renderVideo(section, index);
-      case 'democracy_spring_agenda':
-        return <DemocracySpringAgenda />;
-      case 'democracy_spring_letter':
-        return <DemocracySpringLetter
+    case 'one_panel':
+      return this.renderOnePanelContent(section, index);
+    case 'statement':
+      return this.renderStatementContent(section, index);
+    case 'letter':
+      return this.renderLetterContent(section, index);
+    case 'two_panel':
+      return this.renderTwoPanelContent(section, index);
+    case 'video':
+      return this.renderVideo(section, index);
+    case 'democracy_spring_agenda':
+      return <DemocracySpringAgenda />;
+    case 'democracy_spring_letter':
+      return <DemocracySpringLetter
           twitterMessage={this.props.twitterMessage}
         />;
     }

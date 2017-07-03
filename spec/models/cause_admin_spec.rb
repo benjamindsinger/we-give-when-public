@@ -4,7 +4,7 @@ RSpec.describe CauseAdmin, type: :model do
 
   describe "#must_have_cause_unless_super_admin" do
 
-    let(:cause) { Cause.create! }
+    let(:cause) { Cause.create!(name: 'Fight for Rights') }
 
     context "regular admin" do
 

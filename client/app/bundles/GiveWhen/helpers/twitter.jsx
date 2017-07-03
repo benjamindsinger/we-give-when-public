@@ -1,9 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default {
+export default class Twitter extends React.Component {
 
-  renderButton: function (message) {
-    const encodedMessage = encodeURIComponent(message);
+  static propTypes = {
+    message: PropTypes.string.isRequired,
+  };
+
+  render () {
+    const encodedMessage = encodeURIComponent(this.props.message);
 
     const href = `https://twitter.com/intent/tweet?text=${encodedMessage}`;
 
@@ -18,7 +23,7 @@ export default {
                 display: 'inline-block',
                 float: 'left',
                 position: 'relative',
-                bottom: 10,
+                botwtom: 10,
                 right: 10
               }}
           />
@@ -27,4 +32,4 @@ export default {
     );
   }
 
-};
+}

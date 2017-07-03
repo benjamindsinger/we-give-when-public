@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 export default class TwoPanelContent extends React.Component {
-  displayName: 'TwoPanelContent';
 
   static propTypes = {
     headline: PropTypes.string.isRequired,
