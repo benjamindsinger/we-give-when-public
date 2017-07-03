@@ -1,18 +1,28 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default {
+export default class FacebookButton extends React.Component {
+
+  render () {
+    return (
+      <div>
+        {this.renderLogo()}
+        {this.button()}
+      </div>
+    );
+  }
 
   currentUrl () {
     const url = window.location.href;
 
     return encodeURIComponent(url);
-  },
+  }
 
   facebookHref () {
     return `https://www.facebook.com/sharer/sharer.php?u=${this.currentUrl()}&src=sdkpreparse`;
-  },
+  }
 
-  button: function () {
+  button () {
     return (
       <div className="fb-share-button"
            data-href={this.currentUrl()}
@@ -25,9 +35,9 @@ export default {
         </a>
       </div>
     );
-  },
+  }
 
-  renderLogo: function () {
+  renderLogo () {
     return (
       <img src="/facebook-logo-white.svg"
            style={{
@@ -38,6 +48,6 @@ export default {
            }}
       />
     );
-  },
+  }
 
 };

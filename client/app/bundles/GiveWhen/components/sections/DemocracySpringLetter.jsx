@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Twitter from '../../helpers/twitter.jsx';
-import Facebook from '../../helpers/facebook.jsx';
+import FacebookButton from '../../helpers/facebook.jsx';
 
 export default class DemocracySpringLetter extends React.Component {
 
@@ -54,8 +54,7 @@ export default class DemocracySpringLetter extends React.Component {
         <Twitter message={this.props.twitterMessage} />
 
         <div className="social__sharing__button facebook">
-          {Facebook.renderLogo()}
-          {Facebook.button()}
+          <FacebookButton />
         </div>
 
       </div>

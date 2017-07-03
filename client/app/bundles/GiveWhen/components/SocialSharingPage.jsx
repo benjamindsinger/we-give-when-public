@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Twitter from '../helpers/twitter.jsx';
-import Facebook from '../helpers/facebook.jsx';
+import FacebookButton from '../helpers/facebook.jsx';
 
 export default class SocialSharingPage extends React.Component {
 
@@ -52,8 +52,7 @@ export default class SocialSharingPage extends React.Component {
 
     return (
       <div className="social__sharing__button facebook">
-        {Facebook.renderLogo()}
-        {Facebook.button()}
+        <FacebookButton />
       </div>
     );
   }
