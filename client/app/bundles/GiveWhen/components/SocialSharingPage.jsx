@@ -59,7 +59,9 @@ export default class SocialSharingPage extends React.Component {
   }
 
   renderTwitter () {
-    return Twitter.renderButton(this.props.twitterMessage);
+    return (
+      <Twitter message={this.props.twitterMessage} />
+    );
   }
 
 }
