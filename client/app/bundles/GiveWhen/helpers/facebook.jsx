@@ -1,15 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 export default class FacebookButton extends React.Component {
 
-  render () {
-    return (
-      <div>
-        {this.renderLogo()}
-        {this.button()}
-      </div>
-    );
+  facebookHref () {
+    return `https://www.facebook.com/sharer/sharer.php?u=${this.currentUrl()}&src=sdkpreparse`;
   }
 
   currentUrl () {
@@ -18,11 +12,16 @@ export default class FacebookButton extends React.Component {
     return encodeURIComponent(url);
   }
 
-  facebookHref () {
-    return `https://www.facebook.com/sharer/sharer.php?u=${this.currentUrl()}&src=sdkpreparse`;
+  render () {
+    return (
+      <div>
+        {this.renderLogo()}
+        {this.renderButton()}
+      </div>
+    );
   }
 
-  button () {
+  renderButton () {
     return (
       <div className="fb-share-button"
            data-href={this.currentUrl()}
