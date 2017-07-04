@@ -4,9 +4,9 @@ import airbrakeJs from 'airbrake-js';
 
 import PersonalDetailsForm from './PersonalDetailsForm.jsx';
 import CardDetailsForm from './CardDetailsForm.jsx';
+import LandingPage from './LandingPage.jsx';
 
 import Footer from './Footer.jsx';
-import Header from './Header.jsx';
 
 import UserEvents from '../helpers/user_events.jsx';
 import DataCuts from '../helpers/data_cuts.jsx';

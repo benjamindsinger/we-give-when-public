@@ -18,6 +18,30 @@ export default class LandingPage extends React.Component {
   }
 
   render () {
+    return (
+      <div>
+        {this.renderFoeSection()}
+        {this.renderFriendSection()}
+        {this.renderMechanicsSection()}
+        {this.renderDisclaimerSection()}
+        <Footer />
+      </div>
+    );
+  }
+
+  renderFoeSection () {
+    return null;
+  }
+
+  renderFriendSection () {
+    return null;
+  }
+
+  renderMechanicsSection () {
+    return null;
+  }
+
+  renderDisclaimerSection () {
     return null;
   }
 
