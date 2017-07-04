@@ -8,7 +8,6 @@ import CardDetailsForm from './CardDetailsForm.jsx';
 import Footer from './Footer.jsx';
 import Header from './Header.jsx';
 
-import Buttons from '../helpers/buttons.jsx';
 import UserEvents from '../helpers/user_events.jsx';
 import DataCuts from '../helpers/data_cuts.jsx';
 
@@ -45,10 +44,6 @@ export default class LandingPage extends React.Component {
   constructor(props, _railsContext) {
     super(props);
 
-    this.renderAmountButton = Buttons.renderAmountButton.bind(this);
-    this.renderMaximumAmountButton = Buttons.renderMaximumAmountButton.bind(this);
-    this.renderCustomAmountButton = Buttons.renderCustomAmountButton.bind(this);
-    this.renderCustomMaximumAmountButton = Buttons.renderCustomMaximumAmountButton.bind(this);
     this.onClickGive = UserEvents.onChangeStep.bind(this, 1);
 
     this.airbrake = new airbrakeJs({
@@ -85,23 +80,8 @@ export default class LandingPage extends React.Component {
     return (this.state[field]);
   }
 
-  colorSchemeClassName () {
-    return `color_scheme__${this.props.colorScheme}`;
-  }
-
   notifyAirbrake (err) {
     this.airbrake.notify(err);
-  }
-
-  headlineClassName () {
-    if (this.props.headlineLoud) return 'loud';
-    return '';
-  }
-
-  headLineFlex () {
-    if (this.props.largeHeadlineText) return { flex: 2 };
-
-    return { flex: 1 };
   }
 
   render () {
@@ -109,10 +89,10 @@ export default class LandingPage extends React.Component {
       const step = this.state.step;
 
       switch (step) {
-      case 0:  return this.renderSignUpPage();
+      case 0:  return this.renderLandingPage();
       case 1:  return this.renderPersonalDetailsPage();
       case 2:  return this.renderCardDetailsPage();
-      default: return this.renderSignUpPage();
+      default: return this.renderLandingPage();
       }
     } catch (err) {
       this.notifyAirbrake(err);
@@ -120,199 +100,21 @@ export default class LandingPage extends React.Component {
     }
   }
 
-  renderSignUpPage () {
+  renderLandingPage () {
     return (
-      <div className={this.colorSchemeClassName()}>
-        {this.renderHeaderWithActionButton()}
-        {this.renderHeadlineSection()}
-        {this.renderGiveWhenBlocks()}
-        {this.renderContentSections()}
-        {this.renderDisclaimer()}
-        {this.renderFooter()}
-      </div>
-    );
-  }
-
-  renderHeaderWithActionButton () {
-    return (
-      <Header givePhrase={this.props.headerGivePhrase}
-        whenPhrase={this.props.headerWhenPhrase}
-        logoImgPath={this.props.headerLogoImgPath}
-        logoHeight={this.props.headerLogoImgSize}
-        onClickActionButton={UserEvents.onChangeStep.bind(this, 1)}
-        showButton={true}
+      <LandingPage
+        foeHeader={this.props.foeHeader}
+        foeSubhead={this.props.foeSubhead}
+        foeImgUrl={this.props.foeImgUrl}
+        foeHex={this.props.foeHex}
+        friendHeader={this.props.friendHeader}
+        friendSubhead={this.props.friendSubhead}
+        friendImgUrl={this.props.friendImgUrl}
+        friendHex={this.props.friendHex}
+        callToActionSentence={this.props.callToActionSentence}
+        theoryOfChangeSentence={this.props.theoryOfChangeSentence}
+        disclaimerParagraphs={this.props.disclaimerParagraphs}
       />
-    );
-  }
-
-  renderHeaderWithoutActionButton () {
-    return (
-      <Header givePhrase={this.props.headerGivePhrase}
-        whenPhrase={this.props.headerWhenPhrase}
-        logoImgPath={this.props.headerLogoImgPath}
-        logoHeight={this.props.headerLogoImgSize}
-        showButton={false}
-      />
-    );
-  }
-
-  renderHeadlineSection () {
-    return (
-      <div className="section flex headline__section below__fixed__navbar">
-
-        <div className="text color__headline" style={this.headLineFlex()}>
-          <h1 className={this.headlineClassName()}>
-            {this.props.headline}
-          </h1>
-          <div className="divider__line"></div>
-          <p>
-            {this.props.subheadline}
-          </p>
-        </div>
-
-        <div className="text" style={{
-          flex: 1,
-          background: `url("${this.props.headlineImgPath}")`,
-          backgroundSize: 'cover',
-          minHeight: 400
-        }}></div>
-      </div>
-    );
-  }
-
-  renderGiveWhenBlocks () {
-    return (
-      <GiveWhenBlocks
-        crowdFundType={this.props.crowdFundType}
-        giveStatement={this.props.giveStatement}
-        whenStatement={this.props.whenStatement}
-        givePhrase={this.props.headerGivePhrase}
-
-        progressStatusPhrase={this.props.progressStatusPhrase}
-        progressGoalPhrase={this.props.progressGoalPhrase}
-        progressLeftPhrase={this.props.progressLeftPhrase}
-        progressTimePhrase={this.props.progressTimePhrase}
-        progressFraction={this.props.progressFraction}
-        renderAmountButton={this.renderAmountButton}
-        renderMaximumAmountButton={this.renderMaximumAmountButton}
-        renderCustomAmountButton={this.renderCustomAmountButton}
-        renderCustomMaximumAmountButton={this.renderCustomMaximumAmountButton}
-
-        optionsInCents={this.props.optionsInCents}
-        monthlyMaxOptionsInCents={this.props.monthlyMaxOptionsInCents}
-
-        onClickGive={this.onClickGive}
-      />
-    );
-  }
-
-  renderContentSections () {
-    const contentSections = this.props.contentSections;
-
-    return contentSections.map((section, index) => {
-      return this.renderContentBlock(section, index);
-    });
-  }
-
-  renderContentBlock (section, index) {
-    const sectionType = section.type;
-
-    switch (sectionType) {
-    case 'one_panel':
-      return this.renderOnePanelContent(section, index);
-    case 'statement':
-      return this.renderStatementContent(section, index);
-    case 'letter':
-      return this.renderLetterContent(section, index);
-    case 'two_panel':
-      return this.renderTwoPanelContent(section, index);
-    case 'video':
-      return this.renderVideo(section, index);
-    case 'democracy_spring_agenda':
-      return <DemocracySpringAgenda />;
-    case 'democracy_spring_letter':
-      return <DemocracySpringLetter
-          twitterMessage={this.props.twitterMessage}
-        />;
-    }
-  }
-
-  renderOnePanelContent (section, index) {
-    const headline = section.headline;
-    const paragraphs = section.paragraphs;
-    const colorType = section.colorType;
-
-    if (!headline || !paragraphs) return null;
-
-    return (
-      <OnePanelContent headline={headline}
-                       paragraphs={paragraphs}
-                       colorType={colorType}
-                       backgroungImgUrl={section.backgroungImgUrl}
-                       key={index} />
-    );
-  }
-
-  renderStatementContent (section, index) {
-    const content = section.content;
-
-    if (!content) return null;
-
-    return (
-      <Statement content={content}
-                 key={index} />
-    );
-  }
-
-  renderLetterContent (section, index) {
-    const headline = section.headline;
-    const paragraphs = section.paragraphs;
-
-    if (!headline || !paragraphs) return null;
-
-    return (
-      <Letter
-        headline={headline}
-        paragraphs={paragraphs}
-        key={index}
-      />
-    );
-  }
-
-  renderTwoPanelContent (section, index) {
-    const headline = section.headline;
-    const paragraphs = section.paragraphs;
-    const imgUrl = section.imgUrl;
-
-    if (!headline || !paragraphs || !imgUrl) return null;
-
-    return (
-      <TwoPanelContent
-        headline={headline}
-        paragraphs={paragraphs}
-        imgUrl={imgUrl}
-        key={index}
-      />
-    );
-  }
-
-  renderVideo (section, index) {
-    return (
-      <Video
-        headline={section.headline}
-        youTubeId={section.youTubeId}
-        key={index}
-      />
-    );
-  }
-
-  renderDisclaimer () {
-    const paragraphs = this.props.disclaimerParagraphs;
-
-    if (!paragraphs) return null;
-
-    return (
-      <Disclaimer paragraphs={paragraphs} />
     );
   }
 
@@ -349,7 +151,7 @@ export default class LandingPage extends React.Component {
         />
 
         {this.renderDisclaimer()}
-        {this.renderFooter()}
+        <Footer />
       </div>
     );
   }
@@ -386,15 +188,8 @@ export default class LandingPage extends React.Component {
         />
 
         {this.renderDisclaimer()}
-        {this.renderFooter()}
+        <Footer />
       </div>
-    );
-  }
-
-
-  renderFooter () {
-    return (
-      <Footer />
     );
   }
 
