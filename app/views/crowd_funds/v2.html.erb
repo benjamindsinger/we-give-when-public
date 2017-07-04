@@ -1,0 +1,32 @@
+<%= react_component(
+      "NewCrowdFundPage",
+      props: {
+        crowdFundId: 2,
+        stripePublishableKey: ENV['STRIPE_PUBLISHABLE_KEY'],
+        airbrakeProjectId: ENV['AIRBRAKE_PROJECT_ID'],
+        airbrakeProjectKey: ENV['AIRBRAKE_PROJECT_KEY'],
+        funderRequiredDetails: @funder_required_details,
+
+        # Defaults
+        defaultSelectedAmountInCents: 10,
+        defaultSelectedMonthlyMaximumInCents: 100,
+
+        optionsInCents: [1,2,3],
+        monthlyMaxOptionsInCents: [100, 200, 300],
+
+        foeHeader: 'McDonalds is bad',
+        foeSubhead: 'very bad',
+        foeImgUrl: nil,
+        foeHex: 'black',
+        friendHeader: 'fight for 15 is good',
+        friendSubhead: 'very good',
+        friendImgUrl: nil,
+        friendHex: 'blue',
+        callToActionSentence: 'sign up',
+        theoryOfChangeSentence: 'sign up',
+        disclaimerParagraphs: ['sign up'],
+      },
+      trace: nil,
+      replay_console: nil
+    )
+%>

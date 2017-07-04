@@ -26,6 +26,13 @@ class CrowdFundsController < ApplicationController
     end
   end
 
+  def v2
+    @funder_required_details = [
+      'firstName', 'lastName', 'occupation', 'employer', 'email',
+      'phone', 'address', 'city', 'usState', 'zip',
+    ]
+  end
+
   def dashboard
     @crowd_fund = CrowdFund.includes(crowd_fund_memberships: [:funder])
                            .friendly.find(params[:id])
