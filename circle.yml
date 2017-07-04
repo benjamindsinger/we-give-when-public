@@ -11,4 +11,3 @@ dependencies:
 test:
   override:
     - yarn test
-    - reek app
