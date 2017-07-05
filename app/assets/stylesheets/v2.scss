@@ -1,4 +1,5 @@
 $breakpoint-m: 1100px;
+$breakpoint-s: 500px;
 
 .new__crowd__fund__page {
   span {}
@@ -159,7 +160,7 @@ $breakpoint-m: 1100px;
     font-style: italic;
   }
 
-  @media (min-width: $breakpoint-m) {
+  @media (min-width: $breakpoint-s) {
     span {}
 
     .next__step__button {
@@ -167,7 +168,7 @@ $breakpoint-m: 1100px;
     }
   }
 
-  @media (max-width: $breakpoint-m) {
+  @media (max-width: $breakpoint-s) {
     span {}
 
     .next__step__button {
