@@ -77,12 +77,13 @@ $breakpoint-m: 1100px;
       font-size: 18px;
       display: inline-block;
       position: relative;
-      bottom: 20px;
+      bottom: 30px;
       left: 30px;
 
       span {
         display: inline-block;
         float: left;
+        margin: 4px 0;
       }
     }
   }
@@ -99,6 +100,7 @@ $breakpoint-m: 1100px;
   .mechanics__section {
     background-color: #e0e6e6;
     padding: 60px;
+    text-align: center;
   }
 
   .section__headline, .section__subheadline {
@@ -133,26 +135,43 @@ $breakpoint-m: 1100px;
     font-family: 'Roboto Slab', sans-serif;
   }
 
-  .next__step__button__wrapper {
-    width: 354px;
-    margin: 100px auto 50px auto;
-  }
-
   .next__step__button {
-    background-color: #00a817;
-    color: white;
-    text-align: center;
+    /* Positioning and sizing */
+    display: inline-block;
+    margin: 80px 0 40px 0;
     padding: 20px;
-    font-size: 3em;
-    cursor: pointer;
+
+    /* Font */
     font-family: 'Roboto Slab', sans-serif;
     font-weight: bold;
+
+    /* Colors */
+    background-color: #00a817;
+    color: white;
     border: 1px solid #00a817;
     transition: background-color 0.35s ease;
+    cursor: pointer;
   }
 
   .next__step__button:hover {
     color: #00a817;
     background-color: white;
+    font-style: italic;
+  }
+
+  @media (min-width: $breakpoint-m) {
+    span {}
+
+    .next__step__button {
+      font-size: 3em;
+    }
+  }
+
+  @media (max-width: $breakpoint-m) {
+    span {}
+
+    .next__step__button {
+      font-size: 2em;
+    }
   }
 }
