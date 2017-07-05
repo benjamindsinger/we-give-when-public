@@ -1,5 +1,5 @@
 $breakpoint-xs: 500px;
-$breakpoint-s: 800px;
+$breakpoint-s: 900px;
 $breakpoint-m: 1100px;
 
 .new__crowd__fund__page {
@@ -58,10 +58,11 @@ $breakpoint-m: 1100px;
 
     .money__box {
       position: relative;
-      display: inline;
-      margin-left: 15px;
-
       span {}
+
+      @media (min-width: $breakpoint-s) {
+        display: inline;
+      }
 
       .subtle__input {
         border: none;
@@ -72,6 +73,25 @@ $breakpoint-m: 1100px;
         padding-left: 60px;
         padding-top: 10px;
         padding-bottom: 10px;
+      }
+
+      .dollar__sign {
+        position: relative;
+        left: 50px;
+        font-size: 45px;
+        bottom: 5px;
+      }
+    }
+
+    @media (min-width: $breakpoint-s) {
+      .responsive__break {
+        display: none;
+      }
+    }
+
+    @media (max-width: $breakpoint-s) {
+      .responsive__break {
+        line-height: 60px;
       }
     }
 
@@ -99,22 +119,11 @@ $breakpoint-m: 1100px;
 
     @media (max-width: $breakpoint-s) {
       .monthly__info {
-        margin-top: 30px;
-
         span {
           text-align: center;
         }
       }
     }
-  }
-
-  .money__box:before {
-    content: '$';
-    position: absolute;
-    left: 30px;
-    bottom: 0px;
-    z-index: 1;
-    font-size: 45px;
   }
 
   .mechanics__section {

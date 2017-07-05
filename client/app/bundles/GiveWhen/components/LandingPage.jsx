@@ -93,10 +93,13 @@ export default class LandingPage extends React.Component {
           {this.props.callToActionSentence}
         </div>
         <div className="amount__selection">
-          I'll automatically respond with:
+          <span>I'll automatically respond with:</span>
+          <br className="responsive__break" />
           <span className="money__box">
+            <span className="dollar__sign">$</span>
             <input className="subtle__input" type="tel" defaultValue="2" />
           </span>
+          <br className="responsive__break" />
           <span className="monthly__info">
             <span>Monthly max: $40</span>
             <br/>
