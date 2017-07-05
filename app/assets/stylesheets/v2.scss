@@ -46,6 +46,16 @@ $breakpoint-m: 1100px;
     }
   }
 
+  @media (min-width: $breakpoint-m) {
+    .amount__selection {
+      text-align: center;
+      margin: 60px 0;
+      font-size: 1.75em;
+      font-weight: lighter;
+      font-family: 'Roboto', sans-serif;
+    }
+  }
+
   .mechanics__section {
     background-color: #e0e6e6;
     padding: 60px;
@@ -74,5 +84,12 @@ $breakpoint-m: 1100px;
     background-repeat: repeat;
     font-family: 'Roboto Slab', sans-serif;
     font-weight: bold;
+  }
+
+  .theory__of__change__sentence {
+    font-size: 3em;
+    text-align: center;
+    background-repeat: repeat;
+    font-family: 'Roboto Slab', sans-serif;
   }
 }
