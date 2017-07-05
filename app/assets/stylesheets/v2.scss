@@ -1,5 +1,6 @@
+$breakpoint-xs: 500px;
+$breakpoint-s: 800px;
 $breakpoint-m: 1100px;
-$breakpoint-s: 500px;
 
 .new__crowd__fund__page {
   span {}
@@ -77,14 +78,32 @@ $breakpoint-s: 500px;
     .monthly__info {
       font-size: 18px;
       display: inline-block;
-      position: relative;
-      bottom: 30px;
-      left: 30px;
 
       span {
         display: inline-block;
-        float: left;
         margin: 4px 0;
+      }
+    }
+
+    @media (min-width: $breakpoint-s) {
+      .monthly__info {
+        position: relative;
+        bottom: 30px;
+        left: 30px;
+
+        span {
+          float: left;
+        }
+      }
+    }
+
+    @media (max-width: $breakpoint-s) {
+      .monthly__info {
+        margin-top: 30px;
+
+        span {
+          text-align: center;
+        }
       }
     }
   }
@@ -160,7 +179,7 @@ $breakpoint-s: 500px;
     font-style: italic;
   }
 
-  @media (min-width: $breakpoint-s) {
+  @media (min-width: $breakpoint-xs) {
     span {}
 
     .next__step__button {
@@ -168,7 +187,7 @@ $breakpoint-s: 500px;
     }
   }
 
-  @media (max-width: $breakpoint-s) {
+  @media (max-width: $breakpoint-xs) {
     span {}
 
     .next__step__button {
