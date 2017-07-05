@@ -88,7 +88,7 @@ export default class LandingPage extends React.Component {
 
   renderMechanicsSection () {
     return (
-      <div>
+      <div className="mechanics__section">
         <div className="call__to__action">
           {this.props.callToActionSentence}
         </div>

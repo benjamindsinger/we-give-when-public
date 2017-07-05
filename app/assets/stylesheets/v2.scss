@@ -37,6 +37,11 @@
     }
   }
 
+  .mechanics__section {
+    background-color: #e0e6e6;
+    padding: 60px;
+  }
+
   .section__headline, .section__subheadline {
     color: white;
     margin: 20px 0;
@@ -57,6 +62,6 @@
   .call__to__action {
     font-size: 3em;
     text-align: center;
-    margin: 60px 0;
+    background-repeat: repeat;
   }
 }
