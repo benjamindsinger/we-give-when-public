@@ -21,19 +21,13 @@ export default class LandingPage extends React.Component {
   }
 
   foeSectionStyle () {
-    const foeImgUrl = this.props.foeImgUrl;
     const foeHex = this.props.foeHex;
-
-    if (foeImgUrl) return { backgroundImage: `url(${foeImgUrl})` };
 
     return { backgroundColor: foeHex };
   }
 
   friendSectionStyle () {
-    const friendImgUrl = this.props.friendImgUrl;
     const friendHex = this.props.friendHex;
-
-    if (friendImgUrl) return { backgroundImage: `url(${friendImgUrl})` };
 
     return { backgroundColor: friendHex };
   }
@@ -52,12 +46,20 @@ export default class LandingPage extends React.Component {
 
   renderFoeSection () {
     return (
-      <div style={this.foeSectionStyle()}>
-        <div className="section__headline">
-          {this.props.foeHeader}
+      <div className="foe__section" style={this.foeSectionStyle()}>
+        <div className="text__part">
+          <div className="section__headline">
+            {this.props.foeHeader}
+          </div>
+          <div className="section__subheadline">
+            {this.props.foeSubhead}
+          </div>
         </div>
-        <div className="section__subheadline">
-          {this.props.foeSubhead}
+        <div className="img__part">
+          <div className="img__wrapper">
+            <img src={this.props.foeImgUrl}
+                 style={{height: 300, borderRadius: 600}} />
+          </div>
         </div>
       </div>
     );
@@ -65,12 +67,16 @@ export default class LandingPage extends React.Component {
 
   renderFriendSection () {
     return (
-      <div style={this.friendSectionStyle()}>
-        <div className="section__headline">
-          {this.props.friendHeader}
+      <div className="friend__section" style={this.friendSectionStyle()}>
+        <div className="img__part">
         </div>
-        <div className="section__subheadline">
-          {this.props.friendSubhead}
+        <div className="text__part">
+          <div className="section__headline">
+            {this.props.friendHeader}
+          </div>
+          <div className="section__subheadline">
+            {this.props.friendSubhead}
+          </div>
         </div>
       </div>
     );

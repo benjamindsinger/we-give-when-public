@@ -1,0 +1,31 @@
+.new__crowd__fund__page {
+  span {}
+
+  .foe__section, .friend__section {
+    padding: 60px;
+    display: flex;
+
+    span {}
+
+    .img__part {
+      flex: 1;
+    }
+
+    .text__part {
+      flex: 2;
+    }
+  }
+
+  .section__headline, .section__subheadline {
+    color: white;
+    margin: 40px 0;
+  }
+
+  .section__headline {
+    font-size: 3em;
+  }
+
+  .section__subheadline {
+    font-size: 1.75em;
+  }
+}
