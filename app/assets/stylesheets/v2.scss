@@ -1,3 +1,5 @@
+$breakpoint-m: 1100px;
+
 .new__crowd__fund__page {
   span {}
 
@@ -6,6 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row;
 
     background-image: url(https://s3-us-west-2.amazonaws.com/give-when/static-images/backgrounds/black-twill.png);
     background-repeat: repeat;
@@ -34,6 +37,12 @@
 
     .text__part {
       flex: 2;
+    }
+  }
+
+  @media (max-width: $breakpoint-m) {
+    .foe__section, .friend__section {
+      flex-direction: column;
     }
   }
 
