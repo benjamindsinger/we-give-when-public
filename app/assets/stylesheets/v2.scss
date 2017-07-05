@@ -132,4 +132,27 @@ $breakpoint-m: 1100px;
     background-repeat: repeat;
     font-family: 'Roboto Slab', sans-serif;
   }
+
+  .next__step__button__wrapper {
+    width: 354px;
+    margin: 100px auto 50px auto;
+  }
+
+  .next__step__button {
+    background-color: #00a817;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 3em;
+    cursor: pointer;
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: bold;
+    border: 1px solid #00a817;
+    transition: background-color 0.35s ease;
+  }
+
+  .next__step__button:hover {
+    color: #00a817;
+    background-color: white;
+  }
 }

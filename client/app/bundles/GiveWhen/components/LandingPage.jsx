@@ -106,6 +106,11 @@ export default class LandingPage extends React.Component {
         <div className="theory__of__change__sentence">
           {this.props.theoryOfChangeSentence}
         </div>
+        <div className="next__step__button__wrapper">
+          <a className="next__step__button">
+            Let's do this >
+          </a>
+        </div>
       </div>
     );
   }
