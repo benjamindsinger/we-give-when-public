@@ -97,6 +97,11 @@ export default class LandingPage extends React.Component {
           <span className="money__box">
             <input className="subtle__input" type="tel" defaultValue="2" />
           </span>
+          <span className="monthly__info">
+            <span>Monthly max: $40</span>
+            <br/>
+            <span>Monthly average: $35</span>
+          </span>
         </div>
         <div className="theory__of__change__sentence">
           {this.props.theoryOfChangeSentence}

@@ -64,12 +64,25 @@ $breakpoint-m: 1100px;
       .subtle__input {
         border: none;
         height: 100px;
-        width: 80px;
+        width: 70px;
         font-size: 60px;
         margin: 10px;
         padding-left: 60px;
         padding-top: 10px;
         padding-bottom: 10px;
+      }
+    }
+
+    .monthly__info {
+      font-size: 20px;
+      display: inline-block;
+      position: relative;
+      bottom: 20px;
+      left: 30px;
+
+      span {
+        display: inline-block;
+        float: left;
       }
     }
   }
