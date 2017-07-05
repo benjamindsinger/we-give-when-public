@@ -58,7 +58,7 @@ export default class LandingPage extends React.Component {
         <div className="img__part">
           <div className="img__wrapper">
             <img src={this.props.foeImgUrl}
-                 style={{height: 300, borderRadius: 600}} />
+                 style={{boxShadow: '0 3px 6px #a9a9a9, 0 3px 6px #a9a9a9'}} />
           </div>
         </div>
       </div>
@@ -69,6 +69,10 @@ export default class LandingPage extends React.Component {
     return (
       <div className="friend__section" style={this.friendSectionStyle()}>
         <div className="img__part">
+          <div className="img__wrapper">
+            <img src={this.props.friendImgUrl}
+                 style={{boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23'}} />
+          </div>
         </div>
         <div className="text__part">
           <div className="section__headline">

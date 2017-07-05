@@ -9,6 +9,22 @@
 
     .img__part {
       flex: 1;
+
+      span {}
+
+      .img__wrapper {
+        height: 300px;
+        width: 300px;
+        margin: auto;
+
+        span {}
+
+        img {
+          height: 300px;
+          width: 300px;
+          border-radius: 600px;
+        }
+      }
     }
 
     .text__part {
@@ -27,5 +43,11 @@
 
   .section__subheadline {
     font-size: 1.75em;
+  }
+
+  .call__to__action {
+    font-size: 3em;
+    text-align: center;
+    margin: 60px 0;
   }
 }
