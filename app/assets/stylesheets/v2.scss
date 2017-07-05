@@ -4,6 +4,8 @@
   .foe__section, .friend__section {
     padding: 60px;
     display: flex;
+    background-image: url(https://s3-us-west-2.amazonaws.com/give-when/static-images/backgrounds/black-twill.png);
+    background-repeat: repeat;
 
     span {}
 
@@ -34,15 +36,18 @@
 
   .section__headline, .section__subheadline {
     color: white;
-    margin: 40px 0;
+    margin: 20px 0 40px 0;
+    font-family: 'Roboto Slab', sans-serif;
   }
 
   .section__headline {
     font-size: 3em;
+    font-weight: bold;
   }
 
   .section__subheadline {
     font-size: 1.75em;
+    font-weight: lighter;
   }
 
   .call__to__action {
