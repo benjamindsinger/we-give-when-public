@@ -108,8 +108,7 @@ $breakpoint-m: 1100px;
     @media (min-width: $breakpoint-s) {
       .monthly__info {
         position: relative;
-        bottom: 30px;
-        left: 30px;
+        left: 20px;
 
         span {
           float: left;
