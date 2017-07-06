@@ -179,12 +179,26 @@ $breakpoint-m: 1100px;
     border: 1px solid #00a817;
     transition: background-color 0.35s ease;
     cursor: pointer;
+    clear: both;
   }
 
   .next__step__button:hover {
     color: #00a817;
     background-color: white;
     font-style: italic;
+  }
+
+  .very__secure__wrapper {
+    /* Positioning and sizing */
+    display: inline-block;
+    margin: 40px 0;
+    padding: 15px 20px;
+    border-radius: 50px;
+
+    /* Colors */
+    background-color: black;
+    color: white;
+    font-size: 20px;
   }
 
   @media (min-width: $breakpoint-xs) {
