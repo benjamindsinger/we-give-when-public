@@ -39,6 +39,7 @@ export default class NewCrowdFundPage extends React.Component {
     callToActionSentence: PropTypes.string.isRequired,
     theoryOfChangeSentence: PropTypes.string.isRequired,
     disclaimerParagraphs: PropTypes.array.isRequired,
+    smallLogoImgPath: PropTypes.string.isRequired,
   };
 
   constructor(props, _railsContext) {
@@ -114,6 +115,7 @@ export default class NewCrowdFundPage extends React.Component {
         callToActionSentence={this.props.callToActionSentence}
         theoryOfChangeSentence={this.props.theoryOfChangeSentence}
         disclaimerParagraphs={this.props.disclaimerParagraphs}
+        smallLogoImgPath={this.props.smallLogoImgPath}
       />
     );
   }

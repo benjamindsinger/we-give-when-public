@@ -18,6 +18,7 @@ export default class LandingPage extends React.Component {
     callToActionSentence: PropTypes.string.isRequired,
     theoryOfChangeSentence: PropTypes.string.isRequired,
     disclaimerParagraphs: PropTypes.array.isRequired,
+    smallLogoImgPath: PropTypes.string.isRequired,
   }
 
   foeSectionStyle () {
@@ -88,21 +89,28 @@ export default class LandingPage extends React.Component {
 
   renderMechanicsSection () {
     return (
-      <div className="mechanics__section">
-        <div className="call__to__action">
-          {this.props.callToActionSentence}
-        </div>
-        <div className="amount__selection">
-          <span>I'll automatically respond with:</span>
-          <br className="responsive__break" />
-          <span className="money__box">
-            <span className="dollar__sign">$</span>
-            <input className="subtle__input" type="tel" defaultValue="2" />
-          </span>
-          <br className="responsive__break" />
-          <span className="monthly__info">
-            <span>Monthly range: $11–$44</span>
-          </span>
+      <div className="mechanics__section" style={{padding: '0 !important'}}>
+        <div style={{
+          backgroundColor: '#00953a',
+          padding: 60,
+          backgroundImage: 'url(https://s3-us-west-2.amazonaws.com/give-when/static-images/backgrounds/black-twill.png)',
+          backgroundRepeat: 'repeat'
+        }}>
+          <div className="call__to__action">
+            {this.props.callToActionSentence}
+          </div>
+          <div className="amount__selection">
+            <span>I'll automatically respond with:</span>
+            <br className="responsive__break" />
+            <span className="money__box">
+              <span className="dollar__sign">$</span>
+              <input className="subtle__input" type="tel" defaultValue="2" />
+            </span>
+            <br className="responsive__break" />
+            <span className="monthly__info">
+              <span>Monthly range: $11–$44</span>
+            </span>
+          </div>
         </div>
         <div className="theory__of__change__sentence">
           {this.props.theoryOfChangeSentence}
@@ -115,7 +123,6 @@ export default class LandingPage extends React.Component {
 
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                viewBox="0 0 71 100"
-               enable-background="new 0 0 71 100"
                style={{
                 height: 25,
                 width: 25,
@@ -138,7 +145,14 @@ export default class LandingPage extends React.Component {
   }
 
   renderDisclaimerSection () {
-    return (<Disclaimer paragraphs={this.props.disclaimerParagraphs} />);
+    return (
+      <div>
+        <div style={{textAlign: 'center', marginTop: 50}}>
+          <img src={this.props.smallLogoImgPath} />
+        </div>
+        <Disclaimer paragraphs={this.props.disclaimerParagraphs} />
+      </div>
+    );
   }
 
 }
