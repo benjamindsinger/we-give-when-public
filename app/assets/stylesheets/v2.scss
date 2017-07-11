@@ -72,13 +72,18 @@ $breakpoint-m: 1100px;
         margin: 10px;
         padding: 0 35px;
         text-align: center;
+        position: relative;
+        top: 5px;
       }
 
       .dollar__sign {
         position: relative;
         left: 50px;
+        top: 2px;
         font-size: 35px;
         bottom: 5px;
+        color: black;
+        z-index: 100;
       }
     }
 
@@ -95,12 +100,10 @@ $breakpoint-m: 1100px;
     }
 
     .monthly__info {
-      font-size: 18px;
       display: inline-block;
 
       span {
         display: inline-block;
-        margin: 4px 0;
       }
     }
 
@@ -108,10 +111,6 @@ $breakpoint-m: 1100px;
       .monthly__info {
         position: relative;
         left: 20px;
-
-        span {
-          float: left;
-        }
       }
     }
 
@@ -119,6 +118,7 @@ $breakpoint-m: 1100px;
       .monthly__info {
         span {
           text-align: center;
+          margin-top: 20px;
         }
       }
     }
@@ -126,8 +126,18 @@ $breakpoint-m: 1100px;
 
   .mechanics__section {
     background-color: #e0e6e6;
+    color: white;
     padding: 60px;
     text-align: center;
+    background-color: #00953a;
+    background-repeat: repeat;
+    background-image: url(https://s3-us-west-2.amazonaws.com/give-when/static-images/backgrounds/black-twill.png);
+  }
+
+  .next__step__button__section {
+    text-align: center;
+    background-color: #e0e6e6;
+    padding: 60px;
   }
 
   .section__headline, .section__subheadline {
@@ -171,23 +181,23 @@ $breakpoint-m: 1100px;
     font-weight: bold;
 
     /* Colors */
-    background-color: #00a817;
+    background-color: #f3831e;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 10px 15px rgba(0,0,0,0.4);
+    border: 1px solid gray;
     color: white;
-    border: 1px solid #00a817;
     transition: background-color 0.35s ease;
     cursor: pointer;
   }
 
   .next__step__button:hover {
-    color: #00a817;
+    color: #f3831e;
     background-color: white;
-    font-style: italic;
   }
 
   .very__secure__wrapper {
     /* Positioning and sizing */
     display: inline-block;
-    margin: 20px 0 40px 0;
+    margin: 40px 0;
     padding: 15px 20px;
     border-radius: 50px;
 
