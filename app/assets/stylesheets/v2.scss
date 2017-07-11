@@ -1,0 +1,225 @@
+$breakpoint-xs: 500px;
+$breakpoint-s: 900px;
+$breakpoint-m: 1100px;
+
+.new__crowd__fund__page {
+  span {}
+
+  .foe__section, .friend__section {
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    background-image: url(https://s3-us-west-2.amazonaws.com/give-when/static-images/backgrounds/black-twill.png);
+    background-repeat: repeat;
+
+    span {}
+
+    .img__part {
+      flex: 1;
+
+      span {}
+
+      .img__wrapper {
+        height: 300px;
+        width: 300px;
+        margin: auto;
+
+        span {}
+
+        img {
+          height: 300px;
+          width: 300px;
+          border-radius: 600px;
+        }
+      }
+    }
+
+    .text__part {
+      flex: 2;
+    }
+  }
+
+  @media (max-width: $breakpoint-m) {
+    .foe__section, .friend__section {
+      flex-direction: column;
+    }
+  }
+
+  .amount__selection {
+    text-align: center;
+    margin: 60px 0;
+    font-size: 1.75em;
+    font-weight: lighter;
+    font-family: 'Roboto', sans-serif;
+    span {}
+
+    .money__box {
+      position: relative;
+      span {}
+
+      @media (min-width: $breakpoint-s) {
+        display: inline;
+      }
+
+      .subtle__input {
+        border: 1px solid black;
+        height: 70px;
+        width: 70px;
+        font-size: 45px;
+        margin: 10px;
+        padding: 0 35px;
+        text-align: center;
+        position: relative;
+        top: 5px;
+      }
+
+      .dollar__sign {
+        position: relative;
+        left: 50px;
+        top: 2px;
+        font-size: 35px;
+        bottom: 5px;
+        color: black;
+        z-index: 100;
+      }
+    }
+
+    @media (min-width: $breakpoint-s) {
+      .responsive__break {
+        display: none;
+      }
+    }
+
+    @media (max-width: $breakpoint-s) {
+      .responsive__break {
+        line-height: 60px;
+      }
+    }
+
+    .monthly__info {
+      display: inline-block;
+
+      span {
+        display: inline-block;
+      }
+    }
+
+    @media (min-width: $breakpoint-s) {
+      .monthly__info {
+        position: relative;
+        left: 20px;
+      }
+    }
+
+    @media (max-width: $breakpoint-s) {
+      .monthly__info {
+        span {
+          text-align: center;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  .mechanics__section {
+    background-color: #e0e6e6;
+    color: white;
+    padding: 60px;
+    text-align: center;
+    background-color: #00953a;
+    background-repeat: repeat;
+    background-image: url(https://s3-us-west-2.amazonaws.com/give-when/static-images/backgrounds/black-twill.png);
+  }
+
+  .next__step__button__section {
+    text-align: center;
+    background-color: #e0e6e6;
+    padding: 60px;
+  }
+
+  .section__headline, .section__subheadline {
+    color: white;
+    margin: 20px 0;
+  }
+
+  .section__headline {
+    font-size: 3em;
+    font-weight: bold;
+    font-family: 'Roboto Slab', sans-serif;
+  }
+
+  .section__subheadline {
+    font-size: 1.75em;
+    font-weight: lighter;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .call__to__action {
+    font-size: 3em;
+    text-align: center;
+    background-repeat: repeat;
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: bold;
+  }
+
+  .theory__of__change__sentence {
+    font-size: 1.75em;
+    font-weight: lighter;
+    text-align: center;
+  }
+
+  .next__step__button {
+    /* Positioning and sizing */
+    display: inline-block;
+    margin: 60px 0 40px 0;
+    padding: 20px;
+
+    /* Font */
+    font-weight: bold;
+
+    /* Colors */
+    background-color: #f3831e;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 10px 15px rgba(0,0,0,0.4);
+    border: 1px solid gray;
+    color: white;
+    transition: background-color 0.35s ease;
+    cursor: pointer;
+  }
+
+  .next__step__button:hover {
+    color: #f3831e;
+    background-color: white;
+  }
+
+  .very__secure__wrapper {
+    /* Positioning and sizing */
+    display: inline-block;
+    margin: 40px 0;
+    padding: 15px 20px;
+    border-radius: 50px;
+
+    /* Colors */
+    background-color: black;
+    color: white;
+    font-size: 20px;
+  }
+
+  @media (min-width: $breakpoint-xs) {
+    span {}
+
+    .next__step__button {
+      font-size: 3em;
+    }
+  }
+
+  @media (max-width: $breakpoint-xs) {
+    span {}
+
+    .next__step__button {
+      font-size: 2em;
+    }
+  }
+}
