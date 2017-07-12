@@ -103,7 +103,7 @@ export default class LandingPage extends React.Component {
           </span>
           <br className="responsive__break" />
           <span className="monthly__info">
-            <span>Monthly range: $11–$44</span>
+            <span>Monthly cap: $44</span>
           </span>
         </div>
       </div>
