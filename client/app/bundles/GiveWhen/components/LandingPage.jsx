@@ -117,7 +117,7 @@ export default class LandingPage extends React.Component {
           {this.props.theoryOfChangeSentence}
         </div>
         <a className="next__step__button">
-          Let's do this >
+          Donate Automatically >
         </a>
         <br/>
         <p className="very__secure__wrapper">
@@ -138,7 +138,7 @@ export default class LandingPage extends React.Component {
             bottom: 2,
             left: 5
           }}>
-            Secured with SSL encryption by Give<span style={{fontWeight: 'bold'}}>When</span>.
+            Secured with SSL encryption by Give<span style={{fontWeight: 'bold'}}>When</span>
           </span>
         </p>
       </div>
