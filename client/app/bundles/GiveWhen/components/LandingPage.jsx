@@ -19,6 +19,15 @@ export default class LandingPage extends React.Component {
     theoryOfChangeSentence: PropTypes.string.isRequired,
     disclaimerParagraphs: PropTypes.array.isRequired,
     smallLogoImgPath: PropTypes.string.isRequired,
+  };
+
+  constructor(props, _railsContext) {
+    super(props);
+
+
+    this.state = {
+      selectedDollarAmount: 1
+    };
   }
 
   foeSectionStyle () {
@@ -31,6 +40,20 @@ export default class LandingPage extends React.Component {
     const friendHex = this.props.friendHex;
 
     return { backgroundColor: friendHex };
+  }
+
+  onAdjustAmountUp () {
+    this.setState({
+      selectedDollarAmount: this.state.selectedDollarAmount + 1
+    });
+  }
+
+  onAdjustAmountDown () {
+    if (1 > this.state.selectedDollarAmount - 1) return;
+
+    this.setState({
+      selectedDollarAmount: this.state.selectedDollarAmount - 1
+    });
   }
 
   render () {
@@ -97,8 +120,9 @@ export default class LandingPage extends React.Component {
         <div className="amount__selection">
           <div>
             <span>I'll automatically respond with:</span>
-            <span className="dollar__amount__indicator"> $2</span>
-            <span style={{
+            <span className="dollar__amount__indicator"> ${this.state.selectedDollarAmount}</span>
+            <span onClick={this.onAdjustAmountUp.bind(this)}
+              style={{
                 width: 0,
                 height: 0,
                 borderLeft: '10px solid transparent',
@@ -108,7 +132,8 @@ export default class LandingPage extends React.Component {
                 bottom: '30px',
                 left: '10px'
             }}></span>
-            <span style={{
+            <span onClick={this.onAdjustAmountDown.bind(this)}
+              style={{
                 width: 0,
                 height: 0,
                 borderLeft: '10px solid transparent',
@@ -120,7 +145,7 @@ export default class LandingPage extends React.Component {
             }}></span>
           </div>
           <br/>
-          <div>Monthly cap: $44</div>
+          <div>Monthly cap: ${this.state.selectedDollarAmount * 17}</div>
         </div>
       </div>
     );
