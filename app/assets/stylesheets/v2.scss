@@ -56,71 +56,9 @@ $breakpoint-m: 1100px;
     font-family: 'Roboto', sans-serif;
     span {}
 
-    .money__box {
-      position: relative;
-      span {}
-
-      @media (min-width: $breakpoint-s) {
-        display: inline;
-      }
-
-      .subtle__input {
-        border: 1px solid black;
-        height: 70px;
-        width: 70px;
-        font-size: 45px;
-        margin: 10px;
-        padding: 0 35px;
-        text-align: center;
-        position: relative;
-        top: 5px;
-      }
-
-      .dollar__sign {
-        position: relative;
-        left: 50px;
-        top: 2px;
-        font-size: 35px;
-        bottom: 5px;
-        color: black;
-        z-index: 100;
-      }
-    }
-
-    @media (min-width: $breakpoint-s) {
-      .responsive__break {
-        display: none;
-      }
-    }
-
-    @media (max-width: $breakpoint-s) {
-      .responsive__break {
-        line-height: 60px;
-      }
-    }
-
-    .monthly__info {
-      display: inline-block;
-
-      span {
-        display: inline-block;
-      }
-    }
-
-    @media (min-width: $breakpoint-s) {
-      .monthly__info {
-        position: relative;
-        left: 20px;
-      }
-    }
-
-    @media (max-width: $breakpoint-s) {
-      .monthly__info {
-        span {
-          text-align: center;
-          margin-top: 20px;
-        }
-      }
+    .dollar__amount__indicator {
+      font-size: 1.5em;
+      margin: 0 10px;
     }
   }
 
