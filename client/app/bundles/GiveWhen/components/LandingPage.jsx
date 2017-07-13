@@ -19,6 +19,15 @@ export default class LandingPage extends React.Component {
     theoryOfChangeSentence: PropTypes.string.isRequired,
     disclaimerParagraphs: PropTypes.array.isRequired,
     smallLogoImgPath: PropTypes.string.isRequired,
+  };
+
+  constructor(props, _railsContext) {
+    super(props);
+
+
+    this.state = {
+      selectedDollarAmount: 1
+    };
   }
 
   foeSectionStyle () {
@@ -31,6 +40,20 @@ export default class LandingPage extends React.Component {
     const friendHex = this.props.friendHex;
 
     return { backgroundColor: friendHex };
+  }
+
+  onAdjustAmountUp () {
+    this.setState({
+      selectedDollarAmount: this.state.selectedDollarAmount + 1
+    });
+  }
+
+  onAdjustAmountDown () {
+    if (1 > this.state.selectedDollarAmount - 1) return;
+
+    this.setState({
+      selectedDollarAmount: this.state.selectedDollarAmount - 1
+    });
   }
 
   render () {
@@ -95,16 +118,34 @@ export default class LandingPage extends React.Component {
           {this.props.callToActionSentence}
         </div>
         <div className="amount__selection">
-          <span>I'll automatically respond with:</span>
-          <br className="responsive__break" />
-          <span className="money__box">
-            <span className="dollar__sign">$</span>
-            <input className="subtle__input" type="tel" defaultValue="2" />
-          </span>
-          <br className="responsive__break" />
-          <span className="monthly__info">
-            <span>Monthly cap: $44</span>
-          </span>
+          <div>
+            <span>I'll automatically respond with:</span>
+            <span className="dollar__amount__indicator"> ${this.state.selectedDollarAmount}</span>
+            <span onClick={this.onAdjustAmountUp.bind(this)}
+              style={{
+                width: 0,
+                height: 0,
+                borderLeft: '10px solid transparent',
+                borderRight: '10px solid transparent',
+                borderBottom: '10px solid white',
+                position: 'relative',
+                bottom: '30px',
+                left: '10px'
+            }}></span>
+            <span onClick={this.onAdjustAmountDown.bind(this)}
+              style={{
+                width: 0,
+                height: 0,
+                borderLeft: '10px solid transparent',
+                borderRight: '10px solid transparent',
+                borderTop: '10px solid white',
+                position: 'relative',
+                top: '30px',
+                right: '10px'
+            }}></span>
+          </div>
+          <br/>
+          <div>Monthly cap: ${this.state.selectedDollarAmount * 17}</div>
         </div>
       </div>
     );
