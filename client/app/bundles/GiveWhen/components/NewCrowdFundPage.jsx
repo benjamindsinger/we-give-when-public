@@ -8,6 +8,7 @@ import LandingPage from './LandingPage.jsx';
 
 import Footer from './Footer.jsx';
 import Header from './Header.jsx';
+import Disclaimer from './sections/Disclaimer.jsx';
 
 import UserEvents from '../helpers/user_events.jsx';
 import DataCuts from '../helpers/data_cuts.jsx';
@@ -204,6 +205,17 @@ export default class NewCrowdFundPage extends React.Component {
 
         {this.renderDisclaimer()}
         <Footer />
+      </div>
+    );
+  }
+
+  renderDisclaimer () {
+    return (
+      <div>
+        <div style={{textAlign: 'center', marginTop: 50}}>
+          <img src={this.props.smallLogoImgPath} />
+        </div>
+        <Disclaimer paragraphs={this.props.disclaimerParagraphs} />
       </div>
     );
   }
