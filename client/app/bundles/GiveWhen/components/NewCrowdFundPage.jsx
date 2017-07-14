@@ -65,10 +65,8 @@ export default class NewCrowdFundPage extends React.Component {
       errorMessages: [],
 
       // Amount summary
-      selectedAmountInCents: props.defaultSelectedAmountInCents,
+      selectedAmountInCents: 100,
       selectedMonthlyMaximumInCents: props.defaultSelectedMonthlyMaximumInCents,
-      customAmountEntered: false,
-      customMaximumEntered: false,
       coverFees: true,
 
       // Form details
@@ -93,13 +91,18 @@ export default class NewCrowdFundPage extends React.Component {
     this.airbrake.notify(err);
   }
 
-  renderHeaderWithoutActionButton () {
-    return (
-      <Header
-        logoImgPath={this.props.headerLogoImgPath}
-        hideSentence={true}
-      />
-    );
+  onAdjustAmountUp () {
+    this.setState({
+      selectedAmountInCents: this.state.selectedAmountInCents + 100
+    });
+  }
+
+  onAdjustAmountDown () {
+    if (100 > this.state.selectedAmountInCents - 100) return;
+
+    this.setState({
+      selectedAmountInCents: this.state.selectedAmountInCents - 100
+    });
   }
 
   render () {
@@ -134,6 +137,10 @@ export default class NewCrowdFundPage extends React.Component {
         onClickGive={this.onClickGive}
         disclaimerParagraphs={this.props.disclaimerParagraphs}
         smallLogoImgPath={this.props.smallLogoImgPath}
+
+        selectedAmountInCents={this.state.selectedAmountInCents}
+        onAdjustAmountUp={this.onAdjustAmountUp.bind(this)}
+        onAdjustAmountDown={this.onAdjustAmountDown.bind(this)}
       />
     );
   }
@@ -221,6 +228,15 @@ export default class NewCrowdFundPage extends React.Component {
         </div>
         <Disclaimer paragraphs={this.props.disclaimerParagraphs} />
       </div>
+    );
+  }
+
+  renderHeaderWithoutActionButton () {
+    return (
+      <Header
+        logoImgPath={this.props.headerLogoImgPath}
+        hideSentence={true}
+      />
     );
   }
 
