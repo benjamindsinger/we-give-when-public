@@ -7,6 +7,7 @@ import CardDetailsForm from './CardDetailsForm.jsx';
 import LandingPage from './LandingPage.jsx';
 
 import Footer from './Footer.jsx';
+import Header from './Header.jsx';
 
 import UserEvents from '../helpers/user_events.jsx';
 import DataCuts from '../helpers/data_cuts.jsx';
@@ -85,6 +86,17 @@ export default class NewCrowdFundPage extends React.Component {
     this.airbrake.notify(err);
   }
 
+  renderHeaderWithoutActionButton () {
+    return (
+      <Header givePhrase={this.props.headerGivePhrase}
+        whenPhrase={this.props.headerWhenPhrase}
+        logoImgPath={this.props.headerLogoImgPath}
+        logoHeight={this.props.headerLogoImgSize}
+        showButton={false}
+      />
+    );
+  }
+
   render () {
     try {
       const step = this.state.step;
@@ -123,7 +135,7 @@ export default class NewCrowdFundPage extends React.Component {
 
   renderPersonalDetailsPage () {
     return (
-      <div className={this.colorSchemeClassName()}>
+      <div>
         {this.renderHeaderWithoutActionButton()}
 
         <PersonalDetailsForm
@@ -161,7 +173,7 @@ export default class NewCrowdFundPage extends React.Component {
 
   renderCardDetailsPage () {
     return (
-      <div className={this.colorSchemeClassName()}>
+      <div>
         {this.renderHeaderWithoutActionButton()}
 
         <CardDetailsForm
