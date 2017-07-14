@@ -96,11 +96,8 @@ export default class NewCrowdFundPage extends React.Component {
   renderHeaderWithoutActionButton () {
     return (
       <Header
-        givePhrase={this.props.headerGivePhrase}
-        whenPhrase={this.props.headerWhenPhrase}
         logoImgPath={this.props.headerLogoImgPath}
-        logoHeight={this.props.headerLogoImgSize}
-        showButton={false}
+        hideSentence={true}
       />
     );
   }
