@@ -114,6 +114,7 @@ export default class NewCrowdFundPage extends React.Component {
         friendHex={this.props.friendHex}
         callToActionSentence={this.props.callToActionSentence}
         theoryOfChangeSentence={this.props.theoryOfChangeSentence}
+        onClickGive={this.onClickGive}
         disclaimerParagraphs={this.props.disclaimerParagraphs}
         smallLogoImgPath={this.props.smallLogoImgPath}
       />

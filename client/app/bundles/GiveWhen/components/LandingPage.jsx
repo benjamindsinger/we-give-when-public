@@ -17,6 +17,7 @@ export default class LandingPage extends React.Component {
     friendHex: PropTypes.string,
     callToActionSentence: PropTypes.string.isRequired,
     theoryOfChangeSentence: PropTypes.string.isRequired,
+    onClickGive: PropTypes.func.isRequired,
     disclaimerParagraphs: PropTypes.array.isRequired,
     smallLogoImgPath: PropTypes.string.isRequired,
   };
@@ -157,7 +158,7 @@ export default class LandingPage extends React.Component {
         <div className="theory__of__change__sentence">
           {this.props.theoryOfChangeSentence}
         </div>
-        <a className="next__step__button">
+        <a onClick={this.props.onClickGive} className="next__step__button">
           Donate Automatically >
         </a>
         <br/>
