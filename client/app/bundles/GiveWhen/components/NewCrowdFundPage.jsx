@@ -66,7 +66,7 @@ export default class NewCrowdFundPage extends React.Component {
 
       // Amount summary
       selectedAmountInCents: 100,
-      selectedMonthlyMaximumInCents: props.defaultSelectedMonthlyMaximumInCents,
+      monthlyMultiplier: 17,
       coverFees: true,
 
       // Form details
