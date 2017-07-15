@@ -9,6 +9,15 @@ export default {
   },
 
   crowdFundMembershipDetails: function (state, props) {
+    const multiplier = state.monthlyMultiplier;
+
+    if (multiplier) return {
+      coverFees: true,
+      crowdFundId: props.crowdFundId,
+      amountPerTimeInCents: state.selectedAmountInCents,
+      monthlyMaximumInCents: state.selectedAmountInCents * multiplier,
+    };
+
     return {
       coverFees: true,
       crowdFundId: props.crowdFundId,

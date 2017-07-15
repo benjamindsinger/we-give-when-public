@@ -33,6 +33,8 @@ export default class Header extends React.Component {
   }
 
   renderActionSentence () {
+    if (this.props.hideSentence) return null;
+
     return (this.props.showButton) ? this.renderSentenceWithButton()
                                    : this.renderPlainSentence();
   }

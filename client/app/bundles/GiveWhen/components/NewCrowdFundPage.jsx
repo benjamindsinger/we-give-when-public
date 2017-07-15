@@ -7,6 +7,8 @@ import CardDetailsForm from './CardDetailsForm.jsx';
 import LandingPage from './LandingPage.jsx';
 
 import Footer from './Footer.jsx';
+import Header from './Header.jsx';
+import Disclaimer from './sections/Disclaimer.jsx';
 
 import UserEvents from '../helpers/user_events.jsx';
 import DataCuts from '../helpers/data_cuts.jsx';
@@ -40,6 +42,12 @@ export default class NewCrowdFundPage extends React.Component {
     theoryOfChangeSentence: PropTypes.string.isRequired,
     disclaimerParagraphs: PropTypes.array.isRequired,
     smallLogoImgPath: PropTypes.string.isRequired,
+
+    // Header
+    headerGivePhrase: PropTypes.string.isRequired,
+    headerWhenPhrase: PropTypes.string.isRequired,
+    headerLogoImgPath: PropTypes.string.isRequired,
+    headerLogoImgSize: PropTypes.number.isRequired,
   };
 
   constructor(props, _railsContext) {
@@ -57,10 +65,8 @@ export default class NewCrowdFundPage extends React.Component {
       errorMessages: [],
 
       // Amount summary
-      selectedAmountInCents: props.defaultSelectedAmountInCents,
-      selectedMonthlyMaximumInCents: props.defaultSelectedMonthlyMaximumInCents,
-      customAmountEntered: false,
-      customMaximumEntered: false,
+      selectedAmountInCents: 100,
+      monthlyMultiplier: 17,
       coverFees: true,
 
       // Form details
@@ -83,6 +89,20 @@ export default class NewCrowdFundPage extends React.Component {
 
   notifyAirbrake (err) {
     this.airbrake.notify(err);
+  }
+
+  onAdjustAmountUp () {
+    this.setState({
+      selectedAmountInCents: this.state.selectedAmountInCents + 100
+    });
+  }
+
+  onAdjustAmountDown () {
+    if (100 > this.state.selectedAmountInCents - 100) return;
+
+    this.setState({
+      selectedAmountInCents: this.state.selectedAmountInCents - 100
+    });
   }
 
   render () {
@@ -114,15 +134,20 @@ export default class NewCrowdFundPage extends React.Component {
         friendHex={this.props.friendHex}
         callToActionSentence={this.props.callToActionSentence}
         theoryOfChangeSentence={this.props.theoryOfChangeSentence}
+        onClickGive={this.onClickGive}
         disclaimerParagraphs={this.props.disclaimerParagraphs}
         smallLogoImgPath={this.props.smallLogoImgPath}
+
+        selectedAmountInCents={this.state.selectedAmountInCents}
+        onAdjustAmountUp={this.onAdjustAmountUp.bind(this)}
+        onAdjustAmountDown={this.onAdjustAmountDown.bind(this)}
       />
     );
   }
 
   renderPersonalDetailsPage () {
     return (
-      <div className={this.colorSchemeClassName()}>
+      <div>
         {this.renderHeaderWithoutActionButton()}
 
         <PersonalDetailsForm
@@ -160,7 +185,7 @@ export default class NewCrowdFundPage extends React.Component {
 
   renderCardDetailsPage () {
     return (
-      <div className={this.colorSchemeClassName()}>
+      <div>
         {this.renderHeaderWithoutActionButton()}
 
         <CardDetailsForm
@@ -192,6 +217,26 @@ export default class NewCrowdFundPage extends React.Component {
         {this.renderDisclaimer()}
         <Footer />
       </div>
+    );
+  }
+
+  renderDisclaimer () {
+    return (
+      <div>
+        <div style={{textAlign: 'center', marginTop: 50}}>
+          <img src={this.props.smallLogoImgPath} />
+        </div>
+        <Disclaimer paragraphs={this.props.disclaimerParagraphs} />
+      </div>
+    );
+  }
+
+  renderHeaderWithoutActionButton () {
+    return (
+      <Header
+        logoImgPath={this.props.headerLogoImgPath}
+        hideSentence={true}
+      />
     );
   }
 
