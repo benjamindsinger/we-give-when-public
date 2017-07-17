@@ -174,7 +174,7 @@ export default class NewCrowdFundPage extends React.Component {
           /* Selected amounts */
           crowdFundType={this.props.crowdFundType}
           selectedAmountInCents={this.state.selectedAmountInCents}
-          selectedMonthlyMaximumInCents={this.state.selectedMonthlyMaximumInCents}
+          selectedMonthlyMaximumInCents={this.state.selectedAmountInCents * this.state.monthlyMultiplier}
         />
 
         {this.renderDisclaimer()}
@@ -202,7 +202,7 @@ export default class NewCrowdFundPage extends React.Component {
 
           /* Selected amounts */
           selectedAmountInCents={this.state.selectedAmountInCents}
-          selectedMonthlyMaximumInCents={this.state.selectedMonthlyMaximumInCents}
+          selectedMonthlyMaximumInCents={this.state.selectedAmountInCents * this.state.monthlyMultiplier}
 
           /* Social sharing */
           twitterMessage={this.props.twitterMessage}
