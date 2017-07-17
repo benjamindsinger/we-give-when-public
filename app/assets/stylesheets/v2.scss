@@ -5,8 +5,14 @@ $breakpoint-m: 1100px;
 .new__crowd__fund__page {
   span {}
 
+  .mechanics__section,
+  .next__step__button__section,
+  .foe__section,
+  .friend__section {
+    padding: 40px;
+  }
+
   .foe__section, .friend__section {
-    padding: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,15 +29,15 @@ $breakpoint-m: 1100px;
       span {}
 
       .img__wrapper {
-        height: 300px;
-        width: 300px;
+        height: 275px;
+        width: 275px;
         margin: auto;
 
         span {}
 
         img {
-          height: 300px;
-          width: 300px;
+          height: 275px;
+          width: 275px;
           border-radius: 600px;
         }
       }
@@ -65,7 +71,6 @@ $breakpoint-m: 1100px;
   .mechanics__section {
     background-color: #e0e6e6;
     color: white;
-    padding: 60px;
     text-align: center;
     background-color: #00953a;
     background-repeat: repeat;
@@ -75,7 +80,6 @@ $breakpoint-m: 1100px;
   .next__step__button__section {
     text-align: center;
     background-color: #e0e6e6;
-    padding: 60px;
   }
 
   .section__headline, .section__subheadline {
