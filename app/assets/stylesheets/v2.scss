@@ -88,9 +88,18 @@ $breakpoint-m: 1100px;
   }
 
   .section__headline {
-    font-size: 3em;
     font-weight: bold;
     font-family: 'Roboto Slab', sans-serif;
+
+    span {}
+
+    @media (min-width: $breakpoint-m) {
+      font-size: 3em;
+    }
+
+    @media (max-width: $breakpoint-m) {
+      font-size: 2em;
+    }
   }
 
   .section__subheadline {
