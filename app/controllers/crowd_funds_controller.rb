@@ -2,8 +2,9 @@ require 'csv'
 
 class CrowdFundsController < ApplicationController
 
-  before_action :authenticate_cause_admin!, only: [:dashboard]
+  before_action :authenticate_cause_admin!, only: [:dashboard, :super_dashboard]
   before_action :check_crowd_fund_cause!, only: [:dashboard]
+  before_action :check_super_admin!, only: [:super_dashboard]
 
   def index
     @crowd_funds_by_popularity = CrowdFund.all.sort_by do |crowd_fund|
@@ -61,6 +62,33 @@ class CrowdFundsController < ApplicationController
     end
   end
 
+  def super_dashboard
+    @crowd_fund = CrowdFund.includes(crowd_fund_memberships: [:funder])
+
+    @membership_headers = [
+      "Sign-Up Date",
+      "Name",
+      "Amount Per Event",
+      "Monthly Maximum",
+      "Occupation",
+      "Employer",
+      "Email",
+      "Phone",
+      "Location",
+    ]
+
+    @membership_rows = @crowd_fund.crowd_fund_memberships.order(created_at: :desc).map do |membership|
+      membership.to_dashboard_row
+    end
+
+    respond_to do |format|
+      format.html
+      format.csv {
+        send_data to_csv(@membership_headers, @membership_rows), filename: csv_filename
+      }
+    end
+  end
+
   private
 
   def check_crowd_fund_cause!
@@ -72,6 +100,12 @@ class CrowdFundsController < ApplicationController
     if crowd_fund.cause != correct_cause
       redirect_to root_url, alert: 'That\'s not your crowd fund, don\'t play.'
     end
+  end
+
+  def check_super_admin!
+    return true if current_cause_admin.super_admin == true
+
+    redirect_to root_url, alert: 'That\'s not your crowd fund, don\'t play.'
   end
 
   def to_csv(headers, rows)
