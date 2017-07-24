@@ -57,7 +57,7 @@ class CrowdFundsController < ApplicationController
 
     @membership_headers = CrowdFundMembership.super_dashboard_row_headers
 
-    @membership_rows = @crowd_fund_memberships.order(created_at: :desc).map do |membership|
+    @membership_rows = @crowd_fund_memberships.order(:crowd_fund_id, created_at: :desc).map do |membership|
       membership.to_super_dashboard_row
     end
 
