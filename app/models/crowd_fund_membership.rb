@@ -16,6 +16,24 @@ class CrowdFundMembership < ApplicationRecord
     Money.new(monthly_maximum_in_cents, "USD").format
   end
 
+  def self.dashboard_row_headers
+    [
+      "Sign-Up Date",
+      "Name",
+      "Amount Per Event",
+      "Monthly Maximum",
+      "Occupation",
+      "Employer",
+      "Email",
+      "Phone",
+      "Location",
+    ]
+  end
+
+  def self.super_dashboard_row_headers
+    dashboard_row_headers.unshift("Crowd Fund")
+  end
+
   def to_dashboard_row
     [
       sign_up_date,
@@ -28,6 +46,10 @@ class CrowdFundMembership < ApplicationRecord
       funder.phone,
       funder.location_info,
     ]
+  end
+
+  def to_super_dashboard_row
+    to_dashboard_row.unshift(crowd_fund.name)
   end
 
 end
