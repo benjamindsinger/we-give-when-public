@@ -63,7 +63,7 @@ class CrowdFundsController < ApplicationController
   end
 
   def super_dashboard
-    @crowd_fund = CrowdFund.includes(crowd_fund_memberships: [:funder])
+    @crowd_fund_memberships = CrowdFundMembership.all
 
     @membership_headers = [
       "Sign-Up Date",
@@ -77,7 +77,7 @@ class CrowdFundsController < ApplicationController
       "Location",
     ]
 
-    @membership_rows = @crowd_fund.crowd_fund_memberships.order(created_at: :desc).map do |membership|
+    @membership_rows = @crowd_fund_memberships.order(created_at: :desc).map do |membership|
       membership.to_dashboard_row
     end
 

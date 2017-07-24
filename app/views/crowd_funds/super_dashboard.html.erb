@@ -1,7 +1,5 @@
 <div class="campaigner-navbar">
   <span class="p-text">Super Dashboard</span>
-  <%= link_to "See Your Crowd Funding Page", crowd_fund_url(@crowd_fund) %>
-  <%= link_to "Download CSV", dashboard_crowd_fund_url(@crowd_fund, format: :csv) %>
   <%= link_to('Log Out', destroy_cause_admin_session_path, method: :delete, style: "float: right") %>
 </div>
 
