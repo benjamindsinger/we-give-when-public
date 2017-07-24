@@ -23,6 +23,12 @@ export default class NewCrowdFundPage extends React.Component {
     airbrakeProjectId: PropTypes.string.isRequired,
     airbrakeProjectKey: PropTypes.string.isRequired,
 
+    // Social
+    twitterMessage: PropTypes.string,
+    hideFacebook: PropTypes.bool,
+    suggestedEmailSubject: PropTypes.string,
+    suggestedEmailBody: PropTypes.string,
+
     // Defaults
     defaultSelectedAmountInCents: PropTypes.number.isRequired,
     defaultSelectedMonthlyMaximumInCents: PropTypes.number,
