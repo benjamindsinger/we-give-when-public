@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170609192036) do
+ActiveRecord::Schema.define(version: 20170724151145) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -122,7 +122,7 @@ ActiveRecord::Schema.define(version: 20170609192036) do
   end
 
   add_foreign_key "crowd_fund_memberships", "crowd_funds"
-  add_foreign_key "crowd_fund_memberships", "funders"
+  add_foreign_key "crowd_fund_memberships", "funders", on_delete: :cascade
   add_foreign_key "crowd_funds", "causes"
   add_foreign_key "legal_entities", "causes"
 end
