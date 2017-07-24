@@ -38,17 +38,7 @@ class CrowdFundsController < ApplicationController
     @crowd_fund = CrowdFund.includes(crowd_fund_memberships: [:funder])
                            .friendly.find(params[:id])
 
-    @membership_headers = [
-      "Sign-Up Date",
-      "Name",
-      "Amount Per Event",
-      "Monthly Maximum",
-      "Occupation",
-      "Employer",
-      "Email",
-      "Phone",
-      "Location",
-    ]
+    @membership_headers = CrowdFundMembership.dashboard_row_headers
 
     @membership_rows = @crowd_fund.crowd_fund_memberships.order(created_at: :desc).map do |membership|
       membership.to_dashboard_row
@@ -65,20 +55,10 @@ class CrowdFundsController < ApplicationController
   def super_dashboard
     @crowd_fund_memberships = CrowdFundMembership.all
 
-    @membership_headers = [
-      "Sign-Up Date",
-      "Name",
-      "Amount Per Event",
-      "Monthly Maximum",
-      "Occupation",
-      "Employer",
-      "Email",
-      "Phone",
-      "Location",
-    ]
+    @membership_headers = CrowdFundMembership.super_dashboard_row_headers
 
     @membership_rows = @crowd_fund_memberships.order(created_at: :desc).map do |membership|
-      membership.to_dashboard_row
+      membership.to_super_dashboard_row
     end
 
     respond_to do |format|
