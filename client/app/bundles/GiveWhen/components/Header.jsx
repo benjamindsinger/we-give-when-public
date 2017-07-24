@@ -6,11 +6,12 @@ export default class Header extends React.Component {
   static propTypes = {
     logoImgPath: PropTypes.string.isRequired,
     logoHeight: PropTypes.number.isRequired,
-    whenPhrase: PropTypes.string.isRequired,
-    givePhrase: PropTypes.string.isRequired,
 
-    // Header button can be active or just plain text
-    showButton: PropTypes.bool.isRequired,
+    // Header button can be active, just plain text, or no sentence
+    showButton: PropTypes.bool,
+    whenPhrase: PropTypes.string,
+    givePhrase: PropTypes.string,
+    hideSentence: PropTypes.bool,
     onClickActionButton: PropTypes.func,
   };
 
