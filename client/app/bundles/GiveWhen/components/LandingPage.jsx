@@ -23,7 +23,7 @@ export default class LandingPage extends React.Component {
 
     selectedAmountInCents: PropTypes.number.isRequired,
     onAdjustAmountDown: PropTypes.func.isRequired,
-    onAdjustAmountDown: PropTypes.func.isRequired,
+    onAdjustAmountUp: PropTypes.func.isRequired,
   };
 
   constructor(props, _railsContext) {
