@@ -105,7 +105,7 @@ export default class LandingPage extends React.Component {
         </div>
         <div className="amount__selection">
           <div>
-            <span>I'll automatically respond with:</span>
+            <span>I will automatically respond with:</span>
             <span className="dollar__amount__indicator"> ${this.props.selectedAmountInCents / 100}</span>
             <span onClick={this.props.onAdjustAmountUp.bind(this)}
               style={{
@@ -144,7 +144,7 @@ export default class LandingPage extends React.Component {
           {this.props.theoryOfChangeSentence}
         </div>
         <a onClick={this.props.onClickGive} className="next__step__button">
-          I Want to Fight Back >
+          I Want to Fight Back &gt;
         </a>
         <br/>
         <p className="very__secure__wrapper">
