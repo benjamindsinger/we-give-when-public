@@ -117,7 +117,7 @@ export default class LandingPage extends React.Component {
                 position: 'relative',
                 bottom: '30px',
                 left: '10px'
-            }}></span>
+              }}></span>
             <span onClick={this.props.onAdjustAmountDown.bind(this)}
               style={{
                 width: 0,
@@ -128,7 +128,7 @@ export default class LandingPage extends React.Component {
                 position: 'relative',
                 top: '30px',
                 right: '10px'
-            }}></span>
+              }}></span>
           </div>
           <br/>
           <div>Monthly cap: ${this.props.selectedAmountInCents / 100 * 17}</div>
@@ -152,10 +152,10 @@ export default class LandingPage extends React.Component {
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                viewBox="0 0 71 100"
                style={{
-                height: 25,
-                width: 25,
-                position: 'relative',
-              }}>
+                 height: 25,
+                 width: 25,
+                 position: 'relative',
+               }}>
             <path fill="white" d="M65.5,45V30c0-16.542-13.458-30-30-30s-30,13.458-30,30v15H0v55h71V45H65.5z M13.5,30c0-12.131,9.869-22,22-22
               s22,9.869,22,22v15h-44V30z">
             </path>
