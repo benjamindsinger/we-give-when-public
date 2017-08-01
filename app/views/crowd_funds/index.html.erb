@@ -29,7 +29,7 @@
       <p style="margin: 50px 0;">Check out trigger-based fundraising in action:</p>
       <% @crowd_funds_by_popularity.each do |crowd_fund| %>
         <div style="margin: 20px 0;">
-          <%= link_to crowd_fund.name, crowd_fund_url(crowd_fund), style: "text-decoration: none;" %>
+          <%= link_to crowd_fund.name_except_for_fight_for_15, crowd_fund_url(crowd_fund), style: "text-decoration: none;" %>
         </div>
       <% end %>
     </div>

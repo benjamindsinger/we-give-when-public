@@ -15,6 +15,12 @@ class CrowdFund < ApplicationRecord
     "DOLLARS"
   ]
 
+  def name_except_for_fight_for_15
+    return 'Will Guzzardi' if name === 'Fight for $15'
+
+    return name
+  end
+
   def must_have_valid_crowd_fund_type
     unless CROWD_FUND_TYPES.include?(crowd_fund_type)
       errors.add(:crowd_fund_type, "must be a valid type")
