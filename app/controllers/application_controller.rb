@@ -18,6 +18,6 @@ class ApplicationController < ActionController::Base
     end
 
     def after_sign_in_path_for_super_admin
-      dashboard_crowd_fund_url(CrowdFund.first)
+      super_dashboard_crowd_funds_url
     end
 end
