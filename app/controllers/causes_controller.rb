@@ -9,7 +9,12 @@ class CausesController < ApplicationController
 
   def update_terms_of_service_acceptance
     @cause = Cause.find_by_id(params[:id])
-    acct = Stripe::Account.retrieve(@cause.stripe_account_id)
+    @stripe_account_id = @cause.stripe_account_id
+
+    raise "No stripe cause ID in our database!" unless @stripe_account_id
+
+    @cause = Cause.find_by_id(params[:id])
+    acct = Stripe::Account.retrieve(@stripe_account_id)
     acct.tos_acceptance.date = Time.now.to_i
     acct.tos_acceptance.ip = request.remote_ip # Assumes you're not using a proxy
     acct.save
