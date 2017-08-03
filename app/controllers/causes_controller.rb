@@ -1,6 +1,7 @@
 class CausesController < ApplicationController
 
-  before_action :authenticate
+  before_action :authenticate_cause_admin!
+  before_action :authenticate_correct_cause
 
   def acceptance
     @cause = Cause.find_by_id(params[:id])
@@ -8,7 +9,7 @@ class CausesController < ApplicationController
 
   private
 
-  def authenticate
+  def authenticate_correct_cause
     correct_cause = current_cause_admin.cause
 
     if Cause.find_by_id(params[:id]) != correct_cause
