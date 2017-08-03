@@ -13,6 +13,7 @@
  *= require variables
  *= require arrow
  *= require baseline
+ *= require causes
  *= require checkout
  *= require color
  *= require dashboard

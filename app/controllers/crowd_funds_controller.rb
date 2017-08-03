@@ -38,6 +38,8 @@ class CrowdFundsController < ApplicationController
     @crowd_fund = CrowdFund.includes(crowd_fund_memberships: [:funder])
                            .friendly.find(params[:id])
 
+    @cause = @crowd_fund.cause
+
     @membership_headers = CrowdFundMembership.dashboard_row_headers
 
     @membership_rows = @crowd_fund.crowd_fund_memberships.order(created_at: :desc).map do |membership|

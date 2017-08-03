@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   end
 
   resources :causes, only: [] do
-    get :sign_up, on: :member
+    get :acceptance, on: :member
+    post :update_terms_of_service_acceptance, on: :member
   end
 end

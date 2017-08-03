@@ -2,6 +2,10 @@ class Cause < ActiveRecord::Base
   has_one :legal_entity
   has_many :crowd_funds
 
+  def tos_unsigned?
+    tos_acceptance_date_in_seconds.nil?
+  end
+
   def create_stripe_account
     return if stripe_account_id.present?
 
