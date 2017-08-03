@@ -176,7 +176,7 @@ export default class LandingPage extends React.Component {
     return (
       <div>
         <div style={{textAlign: 'center', marginTop: 50}}>
-          <img src={this.props.smallLogoImgPath} />
+          <img src={this.props.smallLogoImgPath} style={{maxHeight: 100}} />
         </div>
         <Disclaimer paragraphs={this.props.disclaimerParagraphs} />
       </div>
