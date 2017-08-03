@@ -9,8 +9,6 @@ class CausesController < ApplicationController
   private
 
   def authenticate
-    return true if current_cause_admin.super_admin == true
-
     correct_cause = current_cause_admin.cause
 
     if crowd_fund.cause != correct_cause
