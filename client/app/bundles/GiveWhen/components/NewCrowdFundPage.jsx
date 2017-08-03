@@ -31,7 +31,7 @@ export default class NewCrowdFundPage extends React.Component {
 
     // Defaults
     defaultSelectedAmountInCents: PropTypes.number.isRequired,
-    defaultSelectedMonthlyMaximumInCents: PropTypes.number,
+    monthlyMultiplier: PropTypes.number,
     optionsInCents: PropTypes.array,
     monthlyMaxOptionsInCents: PropTypes.array,
 
@@ -71,8 +71,8 @@ export default class NewCrowdFundPage extends React.Component {
       errorMessages: [],
 
       // Amount summary
-      selectedAmountInCents: 100,
-      monthlyMultiplier: 17,
+      selectedAmountInCents: this.props.defaultSelectedAmountInCents,
+      monthlyMultiplier: this.props.monthlyMultiplier,
       coverFees: true,
 
       // Form details
