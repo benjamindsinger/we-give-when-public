@@ -144,7 +144,7 @@ export default class LandingPage extends React.Component {
           {this.props.theoryOfChangeSentence}
         </div>
         <a onClick={this.props.onClickGive} className="next__step__button">
-          I Want to Fight Back &gt;
+          Sign Up Today &gt;
         </a>
         <br/>
         <p className="very__secure__wrapper">
