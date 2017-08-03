@@ -36,11 +36,11 @@ ActiveRecord::Schema.define(version: 20170803202946) do
   end
 
   create_table "causes", force: :cascade do |t|
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.string   "stripe_account_id"
-    t.string   "name",                null: false
-    t.datetime "tos_acceptance_date"
+    t.string   "name",                           null: false
+    t.integer  "tos_acceptance_date_in_seconds"
     t.inet     "tos_acceptance_ip"
   end
 

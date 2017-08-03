@@ -22,7 +22,7 @@ class CausesController < ApplicationController
     acct.tos_acceptance.ip = @ip
 
     if acct.save
-      if @cause.update({ tos_acceptance_date: @now, tos_acceptance_ip: @ip })
+      if @cause.update({ tos_acceptance_date_in_seconds: @now, tos_acceptance_ip: @ip })
         redirect_to dashboard_crowd_fund_url(@cause.crowd_funds.first)
       end
     end

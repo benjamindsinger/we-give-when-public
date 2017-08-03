@@ -3,7 +3,7 @@ class Cause < ActiveRecord::Base
   has_many :crowd_funds
 
   def tos_unsigned?
-    tos_acceptance_date.nil?
+    tos_acceptance_date_in_seconds.nil?
   end
 
   def create_stripe_account
