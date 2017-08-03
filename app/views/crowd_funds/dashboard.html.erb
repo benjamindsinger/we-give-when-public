@@ -2,7 +2,7 @@
   <span class="p-text"><%= @crowd_fund.name %> Data</span>
   <%= link_to "See Your Crowd Funding Page", crowd_fund_url(@crowd_fund) %>
   <%= link_to "Download CSV", dashboard_crowd_fund_url(@crowd_fund, format: :csv) %>
-  <%= link_to "Accept TOS", acceptance_cause_url(@cause) %>
+  <%= if @cause.tos_unsigned? then link_to "Accept TOS", acceptance_cause_url(@cause) end %>
   <%= link_to('Log Out', destroy_cause_admin_session_path, method: :delete, style: "float: right") %>
 </div>
 
