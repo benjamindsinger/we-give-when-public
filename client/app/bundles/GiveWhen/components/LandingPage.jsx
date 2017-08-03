@@ -113,7 +113,7 @@ export default class LandingPage extends React.Component {
                 height: 0,
                 borderLeft: '10px solid transparent',
                 borderRight: '10px solid transparent',
-                borderBottom: '10px solid white',
+                borderBottom: '10px solid black',
                 position: 'relative',
                 bottom: '30px',
                 left: '10px'
@@ -124,7 +124,7 @@ export default class LandingPage extends React.Component {
                 height: 0,
                 borderLeft: '10px solid transparent',
                 borderRight: '10px solid transparent',
-                borderTop: '10px solid white',
+                borderTop: '10px solid black',
                 position: 'relative',
                 top: '30px',
                 right: '10px'
