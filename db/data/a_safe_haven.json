@@ -20,7 +20,7 @@
   "open_graph_description": "Help us raise $100 per job placement to transform one life at a time. ",
   "twitter_message": "Help us raise $100 per job placement to transform one life at a time. ➡ https://wegivewhen.com/campaigns/a-safe-haven",
   "suggested_email_subject": "These Illinoisans will be homeless until we get them jobs.",
-  "suggested_email_body": "Hey: I just joined the campaign and I hope you will too. Help us raise $100 every time we secure a job for a veteran, mother with children, or other person experiencing homelessness, to transform one life at a time. ➡ https://wegivewhen.com/campaigns/a-safe-haven",
+  "suggested_email_body": "Hey: I just joined the campaign and I hope you will too. Help us every time we secure a job for a veteran, mother with children, or other person experiencing homelessness, to transform one life at a time. ➡ https://wegivewhen.com/campaigns/a-safe-haven",
 
   // JSON for landing page
   "page_data": {
@@ -37,7 +37,7 @@
     // # Content, headline
     "headline": "These Illinoisans will be homeless until we get them jobs.",
     "headlineLoud": true,
-    "subheadline": "We are stronger than the government budget crisis. Help us raise $100 per job placement by July 15, so we can transform one life at a time.",
+    "subheadline": "We are stronger than the government budget crisis. Help us every time we get a job for a person in homelessness so we can transform our state, one life at a time.",
     "headlineImgPath": "https://s3-us-west-2.amazonaws.com/give-when/static-images/a-safe-haven/Landscaping-several-guys-shorter-cropped.jpg",
     "headerLogoImgSize": 50,
     "largeHeadlineText": true,
@@ -58,7 +58,7 @@
           "A Safe Haven helps people aspire, transform, and sustain their lives from homelessness to self-sufficiency with pride and purpose. A Safe Haven provides the tools for each individual to overcome the root causes of homelessness through a holistic, scalable model. A Safe Haven’s visible social and economic impact unites families, stabilizes neighborhoods and creates vibrant, viable communities.",
           "Step up to transform our community--one life at a time--including veterans and mothers with children. Your generous gift will help individuals, who may have lost their way, get back on the right path at A Safe Haven. Whether at the beginning, middle, or end of their journey, your gift will help people achieve sustainable independence with pride and purpose.",
           "These services cost $9,600 for the entire set of services including housing, education, and more. The $100 per job we secure will go a long way to fund our Workforce Development Department that develops relationships with employers and places our community members into immediately available jobs.",
-          "To stay on track to keep placing formerly homeless individuals into jobs, we need to reach a benchmark of $100 per job by the July 15 5k RUN! To End Homelessness. Help us stay on track to keep providing these critical services to transform one life at a time."
+          "To stay on track to keep placing formerly homeless individuals into jobs, we need to reach a benchmark of $100 per job. Help us stay on track to keep providing these critical services to transform one life at a time."
         ]
       }
     ]
