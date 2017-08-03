@@ -16,5 +16,6 @@ Rails.application.routes.draw do
 
   resources :causes, only: [] do
     get :acceptance, on: :member
+    post :update_terms_of_service_acceptance, on: :member
   end
 end
