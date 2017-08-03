@@ -1,6 +1,6 @@
 class CausesController < ApplicationController
 
-  def sign_up
+  def acceptance
     @cause = Cause.find_by_id(params[:id])
   end
 
