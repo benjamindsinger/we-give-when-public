@@ -42,6 +42,10 @@ export default class LandingPage extends React.Component {
     return { backgroundColor: friendHex };
   }
 
+  monthlyCapInDollars () {
+    return (this.props.selectedAmountInCents / 100 * this.props.monthlyMultiplier);
+  }
+
   render () {
     return (
       <div className="new__crowd__fund__page">
@@ -131,7 +135,7 @@ export default class LandingPage extends React.Component {
               }}></span>
           </div>
           <br/>
-          <div>Monthly cap: ${this.props.selectedAmountInCents / 100 * this.props.monthlyMultiplier}</div>
+          <div>Monthly cap: ${this.monthlyCapInDollars()}</div>
         </div>
       </div>
     );
