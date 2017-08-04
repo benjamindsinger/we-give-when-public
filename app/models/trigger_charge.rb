@@ -20,7 +20,9 @@ class TriggerCharge
   private
 
   def statement_descriptor
-    @crowd_fund_membership.crowd_fund.name
+    # From Stripe: The statement descriptor must be at most 22 characters.
+
+    @crowd_fund_membership.crowd_fund.name[0..21]
   end
 
   def amount_to_charge
