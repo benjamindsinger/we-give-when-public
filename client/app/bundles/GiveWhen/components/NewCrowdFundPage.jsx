@@ -89,6 +89,10 @@ export default class NewCrowdFundPage extends React.Component {
     };
   }
 
+  selectedMonthlyMaximumInCents () {
+    return (this.state.selectedAmountInCents * this.props.monthlyMultiplier);
+  }
+
   checkRequiredField (field) {
     return (this.state[field]);
   }
@@ -181,7 +185,7 @@ export default class NewCrowdFundPage extends React.Component {
           /* Selected amounts */
           crowdFundType={this.props.crowdFundType}
           selectedAmountInCents={this.state.selectedAmountInCents}
-          selectedMonthlyMaximumInCents={this.state.selectedAmountInCents * this.state.monthlyMultiplier}
+          selectedMonthlyMaximumInCents={this.selectedMonthlyMaximumInCents()}
         />
 
         {this.renderDisclaimer()}
@@ -209,7 +213,7 @@ export default class NewCrowdFundPage extends React.Component {
 
           /* Selected amounts */
           selectedAmountInCents={this.state.selectedAmountInCents}
-          selectedMonthlyMaximumInCents={this.state.selectedAmountInCents * this.state.monthlyMultiplier}
+          selectedMonthlyMaximumInCents={this.selectedMonthlyMaximumInCents()}
 
           /* Social sharing */
           twitterMessage={this.props.twitterMessage}
