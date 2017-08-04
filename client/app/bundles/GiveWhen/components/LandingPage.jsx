@@ -20,7 +20,7 @@ export default class LandingPage extends React.Component {
     onClickGive: PropTypes.func.isRequired,
     disclaimerParagraphs: PropTypes.array.isRequired,
     smallLogoImgPath: PropTypes.string.isRequired,
-
+    monthlyMultiplier: PropTypes.number.isRequired,
     selectedAmountInCents: PropTypes.number.isRequired,
     onAdjustAmountDown: PropTypes.func.isRequired,
     onAdjustAmountUp: PropTypes.func.isRequired,
@@ -131,7 +131,7 @@ export default class LandingPage extends React.Component {
               }}></span>
           </div>
           <br/>
-          <div>Monthly cap: ${this.props.selectedAmountInCents / 100 * 17}</div>
+          <div>Monthly cap: ${this.props.selectedAmountInCents / 100 * this.props.monthlyMultiplier}</div>
         </div>
       </div>
     );

@@ -145,6 +145,7 @@ export default class NewCrowdFundPage extends React.Component {
         smallLogoImgPath={this.props.smallLogoImgPath}
 
         selectedAmountInCents={this.state.selectedAmountInCents}
+        monthlyMultiplier={this.props.monthlyMultiplier}
         onAdjustAmountUp={this.onAdjustAmountUp.bind(this)}
         onAdjustAmountDown={this.onAdjustAmountDown.bind(this)}
       />
