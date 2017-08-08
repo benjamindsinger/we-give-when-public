@@ -13,13 +13,10 @@
         defaultSelectedAmountInCents: 100,
         monthlyMultiplier: 17,
 
-        optionsInCents: [1,2,3],
-        monthlyMaxOptionsInCents: [100, 200, 300],
-
         # Social
-        twitter_message: "Every time an anti-living wage corp (@mcdonalds @walmart...) writes a campaign check, let's fight back ➡ https://wegivewhen.com/campaigns/fight-for-15 #fightfor15",
-        suggested_email_subject: "Fight for $15",
-        suggested_email_body: "Hey: I just joined the campaign and I hope you will too. Let\"s fight back every time an anti-living wage corporation like McDonalds writes a campaign check: https://wegivewhen.com/campaigns/fight-for-15",
+        twitterMessage: "Every time an anti-living wage corp (@mcdonalds @walmart...) writes a campaign check, let's fight back ➡ https://wegivewhen.com/campaigns/fight-for-15 #fightfor15",
+        suggestedEmailSubject: "Fight for $15",
+        suggestedEmailBody: "Hey: I just joined the campaign and I hope you will too. Let\"s fight back every time an anti-living wage corporation like McDonalds writes a campaign check: https://wegivewhen.com/campaigns/fight-for-15",
 
         foeHeader: 'Big Business pays off politicians 17 times a month to stop a living wage.',
         foeSubhead: 'McDonald\'s, Walmart, and three corporate PACs are writing between 6 and 37 checks to Illinois politicans a month.',
@@ -40,6 +37,47 @@
         ],
         headerGivePhrase: "fight back automatically",
         headerWhenPhrase: "Every time they buy off a candidate to prevent a $15 minimum wage,",
+        headerLogoImgPath: "https://s3-us-west-2.amazonaws.com/give-when/static-images/guzzardi-fight-for-15/guzzardi-logo-good-small.jpg",
+        headerLogoImgSize: 35,
+      },
+      trace: nil,
+      replay_console: nil
+    )
+  %>
+<% elsif @crowd_fund.id == 3 %>
+  <%= react_component(
+      "NewCrowdFundPage",
+      props: {
+        crowdFundId: 3,
+        crowdFundType: "SLINGSHOT",
+        stripePublishableKey: ENV['STRIPE_PUBLISHABLE_KEY'],
+        airbrakeProjectId: ENV['AIRBRAKE_PROJECT_ID'],
+        airbrakeProjectKey: ENV['AIRBRAKE_PROJECT_KEY'],
+        funderRequiredDetails: @funder_required_details,
+
+        # Defaults
+        defaultSelectedAmountInCents: 100,
+        monthlyMultiplier: 20,
+
+        # Social
+        twitterMessage: "Political budget battles left Chicagoans in homelessness and poverty. But we can change that. ➡ https://wegivewhen.com/campaigns/inspiration-corporation",
+        suggestedEmailSubject: "Support Chicagoans Suffering Homelessness",
+        suggestedEmailBody: "Hey: I just joined the campaign and I hope you will too. Political budget battles left Chicagoans in homelessness and poverty, but we can change that. ➡ https://wegivewhen.com/campaigns/inspiration-corporation",
+
+        foeHeader: 'This Chicago man is struggling with poverty.',
+        foeSubhead: 'Political budget battles have left a $1.2 million gap in our budget to serve Chicagoans in homelessness and poverty.',
+        foeImgUrl: 'https://s3-us-west-2.amazonaws.com/give-when/static-images/inspiration-corp/Inspiration-Cafe-316-square.jpg',
+        foeHex: '#f90016',
+        friendImgUrl: 'https://s3-us-west-2.amazonaws.com/give-when/static-images/inspiration-corp/Inspiration-happy-square.jpg',
+        friendHeader: 'We’re Inspiration Corporation, and with your help we can get him on his feet. ',
+        friendSubhead: 'With dignity and respect, we help people in poverty improve their lives & increase self-sufficiency with social services, employment training, & housing.',
+        friendHex: '#1c407b',
+        callToActionSentence: 'Respond every time we take in someone in poverty:',
+        theoryOfChangeSentence: 'If we all chip in a little bit to help people increase their self-sufficiency, together we can end homelessness.',
+        smallLogoImgPath: "https://s3-us-west-2.amazonaws.com/give-when/static-images/inspiration-corp/inspiration_logo.GIF",
+        disclaimerParagraphs: [
+          "Inspiration Corporation is a non-profit 501(c)(3) organization so donations are tax-deductible for federal income tax purposes. Our federal tax ID number is 36-3673980. Once enrolled, your gift will be made automatically each month. We will also remove you from our mailing lists, which means no more fundraising letters."
+        ],
         headerLogoImgPath: "https://s3-us-west-2.amazonaws.com/give-when/static-images/guzzardi-fight-for-15/guzzardi-logo-good-small.jpg",
         headerLogoImgSize: 35,
       },

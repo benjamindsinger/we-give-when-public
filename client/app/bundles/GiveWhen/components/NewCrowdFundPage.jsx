@@ -89,6 +89,10 @@ export default class NewCrowdFundPage extends React.Component {
     };
   }
 
+  selectedMonthlyMaximumInCents () {
+    return (this.state.selectedAmountInCents * this.props.monthlyMultiplier);
+  }
+
   checkRequiredField (field) {
     return (this.state[field]);
   }
@@ -145,6 +149,7 @@ export default class NewCrowdFundPage extends React.Component {
         smallLogoImgPath={this.props.smallLogoImgPath}
 
         selectedAmountInCents={this.state.selectedAmountInCents}
+        monthlyMultiplier={this.props.monthlyMultiplier}
         onAdjustAmountUp={this.onAdjustAmountUp.bind(this)}
         onAdjustAmountDown={this.onAdjustAmountDown.bind(this)}
       />
@@ -180,7 +185,7 @@ export default class NewCrowdFundPage extends React.Component {
           /* Selected amounts */
           crowdFundType={this.props.crowdFundType}
           selectedAmountInCents={this.state.selectedAmountInCents}
-          selectedMonthlyMaximumInCents={this.state.selectedAmountInCents * this.state.monthlyMultiplier}
+          selectedMonthlyMaximumInCents={this.selectedMonthlyMaximumInCents()}
         />
 
         {this.renderDisclaimer()}
@@ -208,7 +213,7 @@ export default class NewCrowdFundPage extends React.Component {
 
           /* Selected amounts */
           selectedAmountInCents={this.state.selectedAmountInCents}
-          selectedMonthlyMaximumInCents={this.state.selectedAmountInCents * this.state.monthlyMultiplier}
+          selectedMonthlyMaximumInCents={this.selectedMonthlyMaximumInCents()}
 
           /* Social sharing */
           twitterMessage={this.props.twitterMessage}
@@ -228,8 +233,8 @@ export default class NewCrowdFundPage extends React.Component {
 
   renderDisclaimer () {
     return (
-      <div>
-        <div style={{textAlign: 'center', marginTop: 50}}>
+      <div className="disclaimer__section">
+        <div id="img__wrapper">
           <img src={this.props.smallLogoImgPath} />
         </div>
         <Disclaimer paragraphs={this.props.disclaimerParagraphs} />

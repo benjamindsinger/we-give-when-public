@@ -20,7 +20,7 @@ export default class LandingPage extends React.Component {
     onClickGive: PropTypes.func.isRequired,
     disclaimerParagraphs: PropTypes.array.isRequired,
     smallLogoImgPath: PropTypes.string.isRequired,
-
+    monthlyMultiplier: PropTypes.number.isRequired,
     selectedAmountInCents: PropTypes.number.isRequired,
     onAdjustAmountDown: PropTypes.func.isRequired,
     onAdjustAmountUp: PropTypes.func.isRequired,
@@ -40,6 +40,10 @@ export default class LandingPage extends React.Component {
     const friendHex = this.props.friendHex;
 
     return { backgroundColor: friendHex };
+  }
+
+  monthlyCapInDollars () {
+    return (this.props.selectedAmountInCents / 100 * this.props.monthlyMultiplier);
   }
 
   render () {
@@ -131,7 +135,7 @@ export default class LandingPage extends React.Component {
               }}></span>
           </div>
           <br/>
-          <div>Monthly cap: ${this.props.selectedAmountInCents / 100 * 17}</div>
+          <div>Monthly cap: ${this.monthlyCapInDollars()}</div>
         </div>
       </div>
     );
@@ -174,8 +178,8 @@ export default class LandingPage extends React.Component {
 
   renderDisclaimerSection () {
     return (
-      <div>
-        <div style={{textAlign: 'center', marginTop: 50}}>
+      <div className="disclaimer__section">
+        <div id="img__wrapper">
           <img src={this.props.smallLogoImgPath} />
         </div>
         <Disclaimer paragraphs={this.props.disclaimerParagraphs} />
