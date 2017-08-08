@@ -8,6 +8,27 @@
       airbrakeProjectId: ENV['AIRBRAKE_PROJECT_ID'],
       airbrakeProjectKey: ENV['AIRBRAKE_PROJECT_KEY'],
       funderRequiredDetails: @funder_required_details,
+
+      # Defaults
+      defaultSelectedAmountInCents: 50,
+      monthlyMultiplier: 50,
+
+      foeHeader: 'Our Country is in a Political Crisis.',
+      foeSubhead: 'Trump and the Republicans are attacking our democracy, our communities, and our planet, while the Democrats refuse to learn from their failures.',
+      foeImgUrl: 'https://s3-us-west-2.amazonaws.com/give-when/static-images/democracy-spring/Bad-Elephant-and-Donkey-Square.jpg',
+      foeHex: '#AA0000',
+      friendHeader: 'We Need Bold, Nonviolent Action to be Heard',
+      friendSubhead: 'Democracy Spring will mobilize and train people to take nonviolent direct action to defend democracy from Trump and the GOP and to force the Democrats to break with Big Money and embrace a progressive agenda.',
+      friendImgUrl: 'https://s3-us-west-2.amazonaws.com/give-when/static-images/democracy-spring/Good-Protest-Square.jpg',
+      friendHex: '#214478',
+      callToActionSentence: 'Respond every time we mobilize an activist to take nonviolent direct action to defend democracy:',
+      theoryOfChangeSentence: 'If enough people chip in to support those who take action, we can build the powerful movement we need to win a democracy that works for all of us.',
+      smallLogoImgPath: 'https://s3-us-west-2.amazonaws.com/give-when/static-images/democracy-spring/dem-spring-logo-hor-blue.png',
+      disclaimerParagraphs: [
+        'Democracy Spring is a civil resistance movement organization committed to ending the corruption of big money in politics and protecting the right to vote for all people. Last year, we organized the largest American civil disobedience action of the 21st Century, with over 1,300 people arrested for sitting-in on the steps of the US Capitol. Since the 2016 election, we have organized mass protests against Trump and led sit-ins and nonviolent disruptions targeting Congress, Jeff Sessions, Neil Gorsuch, Senate Republicans, and the DNC.',
+        'Contributions will be triggered when either Democracy Spring or a coalition in which Democracy Spring actively participates mobilizes someone to take nonviolent direct action. Each individual who takes nonviolent direct action will trigger a separate and distinct contribution. You will never be charged more than your monthly cap per month.',
+        'Democracy Spring is a 501(c)(4) organization. Contributions are not tax deductible.',
+      ]
     })
   %>
 <% elsif @crowd_fund.id == 2 %>
