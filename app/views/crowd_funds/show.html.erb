@@ -1,4 +1,16 @@
-<% if @crowd_fund.id == 2 %>
+<% if @crowd_fund.id == 1 %>
+  <%= react_component(
+    "NewCrowdFundPage",
+    props: {
+      crowdFundId: 1,
+      crowdFundType: "SLINGSHOT",
+      stripePublishableKey: ENV['STRIPE_PUBLISHABLE_KEY'],
+      airbrakeProjectId: ENV['AIRBRAKE_PROJECT_ID'],
+      airbrakeProjectKey: ENV['AIRBRAKE_PROJECT_KEY'],
+      funderRequiredDetails: @funder_required_details,
+    })
+  %>
+<% elsif @crowd_fund.id == 2 %>
   <%= react_component(
       "NewCrowdFundPage",
       props: {
