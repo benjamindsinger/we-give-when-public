@@ -21,6 +21,19 @@ class Cause < ActiveRecord::Base
     )
   end
 
+  def update_bank_account(account_number)
+    return if stripe_account_id.present?
+
+    acct = Stripe::Account.retrieve(stripe_account_id)
+
+    acct.external_accounts.create(external_account: {
+      object: "bank_account",
+      account_number: account_number,
+      country: "US",
+      currency: "usd",
+    })
+  end
+
   def retrieve_stripe_account
     Stripe::Account.retrieve(stripe_account_id)
   end
