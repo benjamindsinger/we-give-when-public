@@ -17,6 +17,7 @@ export default class LandingPage extends React.Component {
     friendHex: PropTypes.string,
     callToActionSentence: PropTypes.string.isRequired,
     theoryOfChangeSentence: PropTypes.string.isRequired,
+    signUpButtonColor: PropTypes.string,
     onClickGive: PropTypes.func.isRequired,
     disclaimerParagraphs: PropTypes.array.isRequired,
     smallLogoImgPath: PropTypes.string.isRequired,
@@ -28,6 +29,18 @@ export default class LandingPage extends React.Component {
 
   constructor(props, _railsContext) {
     super(props);
+  }
+
+  getSignUpButtonClassName () {
+    if (!this.props.signUpButtonColor) return "next__step__button";
+
+    return "next__step__button custom__color";
+  }
+
+  getSignUpButtonStyle () {
+    if (!this.props.signUpButtonColor) return;
+
+    return { backgroundColor: this.props.signUpButtonColor };
   }
 
   foeSectionStyle () {
@@ -147,7 +160,9 @@ export default class LandingPage extends React.Component {
         <div className="theory__of__change__sentence">
           {this.props.theoryOfChangeSentence}
         </div>
-        <a onClick={this.props.onClickGive} className="next__step__button">
+        <a onClick={this.props.onClickGive}
+           className={this.getSignUpButtonClassName()}
+           style={this.getSignUpButtonStyle()}>
           Sign Up Today &gt;
         </a>
         <br/>

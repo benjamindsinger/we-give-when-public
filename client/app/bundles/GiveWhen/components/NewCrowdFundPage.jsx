@@ -147,6 +147,7 @@ export default class NewCrowdFundPage extends React.Component {
         onClickGive={this.onClickGive}
         disclaimerParagraphs={this.props.disclaimerParagraphs}
         smallLogoImgPath={this.props.smallLogoImgPath}
+        signUpButtonColor={this.props.signUpButtonColor}
 
         selectedAmountInCents={this.state.selectedAmountInCents}
         monthlyMultiplier={this.props.monthlyMultiplier}
