@@ -3,6 +3,7 @@ import React from 'react';
 
 import Disclaimer from './sections/Disclaimer.jsx';
 import Footer from './Footer.jsx';
+import Money from '../helpers/money.jsx';
 
 export default class LandingPage extends React.Component {
 
@@ -114,6 +115,12 @@ export default class LandingPage extends React.Component {
     );
   }
 
+  renderAmountSelected () {
+    const amount = this.props.selectedAmountInCents;
+
+    return Money.renderAmountInCentsAsExactChange(amount);
+  }
+
   renderMechanicsSection () {
     return (
       <div className="mechanics__section" style={{padding: '0 !important'}}>
@@ -123,7 +130,7 @@ export default class LandingPage extends React.Component {
         <div className="amount__selection">
           <div>
             <span>I will automatically respond with:</span>
-            <span className="dollar__amount__indicator"> ${this.props.selectedAmountInCents / 100}</span>
+            <span className="dollar__amount__indicator"> ${this.renderAmountSelected()}</span>
             <span onClick={this.props.onAdjustAmountUp.bind(this)}
               style={{
                 width: 0,
