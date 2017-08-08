@@ -19,14 +19,18 @@ class CrowdFundMembership < ApplicationRecord
   def self.dashboard_row_headers
     [
       "Sign-Up Date",
-      "Name",
+      "First Name",
+      "Last Name",
       "Amount Per Event",
       "Monthly Maximum",
       "Occupation",
       "Employer",
       "Email",
       "Phone",
-      "Location",
+      "Address",
+      "City",
+      "State",
+      "ZIP"
     ]
   end
 
@@ -37,14 +41,18 @@ class CrowdFundMembership < ApplicationRecord
   def to_dashboard_row
     [
       sign_up_date,
-      "#{funder.first_name} #{funder.last_name}",
+      funder.first_name,
+      funder.last_name,
       amount_per_time_in_dollars,
       monthly_maximum_in_dollars,
       funder.occupation,
       funder.employer,
       funder.email,
       funder.phone,
-      funder.location_info,
+      funder.address,
+      funder.city,
+      funder.us_state,
+      funder.zip,
     ]
   end
 
