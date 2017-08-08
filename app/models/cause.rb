@@ -22,7 +22,7 @@ class Cause < ActiveRecord::Base
   end
 
   def update_bank_account(account_number)
-    return if stripe_account_id.present?
+    return if stripe_account_id.nil?
 
     acct = Stripe::Account.retrieve(stripe_account_id)
 
