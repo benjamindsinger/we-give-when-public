@@ -48,6 +48,7 @@ export default class NewCrowdFundPage extends React.Component {
     theoryOfChangeSentence: PropTypes.string.isRequired,
     disclaimerParagraphs: PropTypes.array.isRequired,
     smallLogoImgPath: PropTypes.string.isRequired,
+    signUpButtonColor: PropTypes.string,
 
     // Header
     headerGivePhrase: PropTypes.string.isRequired,
