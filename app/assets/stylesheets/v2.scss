@@ -135,7 +135,7 @@ $breakpoint-m: 1100px;
     cursor: pointer;
   }
 
-  .next__step__button:hover {
+  .next__step__button:hover:not(.custom__color) {
     color: #f3831e;
     background-color: white;
   }
