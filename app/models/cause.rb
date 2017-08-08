@@ -7,7 +7,7 @@ class Cause < ActiveRecord::Base
   end
 
   def create_stripe_account
-    return if stripe_account_id.present?
+    raise 'Already has Stripe acct' if stripe_account_id.present?
 
     acct = Stripe::Account.create({
       country: "US",
@@ -19,6 +19,19 @@ class Cause < ActiveRecord::Base
     update!(
       stripe_account_id: stripe_account_id
     )
+  end
+
+  def update_bank_account(account_number)
+    raise 'Has no stripe_account_id' if stripe_account_id.nil?
+
+    acct = Stripe::Account.retrieve(stripe_account_id)
+
+    acct.external_accounts.create(external_account: {
+      object: "bank_account",
+      account_number: account_number,
+      country: "US",
+      currency: "usd",
+    })
   end
 
   def retrieve_stripe_account
