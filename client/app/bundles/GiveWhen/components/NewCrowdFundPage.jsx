@@ -103,16 +103,22 @@ export default class NewCrowdFundPage extends React.Component {
   }
 
   onAdjustAmountUp () {
+    const defaultSelectedAmount = this.props.defaultSelectedAmountInCents;
+    const selectedAmountInCents = this.state.selectedAmountInCents;
+
     this.setState({
-      selectedAmountInCents: this.state.selectedAmountInCents + 100
+      selectedAmountInCents: selectedAmountInCents + defaultSelectedAmount
     });
   }
 
   onAdjustAmountDown () {
-    if (100 > this.state.selectedAmountInCents - 100) return;
+    const defaultSelectedAmount = this.props.defaultSelectedAmountInCents;
+    const selectedAmountInCents = this.state.selectedAmountInCents;
+
+    if (defaultSelectedAmount > selectedAmountInCents - defaultSelectedAmount) return;
 
     this.setState({
-      selectedAmountInCents: this.state.selectedAmountInCents - 100
+      selectedAmountInCents: selectedAmountInCents - defaultSelectedAmount
     });
   }
 
