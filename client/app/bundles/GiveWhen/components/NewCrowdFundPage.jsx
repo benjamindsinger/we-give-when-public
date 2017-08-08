@@ -233,8 +233,8 @@ export default class NewCrowdFundPage extends React.Component {
 
   renderDisclaimer () {
     return (
-      <div>
-        <div style={{textAlign: 'center', marginTop: 50}}>
+      <div className="disclaimer__section">
+        <div id="img__wrapper">
           <img src={this.props.smallLogoImgPath} />
         </div>
         <Disclaimer paragraphs={this.props.disclaimerParagraphs} />
