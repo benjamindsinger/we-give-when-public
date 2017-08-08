@@ -21,7 +21,7 @@ class Cause < ActiveRecord::Base
     )
   end
 
-  def update_bank_account(account_number)
+  def update_bank_account(account_number:, routing_number:)
     raise 'Has no stripe_account_id' if stripe_account_id.nil?
 
     acct = Stripe::Account.retrieve(stripe_account_id)
@@ -29,6 +29,7 @@ class Cause < ActiveRecord::Base
     acct.external_accounts.create(external_account: {
       object: "bank_account",
       account_number: account_number,
+      routing_number: routing_number,
       country: "US",
       currency: "usd",
     })
