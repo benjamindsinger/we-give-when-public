@@ -196,7 +196,9 @@ export default class NewCrowdFundPage extends React.Component {
           selectedMonthlyMaximumInCents={this.selectedMonthlyMaximumInCents()}
         />
 
-        {this.renderDisclaimer()}
+        <div className="disclaimer__section">
+          <Disclaimer paragraphs={this.props.disclaimerParagraphs} />
+        </div>
         <Footer />
       </div>
     );
@@ -233,19 +235,10 @@ export default class NewCrowdFundPage extends React.Component {
           crowdFundType={this.props.crowdFundType}
         />
 
-        {this.renderDisclaimer()}
-        <Footer />
-      </div>
-    );
-  }
-
-  renderDisclaimer () {
-    return (
-      <div className="disclaimer__section">
-        <div id="img__wrapper">
-          <img src={this.props.smallLogoImgPath} />
+        <div className="disclaimer__section">
+          <Disclaimer paragraphs={this.props.disclaimerParagraphs} />
         </div>
-        <Disclaimer paragraphs={this.props.disclaimerParagraphs} />
+        <Footer />
       </div>
     );
   }
