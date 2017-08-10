@@ -5,9 +5,9 @@ RSpec.describe FundersController, type: :controller do
   describe "POST #create" do
 
     class FakeStripeCustomer
-      def id
-        'FAKE_STRIPE_CUSTOMER_ID'
-      end
+      def id; 'FAKE_STRIPE_CUSTOMER_ID' end
+      def metadata; {} end
+      def save; end
     end
 
     before do
