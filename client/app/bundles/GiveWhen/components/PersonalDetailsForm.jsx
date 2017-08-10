@@ -35,6 +35,10 @@ export default class PersonalDetailsForm extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
+
+    $(document).keydown((e) => {
+      if (e.which === 13) { this.props.onClickContinue(); }
+    });
   }
 
   fieldToLabel (field) {

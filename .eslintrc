@@ -3,6 +3,9 @@
     "browser": true,
     "es6": true
   },
+  "globals": {
+    "$": true
+  },
   "ecmaFeatures": {
     "classes": true,
     "jsx": true

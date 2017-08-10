@@ -32,6 +32,12 @@ export default class LandingPage extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    $(document).keydown((e) => {
+      if (e.which === 13) { this.props.onClickGive(); }
+    });
+  }
+
   getSignUpButtonClassName () {
     if (!this.props.signUpButtonColor) return "next__step__button";
 
