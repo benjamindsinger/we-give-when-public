@@ -248,6 +248,7 @@ export default class NewCrowdFundPage extends React.Component {
       <Header
         logoImgPath={this.props.headerLogoImgPath}
         hideSentence={true}
+        logoHeight={this.props.headerLogoImgSize}
       />
     );
   }
