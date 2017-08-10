@@ -40,6 +40,7 @@ export default class CardDetailsForm extends React.Component {
     super();
 
     this.state = {
+      submissionSentToStripe: false,
       tokenSaveOK: false,
       tokenSaveFail: false,
     };
@@ -84,6 +85,8 @@ export default class CardDetailsForm extends React.Component {
         const errorElement = document.getElementById('card-errors');
         errorElement.textContent = error.message;
       } else {
+        // Tell the user you're submitting card details to stripe
+        this.setState({ submissionSentToStripe: true });
         // Send the token to your server
         stripeTokenHandler(token);
       }
@@ -123,6 +126,12 @@ export default class CardDetailsForm extends React.Component {
         }
       });
     };
+  }
+
+  submissionStatusText () {
+    if (this.state.submissionSentToStripe) return 'submitting...';
+
+    return 'submit →';
   }
 
   render () {
@@ -201,7 +210,7 @@ export default class CardDetailsForm extends React.Component {
                 <div style={{textAlign: 'center'}}>
                   <button id="submit-stripe"
                           className="action_button_big">
-                    submit →
+                    {this.submissionStatusText()}
                   </button>
                 </div>
               </div>
