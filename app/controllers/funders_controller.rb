@@ -14,7 +14,15 @@ class FundersController < ApplicationController
   private
 
   def stripe_customer
-    Stripe::Customer.create(source: stripe_token_id)
+    customer = Stripe::Customer.create(source: stripe_token_id)
+
+    first_name = funder_details_to_underscore[:first_name]
+    last_name = funder_details_to_underscore[:last_name]
+    customer.metadata['first_name'] = first_name
+    customer.metadata['last_name'] = last_name
+    customer.save
+
+    return customer
   end
 
   def funder_data
@@ -36,7 +44,7 @@ class FundersController < ApplicationController
   end
 
   def funder_details_to_underscore
-    funder_details.transform_keys { |key| key.underscore }
+    @details ||= funder_details.transform_keys { |key| key.underscore }
   end
 
   def crowd_fund_membership_details
