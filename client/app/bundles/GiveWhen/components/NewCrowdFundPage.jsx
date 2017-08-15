@@ -17,7 +17,6 @@ export default class NewCrowdFundPage extends React.Component {
 
   static propTypes = {
     crowdFundId: PropTypes.number.isRequired,
-    crowdFundType: PropTypes.string.isRequired,
     funderRequiredDetails: PropTypes.array.isRequired,
     stripePublishableKey: PropTypes.string.isRequired,
     airbrakeProjectId: PropTypes.string.isRequired,
@@ -191,7 +190,7 @@ export default class NewCrowdFundPage extends React.Component {
           employer={this.state.employer}
 
           /* Selected amounts */
-          crowdFundType={this.props.crowdFundType}
+          crowdFundType={'SLINGSHOT'}
           selectedAmountInCents={this.state.selectedAmountInCents}
           selectedMonthlyMaximumInCents={this.selectedMonthlyMaximumInCents()}
         />
@@ -232,7 +231,7 @@ export default class NewCrowdFundPage extends React.Component {
           suggestedEmailBody={this.props.suggestedEmailBody}
 
           /* Campaign type */
-          crowdFundType={this.props.crowdFundType}
+          crowdFundType={'SLINGSHOT'}
         />
 
         <div className="disclaimer__section">
