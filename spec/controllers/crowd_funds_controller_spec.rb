@@ -7,7 +7,6 @@ RSpec.describe CrowdFundsController, type: :controller do
   let(:crowd_fund) {
     CrowdFund.create!(
       name: 'Example Crowd Fund',
-      crowd_fund_type: 'COUNTDOWN',
       cause: cause
     )
   }
