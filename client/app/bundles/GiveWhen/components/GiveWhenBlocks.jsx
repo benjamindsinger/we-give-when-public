@@ -9,12 +9,6 @@ export default class GiveWhenBlocks extends React.Component {
     whenStatement: PropTypes.string.isRequired,
     givePhrase: PropTypes.string.isRequired,
 
-    progressStatusPhrase: PropTypes.string.isRequired,
-    progressGoalPhrase: PropTypes.string.isRequired,
-    progressLeftPhrase: PropTypes.string.isRequired,
-    progressTimePhrase: PropTypes.string.isRequired,
-    progressFraction: PropTypes.number.isRequired,
-
     onClickGive: PropTypes.func.isRequired,
 
     optionsInCents: PropTypes.array.isRequired,
@@ -33,7 +27,6 @@ export default class GiveWhenBlocks extends React.Component {
         {this.renderArrowShape()}
         {this.renderWhen()}
         {this.renderDividerLine()}
-        {this.renderProgressBar()}
       </div>
     );
   }
@@ -199,34 +192,5 @@ export default class GiveWhenBlocks extends React.Component {
     );
   }
 
-  renderProgressBar () {
-    return (
-      <div className="give_when__subsection" id="progress-bar">
-        <div style={{
-          width: '80%',
-          margin: '30px auto',
-          position: 'relative',
-        }}>
-          <h3 style={{color: '#1c407b', lineHeight: '7.5px'}}>
-            {this.props.progressStatusPhrase}
-          </h3>
-          <p style={{color: '#1c407b', lineHeight: '7.5px'}}>
-            {this.props.progressGoalPhrase}
-          </p>
-
-          <div className="progress__bar">
-            <div className="progress__bar__inner" style={{
-              width: `${this.props.progressFraction * 100}%`
-            }}>
-            </div>
-          </div>
-
-          <p style={{color: 'red', lineHeight: '7.5px'}}>
-            {this.props.progressLeftPhrase}
-          </p>
-        </div>
-      </div>
-    );
-  }
 
 }
