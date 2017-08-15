@@ -2,7 +2,7 @@ namespace :crowd_funds do
 
   desc 'V2 Update page data'
   task update_page_data: :environment do
-    democracy_spring = CrowdFund.find_or_create_by(id: 1)
+    democracy_spring = CrowdFund.find_or_create_by(id: 1, name: 'Democracy Spring')
 
     democracy_spring_v2_data = {
        foeHeader: 'Our Country is in a Political Crisis',
@@ -21,6 +21,32 @@ namespace :crowd_funds do
     democracy_spring_v2_data.transform_keys! { |key| key.to_s.underscore }
 
     democracy_spring.update(democracy_spring_v2_data)
+
+    will_guzzardi = CrowdFund.find_or_create_by(id: 2, name: 'Fight for $15')
+
+    will_guzzardi_v2_data = {
+      foeHeader: 'Big Business pays off politicians 17 times a month to stop a living wage.',
+      foeSubhead: 'McDonald\'s, Walmart, and three corporate PACs are writing between 6 and 37 checks to Illinois politicians a month.',
+      foeImgUrl: 'https://s3-us-west-2.amazonaws.com/give-when/static-images/guzzardi-fight-for-15/McDonalds-X-square.jpg',
+      foeHex: 'black',
+      friendHeader: 'I’m Will Guzzardi, and I’m supporting candidates
+       like me who Fight for $15',
+      friendSubhead: 'If we respond every time they buy off a politician, we can win enough House seats to override Rauner\'s veto and enact a $15 minimum wage.',
+      friendImgUrl: 'https://s3-us-west-2.amazonaws.com/give-when/static-images/guzzardi-fight-for-15/Will-Guzzardi-square.jpg',
+      friendHex: '#0055b8',
+      callToActionSentence: 'Respond every time Big Business pays off a politician:',
+      theoryOfChangeSentence: 'If we all chip in a little bit to counter corporate donations, together we can pass a living wage.',
+      logoImgPath: "https://s3-us-west-2.amazonaws.com/give-when/static-images/guzzardi-fight-for-15/guzzardi-logo-good-small.jpg",
+      disclaimerParagraphs: [
+       "Funds go to the Committee to Elect Will Guzzardi, which supports the Fight for $15 and donates to candidates who also support the Fight for $15.",
+       "Anti-living-wage corporate donations are tracked via Illinois Sunshine database, an open portal that tracks campaign finance.",
+       "Paid for by the Committee to Elect Will Guzzardi. A copy of our report filed with the State Board of Elections is (or will be) available on the Board's official website (www.elections.il.gov) or for purchase from the State Board of Elections, Springfield, Illinois."
+      ]
+    }
+
+    will_guzzardi_v2_data.transform_keys! { |key| key.to_s.underscore }
+
+    will_guzzardi.update(will_guzzardi_v2_data)
   end
 
   desc 'OLD V1 Update page data'
