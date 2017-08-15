@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170815182645) do
+ActiveRecord::Schema.define(version: 20170815194451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,8 +72,6 @@ ActiveRecord::Schema.define(version: 20170815182645) do
     t.string "suggested_email_body"
     t.integer "default_selected_amount_in_cents"
     t.integer "default_selected_monthly_maximum_in_cents"
-    t.string "goal_type"
-    t.integer "goal_amount"
     t.index ["cause_id"], name: "index_crowd_funds_on_cause_id"
   end
 
