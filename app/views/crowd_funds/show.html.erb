@@ -1,129 +1,41 @@
-<% if @crowd_fund.id == 1 %>
+<% if @crowd_fund.id.in? [1, 2, 3] %>
   <%= react_component(
     "NewCrowdFundPage",
     props: {
-      crowdFundId: 1,
+      crowdFundId: @crowd_fund.id,
       stripePublishableKey: ENV['STRIPE_PUBLISHABLE_KEY'],
       airbrakeProjectId: ENV['AIRBRAKE_PROJECT_ID'],
       airbrakeProjectKey: ENV['AIRBRAKE_PROJECT_KEY'],
       funderRequiredDetails: @funder_required_details,
 
       # Defaults
-      defaultSelectedAmountInCents: 50,
-      monthlyMultiplier: 50,
+      defaultSelectedAmountInCents: @crowd_fund.default_selected_amount_in_cents,
+      monthlyMultiplier: @crowd_fund.monthly_multiplier,
 
       # Social
-      twitterMessage: "Respond each time we mobilize an activist to defend democracy. Help #DemocracySpring build a movement: https://wegivewhen.com/campaigns/democracy-spring @WeGiveWhen",
-      suggestedEmailSubject: "Democrats Need Big Change",
-      suggestedEmailBody: "Hey: I just joined the campaign and I hope you will too. Respond each time Democracy Spring mobilizes and trains people from across the country to take bold nonviolent direct action to resist Trump and the GOP and to force the Democratic Party to break with Big Money and embrace a progressive agenda: https://wegivewhen.com/campaigns/democracy-spring",
-      foeHeader: 'Our Country is in a Political Crisis',
-      foeSubhead: 'Trump and the Republicans relentlessly attack our democracy, our communities, and our planet, while the Democrats refuse to learn from their failures and represent working people.',
-      foeImgUrl: 'https://s3-us-west-2.amazonaws.com/give-when/static-images/democracy-spring/Square-Trump-Police-Brutality.jpg',
-      foeHex: '#AA0000',
-      friendHeader: 'We Need Nonviolent Direct Action to be Heard',
-      friendSubhead: 'Democracy Spring will mobilize and train people from across the country to take bold nonviolent direct action to resist Trump and the GOP and to force the Democratic Party to break with Big Money and embrace a progressive agenda.',
-      friendImgUrl: 'https://s3-us-west-2.amazonaws.com/give-when/static-images/democracy-spring/Square-RESIST-Black-and-White.jpg',
-      friendHex: '#214478',
-      callToActionSentence: 'Respond every time we mobilize an activist to take nonviolent direct action to defend democracy:',
-      theoryOfChangeSentence: 'If enough people chip in to support the brave Americans stepping up to take action, we can build the powerful people\'s movement we need to fight back and push forward.',
-      smallLogoImgPath: 'https://s3-us-west-2.amazonaws.com/give-when/static-images/democracy-spring/dem-spring-logo-quite-small.png',
-      headerWhenPhrase: "Respond every time Democracy Spring mobilizes an activist to take nonviolent direct action to defend democracy.",
-      headerGivePhrase: "Join the Fight",
-      headerLogoImgPath: 'https://s3-us-west-2.amazonaws.com/give-when/static-images/democracy-spring/dem-spring-logo-quite-small.png',
-      headerLogoImgSize: 35,
-      signUpButtonColor: '#c61500',
+      twitterMessage: @crowd_fund.twitter_message,
+      suggestedEmailSubject: @crowd_fund.suggested_email_subject,
+      suggestedEmailBody: @crowd_fund.suggested_email_body,
 
-      disclaimerParagraphs: [
-        'Democracy Spring is a civil resistance movement organization committed to ending the corruption of big money in politics and protecting the right to vote for all people. Last year, we organized the largest American civil disobedience action of the 21st Century, with over 1,300 people arrested for sitting-in on the steps of the US Capitol. Since the 2016 election, we have organized mass protests against Trump and led sit-ins and nonviolent disruptions targeting Congress, Jeff Sessions, Neil Gorsuch, Senate Republicans, and the DNC.',
-        'Contributions will be triggered when either Democracy Spring or a coalition in which Democracy Spring actively participates mobilizes someone to take nonviolent direct action. Each individual who takes nonviolent direct action will trigger a separate and distinct contribution. You will never be charged more than your monthly cap per month.',
-        'Democracy Spring is a 501(c)(4) organization. Contributions are not tax deductible.',
-      ]
+      # Foe
+      foeHeader: @crowd_fund.foe_header,
+      foeSubhead: @crowd_fund.foe_subhead,
+      foeImgUrl: @crowd_fund.foe_img_url,
+      foeHex: @crowd_fund.foe_hex,
+
+      # Friend
+      friendHeader: @crowd_fund.friend_header,
+      friendSubhead: @crowd_fund.friend_subhead,
+      friendImgUrl: @crowd_fund.friend_img_url,
+      friendHex: @crowd_fund.friend_hex,
+
+      callToActionSentence: @crowd_fund.call_to_action_sentence,
+      theoryOfChangeSentence: @crowd_fund.theory_of_change_sentence,
+      smallLogoImgPath: @crowd_fund.logo_img_path,
+      signUpButtonColor: @crowd_fund.sign_up_button_hex,
+
+      disclaimerParagraphs: @crowd_fund.disclaimer_paragraphs
     })
-  %>
-<% elsif @crowd_fund.id == 2 %>
-  <%= react_component(
-      "NewCrowdFundPage",
-      props: {
-        crowdFundId: 2,
-        stripePublishableKey: ENV['STRIPE_PUBLISHABLE_KEY'],
-        airbrakeProjectId: ENV['AIRBRAKE_PROJECT_ID'],
-        airbrakeProjectKey: ENV['AIRBRAKE_PROJECT_KEY'],
-        funderRequiredDetails: @funder_required_details,
-
-        # Defaults
-        defaultSelectedAmountInCents: 100,
-        monthlyMultiplier: 17,
-
-        # Social
-        twitterMessage: "Every time an anti-living wage corp (@mcdonalds @walmart...) writes a campaign check, let's fight back ➡ https://wegivewhen.com/campaigns/fight-for-15 #fightfor15",
-        suggestedEmailSubject: "Fight for $15",
-        suggestedEmailBody: "Hey: I just joined the campaign and I hope you will too. Let\"s fight back every time an anti-living wage corporation like McDonalds writes a campaign check: https://wegivewhen.com/campaigns/fight-for-15",
-
-        foeHeader: 'Big Business pays off politicians 17 times a month to stop a living wage.',
-        foeSubhead: 'McDonald\'s, Walmart, and three corporate PACs are writing between 6 and 37 checks to Illinois politicians a month.',
-        foeImgUrl: 'https://s3-us-west-2.amazonaws.com/give-when/static-images/guzzardi-fight-for-15/McDonalds-X-square.jpg',
-        foeHex: 'black',
-        friendHeader: 'I’m Will Guzzardi, and I’m supporting candidates
-          like me who Fight for $15',
-        friendSubhead: 'If we respond every time they buy off a politician, we can win enough House seats to override Rauner\'s veto and enact a $15 minimum wage.',
-        friendImgUrl: 'https://s3-us-west-2.amazonaws.com/give-when/static-images/guzzardi-fight-for-15/Will-Guzzardi-square.jpg',
-        friendHex: '#0055b8',
-        callToActionSentence: 'Respond every time Big Business pays off a politician:',
-        theoryOfChangeSentence: 'If we all chip in a little bit to counter corporate donations, together we can pass a living wage.',
-        smallLogoImgPath: "https://s3-us-west-2.amazonaws.com/give-when/static-images/guzzardi-fight-for-15/guzzardi-logo-good-small.jpg",
-        disclaimerParagraphs: [
-          "Funds go to the Committee to Elect Will Guzzardi, which supports the Fight for $15 and donates to candidates who also support the Fight for $15.",
-          "Anti-living-wage corporate donations are tracked via Illinois Sunshine database, an open portal that tracks campaign finance.",
-          "Paid for by the Committee to Elect Will Guzzardi. A copy of our report filed with the State Board of Elections is (or will be) available on the Board's official website (www.elections.il.gov) or for purchase from the State Board of Elections, Springfield, Illinois."
-        ],
-        headerGivePhrase: "fight back automatically",
-        headerWhenPhrase: "Every time they buy off a candidate to prevent a $15 minimum wage,",
-        headerLogoImgPath: "https://s3-us-west-2.amazonaws.com/give-when/static-images/guzzardi-fight-for-15/guzzardi-logo-good-small.jpg",
-        headerLogoImgSize: 35,
-      },
-      trace: nil,
-      replay_console: nil
-    )
-  %>
-<% elsif @crowd_fund.id == 3 %>
-  <%= react_component(
-      "NewCrowdFundPage",
-      props: {
-        crowdFundId: 3,
-        stripePublishableKey: ENV['STRIPE_PUBLISHABLE_KEY'],
-        airbrakeProjectId: ENV['AIRBRAKE_PROJECT_ID'],
-        airbrakeProjectKey: ENV['AIRBRAKE_PROJECT_KEY'],
-        funderRequiredDetails: @funder_required_details,
-
-        # Defaults
-        defaultSelectedAmountInCents: 100,
-        monthlyMultiplier: 20,
-
-        # Social
-        twitterMessage: "Political budget battles left Chicagoans in homelessness and poverty. But we can change that. ➡ https://wegivewhen.com/campaigns/inspiration-corporation",
-        suggestedEmailSubject: "Support Chicagoans Suffering Homelessness",
-        suggestedEmailBody: "Hey: I just joined the campaign and I hope you will too. Political budget battles left Chicagoans in homelessness and poverty, but we can change that. ➡ https://wegivewhen.com/campaigns/inspiration-corporation",
-
-        foeHeader: 'This Chicago man is struggling with poverty.',
-        foeSubhead: 'Political budget battles have left a gap of over a million dollars in our budget to serve Chicagoans in homelessness and poverty.',
-        foeImgUrl: 'https://s3-us-west-2.amazonaws.com/give-when/static-images/inspiration-corp/Inspiration-Cafe-316-square.jpg',
-        foeHex: '#f90016',
-        friendImgUrl: 'https://s3-us-west-2.amazonaws.com/give-when/static-images/inspiration-corp/Inspiration-happy-square.jpg',
-        friendHeader: 'We’re Inspiration Corporation, and with your help we can get him on his feet. ',
-        friendSubhead: 'With dignity and respect, we help people in poverty improve their lives & increase self-sufficiency with social services, employment training, & housing.',
-        friendHex: '#1c407b',
-        callToActionSentence: 'Respond every time we take in someone in poverty:',
-        theoryOfChangeSentence: 'If we all chip in a little bit to help people increase their self-sufficiency, together we can end homelessness.',
-        smallLogoImgPath: "https://s3-us-west-2.amazonaws.com/give-when/static-images/inspiration-corp/inspiration_logo.GIF",
-        disclaimerParagraphs: [
-          "Inspiration Corporation is a non-profit 501(c)(3) organization so donations are tax-deductible for federal income tax purposes. Our federal tax ID number is 36-3673980. Once enrolled, your gift will be made automatically each month. We will also remove you from our mailing lists, which means no more fundraising letters."
-        ],
-        headerLogoImgPath: "https://s3-us-west-2.amazonaws.com/give-when/static-images/inspiration-corp/inspiration_logo.GIF",
-        headerLogoImgSize: 55,
-      },
-      trace: nil,
-      replay_console: nil
-    )
   %>
 <% else %>
   <%= react_component(
