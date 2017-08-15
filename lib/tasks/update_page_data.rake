@@ -47,6 +47,29 @@ namespace :crowd_funds do
     will_guzzardi_v2_data.transform_keys! { |key| key.to_s.underscore }
 
     will_guzzardi.update(will_guzzardi_v2_data)
+
+    inspiration_corp = CrowdFund.find_or_create_by(id: 3, name: 'Inspiration Corporation')
+
+    inspiration_corp_v2_data = {
+      foeHeader: 'This Chicago man is struggling with poverty.',
+      foeSubhead: 'Political budget battles have left a gap of over a million dollars in our budget to serve Chicagoans in homelessness and poverty.',
+      foeImgUrl: 'https://s3-us-west-2.amazonaws.com/give-when/static-images/inspiration-corp/Inspiration-Cafe-316-square.jpg',
+      foeHex: '#f90016',
+      friendImgUrl: 'https://s3-us-west-2.amazonaws.com/give-when/static-images/inspiration-corp/Inspiration-happy-square.jpg',
+      friendHeader: 'We’re Inspiration Corporation, and with your help we can get him on his feet. ',
+      friendSubhead: 'With dignity and respect, we help people in poverty improve their lives & increase self-sufficiency with social services, employment training, & housing.',
+      friendHex: '#1c407b',
+      callToActionSentence: 'Respond every time we take in someone in poverty:',
+      theoryOfChangeSentence: 'If we all chip in a little bit to help people increase their self-sufficiency, together we can end homelessness.',
+      logoImgPath: "https://s3-us-west-2.amazonaws.com/give-when/static-images/inspiration-corp/inspiration_logo.GIF",
+      disclaimerParagraphs: [
+        "Inspiration Corporation is a non-profit 501(c)(3) organization so donations are tax-deductible for federal income tax purposes. Our federal tax ID number is 36-3673980. Once enrolled, your gift will be made automatically each month. We will also remove you from our mailing lists, which means no more fundraising letters."
+      ]
+    }
+
+    inspiration_corp_v2_data.transform_keys! { |key| key.to_s.underscore }
+
+    inspiration_corp.update(inspiration_corp_v2_data)
   end
 
   desc 'OLD V1 Update page data'
