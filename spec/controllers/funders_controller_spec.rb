@@ -20,12 +20,7 @@ RSpec.describe FundersController, type: :controller do
       )
     end
 
-    let(:crowd_fund) {
-      CrowdFund.create!(
-        name: 'Democracy Spring',
-        crowd_fund_type: 'COUNTDOWN'
-      )
-    }
+    let(:crowd_fund) { CrowdFund.create!(name: 'Democracy Spring') }
 
     context "valid giver data, valid campaign membership data" do
       let(:params) {
