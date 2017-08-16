@@ -5,6 +5,8 @@ namespace :crowd_funds do
     democracy_spring = CrowdFund.find_or_create_by(id: 1, name: 'Democracy Spring')
 
     democracy_spring_v2_data = {
+       defaultSelectedAmountInCents: 50,
+       monthlyMaxMultiplier: 50,
        foeHeader: 'Our Country is in a Political Crisis',
        foeSubhead: 'Trump and the Republicans relentlessly attack our democracy, our communities, and our planet, while the Democrats refuse to learn from their failures and represent working people.',
        foeImgUrl: 'https://s3-us-west-2.amazonaws.com/give-when/static-images/democracy-spring/Square-Trump-Police-Brutality.jpg',
@@ -25,6 +27,8 @@ namespace :crowd_funds do
     will_guzzardi = CrowdFund.find_or_create_by(id: 2, name: 'Fight for $15')
 
     will_guzzardi_v2_data = {
+      defaultSelectedAmountInCents: 100,
+      monthlyMaxMultiplier: 17,
       foeHeader: 'Big Business pays off politicians 17 times a month to stop a living wage.',
       foeSubhead: 'McDonald\'s, Walmart, and three corporate PACs are writing between 6 and 37 checks to Illinois politicians a month.',
       foeImgUrl: 'https://s3-us-west-2.amazonaws.com/give-when/static-images/guzzardi-fight-for-15/McDonalds-X-square.jpg',
@@ -51,6 +55,9 @@ namespace :crowd_funds do
     inspiration_corp = CrowdFund.find_or_create_by(id: 3, name: 'Inspiration Corporation')
 
     inspiration_corp_v2_data = {
+      defaultSelectedAmountInCents: 100,
+      monthlyMaxMultiplier: 20,
+
       foeHeader: 'This Chicago man is struggling with poverty.',
       foeSubhead: 'Political budget battles have left a gap of over a million dollars in our budget to serve Chicagoans in homelessness and poverty.',
       foeImgUrl: 'https://s3-us-west-2.amazonaws.com/give-when/static-images/inspiration-corp/Inspiration-Cafe-316-square.jpg',
