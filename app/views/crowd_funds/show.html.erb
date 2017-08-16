@@ -1,4 +1,4 @@
-<% if @crowd_fund.id.in? [1, 2, 3] %>
+<% unless @crowd_fund.id.in? [4, 5] %>
   <%= react_component(
     "NewCrowdFundPage",
     props: {
