@@ -1,6 +1,11 @@
 require "administrate/base_dashboard"
 
 class CrowdFundDashboard < Administrate::BaseDashboard
+
+  def display_resource(crowd_fund)
+    crowd_fund.name
+  end
+
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -52,52 +57,11 @@ class CrowdFundDashboard < Administrate::BaseDashboard
     :friend_header,
   ].freeze
 
-  # SHOW_PAGE_ATTRIBUTES
-  # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = [
-    :crowd_fund_memberships,
-    :cause,
-    :id,
-    :slug,
-    :name,
-    :page_data,
-    :goal_date,
-    :created_at,
-    :updated_at,
-    :open_graph_title,
-    :open_graph_description,
-    :twitter_message,
-    :suggested_email_subject,
-    :suggested_email_body,
-    :default_selected_amount_in_cents,
-    :default_selected_monthly_maximum_in_cents,
-    :monthly_max_multiplier,
-    :foe_header,
-    :foe_subhead,
-    :foe_img_url,
-    :foe_hex,
-    :friend_header,
-    :friend_subhead,
-    :friend_img_url,
-    :friend_hex,
-    :call_to_action_sentence,
-    :theory_of_change_sentence,
-    :logo_img_path,
-    :sign_up_button_hex,
-    :disclaimer_paragraphs,
-    :open_graph_img_path,
-  ].freeze
-
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :crowd_fund_memberships,
-    :cause,
-    :slug,
     :name,
-    :page_data,
-    :goal_date,
     :open_graph_title,
     :open_graph_description,
     :twitter_message,
@@ -117,15 +81,10 @@ class CrowdFundDashboard < Administrate::BaseDashboard
     :call_to_action_sentence,
     :theory_of_change_sentence,
     :logo_img_path,
-    :sign_up_button_hex,
     :disclaimer_paragraphs,
     :open_graph_img_path,
   ].freeze
 
-  # Overwrite this method to customize how crowd funds are displayed
-  # across all pages of the admin dashboard.
-  #
-  # def display_resource(crowd_fund)
-  #   "CrowdFund ##{crowd_fund.id}"
-  # end
+  SHOW_PAGE_ATTRIBUTES =FORM_ATTRIBUTES
+
 end
