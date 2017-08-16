@@ -18,6 +18,12 @@ namespace :crowd_funds do
        callToActionSentence: 'Respond every time we mobilize an activist to take nonviolent direct action to defend democracy:',
        theoryOfChangeSentence: 'If enough people chip in to support the brave Americans stepping up to take action, we can build the powerful people\'s movement we need to fight back and push forward.',
        logoImgPath: 'https://s3-us-west-2.amazonaws.com/give-when/static-images/democracy-spring/dem-spring-logo-quite-small.png',
+       openGraphImgPath: 'https://s3-us-west-2.amazonaws.com/give-when/static-images/democracy-spring/democracy-spring-marching-smaller.jpg',
+       disclaimerParagraphs: [
+         'Democracy Spring is a civil resistance movement organization committed to ending the corruption of big money in politics and protecting the right to vote for all people. Last year, we organized the largest American civil disobedience action of the 21st Century, with over 1,300 people arrested for sitting-in on the steps of the US Capitol. Since the 2016 election, we have organized mass protests against Trump and led sit-ins and nonviolent disruptions targeting Congress, Jeff Sessions, Neil Gorsuch, Senate Republicans, and the DNC.',
+         'Contributions will be triggered when either Democracy Spring or a coalition in which Democracy Spring actively participates mobilizes someone to take nonviolent direct action. Each individual who takes nonviolent direct action will trigger a separate and distinct contribution. You will never be charged more than your monthly cap per month.',
+         'Democracy Spring is a 501(c)(4) organization. Contributions are not tax deductible.',
+       ]
     }
 
     democracy_spring_v2_data.transform_keys! { |key| key.to_s.underscore }
