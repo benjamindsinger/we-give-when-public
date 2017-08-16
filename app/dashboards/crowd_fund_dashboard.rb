@@ -62,13 +62,7 @@ class CrowdFundDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :name,
-    :open_graph_title,
-    :open_graph_description,
-    :twitter_message,
-    :suggested_email_subject,
-    :suggested_email_body,
     :default_selected_amount_in_cents,
-    :default_selected_monthly_maximum_in_cents,
     :monthly_max_multiplier,
     :foe_header,
     :foe_subhead,
@@ -83,6 +77,11 @@ class CrowdFundDashboard < Administrate::BaseDashboard
     :logo_img_path,
     :disclaimer_paragraphs,
     :open_graph_img_path,
+    :open_graph_title,
+    :open_graph_description,
+    :twitter_message,
+    :suggested_email_subject,
+    :suggested_email_body,
   ].freeze
 
   SHOW_PAGE_ATTRIBUTES =FORM_ATTRIBUTES
