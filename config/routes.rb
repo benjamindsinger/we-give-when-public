@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :causes
+    resources :legal_entities
+    resources :cause_admins
+    resources :crowd_funds
+    resources :crowd_fund_memberships
+    resources :funders
+
+    root to: "crowd_funds#index"
+  end
+
   devise_for :cause_admins, only: [:sessions, :passwords], path: ''
 
   root 'crowd_funds#index'
