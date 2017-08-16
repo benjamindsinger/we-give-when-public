@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170815194451) do
+ActiveRecord::Schema.define(version: 20170815225625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,21 @@ ActiveRecord::Schema.define(version: 20170815194451) do
     t.string "suggested_email_body"
     t.integer "default_selected_amount_in_cents"
     t.integer "default_selected_monthly_maximum_in_cents"
+    t.integer "monthly_max_multiplier"
+    t.string "foe_header"
+    t.string "foe_subhead"
+    t.string "foe_img_url"
+    t.string "foe_hex"
+    t.string "friend_header"
+    t.string "friend_subhead"
+    t.string "friend_img_url"
+    t.string "friend_hex"
+    t.string "call_to_action_sentence"
+    t.string "theory_of_change_sentence"
+    t.string "logo_img_path"
+    t.string "sign_up_button_hex"
+    t.text "disclaimer_paragraphs", default: [], array: true
+    t.string "open_graph_img_path"
     t.index ["cause_id"], name: "index_crowd_funds_on_cause_id"
   end
 

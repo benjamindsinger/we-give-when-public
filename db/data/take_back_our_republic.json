@@ -4,12 +4,6 @@
   "cause_name": "Take Back Our Republic",
 
   "name": "Take Back Our Republic",
-  "crowd_fund_type": "SLINGSHOT",
-
-  // Progress
-  "goal_date": "09/Jul/2017",
-  "goal_type": "BACKERS",
-  "goal_amount": 100,
 
     // Defaults
   "default_selected_amount_in_cents": 300,

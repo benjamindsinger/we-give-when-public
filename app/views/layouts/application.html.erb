@@ -8,7 +8,7 @@
     <meta property="og:url"
           content="<%= @crowd_fund.url %>" />
     <meta property="og:image"
-          content="<%= @crowd_fund.page_data["headlineImgPath"] %>" />
+          content="<%= @crowd_fund.open_graph_img_path %>" />
     <meta property="og:title"
           content="<%= @crowd_fund.open_graph_title %>" />
     <meta property="og:description"
@@ -16,7 +16,7 @@
     <meta name="twitter:card"
           content="summary_large_image" />
     <meta name="twitter:image:src"
-          content="<%= @crowd_fund.page_data["headlineImgPath"] %>" />
+          content="<%= @crowd_fund.open_graph_img_path %>" />
   <% end %>
 
     <script src="https://js.stripe.com/v3/"></script>

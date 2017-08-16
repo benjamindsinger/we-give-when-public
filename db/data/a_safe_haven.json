@@ -4,12 +4,6 @@
   "cause_name": "A Safe Haven",
 
   "name": "A Safe Haven",
-  "crowd_fund_type": "SLINGSHOT",
-
-  // Progress
-  "goal_date": "15/Jul/2017",
-  "goal_type": "DOLLARS",
-  "goal_amount": 100,
 
     // Defaults
   "default_selected_amount_in_cents": 200,
