@@ -3,6 +3,10 @@ class Funder < ApplicationRecord
   has_many :crowd_fund_memberships
   accepts_nested_attributes_for :crowd_fund_memberships
 
+  def retrieve_stripe_account
+    Stripe::Customer.retrieve(stripe_customer_id)
+  end
+
   def charge(amount)
     Stripe::Charge.create(
       amount: amount,
