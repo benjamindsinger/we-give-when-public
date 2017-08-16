@@ -48,12 +48,6 @@ export default class NewCrowdFundPage extends React.Component {
     disclaimerParagraphs: PropTypes.array.isRequired,
     smallLogoImgPath: PropTypes.string.isRequired,
     signUpButtonColor: PropTypes.string,
-
-    // Header
-    headerGivePhrase: PropTypes.string.isRequired,
-    headerWhenPhrase: PropTypes.string.isRequired,
-    headerLogoImgPath: PropTypes.string.isRequired,
-    headerLogoImgSize: PropTypes.number.isRequired,
   };
 
   constructor(props, _railsContext) {
@@ -245,9 +239,9 @@ export default class NewCrowdFundPage extends React.Component {
   renderHeaderWithoutActionButton () {
     return (
       <Header
-        logoImgPath={this.props.headerLogoImgPath}
+        logoImgPath={this.props.smallLogoImgPath}
         hideSentence={true}
-        logoHeight={this.props.headerLogoImgSize}
+        logoHeight={35}
       />
     );
   }
