@@ -5,10 +5,7 @@ CrowdFund.destroy_all
 Cause.destroy_all
 
 data_sources = [
-  "will_guzzardi_fight_for_fifteen.json",
-  "democracy_spring.json",
   "a_safe_haven.json",
-  "inspiration_corp.json",
   "take_back_our_republic.json"
 ]
 
