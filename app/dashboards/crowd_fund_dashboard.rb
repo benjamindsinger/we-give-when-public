@@ -84,6 +84,5 @@ class CrowdFundDashboard < Administrate::BaseDashboard
     :suggested_email_body,
   ].freeze
 
-  SHOW_PAGE_ATTRIBUTES =FORM_ATTRIBUTES
-
+  SHOW_PAGE_ATTRIBUTES = FORM_ATTRIBUTES
 end
