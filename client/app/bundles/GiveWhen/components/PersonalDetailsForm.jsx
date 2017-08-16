@@ -148,7 +148,7 @@ export default class PersonalDetailsForm extends React.Component {
     return (
       <div className="input__row">
         {this.renderInputFor('city')}
-        {this.renderInputFor('usState', 'US STATE (I.E., IL)')}
+        {this.renderInputFor('usState', 'US STATE (E.G., IL)')}
         {this.renderInputFor('zip')}
       </div>
     );
