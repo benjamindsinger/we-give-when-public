@@ -19,7 +19,6 @@ class CrowdFundDashboard < Administrate::BaseDashboard
     slug: Field::String,
     name: Field::String,
     page_data: Field::String.with_options(searchable: false),
-    goal_date: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     open_graph_title: Field::String,
@@ -32,18 +31,19 @@ class CrowdFundDashboard < Administrate::BaseDashboard
     monthly_max_multiplier: Field::Number,
     foe_header: Field::String,
     foe_subhead: Field::String,
-    foe_img_url: Field::String,
+    foe_img_url: ImageField,
     foe_hex: Field::String,
     friend_header: Field::String,
     friend_subhead: Field::String,
-    friend_img_url: Field::String,
+    friend_img_url: ImageField,
     friend_hex: Field::String,
     call_to_action_sentence: Field::String,
     theory_of_change_sentence: Field::String,
-    logo_img_path: Field::String,
+    logo_img_path: ImageField,
     sign_up_button_hex: Field::String,
     disclaimer_paragraphs: Field::Text,
-    open_graph_img_path: Field::String,
+    open_graph_img_path: ImageField,
+    url: LinkField,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -84,5 +84,7 @@ class CrowdFundDashboard < Administrate::BaseDashboard
     :suggested_email_body,
   ].freeze
 
-  SHOW_PAGE_ATTRIBUTES = FORM_ATTRIBUTES
+  SHOW_PAGE_ATTRIBUTES = FORM_ATTRIBUTES.dup
+
+  SHOW_PAGE_ATTRIBUTES.unshift(:url)
 end
