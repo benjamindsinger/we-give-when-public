@@ -43,6 +43,7 @@ class CrowdFundDashboard < Administrate::BaseDashboard
     sign_up_button_hex: Field::String,
     disclaimer_paragraphs: Field::Text,
     open_graph_img_path: LinkField,
+    url: LinkField,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -83,5 +84,7 @@ class CrowdFundDashboard < Administrate::BaseDashboard
     :suggested_email_body,
   ].freeze
 
-  SHOW_PAGE_ATTRIBUTES = FORM_ATTRIBUTES
+  SHOW_PAGE_ATTRIBUTES = FORM_ATTRIBUTES.dup
+
+  SHOW_PAGE_ATTRIBUTES.unshift(:url)
 end
