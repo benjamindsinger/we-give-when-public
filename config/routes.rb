@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   resources :crowd_funds, path: 'campaigns', only: [:show, :index] do
     get :dashboard, on: :member
+    get :v2, on: :member
     get :super_dashboard, on: :collection
   end
 
