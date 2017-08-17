@@ -15,7 +15,7 @@ module Admin
     end
 
     def valid_action?(name, resource = resource_class)
-      %w[destroy].exclude?(name.to_s) && super
+      %w[destroy new].exclude?(name.to_s) && super
     end
 
   end
