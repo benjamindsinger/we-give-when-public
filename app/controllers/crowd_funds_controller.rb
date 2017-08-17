@@ -28,10 +28,18 @@ class CrowdFundsController < ApplicationController
   end
 
   def v2
-    @funder_required_details = [
-      'firstName', 'lastName', 'occupation', 'employer', 'email',
-      'phone', 'address', 'city', 'usState', 'zip',
-    ]
+    @crowd_fund = CrowdFund.friendly.find(params[:id])
+
+    if @crowd_fund.id == 2
+      @funder_required_details = [
+        'firstName', 'lastName', 'occupation', 'employer', 'email',
+        'phone', 'address', 'city', 'usState', 'zip',
+      ]
+    else
+      @funder_required_details = [
+        'firstName', 'lastName', 'email', 'phone', 'city', 'usState', 'zip',
+      ]
+    end
   end
 
   def dashboard

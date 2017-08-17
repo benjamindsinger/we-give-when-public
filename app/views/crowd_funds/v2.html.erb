@@ -1,0 +1,38 @@
+<%= react_component(
+  "NewCrowdFundPage",
+  props: {
+    crowdFundId: @crowd_fund.id,
+    stripePublishableKey: ENV['STRIPE_PUBLISHABLE_KEY'],
+    airbrakeProjectId: ENV['AIRBRAKE_PROJECT_ID'],
+    airbrakeProjectKey: ENV['AIRBRAKE_PROJECT_KEY'],
+    funderRequiredDetails: @funder_required_details,
+
+    # Defaults
+    defaultSelectedAmountInCents: @crowd_fund.default_selected_amount_in_cents,
+    monthlyMultiplier: @crowd_fund.monthly_max_multiplier,
+
+    # Social
+    twitterMessage: @crowd_fund.twitter_message,
+    suggestedEmailSubject: @crowd_fund.suggested_email_subject,
+    suggestedEmailBody: @crowd_fund.suggested_email_body,
+
+    # Foe
+    foeHeader: @crowd_fund.foe_header,
+    foeSubhead: @crowd_fund.foe_subhead,
+    foeImgUrl: @crowd_fund.foe_img_url,
+    foeHex: @crowd_fund.foe_hex,
+
+    # Friend
+    friendHeader: @crowd_fund.friend_header,
+    friendSubhead: @crowd_fund.friend_subhead,
+    friendImgUrl: @crowd_fund.friend_img_url,
+    friendHex: @crowd_fund.friend_hex,
+
+    callToActionSentence: @crowd_fund.call_to_action_sentence,
+    theoryOfChangeSentence: @crowd_fund.theory_of_change_sentence,
+    smallLogoImgPath: @crowd_fund.logo_img_path,
+    signUpButtonColor: @crowd_fund.sign_up_button_hex,
+
+    disclaimerParagraphs: @crowd_fund.disclaimer_paragraphs
+  })
+%>

@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :crowd_funds
+
+    root to: "crowd_funds#index"
+  end
+
   devise_for :cause_admins, only: [:sessions, :passwords], path: ''
 
   root 'crowd_funds#index'
@@ -11,6 +17,7 @@ Rails.application.routes.draw do
 
   resources :crowd_funds, path: 'campaigns', only: [:show, :index] do
     get :dashboard, on: :member
+    get :v2, on: :member
     get :super_dashboard, on: :collection
   end
 
