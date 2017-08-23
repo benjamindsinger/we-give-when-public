@@ -1,5 +1,10 @@
 namespace :crowd_funds do
 
+  desc 'Reset primary key index'
+  task reset_primary_key_index: :environment do
+    ActiveRecord::Base.connection.reset_pk_sequence!('crowd_funds')
+  end
+
   desc 'V2 Update page data'
   task update_page_data: :environment do
     democracy_spring = CrowdFund.find_or_create_by(id: 1, name: 'Democracy Spring')
