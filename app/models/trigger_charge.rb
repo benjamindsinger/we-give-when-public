@@ -1,12 +1,13 @@
 class TriggerCharge
 
-  def initialize(crowd_fund_membership:, number_of_triggers:)
+  def initialize(crowd_fund_membership:, number_of_triggers:, api_to_charge:)
+    @api_to_charge = api_to_charge
     @crowd_fund_membership = crowd_fund_membership
     @number_of_triggers = number_of_triggers
   end
 
   def charge_funder
-    Stripe::Charge.create({
+    @api_to_charge.create({
         currency: "usd",
         amount: amount_to_charge,
         source: token.id,

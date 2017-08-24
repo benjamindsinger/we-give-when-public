@@ -10,12 +10,16 @@ class CrowdFund < ApplicationRecord
     return name
   end
 
-  def charge_funders(number_of_triggers)
-    crowd_fund_memberships.each do |membership|
-      TriggerCharge.new(
-        crowd_fund_membership: membership,
-        number_of_triggers: number_of_triggers
-      ).charge_funder
+  def charge_funders(number_of_triggers,
+                     api_to_charge = Stripe::Charge,
+                     log=STDOUT)
+    crowd_fund_memberships.map do |membership|
+      begin
+        membership.charge_member(number_of_triggers, api_to_charge)
+      rescue => error
+        log.write("Error charging card! #{error}")
+        false
+      end
     end
   end
 
