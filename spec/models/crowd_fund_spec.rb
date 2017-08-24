@@ -28,16 +28,12 @@ RSpec.describe CrowdFund, type: :model do
             monthly_maximum_in_cents: 100
           )
         end
-
-        crowd_fund.reload
       end
 
-      let(:fake_log) { Mocks::FakeLog.new }
-      let(:charges) { crowd_fund.charge_funders(3, fake_api, fake_log) }
+      let(:charges) { crowd_fund.charge_funders(3, fake_api, Mocks::FakeLog.new) }
       let(:successful_charge_count) { charges.select { |c| c }.size }
 
       context "stripe raises no errors" do
-
         let(:fake_api) { Mocks::FakeStripeChargeApiNoErrors.new }
 
         it "charges 7 funders" do
