@@ -7,6 +7,10 @@ RSpec.describe CrowdFund, type: :model do
       def id; end
     end
 
+    class FakeLog
+      def write(str); end
+    end
+
     before do
       allow(Stripe::Token).to receive(:create).and_return(FakeStripeToken.new)
     end
@@ -36,7 +40,9 @@ RSpec.describe CrowdFund, type: :model do
         crowd_fund.reload
       end
 
-      let(:charges) { crowd_fund.charge_funders(3, fake_api) }
+      let(:fake_log) { FakeLog.new }
+
+      let(:charges) { crowd_fund.charge_funders(3, fake_api, fake_log) }
 
       let(:successful_charge_count) { charges.select { |c| c }.size }
 
