@@ -4,6 +4,13 @@ class CrowdFundMembership < ApplicationRecord
   belongs_to :crowd_fund
   belongs_to :funder
 
+  def charge_member(number_of_triggers)
+    TriggerCharge.new(
+      crowd_fund_membership: self,
+      number_of_triggers: number_of_triggers
+    ).charge_funder
+  end
+
   def sign_up_date
     created_at.strftime("%-m/%e/%y %r")
   end
