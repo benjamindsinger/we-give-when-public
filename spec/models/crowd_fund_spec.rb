@@ -1,27 +1,19 @@
 require "rails_helper"
 
+RSpec.configure do |c|
+  c.extend Mocks
+end
+
 RSpec.describe CrowdFund, type: :model do
 
   describe "#charge_funders" do
-    class FakeStripeToken
-      def id; end
-    end
-
-    class FakeLog
-      def write(str); end
-    end
 
     before do
-      allow(Stripe::Token).to receive(:create).and_return(FakeStripeToken.new)
+      allow(Stripe::Token).to receive(:create).and_return(Mocks::FakeStripeToken.new)
     end
 
-    let(:cause) {
-      Cause.create!(stripe_account_id: 'AAAAAA', name: 'EEEEEEE')
-    }
-
-    let(:crowd_fund) {
-      CrowdFund.create!(cause: cause, name: 'UUUUUU')
-    }
+    let(:cause) { Cause.create!(stripe_account_id: 'AAAAAA', name: 'EEEEEEE') }
+    let(:crowd_fund) { CrowdFund.create!(cause: cause, name: 'UUUUUU') }
 
     context "7 funders" do
       before do
@@ -40,18 +32,13 @@ RSpec.describe CrowdFund, type: :model do
         crowd_fund.reload
       end
 
-      let(:fake_log) { FakeLog.new }
-
+      let(:fake_log) { Mocks::FakeLog.new }
       let(:charges) { crowd_fund.charge_funders(3, fake_api, fake_log) }
-
       let(:successful_charge_count) { charges.select { |c| c }.size }
 
       context "stripe raises no errors" do
-        class FakeStripeChargeApiNoErrors
-          def create(arg1, art2); true end
-        end
 
-        let(:fake_api) { FakeStripeChargeApiNoErrors.new }
+        let(:fake_api) { Mocks::FakeStripeChargeApiNoErrors.new }
 
         it "charges 7 funders" do
           expect(successful_charge_count).to eq 7
@@ -59,22 +46,7 @@ RSpec.describe CrowdFund, type: :model do
       end
 
       context "stripe raises errors on the first two" do
-        class FakeStripeChargeApiTwoErrors
-          def initialize
-            @charges = 0
-          end
-
-          def create(arg, argetyargarg)
-            @charges += 1
-
-            if @charges < 3
-              raise 'Bad card! Bad!'
-            else
-              true
-            end
-          end
-        end
-        let(:fake_api) { FakeStripeChargeApiTwoErrors.new }
+        let(:fake_api) { Mocks::FakeStripeChargeApiTwoErrors.new }
 
         it "charges 5 funders" do
           expect(successful_charge_count).to eq 5
