@@ -11,7 +11,7 @@ class CrowdFund < ApplicationRecord
   end
 
   def charge_funders(number_of_triggers, api_to_charge = Stripe::Charge)
-    crowd_fund_memberships.each do |membership|
+    crowd_fund_memberships.map do |membership|
       begin
         membership.charge_member(number_of_triggers, api_to_charge)
       rescue => error

@@ -36,15 +36,19 @@ RSpec.describe CrowdFund, type: :model do
         crowd_fund.reload
       end
 
+      let(:charges) { crowd_fund.charge_funders(3, fake_api) }
+
+      let(:successful_charge_count) { charges.select { |c| c }.size }
+
       context "stripe raises no errors" do
         class FakeStripeChargeApiNoErrors
-          def create(arg, argetyargarg); end
+          def create(arg1, art2); true end
         end
 
         let(:fake_api) { FakeStripeChargeApiNoErrors.new }
 
         it "charges 7 funders" do
-          expect(crowd_fund.charge_funders(3, fake_api).count).to eq 7
+          expect(successful_charge_count).to eq 7
         end
       end
 
@@ -57,13 +61,17 @@ RSpec.describe CrowdFund, type: :model do
           def create(arg, argetyargarg)
             @charges += 1
 
-            raise 'Bad card! Bad!' if @charges < 2
+            if @charges < 3
+              raise 'Bad card! Bad!'
+            else
+              true
+            end
           end
         end
         let(:fake_api) { FakeStripeChargeApiTwoErrors.new }
 
         it "charges 5 funders" do
-          expect(crowd_fund.charge_funders(3, fake_api).count).to eq 7
+          expect(successful_charge_count).to eq 5
         end
       end
 
