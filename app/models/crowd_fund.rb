@@ -10,9 +10,9 @@ class CrowdFund < ApplicationRecord
     return name
   end
 
-  def charge_funders(number_of_triggers)
+  def charge_funders(number_of_triggers, api_to_charge = Stripe::Charge)
     crowd_fund_memberships.each do |membership|
-      membership.charge_member(number_of_triggers)
+      membership.charge_member(number_of_triggers, api_to_charge)
     end
   end
 

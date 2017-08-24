@@ -9,7 +9,6 @@ RSpec.describe CrowdFund, type: :model do
 
     before do
       allow(Stripe::Token).to receive(:create).and_return(FakeStripeToken.new)
-      allow(Stripe::Charge).to receive(:create).and_return('yaya!')
     end
 
     let(:cause) {
@@ -38,14 +37,33 @@ RSpec.describe CrowdFund, type: :model do
       end
 
       context "stripe raises no errors" do
+        class FakeStripeChargeApiNoErrors
+          def create(arg, argetyargarg); end
+        end
+
+        let(:fake_api) { FakeStripeChargeApiNoErrors.new }
+
         it "charges 7 funders" do
-          expect(crowd_fund.charge_funders(3).count).to eq 7
+          expect(crowd_fund.charge_funders(3, fake_api).count).to eq 7
         end
       end
 
       context "stripe raises errors on the first two" do
+        class FakeStripeChargeApiTwoErrors
+          def initialize
+            @charges = 0
+          end
+
+          def create(arg, argetyargarg)
+            @charges += 1
+
+            raise 'Bad card! Bad!' if @charges < 2
+          end
+        end
+        let(:fake_api) { FakeStripeChargeApiTwoErrors.new }
+
         it "charges 5 funders" do
-          expect(crowd_fund.charge_funders(3).count).to eq 7
+          expect(crowd_fund.charge_funders(3, fake_api).count).to eq 7
         end
       end
 

@@ -4,9 +4,10 @@ class CrowdFundMembership < ApplicationRecord
   belongs_to :crowd_fund
   belongs_to :funder
 
-  def charge_member(number_of_triggers)
+  def charge_member(number_of_triggers, api_to_charge)
     TriggerCharge.new(
       crowd_fund_membership: self,
+      api_to_charge: api_to_charge,
       number_of_triggers: number_of_triggers
     ).charge_funder
   end
