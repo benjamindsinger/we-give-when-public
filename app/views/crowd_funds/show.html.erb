@@ -1,91 +1,39 @@
-<% unless @crowd_fund.id.in? [4, 5] %>
-  <%= react_component(
-    "NewCrowdFundPage",
-    props: {
-      crowdFundId: @crowd_fund.id,
-      stripePublishableKey: ENV['STRIPE_PUBLISHABLE_KEY'],
-      airbrakeProjectId: ENV['AIRBRAKE_PROJECT_ID'],
-      airbrakeProjectKey: ENV['AIRBRAKE_PROJECT_KEY'],
-      funderRequiredDetails: @funder_required_details,
+<%= react_component(
+  "NewCrowdFundPage",
+  props: {
+    crowdFundId: @crowd_fund.id,
+    stripePublishableKey: ENV['STRIPE_PUBLISHABLE_KEY'],
+    airbrakeProjectId: ENV['AIRBRAKE_PROJECT_ID'],
+    airbrakeProjectKey: ENV['AIRBRAKE_PROJECT_KEY'],
+    funderRequiredDetails: @funder_required_details,
 
-      # Defaults
-      defaultSelectedAmountInCents: @crowd_fund.default_selected_amount_in_cents,
-      monthlyMultiplier: @crowd_fund.monthly_max_multiplier,
+    # Defaults
+    defaultSelectedAmountInCents: @crowd_fund.default_selected_amount_in_cents,
+    monthlyMultiplier: @crowd_fund.monthly_max_multiplier,
 
-      # Social
-      twitterMessage: @crowd_fund.twitter_message,
-      suggestedEmailSubject: @crowd_fund.suggested_email_subject,
-      suggestedEmailBody: @crowd_fund.suggested_email_body,
+    # Social
+    twitterMessage: @crowd_fund.twitter_message,
+    suggestedEmailSubject: @crowd_fund.suggested_email_subject,
+    suggestedEmailBody: @crowd_fund.suggested_email_body,
 
-      # Foe
-      foeHeader: @crowd_fund.foe_header,
-      foeSubhead: @crowd_fund.foe_subhead,
-      foeImgUrl: @crowd_fund.foe_img_url,
-      foeHex: @crowd_fund.foe_hex,
+    # Foe
+    foeHeader: @crowd_fund.foe_header,
+    foeSubhead: @crowd_fund.foe_subhead,
+    foeImgUrl: @crowd_fund.foe_img_url,
+    foeHex: @crowd_fund.foe_hex,
 
-      # Friend
-      friendHeader: @crowd_fund.friend_header,
-      friendSubhead: @crowd_fund.friend_subhead,
-      friendImgUrl: @crowd_fund.friend_img_url,
-      friendHex: @crowd_fund.friend_hex,
+    # Friend
+    friendHeader: @crowd_fund.friend_header,
+    friendSubhead: @crowd_fund.friend_subhead,
+    friendImgUrl: @crowd_fund.friend_img_url,
+    friendHex: @crowd_fund.friend_hex,
 
-      callToActionSentence: @crowd_fund.call_to_action_sentence,
-      theoryOfChangeSentence: @crowd_fund.theory_of_change_sentence,
-      smallLogoImgPath: @crowd_fund.logo_img_path,
-      signUpButtonColor: @crowd_fund.sign_up_button_hex,
+    callToActionSentence: @crowd_fund.call_to_action_sentence,
+    theoryOfChangeSentence: @crowd_fund.theory_of_change_sentence,
+    smallLogoImgPath: @crowd_fund.logo_img_path,
+    signUpButtonColor: @crowd_fund.sign_up_button_hex,
 
-      disclaimerParagraphs: @crowd_fund.disclaimer_paragraphs
-    })
-  %>
-<% else %>
-  <%= react_component(
-      "CrowdFundPage",
-        crowdFundId: @crowd_fund.id,
-      props: {
-        crowdFundType: 'SLINGSHOT',
-        stripePublishableKey: ENV['STRIPE_PUBLISHABLE_KEY'],
-        airbrakeProjectId: ENV['AIRBRAKE_PROJECT_ID'],
-        airbrakeProjectKey: ENV['AIRBRAKE_PROJECT_KEY'],
-        funderRequiredDetails: @funder_required_details,
+    disclaimerParagraphs: @crowd_fund.disclaimer_paragraphs
+  })
+%>
 
-        # Defaults
-        defaultSelectedAmountInCents: @crowd_fund.default_selected_amount_in_cents,
-        defaultSelectedMonthlyMaximumInCents: @crowd_fund.default_selected_monthly_maximum_in_cents,
-
-        optionsInCents: @crowd_fund.page_data.fetch("optionsInCents"),
-        monthlyMaxOptionsInCents: @crowd_fund.page_data.fetch("monthlyMaxOptionsInCents", nil),
-
-        # Social
-        twitterMessage: @crowd_fund.twitter_message,
-        hideFacebook: (@crowd_fund.name == "Inspiration Corporation"),
-        suggestedEmailSubject: @crowd_fund.suggested_email_subject,
-        suggestedEmailBody: @crowd_fund.suggested_email_body,
-
-        # Colors
-        colorScheme: @crowd_fund.page_data.fetch("colorScheme"),
-
-        # Content, header
-        headerGivePhrase: @crowd_fund.page_data.fetch("headerGivePhrase"),
-        headerWhenPhrase: @crowd_fund.page_data.fetch("headerWhenPhrase"),
-        headerLogoImgPath: @crowd_fund.page_data.fetch("headerLogoImgPath"),
-        headerLogoImgSize: @crowd_fund.page_data.fetch("headerLogoImgSize"),
-        # Content, headline
-        headline: @crowd_fund.page_data.fetch("headline"),
-        headlineLoud: @crowd_fund.page_data.fetch("headlineLoud"),
-        subheadline: @crowd_fund.page_data.fetch("subheadline"),
-        headlineImgPath: @crowd_fund.page_data.fetch("headlineImgPath"),
-        largeHeadlineText: @crowd_fund.page_data.fetch("largeHeadlineText"),
-
-        # Content, give when blocks
-        giveStatement: @crowd_fund.page_data.fetch("giveStatement"),
-        whenStatement: @crowd_fund.page_data.fetch("whenStatement"),
-
-        # Content, sections
-        contentSections: @crowd_fund.page_data.fetch("contentSections"),
-        disclaimerParagraphs: @crowd_fund.page_data.fetch("disclaimerParagraphs")
-      },
-      trace: nil,
-      replay_console: nil
-    )
-  %>
-<% end %>
