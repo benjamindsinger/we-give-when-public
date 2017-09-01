@@ -48,6 +48,7 @@ export default class NewCrowdFundPage extends React.Component {
     disclaimerParagraphs: PropTypes.array.isRequired,
     smallLogoImgPath: PropTypes.string.isRequired,
     signUpButtonColor: PropTypes.string,
+    flatMonthlyAmount: PropTypes.bool.isRequired,
   };
 
   constructor(props, _railsContext) {
