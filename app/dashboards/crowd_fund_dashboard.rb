@@ -44,6 +44,7 @@ class CrowdFundDashboard < Administrate::BaseDashboard
     disclaimer_paragraphs: Field::Text,
     open_graph_img_path: ImageField,
     url: LinkField,
+    flat_monthly_amount: Field::Boolean
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -82,6 +83,7 @@ class CrowdFundDashboard < Administrate::BaseDashboard
     :twitter_message,
     :suggested_email_subject,
     :suggested_email_body,
+    :flat_monthly_amount
   ].freeze
 
   SHOW_PAGE_ATTRIBUTES = FORM_ATTRIBUTES.dup
