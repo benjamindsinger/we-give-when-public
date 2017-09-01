@@ -15,7 +15,11 @@ class CrowdFund < ApplicationRecord
                      log=STDOUT)
     crowd_fund_memberships.map do |membership|
       begin
-        membership.charge_member(number_of_triggers, api_to_charge)
+        if flat_monthly_amount
+          membership.charge_member_for_month(api_to_charge)
+        else
+          membership.charge_member_based_on_triggers(number_of_triggers, api_to_charge)
+        end
       rescue => error
         log.write("Error charging card! #{error}")
         false
