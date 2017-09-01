@@ -185,9 +185,9 @@ export default class NewCrowdFundPage extends React.Component {
           employer={this.state.employer}
 
           /* Selected amounts */
-          crowdFundType={'SLINGSHOT'}
           selectedAmountInCents={this.state.selectedAmountInCents}
           selectedMonthlyMaximumInCents={this.selectedMonthlyMaximumInCents()}
+          flatMonthlyAmount={this.props.flatMonthlyAmount}
         />
 
         <div className="disclaimer__section">
