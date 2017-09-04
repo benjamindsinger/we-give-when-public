@@ -6,7 +6,6 @@ import CheckoutTable from './CheckoutTable.jsx';
 export default class FlatMonthlyCheckout extends React.Component {
 
   static propTypes = {
-    crowdFundType: PropTypes.string.isRequired,
     selectedAmountInCents: PropTypes.number.isRequired,
     onClickEdit: PropTypes.func.isRequired,
   };

@@ -232,7 +232,6 @@ export default class CardDetailsForm extends React.Component {
   renderTriggerBasedCheckout () {
     return (
       <TriggerBasedCheckout
-        crowdFundType={this.props.crowdFundType}
         selectedAmountInCents={this.props.selectedAmountInCents}
         selectedMonthlyMaximumInCents={this.props.selectedMonthlyMaximumInCents}
         onClickEdit={this.props.onClickEdit} />
@@ -242,7 +241,6 @@ export default class CardDetailsForm extends React.Component {
   renderFlatMonthlyCheckout () {
     return (
       <FlatMonthlyCheckout
-        crowdFundType={this.props.crowdFundType}
         selectedAmountInCents={this.props.selectedAmountInCents}
         onClickEdit={this.props.onClickEdit} />
     );
