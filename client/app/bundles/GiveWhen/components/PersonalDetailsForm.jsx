@@ -30,7 +30,7 @@ export default class PersonalDetailsForm extends React.Component {
     // Amounts
     selectedAmountInCents: PropTypes.number.isRequired,
     selectedMonthlyMaximumInCents: PropTypes.number,
-    flatMonthlyAmount: PropTypes.string.isRequired,
+    flatMonthlyAmount: PropTypes.bool.isRequired,
   };
 
   componentDidMount() {
