@@ -3,12 +3,11 @@ import React from 'react';
 import Money from '../../helpers/money.jsx';
 import CheckoutTable from './CheckoutTable.jsx';
 
-export default class SlingshotCheckout extends React.Component {
+export default class FlatMonthlyCheckout extends React.Component {
 
   static propTypes = {
     crowdFundType: PropTypes.string.isRequired,
     selectedAmountInCents: PropTypes.number.isRequired,
-    selectedMonthlyMaximumInCents: PropTypes.number.isRequired,
     onClickEdit: PropTypes.func.isRequired,
   };
 
@@ -20,37 +19,32 @@ export default class SlingshotCheckout extends React.Component {
     return this.asExactChange(this.props.selectedAmountInCents);
   }
 
-  maximumAmountAsExactChange () {
-    return this.asExactChange(this.props.selectedMonthlyMaximumInCents);
+  monthlyAmountAsExactChange () {
+    return this.asExactChange(this.props.selectedAmountInCents * 30);
   }
 
   donationAmountInWords () {
-    return `$${this.selectedAmountInAsExactChange()}/trigger up to $${this.maximumAmountAsExactChange()}/mo`;
+    return `$${this.selectedAmountInAsExactChange()}/day, ~$${this.monthlyAmountAsExactChange()}/mo`;
   }
 
-  processingAmount () {
-    const maximumAmountInCents = this.props.selectedMonthlyMaximumInCents;
-
-    return (maximumAmountInCents * .084) + 30;
+  processingAmountPerMonth () {
+    return (this.props.selectedAmountInCents * .084 * 30) + 30;
   }
 
   processingAmountInWords () {
-    const processingAmount = this.processingAmount();
+    const processingAmountPerMonth = this.processingAmountPerMonth();
 
-    return `Up to $${this.asExactChange(processingAmount)}/mo`;
+    return `~$${this.asExactChange(processingAmountPerMonth)}/mo`;
   }
 
-  totalAmount () {
-    const maximumAmountInCents = this.props.selectedMonthlyMaximumInCents;
-    const processingAmount = this.processingAmount();
-
-    return maximumAmountInCents + processingAmount;
+  totalAmountPerMonth () {
+    return this.processingAmountPerMonth() + (this.props.selectedAmountInCents * 30);
   }
 
   totalAmountInWords () {
-    const totalAmount = this.totalAmount();
+    const totalAmountPerMonth = this.totalAmountPerMonth();
 
-    return `Up to $${this.asExactChange(totalAmount)}/mo`;
+    return `~$${this.asExactChange(totalAmountPerMonth)}/mo`;
   }
 
   render () {
