@@ -5,8 +5,8 @@ import 'whatwg-fetch';
 import Mixpanel from '../helpers/mixpanel.jsx';
 
 import SocialSharingPage from './SocialSharingPage.jsx';
-import SlingshotCheckout from './checkout/SlingshotCheckout.jsx';
-import CountdownCheckout from './checkout/CountdownCheckout.jsx';
+import TriggerBasedCheckout from './checkout/TriggerBasedCheckout.jsx';
+import FlatMonthlyCheckout from './checkout/FlatMonthlyCheckout.jsx';
 
 export default class CardDetailsForm extends React.Component {
 
@@ -226,15 +226,15 @@ export default class CardDetailsForm extends React.Component {
 
     switch (crowdFundType) {
     case 'SLINGSHOT':
-      return this.renderSlingshotCheckout();
+      return this.renderTriggerBasedCheckout();
     case 'COUNTDOWN':
       return this.renderCountdownCheckout();
     }
   }
 
-  renderSlingshotCheckout () {
+  renderTriggerBasedCheckout () {
     return (
-      <SlingshotCheckout
+      <TriggerBasedCheckout
         crowdFundType={this.props.crowdFundType}
         selectedAmountInCents={this.props.selectedAmountInCents}
         selectedMonthlyMaximumInCents={this.props.selectedMonthlyMaximumInCents}
@@ -242,9 +242,9 @@ export default class CardDetailsForm extends React.Component {
     );
   }
 
-  renderCountdownCheckout () {
+  renderFlatMonthlyCheckout () {
     return (
-      <CountdownCheckout
+      <FlatMonthlyCheckout
         crowdFundType={this.props.crowdFundType}
         selectedAmountInCents={this.props.selectedAmountInCents}
         onClickEdit={this.props.onClickEdit} />
