@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170816185848) do
+ActiveRecord::Schema.define(version: 20170901130051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(version: 20170816185848) do
     t.string "sign_up_button_hex"
     t.text "disclaimer_paragraphs", default: [], array: true
     t.string "open_graph_img_path"
+    t.boolean "flat_monthly_amount", default: false
     t.index ["cause_id"], name: "index_crowd_funds_on_cause_id"
   end
 
