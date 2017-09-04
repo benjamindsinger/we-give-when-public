@@ -187,6 +187,8 @@ export default class NewCrowdFundPage extends React.Component {
           /* Selected amounts */
           selectedAmountInCents={this.state.selectedAmountInCents}
           selectedMonthlyMaximumInCents={this.selectedMonthlyMaximumInCents()}
+
+          /* Crowd fund type */
           flatMonthlyAmount={this.props.flatMonthlyAmount}
         />
 
@@ -225,8 +227,8 @@ export default class NewCrowdFundPage extends React.Component {
           suggestedEmailSubject={this.props.suggestedEmailSubject}
           suggestedEmailBody={this.props.suggestedEmailBody}
 
-          /* Campaign type */
-          crowdFundType={'SLINGSHOT'}
+          /* Crowd fund type */
+          flatMonthlyAmount={this.props.flatMonthlyAmount}
         />
 
         <div className="disclaimer__section">
