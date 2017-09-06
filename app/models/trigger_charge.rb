@@ -78,7 +78,7 @@ class TriggerCharge
 
   def add_stripe_fees(amount)
     # Must return an integer, no fractional U.S. cents
-    ((amount * 1.084) + 30).to_i
+    (((amount * 1.055) + 30)/0.971).to_i
   end
 
 end
