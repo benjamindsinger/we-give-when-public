@@ -41,7 +41,7 @@ class CrowdFundDashboard < Administrate::BaseDashboard
     theory_of_change_sentence: Field::String,
     logo_img_path: ImageField,
     sign_up_button_hex: Field::String,
-    disclaimer_paragraphs: Field::Text,
+    disclaimer_paragraphs: PostgresArrayField,
     open_graph_img_path: ImageField,
     url: LinkField,
     flat_monthly_amount: Field::Boolean

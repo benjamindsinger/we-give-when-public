@@ -10,6 +10,10 @@ class CrowdFund < ApplicationRecord
     return name
   end
 
+  def disclaimer_paragraphs_for_form
+    disclaimer_paragraphs.join(" // ")
+  end
+
   def charge_funders(number_of_triggers,
                      api_to_charge = Stripe::Charge,
                      log=STDOUT)
