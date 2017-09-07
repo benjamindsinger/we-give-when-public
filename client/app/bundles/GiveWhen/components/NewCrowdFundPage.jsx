@@ -154,6 +154,9 @@ export default class NewCrowdFundPage extends React.Component {
         monthlyMultiplier={this.props.monthlyMultiplier}
         onAdjustAmountUp={this.onAdjustAmountUp.bind(this)}
         onAdjustAmountDown={this.onAdjustAmountDown.bind(this)}
+
+        /* Crowd fund type */
+        flatMonthlyAmount={this.props.flatMonthlyAmount}
       />
     );
   }

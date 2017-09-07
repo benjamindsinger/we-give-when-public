@@ -26,6 +26,7 @@ export default class LandingPage extends React.Component {
     selectedAmountInCents: PropTypes.number.isRequired,
     onAdjustAmountDown: PropTypes.func.isRequired,
     onAdjustAmountUp: PropTypes.func.isRequired,
+    flatMonthlyAmount: PropTypes.bool.isRequired,
   };
 
   constructor(props, _railsContext) {
@@ -161,9 +162,17 @@ export default class LandingPage extends React.Component {
               }}></span>
           </div>
           <br/>
-          <div>Monthly cap: ${this.monthlyCapInDollars()}</div>
+          {this.renderMonthlyCapSection()}
         </div>
       </div>
+    );
+  }
+
+  renderMonthlyCapSection() {
+    if (this.props.flatMonthlyAmount === true) return null;
+
+    return (
+      <div>Monthly cap: ${this.monthlyCapInDollars()}</div>
     );
   }
 
