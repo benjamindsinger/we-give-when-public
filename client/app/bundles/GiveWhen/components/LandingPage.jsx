@@ -26,6 +26,7 @@ export default class LandingPage extends React.Component {
     selectedAmountInCents: PropTypes.number.isRequired,
     onAdjustAmountDown: PropTypes.func.isRequired,
     onAdjustAmountUp: PropTypes.func.isRequired,
+    flatMonthlyAmount: PropTypes.bool.isRequired,
   };
 
   constructor(props, _railsContext) {
@@ -124,10 +125,65 @@ export default class LandingPage extends React.Component {
   renderAmountSelected () {
     const amount = this.props.selectedAmountInCents;
 
-    return Money.renderAmountInCentsAsExactChange(amount);
+    const amountAsExactChange = Money.renderAmountInCentsAsExactChange(amount);
+
+    if (this.props.flatMonthlyAmount === false) return amountAsExactChange;
+
+    return `${amountAsExactChange}/mo`;
   }
 
-  renderMechanicsSection () {
+  renderFunderResponse() {
+    const phrase = (this.props.flatMonthlyAmount)
+                     ? 'I will respond with:'
+                     : 'I will automatically respond with:';
+
+    const amountSelected = this.renderAmountSelected();
+
+    return (
+      <div>
+        <span>{phrase}</span>
+        <span className="dollar__amount__indicator"> ${amountSelected}</span>
+        {this.renderAdjustUpCaret()}
+        {this.renderAdjustDownCaret()}
+      </div>
+    );
+  }
+
+  renderAdjustUpCaret() {
+    return (
+      <span onClick={this.props.onAdjustAmountUp.bind(this)}
+        style={{
+          width: 0,
+          height: 0,
+          borderLeft: '10px solid transparent',
+          borderRight: '10px solid transparent',
+          borderBottom: '10px solid black',
+          position: 'relative',
+          bottom: '30px',
+          left: '10px'
+        }}>
+      </span>
+    );
+  }
+
+  renderAdjustDownCaret() {
+    return (
+      <span onClick={this.props.onAdjustAmountDown.bind(this)}
+        style={{
+          width: 0,
+          height: 0,
+          borderLeft: '10px solid transparent',
+          borderRight: '10px solid transparent',
+          borderTop: '10px solid black',
+          position: 'relative',
+          top: '30px',
+          right: '10px'
+        }}>
+      </span>
+    );
+  }
+
+  renderMechanicsSection() {
     return (
       <div className="mechanics__section" style={{padding: '0 !important'}}>
         <div className="call__to__action">
@@ -135,35 +191,20 @@ export default class LandingPage extends React.Component {
         </div>
         <div className="amount__selection">
           <div>
-            <span>I will automatically respond with:</span>
-            <span className="dollar__amount__indicator"> ${this.renderAmountSelected()}</span>
-            <span onClick={this.props.onAdjustAmountUp.bind(this)}
-              style={{
-                width: 0,
-                height: 0,
-                borderLeft: '10px solid transparent',
-                borderRight: '10px solid transparent',
-                borderBottom: '10px solid black',
-                position: 'relative',
-                bottom: '30px',
-                left: '10px'
-              }}></span>
-            <span onClick={this.props.onAdjustAmountDown.bind(this)}
-              style={{
-                width: 0,
-                height: 0,
-                borderLeft: '10px solid transparent',
-                borderRight: '10px solid transparent',
-                borderTop: '10px solid black',
-                position: 'relative',
-                top: '30px',
-                right: '10px'
-              }}></span>
+            {this.renderFunderResponse()}
           </div>
           <br/>
-          <div>Monthly cap: ${this.monthlyCapInDollars()}</div>
+          {this.renderMonthlyCapSection()}
         </div>
       </div>
+    );
+  }
+
+  renderMonthlyCapSection() {
+    if (this.props.flatMonthlyAmount === true) return null;
+
+    return (
+      <div>Monthly cap: ${this.monthlyCapInDollars()}</div>
     );
   }
 

@@ -6,7 +6,6 @@ import CheckoutTable from './CheckoutTable.jsx';
 export default class FlatMonthlyCheckout extends React.Component {
 
   static propTypes = {
-    crowdFundType: PropTypes.string.isRequired,
     selectedAmountInCents: PropTypes.number.isRequired,
     onClickEdit: PropTypes.func.isRequired,
   };
@@ -19,32 +18,28 @@ export default class FlatMonthlyCheckout extends React.Component {
     return this.asExactChange(this.props.selectedAmountInCents);
   }
 
-  monthlyAmountAsExactChange () {
-    return this.asExactChange(this.props.selectedAmountInCents * 30);
-  }
-
   donationAmountInWords () {
-    return `$${this.selectedAmountInAsExactChange()}/day, ~$${this.monthlyAmountAsExactChange()}/mo`;
+    return `$${this.selectedAmountInAsExactChange()}/mo`;
   }
 
   processingAmountPerMonth () {
-    return (this.props.selectedAmountInCents * .084 * 30) + 30;
+    return (this.props.selectedAmountInCents * .084) + 30;
   }
 
   processingAmountInWords () {
     const processingAmountPerMonth = this.processingAmountPerMonth();
 
-    return `~$${this.asExactChange(processingAmountPerMonth)}/mo`;
+    return `$${this.asExactChange(processingAmountPerMonth)}/mo`;
   }
 
   totalAmountPerMonth () {
-    return this.processingAmountPerMonth() + (this.props.selectedAmountInCents * 30);
+    return this.processingAmountPerMonth() + this.props.selectedAmountInCents;
   }
 
   totalAmountInWords () {
     const totalAmountPerMonth = this.totalAmountPerMonth();
 
-    return `~$${this.asExactChange(totalAmountPerMonth)}/mo`;
+    return `$${this.asExactChange(totalAmountPerMonth)}/mo`;
   }
 
   render () {

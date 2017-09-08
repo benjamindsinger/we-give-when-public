@@ -33,7 +33,7 @@ export default class CardDetailsForm extends React.Component {
     hideFacebook: PropTypes.bool,
 
     /* Campaign type */
-    crowdFundType: PropTypes.string.isRequired
+    flatMonthlyAmount: PropTypes.bool.isRequired,
   };
 
   constructor (props) {
@@ -222,20 +222,16 @@ export default class CardDetailsForm extends React.Component {
   }
 
   renderCheckoutTable () {
-    const crowdFundType = this.props.crowdFundType;
+    const flatMonthlyAmount = this.props.flatMonthlyAmount;
 
-    switch (crowdFundType) {
-    case 'SLINGSHOT':
-      return this.renderTriggerBasedCheckout();
-    case 'COUNTDOWN':
-      return this.renderCountdownCheckout();
-    }
+    if (flatMonthlyAmount) return this.renderFlatMonthlyCheckout();
+
+    return this.renderTriggerBasedCheckout();
   }
 
   renderTriggerBasedCheckout () {
     return (
       <TriggerBasedCheckout
-        crowdFundType={this.props.crowdFundType}
         selectedAmountInCents={this.props.selectedAmountInCents}
         selectedMonthlyMaximumInCents={this.props.selectedMonthlyMaximumInCents}
         onClickEdit={this.props.onClickEdit} />
@@ -245,7 +241,6 @@ export default class CardDetailsForm extends React.Component {
   renderFlatMonthlyCheckout () {
     return (
       <FlatMonthlyCheckout
-        crowdFundType={this.props.crowdFundType}
         selectedAmountInCents={this.props.selectedAmountInCents}
         onClickEdit={this.props.onClickEdit} />
     );

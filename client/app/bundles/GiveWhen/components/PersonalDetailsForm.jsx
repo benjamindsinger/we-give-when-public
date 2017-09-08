@@ -30,7 +30,7 @@ export default class PersonalDetailsForm extends React.Component {
     // Amounts
     selectedAmountInCents: PropTypes.number.isRequired,
     selectedMonthlyMaximumInCents: PropTypes.number,
-    crowdFundType: PropTypes.string.isRequired,
+    flatMonthlyAmount: PropTypes.bool.isRequired,
   };
 
   componentDidMount() {
@@ -85,22 +85,23 @@ export default class PersonalDetailsForm extends React.Component {
     );
   }
 
-  renderSlingshotSummary () {
+  renderTriggerBasedSummary () {
     const triggerAmount = Money.renderAmountInCentsAsRoundDollars(this.props.selectedAmountInCents);
     const maxAmount = Money.renderAmountInCentsAsRoundDollars(this.props.selectedMonthlyMaximumInCents);
 
     return `I'll respond with $${triggerAmount}, up to $${maxAmount} per month.`;
   }
 
-  renderCountdownSummary () {
-    return `Fight back: $${Money.renderAmountInCentsAsRoundDollars(this.props.selectedAmountInCents)}/day`;
+  renderFlatMonthlySummary () {
+    const triggerAmount = Money.renderAmountInCentsAsRoundDollars(this.props.selectedAmountInCents);
+
+    return `I'll respond with $${triggerAmount} / month.`;
   }
 
   renderSummaryContent () {
-    const crowdFundType = this.props.crowdFundType;
+    if (this.props.flatMonthlyAmount) return this.renderFlatMonthlySummary();
 
-    if (crowdFundType === 'SLINGSHOT') return this.renderSlingshotSummary();
-    if (crowdFundType === 'COUNTDOWN') return this.renderCountdownSummary();
+    return this.renderTriggerBasedSummary();
   }
 
   renderInputFor (field, optionalLabel) {

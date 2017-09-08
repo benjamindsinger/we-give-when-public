@@ -48,6 +48,7 @@ export default class NewCrowdFundPage extends React.Component {
     disclaimerParagraphs: PropTypes.array.isRequired,
     smallLogoImgPath: PropTypes.string.isRequired,
     signUpButtonColor: PropTypes.string,
+    flatMonthlyAmount: PropTypes.bool.isRequired,
   };
 
   constructor(props, _railsContext) {
@@ -153,6 +154,9 @@ export default class NewCrowdFundPage extends React.Component {
         monthlyMultiplier={this.props.monthlyMultiplier}
         onAdjustAmountUp={this.onAdjustAmountUp.bind(this)}
         onAdjustAmountDown={this.onAdjustAmountDown.bind(this)}
+
+        /* Crowd fund type */
+        flatMonthlyAmount={this.props.flatMonthlyAmount}
       />
     );
   }
@@ -184,9 +188,11 @@ export default class NewCrowdFundPage extends React.Component {
           employer={this.state.employer}
 
           /* Selected amounts */
-          crowdFundType={'SLINGSHOT'}
           selectedAmountInCents={this.state.selectedAmountInCents}
           selectedMonthlyMaximumInCents={this.selectedMonthlyMaximumInCents()}
+
+          /* Crowd fund type */
+          flatMonthlyAmount={this.props.flatMonthlyAmount}
         />
 
         <div className="disclaimer__section">
@@ -224,8 +230,8 @@ export default class NewCrowdFundPage extends React.Component {
           suggestedEmailSubject={this.props.suggestedEmailSubject}
           suggestedEmailBody={this.props.suggestedEmailBody}
 
-          /* Campaign type */
-          crowdFundType={'SLINGSHOT'}
+          /* Crowd fund type */
+          flatMonthlyAmount={this.props.flatMonthlyAmount}
         />
 
         <div className="disclaimer__section">
