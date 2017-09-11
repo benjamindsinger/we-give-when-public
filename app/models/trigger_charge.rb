@@ -69,16 +69,17 @@ class TriggerCharge
   end
 
   def amount_after_fees
-    add_stripe_fees(amount_before_fees)
+    amount = amount_before_fees
+    calculator = FeesCalculator.new(amount)
+
+    return calculator.add_stripe_fees
   end
 
   def monthly_maximum_after_fees
-    add_stripe_fees(@crowd_fund_membership.monthly_maximum_in_cents)
-  end
+    amount = @crowd_fund_membership.monthly_maximum_in_cents
+    calculator = FeesCalculator.new(amount)
 
-  def add_stripe_fees(amount)
-    # Must return an integer, no fractional U.S. cents
-    (((amount * 1.055) + 30)/0.971).to_i
+    return calculator.add_stripe_fees
   end
 
 end
