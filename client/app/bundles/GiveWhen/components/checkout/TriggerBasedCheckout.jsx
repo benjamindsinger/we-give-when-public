@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Money from '../../helpers/money.jsx';
 import CheckoutTable from './CheckoutTable.jsx';
+import FeesCalculator from '../../helpers/FeesCalculator.jsx';
 
 export default class TriggerBasedCheckout extends React.Component {
 
