@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Money from '../../helpers/money.jsx';
 import CheckoutTable from './CheckoutTable.jsx';
-import FeesCalculator from '../../helpers/FeesCalculator.jsx';
+import FeesCalculator from '../../helpers/fees_calculator.jsx';
 
 export default class FlatMonthlyCheckout extends React.Component {
 
@@ -24,7 +24,9 @@ export default class FlatMonthlyCheckout extends React.Component {
   }
 
   processingAmountPerMonth () {
-    return (this.props.selectedAmountInCents * .084) + 30;
+    const amount = this.props.selectedAmountInCents;
+
+    return FeesCalculator.fees(amount);
   }
 
   processingAmountInWords () {
