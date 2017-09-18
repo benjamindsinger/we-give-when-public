@@ -1,6 +1,10 @@
 module Admin
   class CrowdFundsController < Admin::ApplicationController
 
+    def valid_action?(name, resource = resource_class)
+      %w[destroy].exclude?(name.to_s) && super
+    end
+
     def find_resource(param)
       CrowdFund.find_by!(slug: param)
     end

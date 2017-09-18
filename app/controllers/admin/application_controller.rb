@@ -13,10 +13,5 @@ module Admin
 
       redirect_to root_url, alert: 'That\'s not yours, don\'t play.'
     end
-
-    def valid_action?(name, resource = resource_class)
-      %w[destroy].exclude?(name.to_s) && super
-    end
-
   end
 end

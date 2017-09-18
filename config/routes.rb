@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :admin do
     resources :crowd_funds
+    resources :funders
     resources :causes
     resources :legal_entities
 
