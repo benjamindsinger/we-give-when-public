@@ -55,7 +55,7 @@ class CauseDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how causes are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(cause)
-  #   "Cause ##{cause.id}"
-  # end
+  def display_resource(cause)
+    cause.name
+  end
 end

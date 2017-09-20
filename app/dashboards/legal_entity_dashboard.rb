@@ -73,7 +73,7 @@ class LegalEntityDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how legal entities are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(legal_entity)
-  #   "LegalEntity ##{legal_entity.id}"
-  # end
+  def display_resource(legal_entity)
+    legal_entity.business_name
+  end
 end
