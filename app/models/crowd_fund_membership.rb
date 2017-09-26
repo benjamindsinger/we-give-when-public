@@ -5,6 +5,8 @@ class CrowdFundMembership < ApplicationRecord
   belongs_to :funder
 
   def charge_member_based_on_triggers(number_of_triggers, api_to_charge)
+    return false unless self.status == 'active'
+
     TriggerCharge.new(
       crowd_fund_membership: self,
       api_to_charge: api_to_charge,
@@ -13,6 +15,8 @@ class CrowdFundMembership < ApplicationRecord
   end
 
   def charge_member_for_month(api_to_charge)
+    return false unless self.status == 'active'
+
     # TODO (ARS)
   end
 
