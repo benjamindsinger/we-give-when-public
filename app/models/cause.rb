@@ -39,6 +39,28 @@ class Cause < ActiveRecord::Base
     })
   end
 
+  def update_legal_entity_for_stripe
+    raise 'Has no stripe_account_id' if stripe_account_id.nil?
+
+    acct = Stripe::Account.retrieve(stripe_account_id)
+
+    data = self.legal_entity
+
+    acct.legal_entity.business_name = data.business_name
+    acct.legal_entity.first_name = data.first_name
+    acct.legal_entity.last_name = data.last_name
+    acct.legal_entity.address.city = data.city
+    acct.legal_entity.address.country = 'US'
+    acct.legal_entity.address.line1 = data.address_line1
+    acct.legal_entity.address.postal_code = data.postal_code
+    acct.legal_entity.address.state = data.state
+    acct.legal_entity.dob.day = data.dob.day
+    acct.legal_entity.dob.month = data.dob.month
+    acct.legal_entity.dob.year = data.dob.year
+
+    acct.save
+  end
+
   def retrieve_stripe_account
     Stripe::Account.retrieve(stripe_account_id)
   end
