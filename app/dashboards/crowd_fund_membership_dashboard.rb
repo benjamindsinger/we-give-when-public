@@ -58,7 +58,7 @@ class CrowdFundMembershipDashboard < Administrate::BaseDashboard
   end
 
   def valid_action?(name, resource = resource_class)
-    %w[destroy create new].exclude?(name.to_s) && super
+    %w[destroy new].exclude?(name.to_s) && super
   end
 
 end
