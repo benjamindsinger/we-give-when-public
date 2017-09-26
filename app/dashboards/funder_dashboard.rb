@@ -71,7 +71,7 @@ class FunderDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how funders are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(funder)
-  #   "Funder ##{funder.id}"
-  # end
+  def display_resource(funder)
+    "#{funder.first_name} #{funder.last_name}"
+  end
 end
