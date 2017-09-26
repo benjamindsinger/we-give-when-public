@@ -54,7 +54,7 @@ class CrowdFundMembershipDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(crowd_fund_membership)
-    "#{crowd_fund_membership.funder.first_name} #{crowd_fund_membership.funder.last_name}: #{crowd_fund_membership.crowd_fund.name}"
+    "#{crowd_fund_membership.funder.first_name} #{crowd_fund_membership.funder.last_name} backing #{crowd_fund_membership.crowd_fund.name}"
   end
 
   def valid_action?(name, resource = resource_class)
