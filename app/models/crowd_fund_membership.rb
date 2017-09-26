@@ -5,7 +5,7 @@ class CrowdFundMembership < ApplicationRecord
   belongs_to :funder
 
   def charge_member_based_on_triggers(number_of_triggers, api_to_charge)
-    return unless self.status == 'active'
+    return false unless self.status == 'active'
 
     TriggerCharge.new(
       crowd_fund_membership: self,
