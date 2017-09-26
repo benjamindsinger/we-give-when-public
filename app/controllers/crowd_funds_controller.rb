@@ -18,11 +18,11 @@ class CrowdFundsController < ApplicationController
     if @crowd_fund.id == 2
       @funder_required_details = [
         'firstName', 'lastName', 'occupation', 'employer', 'email',
-        'phone', 'address', 'city', 'usState', 'zip',
+        'address', 'city', 'usState', 'zip',
       ]
     else
       @funder_required_details = [
-        'firstName', 'lastName', 'email', 'phone', 'city', 'usState', 'zip',
+        'firstName', 'lastName', 'email', 'city', 'usState', 'zip',
       ]
     end
   end
@@ -33,11 +33,11 @@ class CrowdFundsController < ApplicationController
     if @crowd_fund.id == 2
       @funder_required_details = [
         'firstName', 'lastName', 'occupation', 'employer', 'email',
-        'phone', 'address', 'city', 'usState', 'zip',
+        'address', 'city', 'usState', 'zip',
       ]
     else
       @funder_required_details = [
-        'firstName', 'lastName', 'email', 'phone', 'city', 'usState', 'zip',
+        'firstName', 'lastName', 'email', 'city', 'usState', 'zip',
       ]
     end
   end
