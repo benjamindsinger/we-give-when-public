@@ -11,6 +11,7 @@ class CauseAdminDashboard < Administrate::BaseDashboard
     cause: Field::BelongsTo,
     id: Field::Number,
     email: Field::String,
+    password: Field::String,
     encrypted_password: Field::String,
     reset_password_token: Field::String,
     reset_password_sent_at: Field::DateTime,
@@ -53,6 +54,7 @@ class CauseAdminDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :cause,
     :email,
+    :password,
   ].freeze
 
   # Overwrite this method to customize how cause admins are displayed
