@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :funders
     resources :causes
     resources :legal_entities
+    resources :cause_admins
 
     root to: "crowd_funds#index"
   end

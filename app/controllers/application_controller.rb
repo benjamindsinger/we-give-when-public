@@ -14,7 +14,11 @@ class ApplicationController < ActionController::Base
     def after_sign_in_path_for_cause_admin(resource)
       crowd_fund = resource.cause.crowd_funds.first
 
-      dashboard_crowd_fund_url(crowd_fund)
+      if crowd_fund
+        dashboard_crowd_fund_url(crowd_fund)
+      else
+        root_url
+      end
     end
 
     def after_sign_in_path_for_super_admin
