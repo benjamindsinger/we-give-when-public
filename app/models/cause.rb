@@ -7,10 +7,13 @@ class Cause < ActiveRecord::Base
     tos_acceptance_date_in_seconds.nil?
   end
 
-  def create_stripe_account
+  def create_stripe_account(api = Stripe::Account)
+    return if Rails.env.test?  # Not a good pattern; TODO pass in a mock service
+                               # for Stripe in the test environment.
+
     raise 'Already has Stripe acct' if stripe_account_id.present?
 
-    acct = Stripe::Account.create({
+    acct = api.create({
       country: "US",
       type: "custom"
     })
