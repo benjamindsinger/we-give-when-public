@@ -32,26 +32,16 @@ class CauseAdminDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :cause,
-    :id,
     :email,
-    :encrypted_password,
+    :sign_in_count,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :cause,
-    :id,
     :email,
-    :encrypted_password,
-    :reset_password_token,
-    :reset_password_sent_at,
-    :remember_created_at,
     :sign_in_count,
-    :current_sign_in_at,
-    :last_sign_in_at,
-    :current_sign_in_ip,
-    :last_sign_in_ip,
     :created_at,
     :updated_at,
     :super_admin,
@@ -63,22 +53,12 @@ class CauseAdminDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :cause,
     :email,
-    :encrypted_password,
-    :reset_password_token,
-    :reset_password_sent_at,
-    :remember_created_at,
-    :sign_in_count,
-    :current_sign_in_at,
-    :last_sign_in_at,
-    :current_sign_in_ip,
-    :last_sign_in_ip,
-    :super_admin,
   ].freeze
 
   # Overwrite this method to customize how cause admins are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(cause_admin)
-  #   "CauseAdmin ##{cause_admin.id}"
-  # end
+  def display_resource(cause_admin)
+    cause_admin.email
+  end
 end
