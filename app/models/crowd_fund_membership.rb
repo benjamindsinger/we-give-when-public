@@ -15,7 +15,7 @@ class CrowdFundMembership < ApplicationRecord
   end
 
   def charge_member_for_month(api_to_charge)
-    return unless self.status == 'active'
+    return false unless self.status == 'active'
 
     # TODO (ARS)
   end
