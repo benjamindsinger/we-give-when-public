@@ -1,6 +1,6 @@
 class Cause < ActiveRecord::Base
   has_one :legal_entity
-  has_many :crowd_funds
+  has_many :crowd_funds, inverse_of: :cause
   after_create :create_stripe_account
 
   def tos_unsigned?

@@ -3,6 +3,7 @@ class CrowdFund < ApplicationRecord
   friendly_id :name, :use => [:slugged]
   has_many :crowd_fund_memberships
   belongs_to :cause
+  validates :cause, presence: true
 
   def name_except_for_fight_for_15
     return 'Will Guzzardi' if name === 'Fight for $15'

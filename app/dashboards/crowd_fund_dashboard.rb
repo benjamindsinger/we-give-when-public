@@ -63,6 +63,7 @@ class CrowdFundDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :name,
+    :cause,
     :default_selected_amount_in_cents,
     :monthly_max_multiplier,
     :foe_header,
