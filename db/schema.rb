@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170901130051) do
+ActiveRecord::Schema.define(version: 20170926192218) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -135,8 +135,17 @@ ActiveRecord::Schema.define(version: 20170901130051) do
     t.index ["cause_id"], name: "index_legal_entities_on_cause_id"
   end
 
+  create_table "monthly_trigger_charges", force: :cascade do |t|
+    t.bigint "crowd_fund_id"
+    t.integer "number_of_triggers"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["crowd_fund_id"], name: "index_monthly_trigger_charges_on_crowd_fund_id"
+  end
+
   add_foreign_key "crowd_fund_memberships", "crowd_funds"
   add_foreign_key "crowd_fund_memberships", "funders", on_delete: :cascade
   add_foreign_key "crowd_funds", "causes"
   add_foreign_key "legal_entities", "causes"
+  add_foreign_key "monthly_trigger_charges", "crowd_funds"
 end
