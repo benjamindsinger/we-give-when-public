@@ -4,7 +4,10 @@ CrowdFundMembership.destroy_all
 CrowdFund.destroy_all
 Cause.destroy_all
 
-CrowdFund.create(
+cause = Cause.create!(name: 'Fight for Pet Store')
+
+CrowdFund.create!(
+  cause: cause,
   name: 'Fight to Keep Our Fave Pet Store Open!',
   default_selected_amount_in_cents: 100,
   monthly_max_multiplier: 10,
@@ -22,7 +25,7 @@ CrowdFund.create(
   disclaimer_paragraphs: ['We Bear No Responsibility For Anything']
 )
 
-CauseAdmin.create(
+CauseAdmin.create!(
   email: ENV.fetch('ALEX_EMAIL'),
   password: ENV.fetch('ALEX_PASSWORD'),
   super_admin: true
