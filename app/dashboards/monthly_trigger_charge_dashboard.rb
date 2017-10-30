@@ -8,6 +8,9 @@ class MonthlyTriggerChargeDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    crowd_fund: Field::BelongsTo,
+    number_of_triggers: Field::Number,
+    created_at: Field::DateTime,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -15,18 +18,18 @@ class MonthlyTriggerChargeDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  COLLECTION_ATTRIBUTES = [
-  ].freeze
+  COLLECTION_ATTRIBUTES = ATTRIBUTE_TYPES.keys.freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = [
-  ].freeze
+  SHOW_PAGE_ATTRIBUTES = ATTRIBUTE_TYPES.keys.freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
+    :crowd_fund,
+    :number_of_triggers,
   ].freeze
 
   # Overwrite this method to customize how funders are displayed
