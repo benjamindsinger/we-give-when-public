@@ -30,7 +30,7 @@ class CrowdFund < ApplicationRecord
     crowd_fund_memberships.map do |membership|
       begin
         log.write("💸 Charging someone...")
-        log.write("\n")
+        log.write("\n\n")
 
         if flat_monthly_amount
           membership.charge_member_for_month(api_to_charge)
@@ -40,19 +40,21 @@ class CrowdFund < ApplicationRecord
 
         success_count += 1
         log.write("✅ Succeeded!")
-        log.write("\n")
+        log.write("\n\n")
       rescue => error
         error_count += 1
         log.write("🚨 Error charging card! #{error}")
-        log.write("\n")
+        log.write("\n\n")
         false
       end
     end
 
     log.write("🙌 🙌 🙌 Successfully charged #{success_count} funders.")
+    log.write("\n\n")
     log.write("🚨 🚨 🚨 Failed to charge #{error_count} funders.")
+    log.write("\n\n")
     log.write("💀 💀 💀 Did not charge #{inactive_count} inactive funders.")
-    log.write("\n")
+    log.write("\n\n")
 
     return crowd_fund_memberships
   end
