@@ -24,6 +24,8 @@ class CrowdFund < ApplicationRecord
 
     success_count = 0
     error_count = 0
+    inactive = crowd_fund_memberships.where.not(status: 'active')
+    inactive_count = inactive.size
 
     crowd_fund_memberships.map do |membership|
       begin
@@ -49,6 +51,7 @@ class CrowdFund < ApplicationRecord
 
     log.write("Successfully charged #{success_count} funders.")
     log.write("Failed to charge #{error_count} funders.")
+    log.write("Did not charge #{inactive_count} inactive funders.")
     log.write("\n")
 
     return crowd_fund_memberships
