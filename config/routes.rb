@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :causes
     resources :legal_entities
     resources :cause_admins
+    resources :monthly_trigger_charges
     resources :crowd_fund_memberships, except: [:new, :create]
 
     root to: "crowd_funds#index"
