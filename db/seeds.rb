@@ -26,7 +26,7 @@ CrowdFund.create!(
 )
 
 CauseAdmin.create!(
-  email: ENV.fetch('ALEX_EMAIL'),
-  password: ENV.fetch('ALEX_PASSWORD'),
+  email: "puppies@example.com",
+  password: "puppies",
   super_admin: true
 )

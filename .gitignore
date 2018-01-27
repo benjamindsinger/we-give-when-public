@@ -7,3 +7,7 @@ config/local_env.yml
 npm-debug.log*
 node_modules
 /app/assets/webpack/*
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
