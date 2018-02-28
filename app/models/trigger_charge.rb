@@ -18,20 +18,27 @@ class TriggerCharge
     )
   end
 
-  private
-
-  def statement_descriptor
-    # From Stripe: The statement descriptor must be at most 22 characters.
-
-    @crowd_fund_membership.crowd_fund.name[0..21]
-  end
-
   def amount_to_charge
     if amount_after_fees > monthly_maximum_after_fees
       monthly_maximum_after_fees
     else
       amount_after_fees
     end
+  end
+
+  def monthly_maximum_after_fees
+    amount = @crowd_fund_membership.monthly_maximum_in_cents
+    calculator = FeesCalculator.new(amount)
+
+    return calculator.add_stripe_fees
+  end
+
+  private
+
+  def statement_descriptor
+    # From Stripe: The statement descriptor must be at most 22 characters.
+
+    @crowd_fund_membership.crowd_fund.name[0..21]
   end
 
   def our_fee_in_cents
@@ -70,13 +77,6 @@ class TriggerCharge
 
   def amount_after_fees
     amount = amount_before_fees
-    calculator = FeesCalculator.new(amount)
-
-    return calculator.add_stripe_fees
-  end
-
-  def monthly_maximum_after_fees
-    amount = @crowd_fund_membership.monthly_maximum_in_cents
     calculator = FeesCalculator.new(amount)
 
     return calculator.add_stripe_fees

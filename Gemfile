@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'config'
+gem 'figaro'
 gem 'rails', '~> 5.1.1'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
@@ -22,11 +22,13 @@ gem 'reek'
 gem 'react_on_rails', '~> 7'
 gem 'rubocop', '~> 0.49.1', require: false
 gem 'sass-rails', '~> 5.0'
+gem 'sendgrid-ruby'
 gem 'stripe'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
+  gem "byebug", "~> 10.0"
 end
 
 group :development do
@@ -35,4 +37,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'xray-rails'
+  gem "letter_opener"
+  gem "better_errors"
+  gem 'binding_of_caller'
 end

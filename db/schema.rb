@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170926192218) do
+ActiveRecord::Schema.define(version: 20180218012717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 20170926192218) do
     t.text "disclaimer_paragraphs", default: [], array: true
     t.string "open_graph_img_path"
     t.boolean "flat_monthly_amount", default: false
+    t.string "trigger_event_past_tense"
     t.index ["cause_id"], name: "index_crowd_funds_on_cause_id"
   end
 
@@ -132,6 +133,7 @@ ActiveRecord::Schema.define(version: 20170926192218) do
     t.integer "cause_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
     t.index ["cause_id"], name: "index_legal_entities_on_cause_id"
   end
 
