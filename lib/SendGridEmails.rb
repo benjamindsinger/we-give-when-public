@@ -17,7 +17,6 @@ class SendGridEmails
   require 'sendgrid-ruby'
   include SendGrid
 
-
   def self.monthly_charge(membership, number_of_triggers)
     @membership = membership
     @crowd_fund = membership.crowd_fund
@@ -58,13 +57,9 @@ class SendGridEmails
     @org_rep_title = @legal_entity.title
 
     @funder_email_object = Email.new(email: @funder.email)
-    @wegivewhen_gmail_object = Email.new(email: "wegivewhen@gmail.com")
-    # @ben_email_object = Email.new(email: "benj@wegivewhen.com")
 
     mail = Mail.new
-    mail.from = Email.new(email: 'WeGiveWhen <wegivewhen@gmail.com>')
-    mail.subject = "WeGiveWhen: Your donation to '#{@crowd_fund.cause.name}' for the month of #{(Date.today - 1.month).strftime("%B %Y")}"
-    # mail.subject = "You #{@trigger_event_past_tense} #{@number_of_triggers} times. Thank you!"
+    mail.from = Email.new(email: "GiveWhen on behalf of #{@cause.name} <wegivewhen@gmail.com>")
     personalization = Personalization.new
     personalization.add_to(@funder_email_object)
     # personalization.add_cc(@ben_email_object) if Rails.env == "development"
