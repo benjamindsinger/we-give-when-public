@@ -1,4 +1,5 @@
 class CrowdFund < ApplicationRecord
+  require 'SendGridEmails'
   include FriendlyId
   friendly_id :name, :use => [:slugged]
   has_many :crowd_fund_memberships
@@ -26,9 +27,10 @@ class CrowdFund < ApplicationRecord
     error_count = 0
     inactive = crowd_fund_memberships.where.not(status: 'active')
     inactive_count = inactive.size
+    active_memberships = crowd_fund_memberships.select{|cfm| cfm.status == "active"}
 
-    crowd_fund_memberships.map do |membership|
-      begin
+    active_memberships.each do |membership|
+      # begin
         log.write("💸 Charging someone...")
         log.write("\n\n")
 
@@ -40,13 +42,17 @@ class CrowdFund < ApplicationRecord
 
         success_count += 1
         log.write("✅ Succeeded!")
+
+        # MonthlyChargesMailer.monthly_charge(membership).deliver_now
+        SendGridEmails.monthly_charge(membership, number_of_triggers)
+
         log.write("\n\n")
-      rescue => error
-        error_count += 1
-        log.write("🚨 Error charging card! #{error}")
-        log.write("\n\n")
-        false
-      end
+      # rescue => error
+      #   error_count += 1
+      #   log.write("🚨 Error charging card! #{error}")
+      #   log.write("\n\n")
+      #   false
+      # end
     end
 
     log.write("🙌 🙌 🙌 Successfully charged #{success_count} funders.")

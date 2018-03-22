@@ -4,14 +4,18 @@ class CrowdFundMembership < ApplicationRecord
   belongs_to :crowd_fund
   belongs_to :funder
 
+  attr_accessor :trigger_charge
+
   def charge_member_based_on_triggers(number_of_triggers, api_to_charge)
     return false unless self.status == 'active'
 
-    TriggerCharge.new(
+    self.trigger_charge = TriggerCharge.new(
       crowd_fund_membership: self,
       api_to_charge: api_to_charge,
       number_of_triggers: number_of_triggers
-    ).charge_funder
+    )
+
+    self.trigger_charge.charge_funder
   end
 
   def charge_member_for_month(api_to_charge)
@@ -30,6 +34,14 @@ class CrowdFundMembership < ApplicationRecord
 
   def monthly_maximum_in_dollars
     Money.new(monthly_maximum_in_cents, "USD").format
+  end
+
+  def monthly_max_including_fees_in_dollars
+    Money.new(trigger_charge.monthly_maximum_after_fees, "USD").format
+  end
+
+  def total_charge_this_month_in_dollars
+    Money.new(trigger_charge.amount_to_charge, "USD").format
   end
 
   def self.dashboard_row_headers
